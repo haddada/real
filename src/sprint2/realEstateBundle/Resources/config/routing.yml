@@ -1,0 +1,3 @@
+real_estate_homepage:
+    path:     /hello
+    defaults: { _controller: realEstateBundle:Default:index }
