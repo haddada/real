@@ -59,19 +59,19 @@ class __TwigTemplate_8cbb0d5a3dc631731f50a639422d51634b7b060aa34c47f902696e2631c
         // line 34
         echo $this->env->getExtension('braincrafted_bootstrap_label')->labelSuccessFunction("Success");
         echo "
-";
+\t";
         // line 35
         echo $this->env->getExtension('braincrafted_bootstrap_label')->labelPrimaryFunction("Primary");
         echo "
-";
+\t";
         // line 36
         echo $this->env->getExtension('braincrafted_bootstrap_label')->labelInfoFunction("Info");
         echo "
-";
+\t";
         // line 37
         echo $this->env->getExtension('braincrafted_bootstrap_label')->labelWarningFunction("Warning");
         echo "
-";
+\t";
         // line 38
         echo $this->env->getExtension('braincrafted_bootstrap_label')->labelDangerFunction("danger");
         echo "
