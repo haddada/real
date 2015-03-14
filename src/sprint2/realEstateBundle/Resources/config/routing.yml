@@ -1,3 +1,9 @@
 real_estate_homepage:
     path:     /hello
     defaults: { _controller: realEstateBundle:Default:index }
+real_estate_admins:
+    path: /admins
+    defaults: { _controller:realEstateBundle:Administrateur:afficherAdmins }
+real_estate_ajoutAdmin:
+    path: /addAdmin
+    defaults: { _controller:realEstateBundle:Administrateur:ajouterAdmin }
