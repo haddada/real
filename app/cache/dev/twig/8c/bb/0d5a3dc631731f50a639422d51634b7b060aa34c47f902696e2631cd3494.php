@@ -10,84 +10,43 @@ class __TwigTemplate_8cbb0d5a3dc631731f50a639422d51634b7b060aa34c47f902696e2631c
         $this->parent = false;
 
         $this->blocks = array(
+            'header' => array($this, 'block_header'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<!DOCTYPE html>
-<html>
-<head>
-
-    <title>Bootstrap 101 Template</title>
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <!-- Bootstrap -->
-    <link href=\"";
-        // line 8
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/bootstrap.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\" media=\"screen\">
-
-    <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
-    ";
-        // line 11
-        $this->env->loadTemplate("BraincraftedBootstrapBundle::ie8-support.html.twig")->display($context);
-        // line 12
-        echo "
+        echo "<html>
+<head>   
+    <link href=\"https://a0.muscache.com/airbnb/static/packages/common_o2.1-ec3a181fa47f7eeeccce237530c4bdf9.css\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />
+    <link href=\"https://a2.muscache.com/airbnb/static/p1/main-pretzel-d13973fd70f8c67a5804eef0ff3f7513.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />
 </head>
 
-<body>
-<nav class=\"navbar navbar-default\" role=\"navigation\">
- <div class=\"navbar-header\">
-        <button type=\"button\" class=\"navbar-toggle\"
-                data-toggle=\"collapse\" data-target=\".navbar-ex1-collapse\">
-            <span class=\"sr-only\">Toggle navigation</span>
-            <span class=\"icon-bar\"></span>
-            <span class=\"icon-bar\"></span>
-            <span class=\"icon-bar\"></span>
-        </button>
-        <a class=\"navbar-brand\" href=\"#\">Brand</a>
-    </div>
-</nav>
+<body class=\"home_view v2 simple-header p1\">
 
-<p>
-  <button type=\"button\" class=\"btn btn-primary btn-lg\">Large button</button>
-  <button type=\"button\" class=\"btn btn-default btn-lg\">Large button</button>
-</p>
-    <h1>Hello, world!</h1>
-    ";
-        // line 34
-        echo $this->env->getExtension('braincrafted_bootstrap_label')->labelSuccessFunction("Success");
+";
+        // line 9
+        $this->displayBlock('header', $context, $blocks);
+        // line 11
         echo "
-\t";
-        // line 35
-        echo $this->env->getExtension('braincrafted_bootstrap_label')->labelPrimaryFunction("Primary");
-        echo "
-\t";
-        // line 36
-        echo $this->env->getExtension('braincrafted_bootstrap_label')->labelInfoFunction("Info");
-        echo "
-\t";
-        // line 37
-        echo $this->env->getExtension('braincrafted_bootstrap_label')->labelWarningFunction("Warning");
-        echo "
-\t";
-        // line 38
-        echo $this->env->getExtension('braincrafted_bootstrap_label')->labelDangerFunction("danger");
-        echo "
-
-    <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
-    <script src=\"";
-        // line 41
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery.js"), "html", null, true);
-        echo "\"></script>
-    <!-- Include all JavaScripts, compiled by Assetic -->
-    <script src=\"";
-        // line 43
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
-        echo "\"></script>
-</body>
+";
+        // line 12
+        $this->displayBlock('content', $context, $blocks);
+        // line 14
+        echo "</body>
 </html>";
+    }
+
+    // line 9
+    public function block_header($context, array $blocks = array())
+    {
+    }
+
+    // line 12
+    public function block_content($context, array $blocks = array())
+    {
     }
 
     public function getTemplateName()
@@ -95,13 +54,8 @@ class __TwigTemplate_8cbb0d5a3dc631731f50a639422d51634b7b060aa34c47f902696e2631c
         return "realEstateBundle:Default:index.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  87 => 43,  82 => 41,  76 => 38,  72 => 37,  68 => 36,  64 => 35,  60 => 34,  36 => 12,  34 => 11,  28 => 8,  19 => 1,);
+        return array (  48 => 12,  43 => 9,  38 => 14,  36 => 12,  33 => 11,  31 => 9,  21 => 1,);
     }
 }

@@ -244,29 +244,35 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // real_estate_homepage
-        if ($pathinfo === '/hello') {
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'real_estate_homepage');
+            }
+
             return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\DefaultController::indexAction',  '_route' => 'real_estate_homepage',);
         }
 
-        if (0 === strpos($pathinfo, '/a')) {
-            if (0 === strpos($pathinfo, '/ad')) {
-                // real_estate_admins
-                if ($pathinfo === '/admins') {
-                    return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\AdministrateurController::afficherAdminsAction',  '_route' => 'real_estate_admins',);
-                }
-
-                // real_estate_ajoutAdmin
-                if ($pathinfo === '/addAdmin') {
-                    return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\AdministrateurController::ajouterAdminAction',  '_route' => 'real_estate_ajoutAdmin',);
-                }
-
+        if (0 === strpos($pathinfo, '/ad')) {
+            // real_estate_admins
+            if ($pathinfo === '/admins') {
+                return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\AdministrateurController::afficherAdminsAction',  '_route' => 'real_estate_admins',);
             }
 
-            // homepage
-            if ($pathinfo === '/app/example') {
-                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+            // real_estate_ajoutAdmin
+            if ($pathinfo === '/addAdmin') {
+                return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\AdministrateurController::ajouterAdminAction',  '_route' => 'real_estate_ajoutAdmin',);
             }
 
+        }
+
+        // real_estate_dashboard
+        if ($pathinfo === '/dashboard') {
+            return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\AdministrateurController::afficherAdminsAction',  '_route' => 'real_estate_dashboard',);
+        }
+
+        // homepage
+        if ($pathinfo === '/app/example') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
         // _welcome
