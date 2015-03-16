@@ -1,5 +1,5 @@
 real_estate_homepage:
-    path:     /hello
+    path:     /
     defaults: { _controller: realEstateBundle:Default:index }
 real_estate_admins:
     path: /admins
@@ -7,3 +7,6 @@ real_estate_admins:
 real_estate_ajoutAdmin:
     path: /addAdmin
     defaults: { _controller:realEstateBundle:Administrateur:ajouterAdmin }
+real_estate_dashboard:
+    path: /dashboard
+    defaults: { _controller:realEstateBundle:Administrateur:afficherAdmins }

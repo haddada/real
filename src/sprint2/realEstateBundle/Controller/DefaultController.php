@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('realEstateBundle:administrateur:dashboard.html.twig');
+        return $this->render('realEstateBundle:Default:header.html.twig');
     }
 }

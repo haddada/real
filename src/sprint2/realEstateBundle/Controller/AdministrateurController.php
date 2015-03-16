@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AdministrateurController extends Controller
 {
+
+
     public function afficherAdminsAction()
     {
     	$administrateurs= $this->getDoctrine()
