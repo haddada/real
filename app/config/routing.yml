@@ -1,7 +1,15 @@
+sprint2_real_estate_admin:
+    resource: "@sprint2RealEstateAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
 real_estate:
     resource: "@realEstateBundle/Resources/config/routing.yml"
     prefix:   /
 
+real_estate_admin:
+    resource: "@sprint2RealEstateAdminBundle/Resources/config/routing.yml"
+    prefix:   /Admin
+    
 app:
     resource: @AppBundle/Controller/
     type:     annotation
