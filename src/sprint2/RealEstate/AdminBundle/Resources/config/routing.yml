@@ -1,0 +1,19 @@
+sprint2_real_estate_admin_homepage:
+    path:     /
+    defaults: { _controller: sprint2RealEstateAdminBundle:Default:index }
+    
+sprint2_real_estate_admin_mailbox:
+    path:     /MailBox
+    defaults: { _controller: sprint2RealEstateAdminBundle:Default:mail }
+
+sprint2_real_estate_admin_sentmail:
+    path:     /SentMail
+    defaults: { _controller: sprint2RealEstateAdminBundle:Default:sent }
+    
+sprint2_real_estate_admin_clients:
+    path:     /Clients
+    defaults: { _controller: sprint2RealEstateAdminBundle:Default:clients }
+    
+sprint2_real_estate_admin_gerants:
+    path:     /Gerants
+    defaults: { _controller: sprint2RealEstateAdminBundle:Default:gerants }

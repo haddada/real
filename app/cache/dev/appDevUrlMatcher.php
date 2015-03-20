@@ -270,6 +270,38 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\AdministrateurController::afficherAdminsAction',  '_route' => 'real_estate_dashboard',);
         }
 
+        if (0 === strpos($pathinfo, '/Admin')) {
+            // sprint2_real_estate_admin_homepage
+            if (rtrim($pathinfo, '/') === '/Admin') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'sprint2_real_estate_admin_homepage');
+                }
+
+                return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::indexAction',  '_route' => 'sprint2_real_estate_admin_homepage',);
+            }
+
+            // sprint2_real_estate_admin_mailbox
+            if ($pathinfo === '/Admin/MailBox') {
+                return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::mailAction',  '_route' => 'sprint2_real_estate_admin_mailbox',);
+            }
+
+            // sprint2_real_estate_admin_sentmail
+            if ($pathinfo === '/Admin/SentMail') {
+                return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::sentAction',  '_route' => 'sprint2_real_estate_admin_sentmail',);
+            }
+
+            // sprint2_real_estate_admin_clients
+            if ($pathinfo === '/Admin/Clients') {
+                return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::clientsAction',  '_route' => 'sprint2_real_estate_admin_clients',);
+            }
+
+            // sprint2_real_estate_admin_gerants
+            if ($pathinfo === '/Admin/Gerants') {
+                return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::gerantsAction',  '_route' => 'sprint2_real_estate_admin_gerants',);
+            }
+
+        }
+
         // homepage
         if ($pathinfo === '/app/example') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
