@@ -398,3 +398,7 @@ bd720e,::1,GET,http://localhost/pidev_sprint2/web/app_dev.php/Admin/,1426893483,
 78b587,::1,GET,http://localhost/pidev_sprint2/web/app_dev.php/Admin/,1426893489,
 dc9e03,::1,GET,http://localhost/pidev_sprint2/web/app_dev.php/Admin/,1426893499,
 241620,::1,GET,http://localhost/pidev_sprint2/web/app_dev.php/Admin/,1426893566,
+ff9ae2,127.0.0.1,GET,http://localhost:8000/,1426939609,
+ddcb3a,127.0.0.1,GET,http://localhost:8000/Admin,1426939618,
+9d58c9,127.0.0.1,GET,http://localhost:8000/Admin/,1426939618,dbcea9
+dbcea9,127.0.0.1,GET,http://localhost:8000/Admin/,1426939618,
