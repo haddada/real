@@ -29,11 +29,12 @@ class Offre
     private $idGerant;
 
     /**
-     * @var integer
+     * @var Adresse
      *
-     * @ORM\Column(name="id_adresse", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Adresse")
+     * )
      */
-    private $idAdresse;
+    private $Adresse;
 
     /**
      * @var string

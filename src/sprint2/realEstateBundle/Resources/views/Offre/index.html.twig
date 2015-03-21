@@ -1,0 +1,87 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h1>Offre list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Idgerant</th>
+                <th>Idadresse</th>
+                <th>Etat</th>
+                <th>Typeimmob</th>
+                <th>Nature</th>
+                <th>Payement</th>
+                <th>Surface</th>
+                <th>Nbrpiece</th>
+                <th>Datepublication</th>
+                <th>Datemodification</th>
+                <th>Dispobileapartir</th>
+                <th>Description</th>
+                <th>Etage</th>
+                <th>Ascenceur</th>
+                <th>Cuisineequipe</th>
+                <th>Jardin</th>
+                <th>Entreeindep</th>
+                <th>Gazdeville</th>
+                <th>Chauffage</th>
+                <th>Meuble</th>
+                <th>Climatisation</th>
+                <th>Note</th>
+                <th>Urlimage</th>
+                <th>Position</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('offre_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.idGerant }}</td>
+                <td>{{ entity.Adresse.ville }}</td>
+                <td>{{ entity.etat }}</td>
+                <td>{{ entity.typeimmob }}</td>
+                <td>{{ entity.nature }}</td>
+                <td>{{ entity.payement }}</td>
+                <td>{{ entity.surface }}</td>
+                <td>{{ entity.nbrpiece }}</td>
+                <td>{% if entity.datepublication %}{{ entity.datepublication|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.datemodification %}{{ entity.datemodification|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.dispobileapartir %}{{ entity.dispobileapartir|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.etage }}</td>
+                <td>{{ entity.ascenceur }}</td>
+                <td>{{ entity.cuisineequipe }}</td>
+                <td>{{ entity.jardin }}</td>
+                <td>{{ entity.entreeindep }}</td>
+                <td>{{ entity.gazdeville }}</td>
+                <td>{{ entity.chauffage }}</td>
+                <td>{{ entity.meuble }}</td>
+                <td>{{ entity.climatisation }}</td>
+                <td>{{ entity.note }}</td>
+                <td>{{ entity.urlimage }}</td>
+                <td>{{ entity.position }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('offre_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('offre_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('offre_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
