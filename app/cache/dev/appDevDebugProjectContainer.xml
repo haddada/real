@@ -2716,6 +2716,19 @@
                   <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
                       <argument type="collection">
+                        <argument key="/home/haddada/realEstate/src/sprint2/RealEstate/AdminBundle/Resources/config/doctrine">sprint2\RealEstate\AdminBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>sprint2\RealEstate\AdminBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                      <argument type="collection">
                         <argument key="C:\wamp\www\pidev_sprint2\src\sprint2\RealEstate\AdminBundle\Resources\config\doctrine">sprint2\RealEstate\AdminBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">

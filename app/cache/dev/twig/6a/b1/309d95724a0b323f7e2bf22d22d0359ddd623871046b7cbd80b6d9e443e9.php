@@ -32,6 +32,303 @@ class __TwigTemplate_6ab1309d95724a0b323f7e2bf22d22d0359ddd623871046b7cbd80b6d9e
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 3
+        $context["__internal_b452191d20d27bcec8f190fbce297a25befd8c8c5df64e60e919575a9d42351e"] = $this;
+        // line 1
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 5
+    public function block_toolbar($context, array $blocks = array())
+    {
+        // line 6
+        echo "    ";
+        if (twig_length_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()))) {
+            // line 7
+            echo "        ";
+            ob_start();
+            // line 8
+            echo "            <img width=\"20\" height=\"28\" alt=\"Forms\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAcAQMAAABbFA0jAAAABlBMVEUAAAA+Pj4LNneDAAAAAXRSTlMAQObYZgAAACxJREFUCNdjYEACjD8gmP8/A8P7/wVw/IChgOH//w9w/AHKf4CLRlILwkgAANMJMNaUFdtJAAAAAElFTkSuQmCC\"/>
+            <span class=\"sf-toolbar-status sf-toolbar-status-";
+            // line 9
+            if ($this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "nb_errors", array())) {
+                echo "red";
+            } else {
+                echo "green";
+            }
+            echo "\">";
+            if ($this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "nb_errors", array())) {
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "nb_errors", array()), "html", null, true);
+            } else {
+                echo twig_escape_filter($this->env, twig_length_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms", array())), "html", null, true);
+            }
+            echo "</span>
+        ";
+            $context["icon"] = ('' === $tmp = ob_get_clean()) ? '' : new Twig_Markup($tmp, $this->env->getCharset());
+            // line 11
+            echo "
+        ";
+            // line 12
+            $this->env->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig")->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : $this->getContext($context, "profiler_url")))));
+            // line 13
+            echo "    ";
+        }
+    }
+
+    // line 16
+    public function block_menu($context, array $blocks = array())
+    {
+        // line 17
+        echo "    <span class=\"label\">
+        <span class=\"icon\"><img src=\"data:image/png;base64,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\" alt=\"\"/></span>
+        <strong>Forms</strong>
+        ";
+        // line 20
+        if (twig_length_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms", array()))) {
+            // line 21
+            echo "            <span class=\"count\"><span>";
+            echo twig_escape_filter($this->env, twig_length_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms", array())), "html", null, true);
+            echo "</span></span>
+        ";
+        }
+        // line 23
+        echo "    </span>
+";
+    }
+
+    // line 26
+    public function block_panel($context, array $blocks = array())
+    {
+        // line 27
+        echo "    <style type=\"text/css\">
+    .window {
+        /*background: #F6F6F6;*/
+        margin: -30px -40px -40px;
+    }
+    .toggle-icon {
+        display: inline-block;
+        background: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAgBAMAAADpp+X/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QweDgwx4LcKwAAAABVQTFRFAAAA////////////////ZmZm////bvjBwAAAAAV0Uk5TABZwsuCVEUjgAAAAAWJLR0QF+G/pxwAAAE1JREFUGNNjSHMSYGBgUEljSGYAAzMGBwiDhUEBwmBiEIAwGBmwgTQgQGWgA7h2uIFwK+CWwp1BpHvYEqDuATEYkBlY3IOmBq6dCPcAAIT5Eg2IksjQAAAAAElFTkSuQmCC\") no-repeat top left #5eb5e0;
+    }
+    .closed .toggle-icon, .closed.toggle-icon {
+        background-position: bottom left;
+    }
+    .toggle-icon.empty {
+        background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QAZgBmAGYHukptAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QweDhIf6CA40AAAAFRJREFUOMvtk7ENACEMA61vfx767MROWfO+AdGBHlNyTZrYUZRYDBII4NWE1pNdpFarfgLUbpDaBEgBYRiEVjsvDLa1l6O4Z3wkFWN+OfLKdpisOH/TlICzukmUJwAAAABJRU5ErkJggg==\");
+    }
+    .tree {
+        width: 230px;
+        padding: 10px;
+        font-size: 12px;
+        float: left;
+    }
+    #content .tree h2 {
+        font-size: 13px;
+        padding: 5px 7px;
+        margin: 0;
+    }
+    .tree li {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .tree .tree-inner {
+        width: 100%;
+        padding: 5px 7px 5px 22px;
+        border-radius: 6px;
+        color: #313131;
+        cursor: pointer;
+        position: relative;
+
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .tree a {
+        text-decoration: none;
+    }
+    .tree .toggle-button {
+        /* provide a bigger clickable area than just 10x10px */
+        width: 16px;
+        height: 16px;
+        /* vertically center the button */
+        position: absolute;
+        top: 50%;
+        margin-top: -8px;
+        margin-left: -18px;
+    }
+    .tree .toggle-icon {
+        width: 10px;
+        height: 10px;
+        /* position the icon in the center of the clickable area */
+        margin-left: 3px;
+        margin-top: 3px;
+        background-size: 10px 20px;
+        background-color: #ccc;
+    }
+    .tree .toggle-icon.empty {
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 50%;
+        margin-top: -5px;
+        margin-left: -15px;
+        background-size: 10px 10px;
+    }
+    .tree ul ul .tree-inner {
+        padding-left: 37px;
+    }
+    .tree ul ul ul .tree-inner {
+        padding-left: 52px;
+    }
+    .tree ul ul ul ul .tree-inner {
+        padding-left: 67px;
+    }
+    .tree ul ul ul ul ul .tree-inner {
+        padding-left: 82px;
+    }
+    .tree .tree-inner:hover {
+        background: #dfdfdf;
+    }
+    .tree .tree-inner.active, .tree .tree-inner.active:hover {
+        background: #dfdfdf;
+        font-weight: bold;
+        color: #313131;
+    }
+    .tree .tree-inner.active .toggle-icon, .tree .tree-inner:hover .toggle-icon, .tree .tree-inner.active:hover .toggle-icon {
+        background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAgBAMAAADpp+X/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QweDhEYXWn+sAAAABhQTFRFAAAA39/f39/f39/f39/fZmZm39/f////gc3YPwAAAAV0Uk5TAAtAc6ZeVyCYAAAAAWJLR0QF+G/pxwAAAE1JREFUGNNjSHMSYGBgUEljSGYAAzMGBwiDhUEBwmBiEIAwGBmwgXIgQGWgA7h2uIFwK+CWwp1BpHvYC6DuATEYkBlY3IOmBq6dCPcAADqLE4MnBi/fAAAAAElFTkSuQmCC\");
+        background-color: #aaa;
+    }
+    .tree .tree-inner.active .toggle-icon.empty, .tree .tree-inner:hover .toggle-icon.empty, .tree .tree-inner.active:hover .toggle-icon.empty {
+        background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QweDhoucSey4gAAABVQTFRFAAAA39/f39/f39/f39/fZmZm39/fD5Dx2AAAAAV0Uk5TAAtAc6ZeVyCYAAAAAWJLR0QF+G/pxwAAADJJREFUCNdjSHMSYGBgUEljSGYAAzMGBwiDhUEBwmBiEIAwGBnIA3DtcAPhVsAthTkDAFOfBKW9C1iqAAAAAElFTkSuQmCC\");
+    }
+    .tree-details {
+        border-left: 1px solid #dfdfdf;
+        background: white;
+        margin-left: 250px;
+        padding: 30px 40px 40px;
+    }
+    .tree-details h3 {
+        position: relative;
+    }
+    .tree-details .toggle-icon {
+        width: 16px;
+        height: 16px;
+        /* vertically center the button */
+        position: absolute;
+        top: 50%;
+        margin-top: -9px;
+        margin-left: 6px;
+    }
+    .form-type {
+        color: #999999;
+    }
+    .hidden {
+        display: none;
+    }
+    .badge-error {
+        float: right;
+        background: #a33;
+        color: #fff;
+        padding: 1px 4px;
+        font-size: 10px;
+        font-weight: bold;
+        vertical-align: middle;
+        border-radius: 6px;
+    }
+    .errors h3 {
+        color: #800;
+    }
+    .errors th, .errors td {
+        border-color: #800;
+    }
+    .errors th {
+        background: #a33;
+        color: #fff;
+    }
+    .errors .toggle-icon {
+        background-color: #a33;
+    }
+    h3 a, h3 a:hover, h3 a:focus {
+        color: inherit;
+        text-decoration: inherit;
+    }
+    </style>
+
+    ";
+        // line 181
+        if (twig_length_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms", array()))) {
+            // line 182
+            echo "        <div class=\"window\">
+            <div class=\"tree\">
+                <h2>Forms</h2>
+
+                <ul>
+                ";
+            // line 187
+            $context['_parent'] = (array) $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms", array()));
+            foreach ($context['_seq'] as $context["formName"] => $context["formData"]) {
+                // line 188
+                echo "                    ";
+                echo $context["__internal_b452191d20d27bcec8f190fbce297a25befd8c8c5df64e60e919575a9d42351e"]->getform_tree_entry($context["formName"], $context["formData"], true);
+<<<<<<< HEAD (80b8e5d) - delete file
+                echo $context["__internal_65d2dd3ec5aa249ba77f5367c2f59b1b35e261bf56427d4ea2918207c1f441cb"]->getform_tree_entry($context["formName"], $context["formData"], true);
+=======
+>>>>>>> dev (b0eba18) - delete file
+                echo "
+                ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['formName'], $context['formData'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 190
+            echo "                </ul>
+            </div>
+
+            ";
+            // line 193
+            $context['_parent'] = (array) $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms", array()));
+            foreach ($context['_seq'] as $context["formName"] => $context["formData"]) {
+                // line 194
+                echo "                ";
+<<<<<<< HEAD (80b8e5d) - delete file
+
+=======
+
+>>>>>>> dev (b0eba18) - delete file
+
+/* @WebProfiler/Collector/form.html.twig */
+class __TwigTemplate_6ab1309d95724a0b323f7e2bf22d22d0359ddd623871046b7cbd80b6d9e443e9 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        // line 1
+        try {
+            $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
+        } catch (Twig_Error_Loader $e) {
+            $e->setTemplateFile($this->getTemplateName());
+            $e->setTemplateLine(1);
+
+            throw $e;
+        }
+
+        $this->blocks = array(
+            'toolbar' => array($this, 'block_toolbar'),
+            'menu' => array($this, 'block_menu'),
+            'panel' => array($this, 'block_panel'),
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "@WebProfiler/Profiler/layout.html.twig";
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        // line 3
         $context["__internal_65d2dd3ec5aa249ba77f5367c2f59b1b35e261bf56427d4ea2918207c1f441cb"] = $this;
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
@@ -288,11 +585,11 @@ class __TwigTemplate_6ab1309d95724a0b323f7e2bf22d22d0359ddd623871046b7cbd80b6d9e
             foreach ($context['_seq'] as $context["formName"] => $context["formData"]) {
                 // line 194
                 echo "                ";
-<<<<<<< OURS
+
                 echo $context["__internal_65d2dd3ec5aa249ba77f5367c2f59b1b35e261bf56427d4ea2918207c1f441cb"]->getform_tree_details($context["formName"], $context["formData"], $this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms_by_hash", array()));
 =======
                 echo $context["__internal_b452191d20d27bcec8f190fbce297a25befd8c8c5df64e60e919575a9d42351e"]->getform_tree_details($context["formName"], $context["formData"], $this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms_by_hash", array()));
->>>>>>> THEIRS
+                echo $context["__internal_b452191d20d27bcec8f190fbce297a25befd8c8c5df64e60e919575a9d42351e"]->getform_tree_details($context["formName"], $context["formData"], $this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "data", array()), "forms_by_hash", array()));
                 echo "
             ";
             }
