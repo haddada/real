@@ -32,7 +32,7 @@ class __TwigTemplate_19d90350ee9df4d3b00d4fc33d8a2d010be1918a9c08449627fc23a3111
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 3
-        $context["__internal_69b474fd8be485b30bc7c8ea65b46952673cf464684d5a1074146eb250e79b3c"] = $this;
+        $context["__internal_b76fe47053f6497f972a1edcc16144af0a28a125265992a1534a0b2792dcd4ce"] = $this;
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
@@ -93,7 +93,11 @@ class __TwigTemplate_19d90350ee9df4d3b00d4fc33d8a2d010be1918a9c08449627fc23a3111
             echo "</code></td>
                 <td><code>";
             // line 34
-            echo $context["__internal_69b474fd8be485b30bc7c8ea65b46952673cf464684d5a1074146eb250e79b3c"]->getdisplay_listener($context["listener"]);
+<<<<<<< OURS
+            echo $context["__internal_b76fe47053f6497f972a1edcc16144af0a28a125265992a1534a0b2792dcd4ce"]->getdisplay_listener($context["listener"]);
+=======
+            echo $context["__internal_02df9e1b84e6dd4663c02f61f534541ba614707b1f59f9ede670b364b084e36d"]->getdisplay_listener($context["listener"]);
+>>>>>>> THEIRS
             echo "</code></td>
             </tr>
         ";
@@ -131,7 +135,11 @@ class __TwigTemplate_19d90350ee9df4d3b00d4fc33d8a2d010be1918a9c08449627fc23a3111
                 echo "</code></td>
                     <td><code>";
                 // line 51
-                echo $context["__internal_69b474fd8be485b30bc7c8ea65b46952673cf464684d5a1074146eb250e79b3c"]->getdisplay_listener($this->getAttribute((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")), $context["listener"], array(), "array"));
+<<<<<<< OURS
+                echo $context["__internal_b76fe47053f6497f972a1edcc16144af0a28a125265992a1534a0b2792dcd4ce"]->getdisplay_listener($this->getAttribute((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")), $context["listener"], array(), "array"));
+=======
+                echo $context["__internal_02df9e1b84e6dd4663c02f61f534541ba614707b1f59f9ede670b364b084e36d"]->getdisplay_listener($this->getAttribute((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")), $context["listener"], array(), "array"));
+>>>>>>> THEIRS
                 echo "</code></td>
                 </tr>
             ";
