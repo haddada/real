@@ -585,16 +585,3 @@ ce863f,127.0.0.1,GET,http://localhost:8000/,1426930427,
 7067d0,127.0.0.1,GET,http://localhost:8000/Admin/,1426931553,80cf26
 80cf26,127.0.0.1,GET,http://localhost:8000/Admin/,1426931553,
 56ea74,127.0.0.1,GET,http://localhost:8000/,1426931619,
-16ac47,::1,GET,http://localhost/pidev_sprint2/web/app_dev.php/,1426893116,
-28550f,::1,GET,http://localhost/pidev_sprint2/web/app_dev.php/,1426893205,
-83afdb,::1,GET,http://localhost/pidev_sprint2/web/app_dev.php/Admin,1426893216,8b86a9
-8b86a9,::1,GET,http://localhost/pidev_sprint2/web/app_dev.php/Admin,1426893216,
-4318d7,::1,GET,http://localhost/pidev_sprint2/web/app_dev.php/Admin,1426893483,
-bd720e,::1,GET,http://localhost/pidev_sprint2/web/app_dev.php/Admin/,1426893483,
-78b587,::1,GET,http://localhost/pidev_sprint2/web/app_dev.php/Admin/,1426893489,
-dc9e03,::1,GET,http://localhost/pidev_sprint2/web/app_dev.php/Admin/,1426893499,
-241620,::1,GET,http://localhost/pidev_sprint2/web/app_dev.php/Admin/,1426893566,
-ff9ae2,127.0.0.1,GET,http://localhost:8000/,1426939609,
-ddcb3a,127.0.0.1,GET,http://localhost:8000/Admin,1426939618,
-9d58c9,127.0.0.1,GET,http://localhost:8000/Admin/,1426939618,dbcea9
-dbcea9,127.0.0.1,GET,http://localhost:8000/Admin/,1426939618,
