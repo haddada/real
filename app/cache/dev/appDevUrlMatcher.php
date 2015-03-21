@@ -243,6 +243,126 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/adresse')) {
+            // adresse
+            if (rtrim($pathinfo, '/') === '/adresse') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'adresse');
+                }
+
+                return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\AdresseController::indexAction',  '_route' => 'adresse',);
+            }
+
+            // adresse_show
+            if (preg_match('#^/adresse/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'adresse_show')), array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\AdresseController::showAction',));
+            }
+
+            // adresse_new
+            if ($pathinfo === '/adresse/new') {
+                return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\AdresseController::newAction',  '_route' => 'adresse_new',);
+            }
+
+            // adresse_create
+            if ($pathinfo === '/adresse/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_adresse_create;
+                }
+
+                return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\AdresseController::createAction',  '_route' => 'adresse_create',);
+            }
+            not_adresse_create:
+
+            // adresse_edit
+            if (preg_match('#^/adresse/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'adresse_edit')), array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\AdresseController::editAction',));
+            }
+
+            // adresse_update
+            if (preg_match('#^/adresse/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_adresse_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'adresse_update')), array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\AdresseController::updateAction',));
+            }
+            not_adresse_update:
+
+            // adresse_delete
+            if (preg_match('#^/adresse/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_adresse_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'adresse_delete')), array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\AdresseController::deleteAction',));
+            }
+            not_adresse_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/offre')) {
+            // offre
+            if (rtrim($pathinfo, '/') === '/offre') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'offre');
+                }
+
+                return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::indexAction',  '_route' => 'offre',);
+            }
+
+            // offre_show
+            if (preg_match('#^/offre/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'offre_show')), array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::showAction',));
+            }
+
+            // offre_new
+            if ($pathinfo === '/offre/new') {
+                return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::newAction',  '_route' => 'offre_new',);
+            }
+
+            // offre_create
+            if ($pathinfo === '/offre/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_offre_create;
+                }
+
+                return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::createAction',  '_route' => 'offre_create',);
+            }
+            not_offre_create:
+
+            // offre_edit
+            if (preg_match('#^/offre/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'offre_edit')), array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::editAction',));
+            }
+
+            // offre_update
+            if (preg_match('#^/offre/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_offre_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'offre_update')), array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::updateAction',));
+            }
+            not_offre_update:
+
+            // offre_delete
+            if (preg_match('#^/offre/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_offre_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'offre_delete')), array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::deleteAction',));
+            }
+            not_offre_delete:
+
+        }
+
         // real_estate_homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

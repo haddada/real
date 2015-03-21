@@ -867,11 +867,16 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getDoctrine_Orm_DefaultEntityManagerService()
     {
+        $a = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array(($this->targetDirs[3].'/src/sprint2/RealEstate/AdminBundle/Resources/config/doctrine') => 'sprint2\\RealEstate\\AdminBundle\\Entity'));
         $a = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array(($this->targetDirs[3].'\\src\\sprint2\\RealEstate\\AdminBundle\\Resources\\config\\doctrine') => 'sprint2\\RealEstate\\AdminBundle\\Entity'));
         $a->setGlobalBasename('mapping');
 
         $b = new \Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain();
+<<<<<<< HEAD
         $b->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($this->get('annotation_reader'), array(0 => ($this->targetDirs[3].'\\src\\sprint2\\realEstateBundle\\Entity'))), 'sprint2\\realEstateBundle\\Entity');
+=======
+        $b->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($this->get('annotation_reader'), array(0 => ($this->targetDirs[3].'/src/sprint2/realEstateBundle/Entity'))), 'sprint2\\realEstateBundle\\Entity');
+>>>>>>> dev
         $b->addDriver($a, 'sprint2\\RealEstate\\AdminBundle\\Entity');
 
         $c = new \Doctrine\ORM\Configuration();
@@ -3436,6 +3441,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['twig.loader'] = $instance = new \Symfony\Bundle\TwigBundle\Loader\FilesystemLoader($this->get('templating.locator'), $this->get('templating.name_parser'));
 
+<<<<<<< HEAD
         $instance->addPath(($this->targetDirs[3].'\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle/Resources/views'), 'Framework');
         $instance->addPath(($this->targetDirs[3].'\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\SecurityBundle/Resources/views'), 'Security');
         $instance->addPath(($this->targetDirs[3].'\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\TwigBundle/Resources/views'), 'Twig');
@@ -3448,6 +3454,20 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath(($this->targetDirs[3].'\\src\\Acme\\DemoBundle/Resources/views'), 'AcmeDemo');
         $instance->addPath(($this->targetDirs[3].'\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views'), 'WebProfiler');
         $instance->addPath(($this->targetDirs[3].'\\vendor\\sensio\\distribution-bundle\\Sensio\\Bundle\\DistributionBundle/Resources/views'), 'SensioDistribution');
+=======
+        $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views'), 'Framework');
+        $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views'), 'Security');
+        $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views'), 'Twig');
+        $instance->addPath(($this->targetDirs[3].'/vendor/symfony/swiftmailer-bundle/Resources/views'), 'Swiftmailer');
+        $instance->addPath(($this->targetDirs[3].'/vendor/doctrine/doctrine-bundle/Resources/views'), 'Doctrine');
+        $instance->addPath(($this->targetDirs[3].'/src/sprint2/realEstateBundle/Resources/views'), 'realEstate');
+        $instance->addPath(($this->targetDirs[3].'/vendor/braincrafted/bootstrap-bundle/Braincrafted/Bundle/BootstrapBundle/Resources/views'), 'BraincraftedBootstrap');
+        $instance->addPath(($this->targetDirs[3].'/src/sprint2/RealEstate/AdminBundle/Resources/views'), 'sprint2RealEstateAdmin');
+        $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views'), 'Debug');
+        $instance->addPath(($this->targetDirs[3].'/src/Acme/DemoBundle/Resources/views'), 'AcmeDemo');
+        $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views'), 'WebProfiler');
+        $instance->addPath(($this->targetDirs[3].'/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/views'), 'SensioDistribution');
+>>>>>>> dev
         $instance->addPath(($this->targetDirs[2].'/Resources/views'));
         $instance->addPath(($this->targetDirs[3].'\\vendor\\symfony\\symfony\\src\\Symfony\\Bridge\\Twig/Resources/views/Form'));
 
@@ -4420,7 +4440,7 @@ class appDevDebugProjectContainer extends Container
             'assetic.java.bin' => 'C:\\Windows\\system32\\java.EXE',
             'assetic.node.bin' => 'C:\\Program Files\\nodejs\\\\node.EXE',
             'assetic.ruby.bin' => '/usr/bin/ruby',
-            'assetic.sass.bin' => '/usr/bin/sass',
+            'assetic.sass.bin' => '/usr/local/bin/sass',
             'assetic.filter.less.class' => 'Assetic\\Filter\\LessFilter',
             'assetic.filter.less.node' => '/usr/bin/node',
             'assetic.filter.less.node_paths' => array(

@@ -269,11 +269,8 @@ class __TwigTemplate_6ab1309d95724a0b323f7e2bf22d22d0359ddd623871046b7cbd80b6d9e
             foreach ($context['_seq'] as $context["formName"] => $context["formData"]) {
                 // line 188
                 echo "                    ";
-<<<<<<< OURS
-                echo $context["__internal_65d2dd3ec5aa249ba77f5367c2f59b1b35e261bf56427d4ea2918207c1f441cb"]->getform_tree_entry($context["formName"], $context["formData"], true);
-=======
                 echo $context["__internal_b452191d20d27bcec8f190fbce297a25befd8c8c5df64e60e919575a9d42351e"]->getform_tree_entry($context["formName"], $context["formData"], true);
->>>>>>> THEIRS
+                echo $context["__internal_65d2dd3ec5aa249ba77f5367c2f59b1b35e261bf56427d4ea2918207c1f441cb"]->getform_tree_entry($context["formName"], $context["formData"], true);
                 echo "
                 ";
             }

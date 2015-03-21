@@ -470,7 +470,7 @@
     <parameter key="assetic.java.bin">C:\Windows\system32\java.EXE</parameter>
     <parameter key="assetic.node.bin">C:\Program Files\nodejs\\node.EXE</parameter>
     <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
-    <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
+    <parameter key="assetic.sass.bin">/usr/local/bin/sass</parameter>
     <parameter key="assetic.filter.less.class">Assetic\Filter\LessFilter</parameter>
     <parameter key="assetic.filter.less.node">/usr/bin/node</parameter>
     <parameter key="assetic.filter.less.node_paths" type="collection">
@@ -2703,6 +2703,19 @@
                   <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
                       <argument type="collection">
+                        <argument key="/home/haddada/realEstate/src/sprint2/RealEstate/AdminBundle/Resources/config/doctrine">sprint2\RealEstate\AdminBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>sprint2\RealEstate\AdminBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                      <argument type="collection">
                         <argument key="C:\wamp\www\pidev_sprint2\src\sprint2\RealEstate\AdminBundle\Resources\config\doctrine">sprint2\RealEstate\AdminBundle\Entity</argument>
                       </argument>
                       <call method="setGlobalBasename">
@@ -3203,6 +3216,11 @@
         <argument>BraincraftedBootstrap</argument>
       </call>
       <call method="addPath">
+        <argument>/home/haddada/realEstate/src/sprint2/RealEstate/AdminBundle/Resources/views</argument>
+        <argument>sprint2RealEstateAdmin</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/haddada/realEstate/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
         <argument>C:\wamp\www\pidev_sprint2\src\sprint2\RealEstate\AdminBundle/Resources/views</argument>
         <argument>sprint2RealEstateAdmin</argument>
       </call>

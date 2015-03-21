@@ -93,11 +93,8 @@ class __TwigTemplate_19d90350ee9df4d3b00d4fc33d8a2d010be1918a9c08449627fc23a3111
             echo "</code></td>
                 <td><code>";
             // line 34
-<<<<<<< OURS
-            echo $context["__internal_b76fe47053f6497f972a1edcc16144af0a28a125265992a1534a0b2792dcd4ce"]->getdisplay_listener($context["listener"]);
-=======
             echo $context["__internal_02df9e1b84e6dd4663c02f61f534541ba614707b1f59f9ede670b364b084e36d"]->getdisplay_listener($context["listener"]);
->>>>>>> THEIRS
+            echo $context["__internal_b76fe47053f6497f972a1edcc16144af0a28a125265992a1534a0b2792dcd4ce"]->getdisplay_listener($context["listener"]);
             echo "</code></td>
             </tr>
         ";

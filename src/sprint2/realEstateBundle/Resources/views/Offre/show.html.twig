@@ -1,0 +1,125 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h1>Offre</h1>
+
+    <table class="record_properties">
+        <tbody>
+
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Idgerant</th>
+                <td>{{ entity.idGerant }}</td>
+            </tr>
+             <tr>
+                <th>adresse</th>
+                <td>{{ entity.Adresse.ville }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ entity.etat }}</td>
+            </tr>
+            <tr>
+                <th>Typeimmob</th>
+                <td>{{ entity.typeimmob }}</td>
+            </tr>
+            <tr>
+                <th>Nature</th>
+                <td>{{ entity.nature }}</td>
+            </tr>
+            <tr>
+                <th>Payement</th>
+                <td>{{ entity.payement }}</td>
+            </tr>
+            <tr>
+                <th>Surface</th>
+                <td>{{ entity.surface }}</td>
+            </tr>
+            <tr>
+                <th>Nbrpiece</th>
+                <td>{{ entity.nbrpiece }}</td>
+            </tr>
+            <tr>
+                <th>Datepublication</th>
+                <td>{{ entity.datepublication|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Datemodification</th>
+                <td>{{ entity.datemodification|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Dispobileapartir</th>
+                <td>{{ entity.dispobileapartir|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ entity.description }}</td>
+            </tr>
+            <tr>
+                <th>Etage</th>
+                <td>{{ entity.etage }}</td>
+            </tr>
+            <tr>
+                <th>Ascenceur</th>
+                <td>{{ entity.ascenceur }}</td>
+            </tr>
+            <tr>
+                <th>Cuisineequipe</th>
+                <td>{{ entity.cuisineequipe }}</td>
+            </tr>
+            <tr>
+                <th>Jardin</th>
+                <td>{{ entity.jardin }}</td>
+            </tr>
+            <tr>
+                <th>Entreeindep</th>
+                <td>{{ entity.entreeindep }}</td>
+            </tr>
+            <tr>
+                <th>Gazdeville</th>
+                <td>{{ entity.gazdeville }}</td>
+            </tr>
+            <tr>
+                <th>Chauffage</th>
+                <td>{{ entity.chauffage }}</td>
+            </tr>
+            <tr>
+                <th>Meuble</th>
+                <td>{{ entity.meuble }}</td>
+            </tr>
+            <tr>
+                <th>Climatisation</th>
+                <td>{{ entity.climatisation }}</td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>{{ entity.note }}</td>
+            </tr>
+            <tr>
+                <th>Urlimage</th>
+                <td>{{ entity.urlimage }}</td>
+            </tr>
+            <tr>
+                <th>Position</th>
+                <td>{{ entity.position }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('offre') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('offre_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
