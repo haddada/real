@@ -25,7 +25,7 @@ class OffreController extends Controller
 
         $entities = $em->getRepository('realEstateBundle:Offre')->findAll();
         
-        return $this->render('realEstateBundle:Offre:shortHeader.html.twig', array(
+        return $this->render('realEstateBundle:Offre:OffreCard.html.twig', array(
             'entities' => $entities,
 
         ));
