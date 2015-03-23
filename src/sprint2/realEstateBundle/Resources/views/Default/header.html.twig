@@ -101,20 +101,30 @@
           </a>
         </div>
         <div class="p1-hero-search-form hide-sm">
-          <div class="col-12"><form id="search_form" method="get" data-reactid=".0"><div class="search-form-input-wrapper" data-reactid=".0.0"><div class="location-wrapper" data-reactid=".0.0.0"><span class="input-placeholder-group" data-reactid=".0.0.0.0"><input class="form-inline location input-large input-contrast" aria-autocomplete="both" aria-owns="menu-1" autocomplete="off" value="" placeholder="Où voulez-vous aller&nbsp;?" name="location" id="location" data-reactid=".0.0.0.0.1" type="text"></span>
+          <div class="col-12">
 
-          <p id="enter_location_error_message" class="bad hide" data-reactid=".0.0.0.1">Merci d'entrer un emplacement</p>
-          </div><span class="input-placeholder-group" data-reactid=".0.0.1">
+          <form id="search_form" method="Post" action="{{path('offre_search')}}" >
+          <div class="search-form-input-wrapper" data-reactid=".0.0">
+          <div class="location-wrapper" data-reactid=".0.0.0">
+          <span class="input-placeholder-group" data-reactid=".0.0.0.0">
+
+          <input class="form-inline location input-large input-contrast" aria-autocomplete="both" aria-owns="menu-1" autocomplete="off" value="" placeholder="Où voulez-vous aller&nbsp;?" name="gouvernorat" id="location"  type="text">
 
           </span>
 
-         <button type="submit" class="search-button form-inline btn btn-primary btn-large" id="submit_location" data-reactid=".0.2">Rechercher</button></form></div>
+          <p id="enter_location_error_message" class="bad hide" >Merci d'entrer une gouvernorat</p>
+          </div><span class="input-placeholder-group" >
+
+          </span>
+
+         <button type="submit" class="search-button form-inline btn btn-primary btn-large" id="submit_location" data-reactid=".0.2" >Rechercher</button></form></div>
         </div>
       </div>
 
     </div>
   </div>
 </div>
+
 </section>
 </div>
 

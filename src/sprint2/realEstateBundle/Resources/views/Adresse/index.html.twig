@@ -14,22 +14,11 @@
             </tr>
         </thead>
         <tbody>
-        {% for entity in entities %}
+        {% for gouvernorat in gouvernorats %}
             <tr>
-                <td><a href="{{ path('adresse_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.gouvernorat }}</td>
-                <td>{{ entity.codepostal }}</td>
-                <td>{{ entity.ville }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('adresse_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('adresse_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
+            
+                <td>{{ gouvernorat.gouvernorat }}</td>
+               
             </tr>
         {% endfor %}
         </tbody>

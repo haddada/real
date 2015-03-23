@@ -52,58 +52,30 @@ class __TwigTemplate_e0bcab61aa09883e947c1268e7b92f346e42638f7c87438196bfc64a97f
         ";
         // line 17
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
-        foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
+        $context['_seq'] = twig_ensure_traversable((isset($context["gouvernorats"]) ? $context["gouvernorats"] : $this->getContext($context, "gouvernorats")));
+        foreach ($context['_seq'] as $context["_key"] => $context["gouvernorat"]) {
             // line 18
             echo "            <tr>
-                <td><a href=\"";
-            // line 19
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("adresse_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
-            echo "</a></td>
+            
                 <td>";
             // line 20
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "gouvernorat", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["gouvernorat"], "gouvernorat", array()), "html", null, true);
             echo "</td>
-                <td>";
-            // line 21
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "codepostal", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 22
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "ville", array()), "html", null, true);
-            echo "</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("adresse_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">show</a>
-                    </li>
-                    <li>
-                        <a href=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("adresse_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">edit</a>
-                    </li>
-                </ul>
-                </td>
+               
             </tr>
         ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['gouvernorat'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 24
         echo "        </tbody>
     </table>
 
         <ul>
         <li>
             <a href=\"";
-        // line 40
+        // line 29
         echo $this->env->getExtension('routing')->getPath("adresse_new");
         echo "\">
                 Create a new entry
@@ -125,6 +97,6 @@ class __TwigTemplate_e0bcab61aa09883e947c1268e7b92f346e42638f7c87438196bfc64a97f
 
     public function getDebugInfo()
     {
-        return array (  107 => 40,  100 => 35,  88 => 29,  82 => 26,  75 => 22,  71 => 21,  67 => 20,  61 => 19,  58 => 18,  54 => 17,  39 => 4,  36 => 3,  11 => 1,);
+        return array (  79 => 29,  72 => 24,  62 => 20,  58 => 18,  54 => 17,  39 => 4,  36 => 3,  11 => 1,);
     }
 }

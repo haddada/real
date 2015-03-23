@@ -28,3 +28,7 @@ offre_delete:
     path:     /{id}/delete
     defaults: { _controller: "realEstateBundle:Offre:delete" }
     requirements: { _method: post|delete }
+offre_search:
+    path: /search
+    defaults: { _controller: "realEstateBundle:Offre:search" }
+    requirements: { _method: post}

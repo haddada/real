@@ -32,7 +32,7 @@ class __TwigTemplate_19d90350ee9df4d3b00d4fc33d8a2d010be1918a9c08449627fc23a3111
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 3
-        $context["__internal_02df9e1b84e6dd4663c02f61f534541ba614707b1f59f9ede670b364b084e36d"] = $this;
+        $context["__internal_f4ede9c9beb726afc8640258014c0cbf736b24499da0ef866c249e95ff5e75c6"] = $this;
         // line 1
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
@@ -93,11 +93,7 @@ class __TwigTemplate_19d90350ee9df4d3b00d4fc33d8a2d010be1918a9c08449627fc23a3111
             echo "</code></td>
                 <td><code>";
             // line 34
-            echo $context["__internal_02df9e1b84e6dd4663c02f61f534541ba614707b1f59f9ede670b364b084e36d"]->getdisplay_listener($context["listener"]);
-<<<<<<< HEAD (80b8e5d) - delete file
-            echo $context["__internal_b76fe47053f6497f972a1edcc16144af0a28a125265992a1534a0b2792dcd4ce"]->getdisplay_listener($context["listener"]);
-=======
->>>>>>> dev (b0eba18) - delete file
+            echo $context["__internal_f4ede9c9beb726afc8640258014c0cbf736b24499da0ef866c249e95ff5e75c6"]->getdisplay_listener($context["listener"]);
             echo "</code></td>
             </tr>
         ";
@@ -135,149 +131,7 @@ class __TwigTemplate_19d90350ee9df4d3b00d4fc33d8a2d010be1918a9c08449627fc23a3111
                 echo "</code></td>
                     <td><code>";
                 // line 51
-<<<<<<< HEAD (80b8e5d) - delete file
-
-=======
-
->>>>>>> dev (b0eba18) - delete file
-
-/* @WebProfiler/Collector/events.html.twig */
-class __TwigTemplate_19d90350ee9df4d3b00d4fc33d8a2d010be1918a9c08449627fc23a31118b1bd extends Twig_Template
-{
-    public function __construct(Twig_Environment $env)
-    {
-        parent::__construct($env);
-
-        // line 1
-        try {
-            $this->parent = $this->env->loadTemplate("@WebProfiler/Profiler/layout.html.twig");
-        } catch (Twig_Error_Loader $e) {
-            $e->setTemplateFile($this->getTemplateName());
-            $e->setTemplateLine(1);
-
-            throw $e;
-        }
-
-        $this->blocks = array(
-            'menu' => array($this, 'block_menu'),
-            'panel' => array($this, 'block_panel'),
-            'panelContent' => array($this, 'block_panelContent'),
-        );
-    }
-
-    protected function doGetParent(array $context)
-    {
-        return "@WebProfiler/Profiler/layout.html.twig";
-    }
-
-    protected function doDisplay(array $context, array $blocks = array())
-    {
-        // line 3
-        $context["__internal_b76fe47053f6497f972a1edcc16144af0a28a125265992a1534a0b2792dcd4ce"] = $this;
-        // line 1
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
-    }
-
-    // line 5
-    public function block_menu($context, array $blocks = array())
-    {
-        // line 6
-        echo "<span class=\"label\">
-    <span class=\"icon\"><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAiCAQAAADragGFAAAD60lEQVR42o2UfUxbVRjGb7fy4ah2QwdECSgjEpcYUP8hmtiWljbt+Gih62zGVqBjXkqgVcYQKzNLJF1HBxt0S9YMgqHVLt1oZRqidcpcgQ1dMpkxgyVK2NSYyWTAJoPB4/1g0iLQnZub+348v3vOPe95L/FogFO+pbBMbtPmgEsEDXC1OXJbYVn5FnBoPwg4wVfVCc7J3WRToxoxIbmYRjXZJHcLzqnqTvAZkEUsSfI2iddxCHtR8LkIvBCIR0UKsNdxSOKVt1mSwGGQ87GKNk3ncO1ARdFxkU/qxMYQaKPUKfIVHR+oGK7VdCrazsdSGKJKqsW+oRqnMcu7s91Td02FuBAo7prKU7ezPcvrNA7ViH0l1Ygi/Kmiz+y2H3Tirvqj0PvLqk09ieAsfW1PYrXJXwZ9/VFx11Vda2OW159KmEvFvkkdadvunN19oEbYrXSczMD6/6D1JzOUDmH3gZrZ3dudpG1SJ/aZSwnSuqsDebIz9oZBtbC7/SDykATu0oZTXl77QWH3oNreIDuD3F0dpJXoU3sMU9nG5ku6lop8N9RIAw9ccqvGoDGQWymIR0XUqk+PVF0qNjZPZXsMfWoCKUijrky8Qt0KyuIiWtMqnBdAAOG8phXRVORFKvM6rWC0KQQiqfAG8PEUnkY8ZUVW7hdg6arcTyk2UJlnKAWfsqIRSSwfSFDeDIaUN5FAhBtIlz4IhqQPkB4eytROBEPaCWQ+xkyu3mDI1fs4Mz33dUsw9KUdieGhzVXf0GIF8hmoPIC4sNBEmuweLbbca56kn9kzI+ngrIkgosHMLqu/90c/a31oQVSYxemu0ELNDCph0E0z+3cd8WshnMAb4jlaqP/rjuwPWelt2hYtfCHFutWhJ95vXTw8v6l/yh3dNyphPJMLMatDz6rHaJHhnwsXJQ+33R/z1d6l/dxxJK+GrHMVsvOUTOdNX+ztvKycaLnORo6Vg7sy9GRVFyspnhp2wIDKs+6cGTay5wI2rQj9nbpt8dTtuzVM4gW89JVlB7V/a1QLEUeMrEBDNaDkfvHht07TrVi/eObrrStUC7H6AJ0smH848MnPWUzn5swM9qNHzyxRO4KE/1XoRoZklk5aRy/bdX8KIJ8XLwhQ+ut3H526ylbLk7OsWogy29hlkL+LKPEHd25f+WXIdJf+T7xzQ8RkjG7wljW5duRRM+yYDvThMIpQjGP+79mtWKzW8yEV8snp9wsgWzh1a64De/Ay+NiEV0HOdXw8plhgsaaKoGohxuSigxKM9cOMN7GZTSIC8ZT33vi3BczG6AOIXYKS85mj+e443kYKokO/FsnQWUeZl84OvUZX618UFpIDvqMM6gAAAABJRU5ErkJggg==\" alt=\"Events\"></span>
-    <strong>Events</strong>
-</span>
-";
-    }
-
-    // line 12
-    public function block_panel($context, array $blocks = array())
-    {
-        // line 13
-        echo "    ";
-        if (twig_length_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "calledlisteners", array()))) {
-            // line 14
-            echo "        ";
-            $this->displayBlock("panelContent", $context, $blocks);
-            echo "
-    ";
-        } else {
-            // line 16
-            echo "        <h2>Events</h2>
-        <p>
-            <em>No events have been recorded. Are you sure that debugging is enabled in the kernel?</em>
-        </p>
-    ";
-        }
-    }
-
-    // line 23
-    public function block_panelContent($context, array $blocks = array())
-    {
-        // line 24
-        echo "    <h2>Called Listeners</h2>
-
-    <table>
-        <tr>
-            <th>Event name</th>
-            <th>Listener</th>
-        </tr>
-        ";
-        // line 31
-        $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "calledlisteners", array()));
-        foreach ($context['_seq'] as $context["_key"] => $context["listener"]) {
-            // line 32
-            echo "            <tr>
-                <td><code>";
-            // line 33
-            echo twig_escape_filter($this->env, $this->getAttribute($context["listener"], "event", array()), "html", null, true);
-            echo "</code></td>
-                <td><code>";
-            // line 34
-            echo $context["__internal_02df9e1b84e6dd4663c02f61f534541ba614707b1f59f9ede670b364b084e36d"]->getdisplay_listener($context["listener"]);
-            echo $context["__internal_b76fe47053f6497f972a1edcc16144af0a28a125265992a1534a0b2792dcd4ce"]->getdisplay_listener($context["listener"]);
-            echo "</code></td>
-            </tr>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['listener'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
-        echo "    </table>
-
-    <h2>Not Called Listeners</h2>
-
-    ";
-        // line 41
-        if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "notcalledlisteners", array())) {
-            // line 42
-            echo "        <table>
-            <tr>
-                <th>Event name</th>
-                <th>Listener</th>
-            </tr>
-            ";
-            // line 47
-            $context["listeners"] = $this->getAttribute((isset($context["collector"]) ? $context["collector"] : $this->getContext($context, "collector")), "notcalledlisteners", array());
-            // line 48
-            echo "            ";
-            $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable(twig_sort_filter(twig_get_array_keys_filter((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")))));
-            foreach ($context['_seq'] as $context["_key"] => $context["listener"]) {
-                // line 49
-                echo "                <tr>
-                    <td><code>";
-                // line 50
-                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")), $context["listener"], array(), "array"), "event", array()), "html", null, true);
-                echo "</code></td>
-                    <td><code>";
-                // line 51
-
-                echo $context["__internal_b76fe47053f6497f972a1edcc16144af0a28a125265992a1534a0b2792dcd4ce"]->getdisplay_listener($this->getAttribute((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")), $context["listener"], array(), "array"));
-=======
-                echo $context["__internal_02df9e1b84e6dd4663c02f61f534541ba614707b1f59f9ede670b364b084e36d"]->getdisplay_listener($this->getAttribute((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")), $context["listener"], array(), "array"));
-                echo $context["__internal_02df9e1b84e6dd4663c02f61f534541ba614707b1f59f9ede670b364b084e36d"]->getdisplay_listener($this->getAttribute((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")), $context["listener"], array(), "array"));
+                echo $context["__internal_f4ede9c9beb726afc8640258014c0cbf736b24499da0ef866c249e95ff5e75c6"]->getdisplay_listener($this->getAttribute((isset($context["listeners"]) ? $context["listeners"] : $this->getContext($context, "listeners")), $context["listener"], array(), "array"));
                 echo "</code></td>
                 </tr>
             ";
