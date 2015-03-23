@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Adresse
  *
  * @ORM\Table(name="adresse")
- * @ORM\Entity
+ * @ORM\Entity (repositoryClass="sprint2\realEstateBundle\Entity\AdresseRepository")
  */
 class Adresse
 {

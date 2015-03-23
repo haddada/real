@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use sprint2\realEstateBundle\Entity\Adresse;
 use sprint2\realEstateBundle\Form\AdresseType;
 
+
 /**
  * Adresse controller.
  *
@@ -23,10 +24,12 @@ class AdresseController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('realEstateBundle:Adresse')->findAll();
+        
+
+        $gouvernorats = $em->getRepository('realEstateBundle:Adresse')->findGouvernorat();
 
         return $this->render('realEstateBundle:Adresse:index.html.twig', array(
-            'entities' => $entities,
+            'gouvernorats' => $gouvernorats,
         ));
     }
     /**

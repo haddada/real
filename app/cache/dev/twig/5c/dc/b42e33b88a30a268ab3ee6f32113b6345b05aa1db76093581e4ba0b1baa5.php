@@ -138,30 +138,43 @@ class __TwigTemplate_5cdcb42e33b88a30a268ab3ee6f32113b6345b05aa1db76093581e4ba0b
           </a>
         </div>
         <div class=\"p1-hero-search-form hide-sm\">
-          <div class=\"col-12\"><form id=\"search_form\" method=\"get\" data-reactid=\".0\"><div class=\"search-form-input-wrapper\" data-reactid=\".0.0\"><div class=\"location-wrapper\" data-reactid=\".0.0.0\"><span class=\"input-placeholder-group\" data-reactid=\".0.0.0.0\"><input class=\"form-inline location input-large input-contrast\" aria-autocomplete=\"both\" aria-owns=\"menu-1\" autocomplete=\"off\" value=\"\" placeholder=\"Où voulez-vous aller&nbsp;?\" name=\"location\" id=\"location\" data-reactid=\".0.0.0.0.1\" type=\"text\"></span>
+          <div class=\"col-12\">
 
-          <p id=\"enter_location_error_message\" class=\"bad hide\" data-reactid=\".0.0.0.1\">Merci d'entrer un emplacement</p>
-          </div><span class=\"input-placeholder-group\" data-reactid=\".0.0.1\">
+          <form id=\"search_form\" method=\"Post\" action=\"";
+        // line 106
+        echo $this->env->getExtension('routing')->getPath("offre_search");
+        echo "\" >
+          <div class=\"search-form-input-wrapper\" data-reactid=\".0.0\">
+          <div class=\"location-wrapper\" data-reactid=\".0.0.0\">
+          <span class=\"input-placeholder-group\" data-reactid=\".0.0.0.0\">
+
+          <input class=\"form-inline location input-large input-contrast\" aria-autocomplete=\"both\" aria-owns=\"menu-1\" autocomplete=\"off\" value=\"\" placeholder=\"Où voulez-vous aller&nbsp;?\" name=\"gouvernorat\" id=\"location\"  type=\"text\">
 
           </span>
 
-         <button type=\"submit\" class=\"search-button form-inline btn btn-primary btn-large\" id=\"submit_location\" data-reactid=\".0.2\">Rechercher</button></form></div>
+          <p id=\"enter_location_error_message\" class=\"bad hide\" >Merci d'entrer une gouvernorat</p>
+          </div><span class=\"input-placeholder-group\" >
+
+          </span>
+
+         <button type=\"submit\" class=\"search-button form-inline btn btn-primary btn-large\" id=\"submit_location\" data-reactid=\".0.2\" >Rechercher</button></form></div>
         </div>
       </div>
 
     </div>
   </div>
 </div>
+
 </section>
 </div>
 
 ";
     }
 
-    // line 126
+    // line 136
     public function block_content($context, array $blocks = array())
     {
-        // line 127
+        // line 137
         echo "<div class=\"panel panel-dark\">
   <div id=\"discovery-container\">
     <div class=\"discovery-section hide page-container-responsive page-container-no-padding\" id=\"upcoming-trips\">
@@ -202,14 +215,14 @@ class __TwigTemplate_5cdcb42e33b88a30a268ab3ee6f32113b6345b05aa1db76093581e4ba0b
         
 <div class=\"row\">
 ";
-        // line 166
+        // line 176
         $this->displayBlock('offreCard8', $context, $blocks);
-        // line 168
+        // line 178
         echo "
 ";
-        // line 169
+        // line 179
         $this->displayBlock('offreCard', $context, $blocks);
-        // line 171
+        // line 181
         echo "
 
   <div class=\"col-sm-12 text-center row-space-4 row-space-top-4 hide-sm\">
@@ -224,12 +237,12 @@ class __TwigTemplate_5cdcb42e33b88a30a268ab3ee6f32113b6345b05aa1db76093581e4ba0b
 ";
     }
 
-    // line 166
+    // line 176
     public function block_offreCard8($context, array $blocks = array())
     {
     }
 
-    // line 169
+    // line 179
     public function block_offreCard($context, array $blocks = array())
     {
     }
@@ -246,6 +259,6 @@ class __TwigTemplate_5cdcb42e33b88a30a268ab3ee6f32113b6345b05aa1db76093581e4ba0b
 
     public function getDebugInfo()
     {
-        return array (  233 => 169,  228 => 166,  213 => 171,  211 => 169,  208 => 168,  206 => 166,  165 => 127,  162 => 126,  42 => 5,  39 => 4,  11 => 2,);
+        return array (  246 => 179,  241 => 176,  226 => 181,  224 => 179,  221 => 178,  219 => 176,  178 => 137,  175 => 136,  145 => 106,  42 => 5,  39 => 4,  11 => 2,);
     }
 }

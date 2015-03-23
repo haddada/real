@@ -11,7 +11,7 @@ class DefaultController extends Controller
 
     {
     	$em = $this->getDoctrine()->getManager();
-    	$entities = $em->getRepository('realEstateBundle:Offre')->findAll();
+    	$entities = $em->getRepository('realEstateBundle:Adresse')->findGouvernorat();
 
         return $this->render('realEstateBundle:Default:offreCard.html.twig', array(
             'entities' => $entities,

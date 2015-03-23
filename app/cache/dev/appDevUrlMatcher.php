@@ -361,6 +361,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_offre_delete:
 
+            // offre_search
+            if ($pathinfo === '/offre/search') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_offre_search;
+                }
+
+                return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchAction',  '_route' => 'offre_search',);
+            }
+            not_offre_search:
+
         }
 
         // real_estate_homepage

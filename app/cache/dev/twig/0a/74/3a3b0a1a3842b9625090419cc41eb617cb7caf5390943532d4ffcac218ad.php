@@ -48,7 +48,10 @@ class __TwigTemplate_0a743a3b0a1a3842b9625090419cc41eb617cb7caf5390943532d4ffcac
     <div class=\"va-container va-container-v va-container-h\">
       <div class=\"va-middle text-center text-contrast\">
           <div class=\"h2 strong\">
-            Séjour au soleil à Hawaï
+            ";
+            // line 11
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "gouvernorat", array()), "html", null, true);
+            echo "
           </div>
       </div>
     </div>
@@ -103,6 +106,6 @@ class __TwigTemplate_0a743a3b0a1a3842b9625090419cc41eb617cb7caf5390943532d4ffcac
 
     public function getDebugInfo()
     {
-        return array (  77 => 28,  74 => 27,  65 => 20,  45 => 5,  40 => 4,  37 => 3,  11 => 1,);
+        return array (  80 => 28,  77 => 27,  68 => 20,  53 => 11,  45 => 5,  40 => 4,  37 => 3,  11 => 1,);
     }
 }
