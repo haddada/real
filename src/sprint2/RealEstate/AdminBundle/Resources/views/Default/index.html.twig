@@ -51,7 +51,7 @@
               <!-- small box -->
               <div class="small-box bg-red">
                 <div class="inner">
-                  <h3>65</h3>
+                  <h3>{{agancen}}</h3>
                   <p>Agance</p>
                 </div>
                 <div class="icon">
@@ -62,7 +62,7 @@
             </div><!-- ./col -->
           </div>
         <div class="row">
-        <!-- PRODUCT LIST -->
+        <!-- Offres LIST -->
         <div class="col-md-6">
               <div class="box box-primary">
                 <div class="box-header with-border">
@@ -80,20 +80,21 @@
                         <img src="{{offre.urlimage}}" alt="Product Image"/>
                       </div>
                       <div class="product-info">
-                        <a href="javascript::;" class="product-type">{{offre.typeimmob}}<span class="label label-warning pull-right">{{offre.payement}} TD</span></a>
+                        <a href="javascript::;" class="product-type">{{offre.typeimmob}}</a><span class="label label-warning pull-right">{{offre.payement}} TD</span>
                         <span class="product-description">
-                          {{offre.nbrpiece}} Piece, {{offre.surface}} Metre, Avenue la liberte 14 janvier, A {{offre.nature}}
+                          {{offre.nbrpiece}} Piece, {{offre.surface}} Metre, Tunisie {{offre.idAdresse.gouvernorat}} {{offre.idAdresse.ville}}, A {{offre.nature}} 
                         </span>
                       </div>
                       </li><!-- /.item -->
                     {% endfor %}
                   </ul>
                 </div>
-              </div></div>
+              </div>
+        </div>
                       
-              <!-- USERS LIST -->
+              <!-- Client LIST -->
               <div class="col-md-6">
-              <div class="box box-danger">
+              <div class="box box-warning">
                 <div class="box-header with-border">
                   <h3 class="box-title">Latest Client</h3>
                   <div class="box-tools pull-right">
@@ -116,11 +117,12 @@
               </div>
         </div>       
               <div class="row">
-        <!-- PRODUCT LIST -->
+                  
+                  <!-- Agence LIST -->
         <div class="col-md-6">
-              <div class="box box-primary">
+              <div class="box box-danger">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Recently Added Offres</h3>
+                  <h3 class="box-title">Recently Added Agence</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -128,78 +130,27 @@
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <ul class="products-list product-list-in-box">
-                    <li class="item">
-                      <div class="product-img">
-                        <img src="http://placehold.it/50x50/d2d6de/ffffff" alt="Product Image"/>
+                    {% for agance in agance %}
+                      <li class="item"> 
+                          <div class="product-img">
+                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSAJkvd0MYu8xLY4QJqfzM-1a2UbUvIyN0W3FxyS97C-D7uXaQA" alt="Product Image"/>
                       </div>
                       <div class="product-info">
-                        <a href="javascript::;" class="product-title">Samsung TV <span class="label label-warning pull-right">$1800</span></a>
+                        <a href="javascript::;" class="product-type">{{agance.nom}}</a>
                         <span class="product-description">
-                          Samsung 32" 1080p 60Hz LED Smart HDTV.
-                        </span>
+                          Gerait par <a href="javascript::;" class="product-type">{{agance.idGerant.nom}} {{agance.idGerant.prenom}}</a>, Localiser {{agance.idAdresse.gouvernorat}} {{agance.idAdresse.ville}}
                       </div>
-                    </li><!-- /.item -->
-                    <li class="item">
-                      <div class="product-img">
-                        <img src="{{ asset('bundles/sprint2realestateadmin/img/default-50x50.gif') }}" alt="Product Image"/>
-                      </div>
-                      <div class="product-info">
-                        <a href="javascript::;" class="product-title">Bicycle <span class="label label-info pull-right">$700</span></a>
-                        <span class="product-description">
-                          26" Mongoose Dolomite Men's 7-speed, Navy Blue.
-                        </span>
-                      </div>
-                    </li><!-- /.item -->
-                    <li class="item">
-                      <div class="product-img">
-                        <img src="{{ asset('bundles/sprint2realestateadmin/img/default-50x50.gif') }}" alt="Product Image"/>
-                      </div>
-                      <div class="product-info">
-                        <a href="javascript::;" class="product-title">Xbox One <span class="label label-danger pull-right">$350</span></a>
-                        <span class="product-description">
-                          Xbox One Console Bundle with Halo Master Chief Collection.
-                        </span>
-                      </div>
-                    </li><!-- /.item -->
-                    <li class="item">
-                      <div class="product-img">
-                        <img src="{{ asset('bundles/sprint2realestateadmin/img/default-50x50.gif') }}" alt="Product Image"/>
-                      </div>
-                      <div class="product-info">
-                        <a href="javascript::;" class="product-title">PlayStation 4 <span class="label label-success pull-right">$399</span></a>
-                        <span class="product-description">
-                          PlayStation 4 500GB Console (PS4)
-                        </span>
-                      </div>
-                    </li><!-- /.item -->
+                      </li><!-- /.item -->
+                    {% endfor %}
                   </ul>
                 </div>
-              </div></div>
+              </div>
+        </div>
                       
               <!-- USERS LIST -->
               <div class="col-md-6">
-{#                  <ul class="offre-list">
-                    {% for utilisateurg in utilisateurg %}
-                    {#<li>
-                      <img src="{{utilisateurg.urlp}}" alt="User Image"/>
-                      <a class="users-list-name" href="#">{{utilisateurg.prenom}} {{utilisateurg.nom}}</a>
-                    </li>
-                    <li>
-                    <div class="small-box bg-red">
-                <div class="inner">
-                    <img src="{{utilisateurg.urlp}}" alt="User Image"/>
-                  <h3>65</h3>
-                  <p>Unique Visitors</p>
-                </div>
-                
-                <a href="#" class="small-box-footer">
-                  More info <i class="fa fa-arrow-circle-right"></i>
-                </a>
-              </div>
-                    </li>
-                   {% endfor %}
-                  </ul>#}
-              <div class="box box-danger">
+
+              <div class="box box-tools">
                 <div class="box-header with-border">
                   <h3 class="box-title">Latest gerant</h3>
                   <div class="box-tools pull-right">

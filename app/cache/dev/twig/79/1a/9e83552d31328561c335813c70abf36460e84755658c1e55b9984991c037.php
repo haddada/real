@@ -314,7 +314,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
         // line 228
         $this->displayBlock('DashActive', $context, $blocks);
         echo ">
-              <a href=\"http://localhost/Sprint2/pidev_sprint2.git/web/app_dev.php/Admin/\">
+              <a href=\"./\">
                 <i class=\"fa fa-dashboard\"></i> <span>Dashboard</span>
               </a> 
             </li>
@@ -322,7 +322,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
         // line 233
         $this->displayBlock('MailboxActive', $context, $blocks);
         echo ">
-              <a href=\"http://localhost/Sprint2/pidev_sprint2.git/web/app_dev.php/Admin/MailBox\">
+              <a href=\"MailBox\">
                 <i class=\"fa fa-envelope\"></i> <span>Mailbox</span>
                 ";
         // line 236
@@ -338,7 +338,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
         // line 240
         $this->displayBlock('clientsActive', $context, $blocks);
         echo "> 
-              <a href=\"http://localhost/Sprint2/pidev_sprint2.git/web/app_dev.php/Admin/Clients\">
+              <a href=\"Clients\">
                 <i class=\"fa fa-users\"></i> <span>Liste des clients</span>
               </a>
             </li>
@@ -347,7 +347,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
         // line 246
         $this->displayBlock('gerantsActive', $context, $blocks);
         echo ">
-              <a href=\"http://localhost/Sprint2/pidev_sprint2.git/web/app_dev.php/Admin/Gerants\">
+              <a href=\"Gerants\">
                 <i class=\"fa fa-user\"></i> <span>Liste des gérants</span>
               </a>
             </li>
@@ -356,8 +356,8 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
         // line 252
         $this->displayBlock('AganceActive', $context, $blocks);
         echo "> 
-              <a href=\"http://localhost/Sprint2/pidev_sprint2.git/web/app_dev.php/Admin/\">
-                <i class=\"fa fa-suitcase\"></i> <span>Liste des Agance</span>
+              <a href=\"Agences\">
+                <i class=\"fa fa-suitcase\"></i> <span>Liste des Agence</span>
               </a>
             </li>
              
@@ -365,7 +365,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
         // line 258
         $this->displayBlock('offreActive', $context, $blocks);
         echo ">
-              <a href=\"http://localhost/Sprint2/pidev_sprint2.git/web/app_dev.php/Admin/\">
+              <a href=\"Offres\">
                 <i class=\"fa fa-shopping-cart\"></i> <span>Liste des offre</span>
               </a>
             </li>
@@ -373,7 +373,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
         // line 263
         $this->displayBlock('StatActive', $context, $blocks);
         echo ">
-              <a href=\"http://localhost/Sprint2/pidev_sprint2.git/web/app_dev.php/Admin/\">
+              <a href=\"\">
                 <i class=\"fa fa-pie-chart\"></i> <span>Statistiques</span>
               </a>
             </li>
