@@ -20,5 +20,32 @@ class AdresseRepository extends EntityRepository
 	    ->getResult()
   		;
   	}
+
+  	public function findvilleDistinct(){
+
+	   $qb=$this->createQueryBuilder('a')
+	   ->select('a.ville')
+	   ->distinct();
+	   $qb->setMaxResults(80);
+	    return $qb	
+	    ->getQuery()    
+	    ->getResult()
+  		;
+  	}
+
+  	public function findvilleGouvernorat($gouvernorat){
+  		$qb=$this->createQueryBuilder('a')
+	   ->select('a.ville')
+	   ->distinct()
+	   ->where('a.gouvernorat = :gouvernorat')
+	   ->setParameter('gouvernorat',$gouvernorat['gouvernorat']);
+
+	    return $qb	
+	    ->getQuery()    
+	    ->getResult()
+  		;
+
+  	}
+
 }
    
