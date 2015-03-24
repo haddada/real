@@ -1,6 +1,7 @@
 <?php
 
 namespace sprint2\realEstateBundle\Entity;
+use sprint2\realEstateBundle\Entity\Adresse;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -29,11 +30,12 @@ class Offre
     private $idGerant;
 
     /**
-     * @var integer
+     * @var Adresse
      *
-     * @ORM\Column(name="id_adresse", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Adresse")
+     * @ORM\JoinColumn(name="id_adresse")
      */
-    private $idAdresse;
+    private $Adresse;
 
     /**
      * @var string
@@ -222,29 +224,6 @@ class Offre
     public function getIdGerant()
     {
         return $this->idGerant;
-    }
-
-    /**
-     * Set idAdresse
-     *
-     * @param integer $idAdresse
-     * @return Offre
-     */
-    public function setIdAdresse($idAdresse)
-    {
-        $this->idAdresse = $idAdresse;
-
-        return $this;
-    }
-
-    /**
-     * Get idAdresse
-     *
-     * @return integer 
-     */
-    public function getIdAdresse()
-    {
-        return $this->idAdresse;
     }
 
     /**
@@ -751,5 +730,28 @@ class Offre
     public function getPosition()
     {
         return $this->position;
+    }
+
+    /**
+     * Set Adresse
+     *
+     * @param $adresse
+     * @return Offre
+     */
+    public function setAdresse( $adresse )
+    {
+        $this->Adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get Adresse
+     *
+     * @return Adresse 
+     */
+    public function getAdresse()
+    {
+        return $this->Adresse;
     }
 }

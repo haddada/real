@@ -1,0 +1,211 @@
+
+{% extends "realEstateBundle:Offre:index.html.twig" %}
+
+        {% block card %}
+
+{%for entity in entities %}
+<div class="col-sm-12 col-md-6 row-space-2">
+
+  
+      <div data-lat="40.684013166194646"
+           data-lng="-73.98322038869327"
+           data-name="Sun-filled room in Boerum Hill"
+           data-url="/rooms/4540756?guests=2&amp;s=eNQN"
+           data-user="1243559"
+           data-price="71&euro;"
+           class="listing"
+           itemscope itemtype="http://schema.org/Enumeration">
+      
+        <div class="panel-image listing-img">
+          <a href="/rooms/4540756?guests=2&amp;s=eNQN" target="listing_4540756" class="media-photo media-cover">
+            <div class="listing-img-container media-cover text-center">
+                                                                  
+                                                          
+              <img itemprop="image" data-current="0" src="{{entity.urlImage}}?interpolation=lanczos-none&amp;size=x_medium&amp;output-format=jpg&amp;output-quality=70" class="img-responsive-height" alt="{{entity.description}}"  >
+            </div>
+          </a>
+      
+      
+          <div class="panel-overlay-bottom-left panel-overlay-label panel-overlay-listing-label">
+            <div>
+              <sup class="h6 text-contrast"></sup>
+              <span class="h3 price-amount">{{entity.payement}}</span>
+              <sup class="h6 text-contrast">&euro;</sup>
+               
+            </div>
+      
+          </div>
+      
+            
+      
+          <div class="panel-overlay-top-right wl-social-connection-panel">
+            <span class="rich-toggle wish_list_button wishlist-button"
+                  data-img="https://a0.muscache.com/ic/pictures/66670616/6a2e75e7_original.jpg?interpolation=lanczos-none&amp;size=x_medium&amp;output-format=jpg&amp;output-quality=70"
+                  data-name="Sun-filled room in {{entity.Adresse.ville}}"
+                  data-address="{{entity.Adresse.ville}}"
+                  data-hosting_id="4540756">
+              <input type="checkbox"
+                     id="wishlist-widget-4540756"
+                     name="wishlist-widget-4540756"
+                     data-for-hosting="4540756">
+              <label for="wishlist-widget-4540756" class="hide-sm">
+                <i class="icon icon-heart icon-rausch icon-size-2 rich-toggle-checked"></i>
+                <i class="icon icon-heart wishlist-heart-unchecked icon-size-2 rich-toggle-unchecked"></i>
+                <i class="icon icon-heart-alt icon-white icon-size-2"></i>
+              </label>
+            </span>
+      
+      
+          </div>
+      
+        </div>
+      
+        <div class="panel-body panel-card-section">
+          <div class="media">
+              <a href="/users/show/1243559"
+                 class="pull-right media-photo media-round card-profile-picture card-profile-picture-offset">
+                <img src="https://a2.muscache.com/ic/users/1243559/profile_pic/1417104530/original.jpg?interpolation=lanczos-none&amp;crop=w:w;*,*&amp;crop=h:h;*,*&amp;resize=68:*&amp;output-format=jpg&amp;output-quality=70" alt="">
+              </a>
+            <a href="/rooms/4540756?guests=2&amp;s=eNQN" target="listing_4540756" class="text-normal">
+              <div title="Sun-filled room in {{entity.Adresse.ville}}" class="h5 listing-name text-truncate row-space-top-1">
+                Sun-filled room in {{entity.Adresse.ville}}
+              </div>
+            </a>
+            <div class="text-muted listing-location text-truncate"><a href="/rooms/4540756?guests=2&amp;s=eNQN" class="text-normal link-reset">
+  {{entity.description}}
+</a>
+</div>
+          </div>
+      
+        </div>
+    </div>
+    
+    </div>
+
+  
+{%endfor%}
+    
+
+    {%endblock%}
+
+
+
+{%block filterQuartier%}
+
+    <div class="row">
+            <div class="col-lg-2 col-md-12 filter-label">
+              <label>Villes</label>
+            </div>
+            <div class="col-lg-9 col-md-11">
+            <div class="row row-condensed filters-columns">
+
+
+
+          <div class="col-md-4">
+            <label class="media checkbox text-truncate" title="{{villes[0].ville}}">
+              <input type="checkbox" name="neighborhood" value="{{villes[0].ville}}" class="pull-left">
+              {{villes[0].ville}}
+            </label>
+          </div>
+
+          <div class="col-md-4">
+            <label class="media checkbox text-truncate" title="{{villes[1].ville}}">
+              <input type="checkbox" name="neighborhood" value="{{villes[1].ville}}" class="pull-left">
+              {{villes[1].ville}}
+            </label>
+          </div>
+
+          <div class="col-md-4">
+            <label class="media checkbox text-truncate" title="{{villes[2].ville}}">
+              <input type="checkbox" name="neighborhood" value="{{villes[2].ville}}" class="pull-left">
+              {{villes[2].ville}}
+            </label>
+          </div>
+        
+          </div>
+        <div class="filters-more collapse">
+          <hr>
+          <div class="row row-condensed filters-columns">
+
+          {%for ville in villes %}
+
+            <div class="col-md-4">
+              <label class="media checkbox text-truncate" title="{{ville.ville}}">
+                <input type="checkbox" name="neighborhood" value="{{ville.ville}}" class="pull-left">
+                {{ville.ville}}
+              </label>
+            </div>
+
+          {%endfor%}
+          </div>
+          </div>
+    </div>
+  {%endblock%}
+
+
+
+  {% block formSearch %}
+
+   <form action="/s" id="search-form" class="search-form">
+      <div class="search-bar">
+        <i class="icon icon-search icon-gray h4"></i>
+        <input type="text"
+               placeholder="Où allez-vous ?"
+               autocomplete="off"
+               name="location"
+               value="{{gouvernorat}}"
+               data-p2=&quot;true&quot;
+               class="location" />
+        <input type="hidden" name="source" value="hdr" />
+      </div>
+    </form>
+  {%endblock%}
+
+{%block formChambre%}
+  <form class="col-lg-9">
+        <div class="row row-condensed">
+          <div class="col-md-4 col-sm-12 row-space-1">
+            <div class="select select-block">
+              <select name="min_bedrooms">
+                <option value="-1">Chambres</option>
+                <option value="1">1 chambre</option>
+}
+<option value="2">2 chambres</option>
+<option value="3">3 chambres</option>
+<option value="4">4 chambres</option>
+<option value="5">5 chambres</option>
+<option value="6">6 chambres</option>
+<option value="7">7 chambres</option>
+<option value="8">8 chambres</option>
+<option value="9">9 chambres</option>
+<option value="10">10 chambres</option>
+              </select>
+            </div>
+          </div>
+
+          
+          
+        </div>
+      </form>
+      {%endblock%}
+
+      {%block formEtat%}
+      <form class="col-lg-9">
+        <div class="row row-condensed">
+          <div class="col-md-4 col-sm-12 row-space-1">
+            <div class="select select-block">
+              <select name="etat">
+                <option value="-1">Etat</option>
+                <option value="1">mauvaise</option>
+<option value="2">bonne</option>
+<option value="3">mediocre</option>
+<option value="4">ancienne</option>
+              </select>
+            </div>
+          </div>
+
+          
+          
+        </div>
+      </form>
+      {%endblock%}
