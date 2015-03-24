@@ -1389,12 +1389,16 @@ a:focus {
   border-bottom-left-radius: 3px;
   padding: 10px;
 }
+
 .no-header .box-body {
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
 }
 .box-body > .table {
   margin-bottom: 0;
+}
+.cform_vb {
+  margin: 50px;
 }
 .box-body > .chart {
   position: relative;
@@ -2489,6 +2493,7 @@ table.text-center th {
   padding: 50px;
   text-align: center;
 }
+
 
 /*
  * Component: Carousel

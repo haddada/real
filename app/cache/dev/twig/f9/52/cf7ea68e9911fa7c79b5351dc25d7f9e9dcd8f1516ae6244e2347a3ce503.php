@@ -108,7 +108,10 @@ class __TwigTemplate_f952cf7ea68e9911fa7c79b5351dc25d7f9e9dcd8f1516ae6244e2347a3
               <!-- small box -->
               <div class=\"small-box bg-red\">
                 <div class=\"inner\">
-                  <h3>65</h3>
+                  <h3>";
+        // line 54
+        echo twig_escape_filter($this->env, (isset($context["agancen"]) ? $context["agancen"] : $this->getContext($context, "agancen")), "html", null, true);
+        echo "</h3>
                   <p>Agance</p>
                 </div>
                 <div class=\"icon\">
@@ -119,7 +122,7 @@ class __TwigTemplate_f952cf7ea68e9911fa7c79b5351dc25d7f9e9dcd8f1516ae6244e2347a3
             </div><!-- ./col -->
           </div>
         <div class=\"row\">
-        <!-- PRODUCT LIST -->
+        <!-- Offres LIST -->
         <div class=\"col-md-6\">
               <div class=\"box box-primary\">
                 <div class=\"box-header with-border\">
@@ -148,18 +151,22 @@ class __TwigTemplate_f952cf7ea68e9911fa7c79b5351dc25d7f9e9dcd8f1516ae6244e2347a3
                         <a href=\"javascript::;\" class=\"product-type\">";
             // line 83
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "typeimmob", array()), "html", null, true);
-            echo "<span class=\"label label-warning pull-right\">";
+            echo "</a><span class=\"label label-warning pull-right\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "payement", array()), "html", null, true);
-            echo " TD</span></a>
+            echo " TD</span>
                         <span class=\"product-description\">
                           ";
             // line 85
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "nbrpiece", array()), "html", null, true);
             echo " Piece, ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "surface", array()), "html", null, true);
-            echo " Metre, Avenue la liberte 14 janvier, A ";
+            echo " Metre, Tunisie ";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["offre"], "idAdresse", array()), "gouvernorat", array()), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["offre"], "idAdresse", array()), "ville", array()), "html", null, true);
+            echo ", A ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "nature", array()), "html", null, true);
-            echo "
+            echo " 
                         </span>
                       </div>
                       </li><!-- /.item -->
@@ -171,11 +178,12 @@ class __TwigTemplate_f952cf7ea68e9911fa7c79b5351dc25d7f9e9dcd8f1516ae6244e2347a3
         // line 90
         echo "                  </ul>
                 </div>
-              </div></div>
+              </div>
+        </div>
                       
-              <!-- USERS LIST -->
+              <!-- Client LIST -->
               <div class=\"col-md-6\">
-              <div class=\"box box-danger\">
+              <div class=\"box box-warning\">
                 <div class=\"box-header with-border\">
                   <h3 class=\"box-title\">Latest Client</h3>
                   <div class=\"box-tools pull-right\">
@@ -187,18 +195,18 @@ class __TwigTemplate_f952cf7ea68e9911fa7c79b5351dc25d7f9e9dcd8f1516ae6244e2347a3
                 <div class=\"box-body no-padding\">
                   <ul class=\"users-list clearfix\">
                     ";
-        // line 107
+        // line 108
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($context["utilisateurc"]);
         foreach ($context['_seq'] as $context["_key"] => $context["utilisateurc"]) {
-            // line 108
+            // line 109
             echo "                    <li>
                       <img src=\"";
-            // line 109
+            // line 110
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurc"], "urlp", array()), "html", null, true);
             echo "\" alt=\"User Image\"/>
                       <a class=\"users-list-name\" href=\"#\">";
-            // line 110
+            // line 111
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurc"], "prenom", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurc"], "nom", array()), "html", null, true);
@@ -209,18 +217,19 @@ class __TwigTemplate_f952cf7ea68e9911fa7c79b5351dc25d7f9e9dcd8f1516ae6244e2347a3
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['utilisateurc'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 113
+        // line 114
         echo "                  </ul><!-- /.users-list -->
                 </div>
               </div>
               </div>
         </div>       
               <div class=\"row\">
-        <!-- PRODUCT LIST -->
+                  
+                  <!-- Agence LIST -->
         <div class=\"col-md-6\">
-              <div class=\"box box-primary\">
+              <div class=\"box box-danger\">
                 <div class=\"box-header with-border\">
-                  <h3 class=\"box-title\">Recently Added Offres</h3>
+                  <h3 class=\"box-title\">Recently Added Agence</h3>
                   <div class=\"box-tools pull-right\">
                     <button class=\"btn btn-box-tool\" data-widget=\"collapse\"><i class=\"fa fa-minus\"></i></button>
                     <button class=\"btn btn-box-tool\" data-widget=\"remove\"><i class=\"fa fa-times\"></i></button>
@@ -228,68 +237,49 @@ class __TwigTemplate_f952cf7ea68e9911fa7c79b5351dc25d7f9e9dcd8f1516ae6244e2347a3
                 </div><!-- /.box-header -->
                 <div class=\"box-body\">
                   <ul class=\"products-list product-list-in-box\">
-                    <li class=\"item\">
-                      <div class=\"product-img\">
-                        <img src=\"http://placehold.it/50x50/d2d6de/ffffff\" alt=\"Product Image\"/>
+                    ";
+        // line 133
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($context["agance"]);
+        foreach ($context['_seq'] as $context["_key"] => $context["agance"]) {
+            // line 134
+            echo "                      <li class=\"item\"> 
+                          <div class=\"product-img\">
+                        <img src=\"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSAJkvd0MYu8xLY4QJqfzM-1a2UbUvIyN0W3FxyS97C-D7uXaQA\" alt=\"Product Image\"/>
                       </div>
                       <div class=\"product-info\">
-                        <a href=\"javascript::;\" class=\"product-title\">Samsung TV <span class=\"label label-warning pull-right\">\$1800</span></a>
+                        <a href=\"javascript::;\" class=\"product-type\">";
+            // line 139
+            echo twig_escape_filter($this->env, $this->getAttribute($context["agance"], "nom", array()), "html", null, true);
+            echo "</a>
                         <span class=\"product-description\">
-                          Samsung 32\" 1080p 60Hz LED Smart HDTV.
-                        </span>
+                          Gerait par <a href=\"javascript::;\" class=\"product-type\">";
+            // line 141
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idGerant", array()), "nom", array()), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idGerant", array()), "prenom", array()), "html", null, true);
+            echo "</a>, Localiser ";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idAdresse", array()), "gouvernorat", array()), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idAdresse", array()), "ville", array()), "html", null, true);
+            echo "
                       </div>
-                    </li><!-- /.item -->
-                    <li class=\"item\">
-                      <div class=\"product-img\">
-                        <img src=\"";
-        // line 144
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/img/default-50x50.gif"), "html", null, true);
-        echo "\" alt=\"Product Image\"/>
-                      </div>
-                      <div class=\"product-info\">
-                        <a href=\"javascript::;\" class=\"product-title\">Bicycle <span class=\"label label-info pull-right\">\$700</span></a>
-                        <span class=\"product-description\">
-                          26\" Mongoose Dolomite Men's 7-speed, Navy Blue.
-                        </span>
-                      </div>
-                    </li><!-- /.item -->
-                    <li class=\"item\">
-                      <div class=\"product-img\">
-                        <img src=\"";
-        // line 155
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/img/default-50x50.gif"), "html", null, true);
-        echo "\" alt=\"Product Image\"/>
-                      </div>
-                      <div class=\"product-info\">
-                        <a href=\"javascript::;\" class=\"product-title\">Xbox One <span class=\"label label-danger pull-right\">\$350</span></a>
-                        <span class=\"product-description\">
-                          Xbox One Console Bundle with Halo Master Chief Collection.
-                        </span>
-                      </div>
-                    </li><!-- /.item -->
-                    <li class=\"item\">
-                      <div class=\"product-img\">
-                        <img src=\"";
-        // line 166
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/img/default-50x50.gif"), "html", null, true);
-        echo "\" alt=\"Product Image\"/>
-                      </div>
-                      <div class=\"product-info\">
-                        <a href=\"javascript::;\" class=\"product-title\">PlayStation 4 <span class=\"label label-success pull-right\">\$399</span></a>
-                        <span class=\"product-description\">
-                          PlayStation 4 500GB Console (PS4)
-                        </span>
-                      </div>
-                    </li><!-- /.item -->
-                  </ul>
+                      </li><!-- /.item -->
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['agance'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 145
+        echo "                  </ul>
                 </div>
-              </div></div>
+              </div>
+        </div>
                       
               <!-- USERS LIST -->
               <div class=\"col-md-6\">
-";
-        // line 202
-        echo "              <div class=\"box box-danger\">
+
+              <div class=\"box box-tools\">
                 <div class=\"box-header with-border\">
                   <h3 class=\"box-title\">Latest gerant</h3>
                   <div class=\"box-tools pull-right\">
@@ -301,18 +291,18 @@ class __TwigTemplate_f952cf7ea68e9911fa7c79b5351dc25d7f9e9dcd8f1516ae6244e2347a3
                 <div class=\"box-body no-padding\">
                   <ul class=\"users-list clearfix\">
                     ";
-        // line 213
+        // line 164
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($context["utilisateurg"]);
         foreach ($context['_seq'] as $context["_key"] => $context["utilisateurg"]) {
-            // line 214
+            // line 165
             echo "                    <li>
                       <img src=\"";
-            // line 215
+            // line 166
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurg"], "urlp", array()), "html", null, true);
             echo "\" alt=\"User Image\"/>
                       <a class=\"users-list-name\" href=\"#\">";
-            // line 216
+            // line 167
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurg"], "prenom", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurg"], "nom", array()), "html", null, true);
@@ -323,7 +313,7 @@ class __TwigTemplate_f952cf7ea68e9911fa7c79b5351dc25d7f9e9dcd8f1516ae6244e2347a3
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['utilisateurg'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 219
+        // line 170
         echo "                  </ul><!-- /.users-list -->
                 </div>
               </div></div>
@@ -345,6 +335,6 @@ class __TwigTemplate_f952cf7ea68e9911fa7c79b5351dc25d7f9e9dcd8f1516ae6244e2347a3
 
     public function getDebugInfo()
     {
-        return array (  327 => 219,  316 => 216,  312 => 215,  309 => 214,  305 => 213,  292 => 202,  274 => 166,  260 => 155,  246 => 144,  213 => 113,  202 => 110,  198 => 109,  195 => 108,  191 => 107,  172 => 90,  157 => 85,  150 => 83,  144 => 80,  140 => 78,  136 => 77,  97 => 41,  81 => 28,  65 => 15,  57 => 9,  54 => 8,  49 => 6,  46 => 5,  41 => 3,  38 => 2,  11 => 1,);
+        return array (  317 => 170,  306 => 167,  302 => 166,  299 => 165,  295 => 164,  274 => 145,  258 => 141,  253 => 139,  246 => 134,  242 => 133,  221 => 114,  210 => 111,  206 => 110,  203 => 109,  199 => 108,  179 => 90,  160 => 85,  153 => 83,  147 => 80,  143 => 78,  139 => 77,  113 => 54,  97 => 41,  81 => 28,  65 => 15,  57 => 9,  54 => 8,  49 => 6,  46 => 5,  41 => 3,  38 => 2,  11 => 1,);
     }
 }

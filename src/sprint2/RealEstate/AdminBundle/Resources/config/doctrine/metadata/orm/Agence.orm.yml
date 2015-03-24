@@ -1,6 +1,13 @@
 Agence:
     type: entity
     table: agence
+    indexes:
+        id_gerant:
+            columns:
+                - id_gerant
+        id_adresse:
+            columns:
+                - id_adresse
     id:
         id:
             type: integer
@@ -8,20 +15,9 @@ Agence:
             unsigned: false
             comment: ''
             id: true
-        idGerant:
-            type: integer
-            nullable: false
-            unsigned: false
-            comment: ''
-            id: true
-            column: id_gerant
+            generator:
+                strategy: IDENTITY
     fields:
-        idAdresse:
-            type: integer
-            nullable: false
-            unsigned: false
-            comment: ''
-            column: id_adresse
         nom:
             type: string
             nullable: false
@@ -34,4 +30,23 @@ Agence:
             length: 250
             fixed: false
             comment: ''
+    manyToOne:
+        idAdresse:
+            targetEntity: Adresse
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_adresse:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idGerant:
+            targetEntity: Utilisateur
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_gerant:
+                    referencedColumnName: id
+            orphanRemoval: false
     lifecycleCallbacks: {  }

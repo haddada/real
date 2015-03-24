@@ -285,19 +285,69 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::mailAction',  '_route' => 'sprint2_real_estate_admin_mailbox',);
             }
 
-            // sprint2_real_estate_admin_sentmail
-            if ($pathinfo === '/Admin/SentMail') {
-                return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::sentAction',  '_route' => 'sprint2_real_estate_admin_sentmail',);
+            if (0 === strpos($pathinfo, '/Admin/C')) {
+                // sprint2_real_estate_admin_sentmail
+                if ($pathinfo === '/Admin/ComposeMail') {
+                    return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::sentAction',  '_route' => 'sprint2_real_estate_admin_sentmail',);
+                }
+
+                if (0 === strpos($pathinfo, '/Admin/Clients')) {
+                    // sprint2_real_estate_admin_clients
+                    if ($pathinfo === '/Admin/Clients') {
+                        return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::clientsAction',  '_route' => 'sprint2_real_estate_admin_clients',);
+                    }
+
+                    // sprint2_real_estate_admin_clients_supp
+                    if (preg_match('#^/Admin/Clients/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'sprint2_real_estate_admin_clients_supp')), array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::supprimerUCAction',));
+                    }
+
+                }
+
             }
 
-            // sprint2_real_estate_admin_clients
-            if ($pathinfo === '/Admin/Clients') {
-                return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::clientsAction',  '_route' => 'sprint2_real_estate_admin_clients',);
+            if (0 === strpos($pathinfo, '/Admin/Gerants')) {
+                // sprint2_real_estate_admin_gerants
+                if ($pathinfo === '/Admin/Gerants') {
+                    return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::gerantsAction',  '_route' => 'sprint2_real_estate_admin_gerants',);
+                }
+
+                // sprint2_real_estate_admin_gerants_supp
+                if (preg_match('#^/Admin/Gerants/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'sprint2_real_estate_admin_gerants_supp')), array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::supprimerUGAction',));
+                }
+
             }
 
-            // sprint2_real_estate_admin_gerants
-            if ($pathinfo === '/Admin/Gerants') {
-                return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::gerantsAction',  '_route' => 'sprint2_real_estate_admin_gerants',);
+            // sprint2_real_estate_admin_offres
+            if ($pathinfo === '/Admin/Offres') {
+                return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::offresAction',  '_route' => 'sprint2_real_estate_admin_offres',);
+            }
+
+            if (0 === strpos($pathinfo, '/Admin/Agences')) {
+                // sprint2_real_estate_admin_agence
+                if ($pathinfo === '/Admin/Agences') {
+                    return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::agenceAction',  '_route' => 'sprint2_real_estate_admin_agence',);
+                }
+
+                // sprint2_real_estate_admin_agence_supp
+                if (preg_match('#^/Admin/Agences/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'sprint2_real_estate_admin_agence_supp')), array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::supprimerAAction',));
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/Admin/ajax')) {
+                // AcmeHomeBundle_ajax_update_mydata
+                if ($pathinfo === '/Admin/ajax') {
+                    return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\AjaxController::updateDataAction',  '_route' => 'AcmeHomeBundle_ajax_update_mydata',);
+                }
+
+                // AcmeHomeBundle_ajax_update_mydatab
+                if ($pathinfo === '/Admin/ajaxx') {
+                    return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\AjaxController::indexAction',  '_route' => 'AcmeHomeBundle_ajax_update_mydatab',);
+                }
+
             }
 
         }

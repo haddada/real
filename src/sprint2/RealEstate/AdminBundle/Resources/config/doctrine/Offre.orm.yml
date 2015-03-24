@@ -18,18 +18,6 @@ sprint2\RealEstate\AdminBundle\Entity\Offre:
             generator:
                 strategy: IDENTITY
     fields:
-        idGerant:
-            type: integer
-            nullable: false
-            unsigned: false
-            comment: ''
-            column: id_gerant
-        idAdresse:
-            type: integer
-            nullable: false
-            unsigned: false
-            comment: ''
-            column: id_adresse
         etat:
             type: string
             nullable: false
@@ -163,4 +151,23 @@ sprint2\RealEstate\AdminBundle\Entity\Offre:
             comment: ''
             default: '1'
             column: NbNote
+    manyToOne:
+        idAdresse:
+            targetEntity: Adresse
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_adresse:
+                    referencedColumnName: id
+            orphanRemoval: false
+        idGerant:
+            targetEntity: Utilisateur
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_gerant:
+                    referencedColumnName: id
+            orphanRemoval: false
     lifecycleCallbacks: {  }

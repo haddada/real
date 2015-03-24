@@ -7,13 +7,42 @@ sprint2_real_estate_admin_mailbox:
     defaults: { _controller: sprint2RealEstateAdminBundle:Default:mail }
 
 sprint2_real_estate_admin_sentmail:
-    path:     /SentMail
+    path:     /ComposeMail
     defaults: { _controller: sprint2RealEstateAdminBundle:Default:sent }
     
 sprint2_real_estate_admin_clients:
     path:     /Clients
     defaults: { _controller: sprint2RealEstateAdminBundle:Default:clients }
-    
+   
+sprint2_real_estate_admin_clients_supp:
+    path:     /Clients/{id}
+    defaults: { _controller: sprint2RealEstateAdminBundle:Default:supprimerUC }
+
 sprint2_real_estate_admin_gerants:
     path:     /Gerants
     defaults: { _controller: sprint2RealEstateAdminBundle:Default:gerants }
+
+sprint2_real_estate_admin_gerants_supp:
+    path:     /Gerants/{id}
+    defaults: { _controller: sprint2RealEstateAdminBundle:Default:supprimerUG }
+    
+sprint2_real_estate_admin_offres:
+    path:     /Offres
+    defaults: { _controller: sprint2RealEstateAdminBundle:Default:offres }
+    
+sprint2_real_estate_admin_agence:
+    path:     /Agences
+    defaults: { _controller: sprint2RealEstateAdminBundle:Default:agence }
+
+sprint2_real_estate_admin_agence_supp:
+    path:     /Agences/{id}
+    defaults: { _controller: sprint2RealEstateAdminBundle:Default:supprimerA }
+
+AcmeHomeBundle_ajax_update_mydata:
+  pattern:  /ajax
+  defaults: { _controller: sprint2RealEstateAdminBundle:Ajax:updateData }
+  
+  
+AcmeHomeBundle_ajax_update_mydatab:
+  pattern:  /ajaxx
+  defaults: { _controller: sprint2RealEstateAdminBundle:Ajax:index }
