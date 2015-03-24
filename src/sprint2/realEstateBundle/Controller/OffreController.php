@@ -24,9 +24,10 @@ class OffreController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('realEstateBundle:Offre')->findAll();
-        
+        $villes=$em->getRepository('realEstateBundle:Adresse')->findvilleDistinct();
+        $gouvernorat='';
         return $this->render('realEstateBundle:Offre:OffreCard.html.twig', array(
-            'entities' => $entities,
+            'entities' => $entities,'villes'=>$villes,'gouvernorat'=>$gouvernorat
 
         ));
     }
@@ -225,6 +226,7 @@ class OffreController extends Controller
 
 
 //rechercher Par gouvernorat
+    
     public function searchAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -234,13 +236,13 @@ class OffreController extends Controller
          if ($request->getMethod() == "POST") {  
             $gouvernorat=$request->get('gouvernorat')  ;
             $adresse  = $em->getRepository('realEstateBundle:Adresse')->findBy(array('gouvernorat'=>$gouvernorat));
-            $patients = $em->getRepository('realEstateBundle:Offre')->findBy(array('Adresse' => $adresse));
-            
+            $entities = $em->getRepository('realEstateBundle:Offre')->findBy(array('Adresse' => $adresse));
+            $villes=$em->getRepository('realEstateBundle:Adresse')->findvilleGouvernorat(array('gouvernorat'=>$gouvernorat));
         }
 
 
-        return $this->render('realEstateBundle:Offre:index.html.twig', array(
-            'entities' => $entities,
+        return $this->render('realEstateBundle:Offre:OffreCard.html.twig', array(
+            'entities' => $entities,'villes'=>$villes,'gouvernorat'=>$gouvernorat
 
         ));
     }

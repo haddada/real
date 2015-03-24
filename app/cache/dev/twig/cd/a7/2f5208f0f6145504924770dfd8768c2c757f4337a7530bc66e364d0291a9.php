@@ -10,6 +10,10 @@ class __TwigTemplate_cda72f5208f0f6145504924770dfd8768c2c757f4337a7530bc66e364d0
         $this->parent = false;
 
         $this->blocks = array(
+            'formSearch' => array($this, 'block_formSearch'),
+            'formChambre' => array($this, 'block_formChambre'),
+            'formEtat' => array($this, 'block_formEtat'),
+            'filterQuartier' => array($this, 'block_filterQuartier'),
             'card' => array($this, 'block_card'),
         );
     }
@@ -87,75 +91,7 @@ class __TwigTemplate_cda72f5208f0f6145504924770dfd8768c2c757f4337a7530bc66e364d0
 
     <title>Locations de vacances et locations de courte durée à New York - Airbnb</title>
 
-    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">
-
-      <link rel=\"canonical\" href=\"https://www.airbnb.fr/s/New-York--New-York\">
-      <link rel=\"next\" href=\"https://www.airbnb.fr/s/New-York--New-York?page=2\">
-          <link rel=\"alternate\" href=\"https://es.airbnb.com/s/Nueva-York--Nueva-York\" hreflang=\"es\">
-          <link rel=\"alternate\" href=\"https://fr.airbnb.be/s/New-York--New-York\" hreflang=\"fr-BE\">
-          <link rel=\"alternate\" href=\"https://fr.airbnb.ca/s/New-York--New-York\" hreflang=\"fr-CA\">
-          <link rel=\"alternate\" href=\"https://fr.airbnb.ch/s/New-York--New-York\" hreflang=\"fr-CH\">
-          <link rel=\"alternate\" href=\"https://it.airbnb.ch/s/New-York--New-York\" hreflang=\"it-CH\">
-          <link rel=\"alternate\" href=\"https://th.airbnb.com/s/นิวยอร์ก--นิวยอร์ก\" hreflang=\"th\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.at/s/New-York--New-York\" hreflang=\"de-AT\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.be/s/New-York--New-York\" hreflang=\"nl-BE\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.ca/s/New-York--NY\" hreflang=\"en-CA\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.cat/s/Nova-York--Nova-York\" hreflang=\"ca\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.ch/s/New-York--New-York\" hreflang=\"de-CH\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.cl/s/Nueva-York--Nueva-York\" hreflang=\"es-CL\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.co.cr/s/Nueva-York--Nueva-York\" hreflang=\"es-CR\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.co.id/s/New-York--New-York\" hreflang=\"id\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.co.in/s/New-York--NY\" hreflang=\"en-IN\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.co.kr/s/뉴욕--뉴욕\" hreflang=\"ko\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.co.nz/s/New-York--NY\" hreflang=\"en-NZ\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.co.uk/s/New-York--NY\" hreflang=\"en-GB\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.co.ve/s/Nueva-York--Nueva-York\" hreflang=\"es-VE\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com/s/New-York--NY\" hreflang=\"en\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.ar/s/Nueva-York--Nueva-York\" hreflang=\"es-AR\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.au/s/New-York--NY\" hreflang=\"en-AU\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.bo/s/Nueva-York--Nueva-York\" hreflang=\"es-BO\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.br/s/Nova-York--Nova-York\" hreflang=\"pt\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.bz/s/Nueva-York--Nueva-York\" hreflang=\"es-BZ\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.co/s/Nueva-York--Nueva-York\" hreflang=\"es-CO\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.ec/s/Nueva-York--Nueva-York\" hreflang=\"es-EC\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.gt/s/Nueva-York--Nueva-York\" hreflang=\"es-GT\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.hk/s/紐約--紐約\" hreflang=\"zh-HK\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.hn/s/Nueva-York--Nueva-York\" hreflang=\"es-HN\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.mt/s/New-York--NY\" hreflang=\"en-MT\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.my/s/New-York--New-York\" hreflang=\"ms\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.ni/s/Nueva-York--Nueva-York\" hreflang=\"es-NI\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.pa/s/Nueva-York--Nueva-York\" hreflang=\"es-PA\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.pe/s/Nueva-York--Nueva-York\" hreflang=\"es-PE\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.py/s/Nueva-York--Nueva-York\" hreflang=\"es-PY\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.sg/s/New-York--NY\" hreflang=\"en-SG\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.sv/s/Nueva-York--Nueva-York\" hreflang=\"es-SV\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.tr/s/New-York--New-York\" hreflang=\"tr\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.com.tw/s/紐約--紐約\" hreflang=\"zh-TW\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.cz/s/New-York--New-York\" hreflang=\"cs\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.de/s/New-York--New-York\" hreflang=\"de\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.dk/s/New-York--New-York\" hreflang=\"da\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.es/s/Nueva-York--Nueva-York\" hreflang=\"es-ES\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.fi/s/New-York--New-York\" hreflang=\"fi\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.fr/s/New-York--New-York\" hreflang=\"fr\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.gr/s/Νέα-Υόρκη--Νέα-Υόρκη\" hreflang=\"el\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.gy/s/New-York--NY\" hreflang=\"en-GY\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.hu/s/New-York--New-York\" hreflang=\"hu\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.ie/s/New-York--NY\" hreflang=\"en-IE\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.is/s/New-York--New-York\" hreflang=\"is\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.it/s/New-York--New-York\" hreflang=\"it\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.jp/s/ニューヨーク--ニューヨーク\" hreflang=\"ja\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.mx/s/Nueva-York--Nueva-York\" hreflang=\"es-MX\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.nl/s/New-York--New-York\" hreflang=\"nl\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.no/s/New-York--New-York\" hreflang=\"no\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.pl/s/Nowy-Jork--Nowy-Jork\" hreflang=\"pl\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.pt/s/Nova-Iorque--Nova-Iorque\" hreflang=\"pt-PT\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.ru/s/Нью~Йорк--Нью~Йорк\" hreflang=\"ru\">
-          <link rel=\"alternate\" href=\"https://www.airbnb.se/s/New-York--New-York\" hreflang=\"sv\">
-          <link rel=\"alternate\" href=\"https://zh.airbnb.com/s/New-York--NY\" hreflang=\"zh\">
-
-      <link rel=\"alternate\" href=\"android-app://com.airbnb.android/airbnb/s/New-York--New-York\">
-
-      <meta name=\"description\" content=\"Louez à des personnes à New York à partir de 48&amp;euro;/nuit. Trouvez des lieux de séjour de rêve dans 190 pays. Chez vous, ailleurs avec Airbnb.\">
+    
 
 
 
@@ -262,19 +198,12 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
   <ul class=\"nav pull-left hide-sm list-unstyled search-form-container\"
     id=\"search-form-header\">
   <li id=\"header-search\" class=\"search-bar-wrapper pull-left medium-right-margin\">
-    <form action=\"/s\" id=\"search-form\" class=\"search-form\">
-      <div class=\"search-bar\">
-        <i class=\"icon icon-search icon-gray h4\"></i>
-        <input type=\"text\"
-               placeholder=\"Où allez-vous ?\"
-               autocomplete=\"off\"
-               name=\"location\"
-               value=\"New York, NY\"
-               data-p2=&quot;true&quot;
-               class=\"location\" />
-        <input type=\"hidden\" name=\"source\" value=\"hdr\" />
-      </div>
-    </form>
+   ";
+        // line 178
+        $this->displayBlock('formSearch', $context, $blocks);
+        // line 180
+        echo "
+
   </li>
     <li class=\"browse-container pull-left hide-md\">
       <a class=\"link-reset header-browse-trigger\"
@@ -531,7 +460,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
 
 
 
-<div class=\"map-search\" data-bootstrap-data=\"{&quot;guests&quot;:&quot;2&quot;,&quot;price_min&quot;:&quot;45&quot;,&quot;sw_lat&quot;:&quot;40.57834400473412&quot;,&quot;sw_lng&quot;:&quot;-74.06148002977625&quot;,&quot;ne_lat&quot;:&quot;40.74806499382262&quot;,&quot;ne_lng&quot;:&quot;-73.86441276903406&quot;,&quot;zoom&quot;:&quot;12&quot;,&quot;search_by_map&quot;:&quot;true&quot;,&quot;ss_id&quot;:&quot;56kqlda2&quot;,&quot;cdn_spdy&quot;:&quot;1&quot;,&quot;controller&quot;:&quot;search&quot;,&quot;action&quot;:&quot;index&quot;,&quot;path_location&quot;:&quot;New-York--NY&quot;,&quot;location&quot;:&quot;New York, NY&quot;,&quot;visible_results_count&quot;:1000,&quot;results_count_string&quot;:&quot;Plus de 1 000 locations &amp;middot; New York&quot;,&quot;urgent_results_count_string&quot;:null,&quot;per_month&quot;:false,&quot;center_lat&quot;:40.7127837,&quot;center_lng&quot;:-74.0059413,&quot;geo&quot;:{&quot;accuracy&quot;:4,&quot;district&quot;:null,&quot;city&quot;:&quot;New York&quot;,&quot;state&quot;:&quot;New York&quot;,&quot;country&quot;:&quot;United States&quot;,&quot;country_code&quot;:&quot;US&quot;,&quot;state_short&quot;:&quot;NY&quot;,&quot;natural_feature&quot;:null,&quot;result_type&quot;:&quot;locality&quot;,&quot;colloquial_area&quot;:null,&quot;success?&quot;:true,&quot;market&quot;:&quot;New York&quot;},&quot;s_tag&quot;:&quot;eNQN&quot;,&quot;pagination_footer&quot;:&quot;&lt;div class=\\&quot;results-footer\\&quot;&gt;\\n\\n  &lt;div class=\\&quot;page-divider\\&quot;&gt; &lt;/div&gt;\\n\\n  &lt;div class=\\&quot;pagination-buttons-container\\&quot;&gt;\\n    &lt;div class=\\&quot;results_count\\&quot;&gt;\\n      &lt;p&gt;\\n        1 – 18 de Plus de 1 000 locations\\n      &lt;/p&gt;\\n    &lt;/div&gt;\\n    &lt;div class=\\&quot;pagination pagination-responsive\\&quot;&gt;&lt;ul class=\\&quot;list-unstyled\\&quot;&gt; &lt;li class=\\&quot;active\\&quot;&gt;&lt;a rel=\\&quot;start\\&quot; target=\\&quot;1\\&quot; href=\\&quot;/s/New-York--NY?page=1\\&quot;&gt;1&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a rel=\\&quot;next\\&quot; target=\\&quot;2\\&quot; href=\\&quot;/s/New-York--NY?page=2\\&quot;&gt;2&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a target=\\&quot;3\\&quot; href=\\&quot;/s/New-York--NY?page=3\\&quot;&gt;3&lt;/a&gt;&lt;/li&gt; &lt;li class=\\&quot;gap\\&quot;&gt;&lt;span class=\\&quot;gap\\&quot;&gt;&amp;hellip;&lt;/span&gt;&lt;/li&gt; &lt;li&gt;&lt;a target=\\&quot;56\\&quot; href=\\&quot;/s/New-York--NY?page=56\\&quot;&gt;56&lt;/a&gt;&lt;/li&gt; &lt;li class=\\&quot;next next_page\\&quot;&gt;&lt;a target=\\&quot;2\\&quot; rel=\\&quot;next\\&quot; href=\\&quot;/s/New-York--NY?page=2\\&quot;&gt;&lt;i class=\\&quot;icon icon-caret-right\\&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;\\n  &lt;/div&gt;\\n\\n  &lt;div class=\\&quot;breadcrumbs\\&quot; itemprop=\\&quot;breadcrumb\\&quot;&gt;\\n      &lt;span itemscope itemtype=\\&quot;http://data-vocabulary.org/Breadcrumb\\&quot;&gt;\\n        &lt;a href=\\&quot;/s/%C3%89tats~Unis\\&quot; itemprop=\\&quot;url\\&quot;&gt;\\n          &lt;span itemprop=\\&quot;title\\&quot;&gt;États-Unis&lt;/span&gt;\\n        &lt;/a&gt;\\n        &lt;i class=\\&quot;icon icon-chevron-right breadcrumb-spacer\\&quot;&gt;&lt;/i&gt;\\n      &lt;/span&gt;\\n      &lt;span itemscope itemtype=\\&quot;http://data-vocabulary.org/Breadcrumb\\&quot;&gt;\\n        &lt;a href=\\&quot;/s/New-York--%C3%89tats~Unis\\&quot; itemprop=\\&quot;url\\&quot;&gt;\\n          &lt;span itemprop=\\&quot;title\\&quot;&gt;New York&lt;/span&gt;\\n        &lt;/a&gt;\\n        &lt;i class=\\&quot;icon icon-chevron-right breadcrumb-spacer\\&quot;&gt;&lt;/i&gt;\\n      &lt;/span&gt;\\n        &lt;a href=\\&quot;/getaways/New-York\\&quot;&gt;\\n          &lt;span&gt;New York&lt;/span&gt;\\n        &lt;/a&gt;\\n  &lt;/div&gt;\\n\\n&lt;/div&gt;\\n&quot;,&quot;page&quot;:1}\">
+<div class=\"map-search\" data-bootstrap-data=\"\">
   <div class=\"sidebar\">
     <div class=\"hide js-map-list-mode-toggle\">
       <a href=\"#map-view\" class=\"link-reset js-map-toggle\">
@@ -544,56 +473,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
     </div>
 
     <div class=\"filters collapse\">
-        <div class=\"filters-section intro-filter panel-body panel-light\">
-    <div class=\"row\">
-      <div class=\"col-lg-2 col-md-12 text-center-sm text-center-md row-space-sm-1 filter-label\">
-        <label>Dates</label>
-      </div>
-
-      <form class=\"col-lg-9 trip-form\">
-        <div class=\"row row-condensed\">
-          <div class=\"col-md-4 col-sm-6 row-space-1-sm\">
-            <input name=\"checkin\"
-                   type=\"text\"
-                   class=\"checkin tour-target\"
-                   placeholder=\"Arrivée\">
-          </div>
-
-          <div class=\"col-md-4 col-sm-6 row-space-1-sm\">
-            <input name=\"checkout\"
-                   type=\"text\"
-                   class=\"checkout tour-target\"
-                   placeholder=\"Départ\">
-          </div>
-
-          <div class=\"col-md-4 col-sm-12\">
-            <div class=\"select select-block\">
-              <select name=\"guests\"
-                      class=\"guest-select\"
-                      data-prefill=\"2\">
-                <option value=\"1\">1 voyageur</option>
-<option value=\"2\">2 voyageurs</option>
-<option value=\"3\">3 voyageurs</option>
-<option value=\"4\">4 voyageurs</option>
-<option value=\"5\">5 voyageurs</option>
-<option value=\"6\">6 voyageurs</option>
-<option value=\"7\">7 voyageurs</option>
-<option value=\"8\">8 voyageurs</option>
-<option value=\"9\">9 voyageurs</option>
-<option value=\"10\">10 voyageurs</option>
-<option value=\"11\">11 voyageurs</option>
-<option value=\"12\">12 voyageurs</option>
-<option value=\"13\">13 voyageurs</option>
-<option value=\"14\">14 voyageurs</option>
-<option value=\"15\">15 voyageurs</option>
-<option value=\"16\">16+ voyageurs</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
+     
 
   <div class=\"filters-section room-type-group intro-filter panel-body panel-light\">
     <div class=\"row\">
@@ -606,11 +486,10 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         <div class=\"tooltip tooltip-left-middle show-lg\" role=\"tooltip\" data-trigger=\"#room-type-tooltip\"
              data-sticky=\"true\">
           <dl class=\"panel-body\">
-            <dt>Logement entier</dt>
-            <dd>Des logements entiers rien que pour vous.</dd>
-            <dt>Chambre privée</dt>
+            <dt>Appartement</dt>
+            <dt>Villa</dt>
             <dd>Des logements où vous disposerez de votre propre chambre, mais partagerez les espaces communs.</dd>
-            <dt>Chambre partagée</dt>
+            <dt>Studio</dt>
             <dd>Logements où vous partagerez votre chambre ou dont votre chambre est un espace commun.</dd>
           </dl>
         </div>
@@ -623,7 +502,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
             <label class=\"checkbox panel panel-dark\">
               <input class=\"pull-right\" type=\"checkbox\" name=\"room-type\" value=\"Entire home/apt\">
               <i class=\"icon icon-entire-place h5 needsclick\"></i>
-              Logement entier
+              Appartement
             </label>
           </div>
 
@@ -631,7 +510,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
             <label class=\"checkbox panel panel-dark\">
               <input class=\"pull-right\" type=\"checkbox\" name=\"room-type\" value=\"Private room\">
               <i class=\"icon icon-private-room h5 needsclick\"></i>
-              Chambre privée
+              Villa
             </label>
           </div>
 
@@ -639,7 +518,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
             <label class=\"checkbox panel panel-dark\">
               <input class=\"pull-right\" type=\"checkbox\" name=\"room-type\" value=\"Shared room\">
               <i class=\"icon icon-shared-room h5 needsclick\"></i>
-              Chambre partagée
+              Studio
             </label>
           </div>
 
@@ -659,8 +538,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
              data-currency-symbol-right=\"&amp;euro;\"
              data-min-price-daily=\"9\"
              data-max-price-daily=\"1000\"
-             data-min-price-monthly=\"140\"
-             data-max-price-monthly=\"15000\">
+             >
 
           <div class=\"ui-slider-handle\">
             <i class=\"icon icon-reorder icon-light-gray icon-handle-draggable\"></i>
@@ -687,652 +565,36 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         <label>Taille</label>
       </div>
 
-      <form class=\"col-lg-9\">
-        <div class=\"row row-condensed\">
-          <div class=\"col-md-4 col-sm-12 row-space-1\">
-            <div class=\"select select-block\">
-              <select name=\"min_bedrooms\">
-                <option value=\"-1\">Chambres</option>
-                <option value=\"1\">1 chambre</option>
-<option value=\"2\">2 chambres</option>
-<option value=\"3\">3 chambres</option>
-<option value=\"4\">4 chambres</option>
-<option value=\"5\">5 chambres</option>
-<option value=\"6\">6 chambres</option>
-<option value=\"7\">7 chambres</option>
-<option value=\"8\">8 chambres</option>
-<option value=\"9\">9 chambres</option>
-<option value=\"10\">10 chambres</option>
-              </select>
-            </div>
-          </div>
-
-          <div class=\"col-md-4 col-sm-12 row-space-1\">
-            <div class=\"select select-block\">
-              <select name=\"min_bathrooms\" class=\"input-medium\">
-                <option value=\"-1\">Salles de bain</option>
-                <option value=\"0.0\">0 salle de bain</option>
-<option value=\"0.5\">0.5 salle de bain</option>
-<option value=\"1.0\">1 salle de bain</option>
-<option value=\"1.5\">1.5 salles de bain</option>
-<option value=\"2.0\">2 salles de bain</option>
-<option value=\"2.5\">2.5 salles de bain</option>
-<option value=\"3.0\">3 salles de bain</option>
-<option value=\"3.5\">3.5 salles de bain</option>
-<option value=\"4.0\">4 salles de bain</option>
-<option value=\"4.5\">4.5 salles de bain</option>
-<option value=\"5.0\">5 salles de bain</option>
-<option value=\"5.5\">5.5 salles de bain</option>
-<option value=\"6.0\">6 salles de bain</option>
-<option value=\"6.5\">6.5 salles de bain</option>
-<option value=\"7.0\">7 salles de bain</option>
-<option value=\"7.5\">7.5 salles de bain</option>
-<option value=\"8\">8+ salles de bain</option>
-              </select>
-            </div>
-          </div>
-
-          <div class=\"col-md-4 col-sm-12\">
-            <div class=\"select select-block\">
-              <select name=\"min_beds\" class=\"input-medium\">
-                <option value=\"-1\">Lits</option>
-                <option value=\"1\">1 lit</option>
-<option value=\"2\">2 lits</option>
-<option value=\"3\">3 lits</option>
-<option value=\"4\">4 lits</option>
-<option value=\"5\">5 lits</option>
-<option value=\"6\">6 lits</option>
-<option value=\"7\">7 lits</option>
-<option value=\"8\">8 lits</option>
-<option value=\"9\">9 lits</option>
-<option value=\"10\">10 lits</option>
-<option value=\"11\">11 lits</option>
-<option value=\"12\">12 lits</option>
-<option value=\"13\">13 lits</option>
-<option value=\"14\">14 lits</option>
-<option value=\"15\">15 lits</option>
-<option value=\"16\">16+ lits</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </form>
+      ";
+        // line 543
+        $this->displayBlock('formChambre', $context, $blocks);
+        // line 545
+        echo "      
     </div>
   </div>
 
   <div class=\"filters-section panel-body panel-light\">
     <div class=\"row\">
         <div class=\"col-lg-2 col-md-12 filter-label\">
-          <label>Options</label>
+          <label>Etat</label>
         </div>
-        <div class=\"col-lg-9\">
-          <div class=\"row row-condensed\">
-              <div class=\"col-lg-4 col-md-6\">
-                <label id=\"instant-book-tooltip\" class=\"row row-condensed\">
-                  <div class=\"col-lg-2 col-md-1 col-middle-alt instant-book\">
-                    <input type=\"checkbox\" name=\"instant_book\" value=\"instant_book\">
-                  </div>
-                  <div class=\"col-lg-10 col-md-11 col-middle-alt needsclick\">
-                    <i class=\"icon icon-instant-book icon-beach needsclick\"></i>
-                    Réservation instantanée<br>
-                    <small class=\"text-muted needsclick\">
-                      Enregistrez une réservation instantanément.
-                      <a href=\"/help/article/187\">En savoir plus</a>
-                    </small>
-                  </div>
-                </label>
-              </div>
-
-          </div>
-        </div>
-    </div>
+         
+         ";
+        // line 555
+        $this->displayBlock('formEtat', $context, $blocks);
+        // line 557
+        echo "    </div>
   </div>
 
   <div class=\"checkbox-group neighborhoods filters-section panel-body panel-light\"
        data-name=\"neighborhoods\">
-    <div class=\"row\">
-      <div class=\"col-lg-2 col-md-12 filter-label\">
-        <label>Quartiers</label>
-      </div>
+   
+       ";
+        // line 563
+        $this->displayBlock('filterQuartier', $context, $blocks);
+        // line 565
+        echo "
 
-      <div class=\"col-lg-9 col-md-11\">
-        <div class=\"row row-condensed filters-columns\">
-          <div class=\"col-md-4\">
-            <label class=\"media checkbox text-truncate\" title=\"Brooklyn\">
-              <input type=\"checkbox\" name=\"neighborhood\" value=\"Brooklyn\" class=\"pull-left\">
-              Brooklyn
-            </label>
-          </div>
-          <div class=\"col-md-4\">
-            <label class=\"media checkbox text-truncate\" title=\"Manhattan\">
-              <input type=\"checkbox\" name=\"neighborhood\" value=\"Manhattan\" class=\"pull-left\">
-              Manhattan
-            </label>
-          </div>
-          <div class=\"col-md-4\">
-            <label class=\"media checkbox text-truncate\" title=\"Williamsburg\">
-              <input type=\"checkbox\" name=\"neighborhood\" value=\"Williamsburg\" class=\"pull-left\">
-              Williamsburg
-            </label>
-          </div>
-        </div>
-
-        <div class=\"filters-more collapse\">
-          <hr>
-          <div class=\"row row-condensed filters-columns\">
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Alphabet City\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Alphabet City\" class=\"pull-left\">
-                Alphabet City
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Bath Beach\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Bath Beach\" class=\"pull-left\">
-                Bath Beach
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Battery Park City\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Battery Park City\" class=\"pull-left\">
-                Battery Park City
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Bay Ridge\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Bay Ridge\" class=\"pull-left\">
-                Bay Ridge
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Bedford-Stuyvesant\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Bedford-Stuyvesant\" class=\"pull-left\">
-                Bedford-Stuyvesant
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Bensonhurst\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Bensonhurst\" class=\"pull-left\">
-                Bensonhurst
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Bergen Beach\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Bergen Beach\" class=\"pull-left\">
-                Bergen Beach
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Boerum Hill\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Boerum Hill\" class=\"pull-left\">
-                Boerum Hill
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Borough Park\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Borough Park\" class=\"pull-left\">
-                Borough Park
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Brighton Beach\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Brighton Beach\" class=\"pull-left\">
-                Brighton Beach
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Brooklyn Heights\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Brooklyn Heights\" class=\"pull-left\">
-                Brooklyn Heights
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Brooklyn Navy Yard\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Brooklyn Navy Yard\" class=\"pull-left\">
-                Brooklyn Navy Yard
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Brownsville\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Brownsville\" class=\"pull-left\">
-                Brownsville
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Bushwick\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Bushwick\" class=\"pull-left\">
-                Bushwick
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Canarsie\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Canarsie\" class=\"pull-left\">
-                Canarsie
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Carroll Gardens\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Carroll Gardens\" class=\"pull-left\">
-                Carroll Gardens
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Chelsea\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Chelsea\" class=\"pull-left\">
-                Chelsea
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Chinatown\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Chinatown\" class=\"pull-left\">
-                Chinatown
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Cidade Nova\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Cidade Nova\" class=\"pull-left\">
-                Cidade Nova
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Civic Center\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Civic Center\" class=\"pull-left\">
-                Civic Center
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Clinton Hill\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Clinton Hill\" class=\"pull-left\">
-                Clinton Hill
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Cobble Hill\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Cobble Hill\" class=\"pull-left\">
-                Cobble Hill
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Columbia Street Waterfront\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Columbia Street Waterfront\" class=\"pull-left\">
-                Columbia Street Waterfront
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Coney Island\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Coney Island\" class=\"pull-left\">
-                Coney Island
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Corona\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Corona\" class=\"pull-left\">
-                Corona
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Crown Heights\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Crown Heights\" class=\"pull-left\">
-                Crown Heights
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"DUMBO\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"DUMBO\" class=\"pull-left\">
-                DUMBO
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Downtown Brooklyn\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Downtown Brooklyn\" class=\"pull-left\">
-                Downtown Brooklyn
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Dyker Heights\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Dyker Heights\" class=\"pull-left\">
-                Dyker Heights
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"East Flatbush\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"East Flatbush\" class=\"pull-left\">
-                East Flatbush
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"East New York\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"East New York\" class=\"pull-left\">
-                East New York
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"East Village\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"East Village\" class=\"pull-left\">
-                East Village
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Elmhurst\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Elmhurst\" class=\"pull-left\">
-                Elmhurst
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Financial District\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Financial District\" class=\"pull-left\">
-                Financial District
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Flatbush\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Flatbush\" class=\"pull-left\">
-                Flatbush
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Flatiron District\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Flatiron District\" class=\"pull-left\">
-                Flatiron District
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Flatlands\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Flatlands\" class=\"pull-left\">
-                Flatlands
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Fort Greene\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Fort Greene\" class=\"pull-left\">
-                Fort Greene
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Gerritsen Beach\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Gerritsen Beach\" class=\"pull-left\">
-                Gerritsen Beach
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Glendale\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Glendale\" class=\"pull-left\">
-                Glendale
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Gowanus\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Gowanus\" class=\"pull-left\">
-                Gowanus
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Gramercy Park\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Gramercy Park\" class=\"pull-left\">
-                Gramercy Park
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Gravesend\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Gravesend\" class=\"pull-left\">
-                Gravesend
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Greenpoint\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Greenpoint\" class=\"pull-left\">
-                Greenpoint
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Greenwich Village\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Greenwich Village\" class=\"pull-left\">
-                Greenwich Village
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Greenwood Heights\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Greenwood Heights\" class=\"pull-left\">
-                Greenwood Heights
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Hamilton Heights\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Hamilton Heights\" class=\"pull-left\">
-                Hamilton Heights
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Harlem\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Harlem\" class=\"pull-left\">
-                Harlem
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Hudson Square\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Hudson Square\" class=\"pull-left\">
-                Hudson Square
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Jackson Heights\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Jackson Heights\" class=\"pull-left\">
-                Jackson Heights
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Kensington\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Kensington\" class=\"pull-left\">
-                Kensington
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Kips Bay\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Kips Bay\" class=\"pull-left\">
-                Kips Bay
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Lefferts Garden\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Lefferts Garden\" class=\"pull-left\">
-                Lefferts Garden
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Little Italy\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Little Italy\" class=\"pull-left\">
-                Little Italy
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Long Island City\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Long Island City\" class=\"pull-left\">
-                Long Island City
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Lower East Side\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Lower East Side\" class=\"pull-left\">
-                Lower East Side
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Manhattan Beach\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Manhattan Beach\" class=\"pull-left\">
-                Manhattan Beach
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Maspeth\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Maspeth\" class=\"pull-left\">
-                Maspeth
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Meatpacking District\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Meatpacking District\" class=\"pull-left\">
-                Meatpacking District
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Middle Village\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Middle Village\" class=\"pull-left\">
-                Middle Village
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Midtown\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Midtown\" class=\"pull-left\">
-                Midtown
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Midtown East\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Midtown East\" class=\"pull-left\">
-                Midtown East
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Midwood\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Midwood\" class=\"pull-left\">
-                Midwood
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Murray Hill\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Murray Hill\" class=\"pull-left\">
-                Murray Hill
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Noho\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Noho\" class=\"pull-left\">
-                Noho
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Nolita\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Nolita\" class=\"pull-left\">
-                Nolita
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Park Slope\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Park Slope\" class=\"pull-left\">
-                Park Slope
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Prospect Heights\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Prospect Heights\" class=\"pull-left\">
-                Prospect Heights
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Queens\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Queens\" class=\"pull-left\">
-                Queens
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Red Hook\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Red Hook\" class=\"pull-left\">
-                Red Hook
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Rego Park\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Rego Park\" class=\"pull-left\">
-                Rego Park
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Ridgewood\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Ridgewood\" class=\"pull-left\">
-                Ridgewood
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Sea Gate\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Sea Gate\" class=\"pull-left\">
-                Sea Gate
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Sheepshead Bay\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Sheepshead Bay\" class=\"pull-left\">
-                Sheepshead Bay
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Soho\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Soho\" class=\"pull-left\">
-                Soho
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"South Street Seaport\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"South Street Seaport\" class=\"pull-left\">
-                South Street Seaport
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Sunnyside\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Sunnyside\" class=\"pull-left\">
-                Sunnyside
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Sunset Park\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Sunset Park\" class=\"pull-left\">
-                Sunset Park
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Tribeca\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Tribeca\" class=\"pull-left\">
-                Tribeca
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Union Square\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Union Square\" class=\"pull-left\">
-                Union Square
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Vinegar Hill\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Vinegar Hill\" class=\"pull-left\">
-                Vinegar Hill
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"West Village\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"West Village\" class=\"pull-left\">
-                West Village
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Windsor Terrace\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Windsor Terrace\" class=\"pull-left\">
-                Windsor Terrace
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Woodhaven\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Woodhaven\" class=\"pull-left\">
-                Woodhaven
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Woodside\">
-                <input type=\"checkbox\" name=\"neighborhood\" value=\"Woodside\" class=\"pull-left\">
-                Woodside
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div class=\"col-md-1\">
         <label class=\"show-more\">
@@ -1358,19 +620,19 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
           <div class=\"col-md-4\">
             <label class=\"media checkbox text-truncate\" title=\"Internet sans fil\">
               <input type=\"checkbox\" name=\"amenities\" value=\"4\" class=\"pull-left\">
-              Internet sans fil
+              Ascenseur
             </label>
           </div>
           <div class=\"col-md-4\">
             <label class=\"media checkbox text-truncate\" title=\"Télévision\">
               <input type=\"checkbox\" name=\"amenities\" value=\"1\" class=\"pull-left\">
-              Télévision
+              Cuisine équipée
             </label>
           </div>
           <div class=\"col-md-4\">
             <label class=\"media checkbox text-truncate\" title=\"Cuisine\">
               <input type=\"checkbox\" name=\"amenities\" value=\"8\" class=\"pull-left\">
-              Cuisine
+              Jardin
             </label>
           </div>
         </div>
@@ -1381,31 +643,31 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
             <div class=\"col-md-4\">
               <label class=\"media checkbox text-truncate\" title=\"Accès handicapés\">
                 <input type=\"checkbox\" name=\"amenities\" value=\"6\" class=\"pull-left\">
-                Accès handicapés
+                Accès indépendant
               </label>
             </div>
             <div class=\"col-md-4\">
               <label class=\"media checkbox text-truncate\" title=\"Adapté aux événements\">
                 <input type=\"checkbox\" name=\"amenities\" value=\"32\" class=\"pull-left\">
-                Adapté aux événements
+                Gaz de ville
               </label>
             </div>
             <div class=\"col-md-4\">
               <label class=\"media checkbox text-truncate\" title=\"Animaux acceptés\">
                 <input type=\"checkbox\" name=\"amenities\" value=\"12\" class=\"pull-left\">
-                Animaux acceptés
+                Chauffage
               </label>
             </div>
             <div class=\"col-md-4\">
               <label class=\"media checkbox text-truncate\" title=\"Ascenseur\">
                 <input type=\"checkbox\" name=\"amenities\" value=\"21\" class=\"pull-left\">
-                Ascenseur
+                Meublé
               </label>
             </div>
             <div class=\"col-md-4\">
               <label class=\"media checkbox text-truncate\" title=\"Chauffage\">
                 <input type=\"checkbox\" name=\"amenities\" value=\"30\" class=\"pull-left\">
-                Chauffage
+                Climatisé
               </label>
             </div>
             <div class=\"col-md-4\">
@@ -1420,126 +682,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
                 Climatisation
               </label>
             </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Détecteur de fumée\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"35\" class=\"pull-left\">
-                Détecteur de fumée
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Détecteur de monoxyde de carbone\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"36\" class=\"pull-left\">
-                Détecteur de monoxyde de carbone
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Extincteur\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"39\" class=\"pull-left\">
-                Extincteur
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Fiche de sécurité\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"38\" class=\"pull-left\">
-                Fiche de sécurité
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Fumeurs acceptés\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"11\" class=\"pull-left\">
-                Fumeurs acceptés
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Internet\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"3\" class=\"pull-left\">
-                Internet
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Interphone\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"28\" class=\"pull-left\">
-                Interphone
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Jacuzzi\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"25\" class=\"pull-left\">
-                Jacuzzi
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Kit de premiers secours\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"37\" class=\"pull-left\">
-                Kit de premiers secours
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Machine à laver\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"33\" class=\"pull-left\">
-                Machine à laver
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Parking gratuit sur place\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"9\" class=\"pull-left\">
-                Parking gratuit sur place
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Petit déjeuner\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"16\" class=\"pull-left\">
-                Petit déjeuner
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Piscine\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"7\" class=\"pull-left\">
-                Piscine
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Portier\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"14\" class=\"pull-left\">
-                Portier
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Pour familles/enfants\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"31\" class=\"pull-left\">
-                Pour familles/enfants
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Produits de base\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"40\" class=\"pull-left\">
-                Produits de base
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Salle de gym\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"15\" class=\"pull-left\">
-                Salle de gym
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Shampooing\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"41\" class=\"pull-left\">
-                Shampooing
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Sèche-linge\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"34\" class=\"pull-left\">
-                Sèche-linge
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Télévision par câble\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"2\" class=\"pull-left\">
-                Télévision par câble
-              </label>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -1580,7 +723,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
           <div class=\"col-md-4\">
             <label class=\"media checkbox text-truncate\" title=\"Bed &amp; Breakfast\">
               <input type=\"checkbox\" name=\"property_type_id\" value=\"3\" class=\"pull-left\">
-              Bed &amp; Breakfast
+              Studio
             </label>
           </div>
         </div>
@@ -1658,222 +801,11 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         </div>
       </div>
 
-      <div class=\"col-md-1\">
-        <label class=\"show-more\">
-          <span>
-            <i class=\"icon icon-caret-down hide-sm\"></i>
-            <strong class=\"text-muted show-sm\">+ Plus</strong>
-          </span>
-          <span class=\"hide\"><i class=\"icon icon-caret-up\"></i></span>
-        </label>
-      </div>
-    </div>
+      
 
-  </div>
 
-  <div class=\"checkbox-group languages filters-section panel-body panel-light\"
-       data-name=\"languages\">
-    <div class=\"row\">
-      <div class=\"col-lg-2 col-md-12 filter-label\">
-        <label>Langue de l'hôte</label>
-      </div>
 
-      <div class=\"col-lg-9 col-md-11\">
-        <div class=\"row row-condensed filters-columns\">
-          <div class=\"col-md-4\">
-            <label class=\"media checkbox text-truncate\" title=\"Français\">
-              <input type=\"checkbox\" name=\"languages\" value=\"2\" class=\"pull-left\">
-              Français
-            </label>
-          </div>
-          <div class=\"col-md-4\">
-            <label class=\"media checkbox text-truncate\" title=\"English\">
-              <input type=\"checkbox\" name=\"languages\" value=\"1\" class=\"pull-left\">
-              English
-            </label>
-          </div>
-          <div class=\"col-md-4\">
-            <label class=\"media checkbox text-truncate\" title=\"Español\">
-              <input type=\"checkbox\" name=\"languages\" value=\"64\" class=\"pull-left\">
-              Español
-            </label>
-          </div>
-        </div>
-
-        <div class=\"filters-more collapse\">
-          <hr>
-          <div class=\"row row-condensed filters-columns\">
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Bahasa Indonesia\">
-                <input type=\"checkbox\" name=\"languages\" value=\"4096\" class=\"pull-left\">
-                Bahasa Indonesia
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Bahasa Malaysia\">
-                <input type=\"checkbox\" name=\"languages\" value=\"4194304\" class=\"pull-left\">
-                Bahasa Malaysia
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Bengali\">
-                <input type=\"checkbox\" name=\"languages\" value=\"32768\" class=\"pull-left\">
-                Bengali
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Dansk\">
-                <input type=\"checkbox\" name=\"languages\" value=\"16777216\" class=\"pull-left\">
-                Dansk
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Deutsch\">
-                <input type=\"checkbox\" name=\"languages\" value=\"4\" class=\"pull-left\">
-                Deutsch
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Hindi\">
-                <input type=\"checkbox\" name=\"languages\" value=\"512\" class=\"pull-left\">
-                Hindi
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Italiano\">
-                <input type=\"checkbox\" name=\"languages\" value=\"16\" class=\"pull-left\">
-                Italiano
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Magyar\">
-                <input type=\"checkbox\" name=\"languages\" value=\"536870912\" class=\"pull-left\">
-                Magyar
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Nederlands\">
-                <input type=\"checkbox\" name=\"languages\" value=\"8192\" class=\"pull-left\">
-                Nederlands
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Norsk\">
-                <input type=\"checkbox\" name=\"languages\" value=\"67108864\" class=\"pull-left\">
-                Norsk
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Polski\">
-                <input type=\"checkbox\" name=\"languages\" value=\"2097152\" class=\"pull-left\">
-                Polski
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Português\">
-                <input type=\"checkbox\" name=\"languages\" value=\"1024\" class=\"pull-left\">
-                Português
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Punjabi\">
-                <input type=\"checkbox\" name=\"languages\" value=\"131072\" class=\"pull-left\">
-                Punjabi
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Sign Language\">
-                <input type=\"checkbox\" name=\"languages\" value=\"524288\" class=\"pull-left\">
-                Sign Language
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Suomi\">
-                <input type=\"checkbox\" name=\"languages\" value=\"134217728\" class=\"pull-left\">
-                Suomi
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Svenska\">
-                <input type=\"checkbox\" name=\"languages\" value=\"33554432\" class=\"pull-left\">
-                Svenska
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Tagalog\">
-                <input type=\"checkbox\" name=\"languages\" value=\"8388608\" class=\"pull-left\">
-                Tagalog
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Türkçe\">
-                <input type=\"checkbox\" name=\"languages\" value=\"2048\" class=\"pull-left\">
-                Türkçe
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Čeština\">
-                <input type=\"checkbox\" name=\"languages\" value=\"268435456\" class=\"pull-left\">
-                Čeština
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Ελληνικά\">
-                <input type=\"checkbox\" name=\"languages\" value=\"262144\" class=\"pull-left\">
-                Ελληνικά
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Русский\">
-                <input type=\"checkbox\" name=\"languages\" value=\"32\" class=\"pull-left\">
-                Русский
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"українська\">
-                <input type=\"checkbox\" name=\"languages\" value=\"1073741824\" class=\"pull-left\">
-                українська
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"עברית\">
-                <input type=\"checkbox\" name=\"languages\" value=\"1048576\" class=\"pull-left\">
-                עברית
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"العربية\">
-                <input type=\"checkbox\" name=\"languages\" value=\"256\" class=\"pull-left\">
-                العربية
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"ภาษาไทย\">
-                <input type=\"checkbox\" name=\"languages\" value=\"65536\" class=\"pull-left\">
-                ภาษาไทย
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"中文\">
-                <input type=\"checkbox\" name=\"languages\" value=\"128\" class=\"pull-left\">
-                中文
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"日本語\">
-                <input type=\"checkbox\" name=\"languages\" value=\"8\" class=\"pull-left\">
-                日本語
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"한국어\">
-                <input type=\"checkbox\" name=\"languages\" value=\"16384\" class=\"pull-left\">
-                한국어
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
+  
 
       <div class=\"col-md-1\">
         <label class=\"show-more\">
@@ -1887,24 +819,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
     </div>
   </div>
 
-  <div class=\"keywords filters-section panel-body panel-light\">
-    <div class=\"row\">
-      <div class=\"col-lg-2 col-md-12 filter-label\">
-        <label>Mots-clés</label>
-      </div>
-
-      <form class=\"col-lg-9\">
-        <div class=\"row row-condensed\">
-          <div class=\"col-md-12\">
-            <input class=\"input-block\"
-                   type=\"text\"
-                   name=\"keywords\"
-                   placeholder=\"Face à l'océan, transports en commun, calme...\">
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
+ 
 
       <div class=\"panel-btn-sm panel-light filters-footer\">
         <button class=\"btn btn-block btn-large btn-primary search-button row-space-4-sm\">
@@ -1955,16 +870,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         </li>
       </ul>
     
-      <div class=\"results-count-item pull-right text-right\">
-        <h1 class=\"results-count h6\">Plus de 1 000 locations &middot; New York</h1>
-        <div class=\"urgency-panel uc-invisible\">
-          <i class=\"icon pull-right icon-color-calendar\"></i>
-          <div class=\"pull-right\">
-            <strong class=\"urgent-results-count\"></strong>
-            <div class=\"text-muted\">Nous vous recommandons de réserver un logement sans tarder.</div>
-          </div>
-        </div>
-      </div>
+      
     </div>
     <div class=\"sidebar-header-placeholder\"></div>
     <div class=\"search-results\">
@@ -1998,54 +904,14 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         <div class=\"row listings-container\">
 
         ";
-        // line 1981
+        // line 875
         $this->displayBlock('card', $context, $blocks);
-        // line 1983
+        // line 877
         echo "
         </div>
         </div>
 
-
-
-
-
-
-        
-
-      <div class=\"results-footer\">
-
-  <div class=\"page-divider\"> </div>
-
-  <div class=\"pagination-buttons-container\">
-    <div class=\"results_count\">
-      <p>
-        1 – 18 de Plus de 1 000 locations
-      </p>
-    </div>
-    <div class=\"pagination pagination-responsive\"><ul class=\"list-unstyled\"> <li class=\"active\"><a rel=\"start\" target=\"1\" href=\"/s/New-York--NY?page=1\">1</a></li> <li><a rel=\"next\" target=\"2\" href=\"/s/New-York--NY?page=2\">2</a></li> <li><a target=\"3\" href=\"/s/New-York--NY?page=3\">3</a></li> <li class=\"gap\"><span class=\"gap\">&hellip;</span></li> <li><a target=\"56\" href=\"/s/New-York--NY?page=56\">56</a></li> <li class=\"next next_page\"><a target=\"2\" rel=\"next\" href=\"/s/New-York--NY?page=2\"><i class=\"icon icon-caret-right\"></i></a></li></ul></div>
-  </div>
-
-  <div class=\"breadcrumbs\" itemprop=\"breadcrumb\">
-      <span itemscope itemtype=\"http://data-vocabulary.org/Breadcrumb\">
-        <a href=\"/s/%C3%89tats~Unis\" itemprop=\"url\">
-          <span itemprop=\"title\">États-Unis</span>
-        </a>
-        <i class=\"icon icon-chevron-right breadcrumb-spacer\"></i>
-      </span>
-      <span itemscope itemtype=\"http://data-vocabulary.org/Breadcrumb\">
-        <a href=\"/s/New-York--%C3%89tats~Unis\" itemprop=\"url\">
-          <span itemprop=\"title\">New York</span>
-        </a>
-        <i class=\"icon icon-chevron-right breadcrumb-spacer\"></i>
-      </span>
-        <a href=\"/getaways/New-York\">
-          <span>New York</span>
-        </a>
-  </div>
-
-</div>
-
-    </div>
+  
 
     <div class=\"panel-btn-sm panel-btn-fixed-sm show-sm\">
       <button class=\"js-small-filter-toggle btn btn-large btn-block btn-primary\">Filtres</button>
@@ -2070,12 +936,6 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
   
   </div>
 
-  <button class=\"hide-sm btn footer-toggle\">
-    <span class=\"open-content\">
-      <i class=\"icon icon-globe\"></i> Langue et devise
-    </span>
-    <span class=\"close-content\"><i class=\"icon icon-remove\"></i> Fermer</span>
-  </button>
 </div>
 
 
@@ -2092,95 +952,21 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
       </div>
     </div>
 
-    <div class=\"col-md-2 col-md-offset-1 hide-sm\">
-      <h5>Société</h5>
-      <ul class=\"unstyled list-layout\">
-        <li><a href=\"/about/about-us\" class=\"link-contrast\">À propos</a></li>
-        <li><a href=\"/careers\" class=\"link-contrast\">Emploi</a></li>
-        <li><a href=\"/press/news\" class=\"link-contrast\">Presse</a></li>
-        <li><a href=\"http://blog.airbnb.com\" class=\"link-contrast\">Blog</a></li>
-        <li><a href=\"/help\" class=\"link-contrast\">Aide</a></li>
-        <li><a href=\"/policies\" class=\"link-contrast\">Règles</a></li>
-        <li><a href=\"/disaster-response\" class=\"link-contrast\">Réponse aux catastrophes</a></li>
-        <li><a href=\"/terms\" class=\"link-contrast\">Conditions générales et confidentialité</a></li>
-      </ul>
-    </div>
+   
 
-    <div class=\"col-md-2 hide-sm\">
-      <h5>Découvrir</h5>
-      <ul class=\"unstyled list-layout\">
-        <li><a href=\"/trust\" class=\"link-contrast\">Confiance et sécurité</a></li>
-        <li><a href=\"/invite?r=6\" class=\"link-contrast\">Inviter des amis</a></li>
-        <li><a href=\"/wishlists/airbnb_picks\" class=\"link-contrast\">La sélection Airbnb</a></li>
-        <li><a href=\"/mobile\" class=\"link-contrast\">Application mobile</a></li>
-        <li><a href=\"https://www.airbnbnyc.com\" class=\"link-contrast\">Soutenir New York</a></li>
-        <li><a href=\"/business-travel-management\" class=\"link-contrast\">Voyage d'affaires</a></li>
-        <li><a href=\"/sitemaps\" class=\"link-contrast\">Plan du site</a></li>
-      </ul>
-    </div>
+ 
 
-    <div class=\"col-md-2 hide-sm\">
-      <h5>Hébergement</h5>
-      <ul class=\"unstyled list-layout\">
-        <li>
-          <a href=\"/host\" class=\"link-contrast\">Pourquoi être hôte</a></li>
-        </li>
-
-        <li><a href=\"/hospitality\" class=\"link-contrast\">Hospitalité</a></li>
-        <li><a href=\"/help/responsible-hosting\" class=\"link-contrast\">Hébergement responsable</a></li>
-        <li><a href=\"/home-safety\" class=\"link-contrast\">Sécurité à la maison</a></li>
-        <li><a href=\"/stories\" class=\"link-contrast\">Les histoires</a></li>
-      </ul>
-    </div>
+  
   </div>
 
-  <div class=\"col-sm-12 row-space-4 row-space-top-4 show-sm\">
-    <ul class=\"unstyled list-layout list-inline text-center h5\">
-      <li><a href=\"/about/about-us\" class=\"link-contrast\">À propos</a></li>
-      <li><a href=\"/careers\" class=\"link-contrast\">Emploi</a></li>
-      <li><a href=\"/press/news\" class=\"link-contrast\">Presse</a></li>
-      <li><a href=\"http://blog.airbnb.com\" class=\"link-contrast\">Blog</a></li>
-      <li><a href=\"/terms\" class=\"link-contrast\">Conditions générales et confidentialité</a></li>
-    </ul>
-  </div>
+  
 
   <hr class=\"footer-divider row-space-top-8 row-space-4 hide-sm\">
 
   <div class=\"social-media text-center\">
     <h5 class=\"row-space-4 hide-sm\">Rejoignez-nous sur</h5>
     <ul class=\"unstyled list-layout list-inline\" itemscope itemtype=\"http://schema.org/Organization\">
-      <link itemprop=\"url\" href=\"https://www.airbnb.fr\">
-        <li>
-          <a href=\"https://www.facebook.com/AirbnbFrance\" class=\"link-contrast footer-icon-container\" itemprop=\"sameAs\" target=\"_blank\">
-            <i class='icon footer-icon icon-facebook'></i>
-</a>        </li>
-        <li>
-          <a href=\"https://plus.google.com/+airbnb_fr\" class=\"link-contrast footer-icon-container\" itemprop=\"sameAs\" target=\"_blank\">
-            <i class='icon footer-icon icon-google-plus'></i>
-</a>        </li>
-
-        <li>
-          <a href=\"https://twitter.com/airbnb_fr\" class=\"link-contrast footer-icon-container\" itemprop=\"sameAs\" target=\"_blank\">
-            <i class='icon footer-icon icon-twitter'></i>
-</a>        </li>
-
-      <li>
-        <a href=\"https://www.linkedin.com/company/airbnb\" class=\"link-contrast footer-icon-container\" itemprop=\"sameAs\" target=\"_blank\">
-          <i class='icon footer-icon icon-linkedin'></i>
-</a>      </li>
-
-        <li>
-          <a href=\"https://www.pinterest.com/airbnbfrance/\" class=\"link-contrast footer-icon-container\" itemprop=\"sameAs\" target=\"_blank\">
-            <i class='icon footer-icon icon-pinterest'></i>
-</a>        </li>
-        <li>
-          <a href=\"http://www.youtube.com/airbnb\" class=\"link-contrast footer-icon-container\" itemprop=\"sameAs\" target=\"_blank\">
-            <i class='icon footer-icon icon-youtube'></i>
-</a>        </li>
-        <li>
-          <a href=\"https://www.instagram.com/airbnb\" class=\"link-contrast footer-icon-container\" itemprop=\"sameAs\" target=\"_blank\">
-            <i class='icon footer-icon icon-instagram'></i>
-</a>        </li>
+     
     </ul>
     <div id=\"copyright\" class=\"row-space-top-2 text-muted\">
       &copy; Airbnb, Inc.
@@ -2235,10 +1021,38 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
 ";
     }
 
-    // line 1981
+    // line 178
+    public function block_formSearch($context, array $blocks = array())
+    {
+        // line 179
+        echo "   ";
+    }
+
+    // line 543
+    public function block_formChambre($context, array $blocks = array())
+    {
+        // line 544
+        echo "      ";
+    }
+
+    // line 555
+    public function block_formEtat($context, array $blocks = array())
+    {
+        // line 556
+        echo "         ";
+    }
+
+    // line 563
+    public function block_filterQuartier($context, array $blocks = array())
+    {
+        // line 564
+        echo "       ";
+    }
+
+    // line 875
     public function block_card($context, array $blocks = array())
     {
-        // line 1982
+        // line 876
         echo "        ";
     }
 
@@ -2249,6 +1063,6 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
 
     public function getDebugInfo()
     {
-        return array (  2242 => 1982,  2239 => 1981,  2004 => 1983,  2002 => 1981,  20 => 1,);
+        return array (  1056 => 876,  1053 => 875,  1049 => 564,  1046 => 563,  1042 => 556,  1039 => 555,  1035 => 544,  1032 => 543,  1028 => 179,  1025 => 178,  910 => 877,  908 => 875,  596 => 565,  594 => 563,  586 => 557,  584 => 555,  572 => 545,  570 => 543,  205 => 180,  203 => 178,  24 => 1,);
     }
 }
