@@ -3,7 +3,7 @@
 namespace sprint2\RealEstate\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Utilisateur
  */
@@ -15,46 +15,60 @@ class Utilisateur
     private $id;
 
     /**
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = true
+     * )
+     * @Assert\NotBlank()
      * @var string
      */
     private $mail;
 
     /**
+     * 
+     * 
      * @var string
      */
     private $password;
 
     /**
+     * 
      * @var string
      */
     private $nom;
 
     /**
+     * 
      * @var string
      */
     private $prenom;
 
     /**
+     * 
      * @var string
      */
     private $nummobile;
 
     /**
+     * 
      * @var string
      */
     private $numfix;
 
     /**
+     *
      * @var string
      */
     private $statusMatrimonial;
 
     /**
+     * 
      * @var integer
      */
     private $role;
 
     /**
+     * 
      * @var string
      */
     private $urlp;

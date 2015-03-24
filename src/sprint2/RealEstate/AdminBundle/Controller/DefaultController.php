@@ -49,16 +49,21 @@ class DefaultController extends Controller
 
     public function clientsAction()
     {
-        $request = $this->getRequest();
-        if ($request->getMethod()=="POST" ){ 
+        $request1 = $this->getRequest();
+        if ($request1->getMethod()=="POST" ){ 
             
-            $idx=$request->get('id');
-            $mailx=$request->get('mail');
-            $nomx=$request->get('nom');
-            $prenomx=$request->get('prenom');
-            $statmatrix=$request->get('statmatri');
+            $idx=$request1->get('id');
+            $mailx=$request1->get('mail');
+            $nomx=$request1->get('nom');
+            $prenomx=$request1->get('prenom');
+            $statmatrix=$request1->get('statmatri');
 //            $passx=$request->get('pass');          
             $em1 = $this->getDoctrine()->getManager();
+            if($request1->get('id')== NULL){
+               $idx= "0";
+            }else{
+                $idx= $request1->get('id');
+            }
             $utilisateurx = $em1->getRepository('sprint2RealEstateAdminBundle:Utilisateur')->find($idx);
                        
             $utilisateurx->setMail($mailx);
@@ -100,39 +105,60 @@ class DefaultController extends Controller
     
     public function gerantsAction()
     {
-        $request = $this->getRequest();
-        if ($request->getMethod()=="POST"){  
-            $mailx=$request->get('mail');
-            $nomx=$request->get('nom');
-            $prenomx=$request->get('prenom');
-            $fixex=$request->get('fixe');
-            $mobilx=$request->get('mobil');
-            $statmatrix=$request->get('statmatri');
-            $passx=$request->get('pass');
+        $request1 = $this->getRequest();
+        if ($request1->getMethod()=="POST" ){ 
             
-            $utilisateurx= new \sprint2\RealEstate\AdminBundle\Entity\Utilisateur();
+            $idx=$request1->get('id');
+            $mailx=$request1->get('mail');
+            $nomx=$request1->get('nom');
+            $prenomx=$request1->get('prenom');
+            $statmatrix=$request1->get('statmatri');
+            $fixex=$request1->get('numfix');
+            $mobilx=$request1->get('nummob');
+//            $passx=$request->get('pass');          
+            $em1 = $this->getDoctrine()->getManager();
+            if($request1->get('id')== NULL){
+               $idx= "0";
+            }else{
+                $idx= $request1->get('id');
+            }
+            $utilisateurx = $em1->getRepository('sprint2RealEstateAdminBundle:Utilisateur')->find($idx);
+                       
             $utilisateurx->setMail($mailx);
             $utilisateurx->setNom($nomx);
             $utilisateurx->setPrenom($prenomx);
+            $utilisateurx->setStatusMatrimonial($statmatrix);
             $utilisateurx->setNumfix($fixex); 
             $utilisateurx->setNummobile($mobilx); 
-            $utilisateurx->setPassword(md5($passx)); 
-            $utilisateurx->setStatusMatrimonial($statmatrix); 
-            $utilisateurx->setRole("1"); 
-            $utilisateurx->setUrlp("http://localhost/image/null.png");
-
-            $em=$this->getDoctrine()->getManager();
-            $em->persist($utilisateurx);
-            $em->flush();     
+//            $utilisateurx->setUrlp("http://localhost/image/null.png");
+            $em2=$this->getDoctrine()->getManager();
+            $em2->persist($utilisateurx);
+            $em2->flush();     
 //            return $this->render('sprint2RealEstateAdminBundle:Pages:agence.html.twig',
 //                array('agance'=>$Agance, 'utilisateur'=>$utilisateur, 'adresse'=>$adresse ));
         }
+        
         $utilisateur= $this->getDoctrine()
         ->getRepository('sprint2RealEstateAdminBundle:Utilisateur')
         ->findBy(array('role'=>1));
+        
+        $utilisateurf=new \sprint2\RealEstate\AdminBundle\Entity\Utilisateur();
+        $form=$this->createForm(new \sprint2\RealEstate\AdminBundle\form\AjouGForm(),$utilisateurf);#container->get("form.factory")entre this et create#}
+        $Request = $this->get('request_stack')->getCurrentRequest();
+        $form->handleRequest($Request);//laison entre formulaire  et lentity en question et recuperer les données du requet
+        if($form->isValid())
+        {
+            $utilisateurf->setPassword(md5($utilisateurf->getPassword()));
+            $utilisateurf->setRole("1");
+            $utilisateurf->setUrlp("http://localhost/image/null.png");
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($utilisateurf);
+            $em->flush();
+
+        }
 
         return $this->render('sprint2RealEstateAdminBundle:Pages:gerants.html.twig',
-        	array('utilisateur'=>$utilisateur));
+        	array('utilisateur'=>$utilisateur, 'form'=>$form->createView()));
     }
     
     public function offresAction()
@@ -165,8 +191,6 @@ class DefaultController extends Controller
             $em=$this->getDoctrine()->getManager();
             $em->persist($agencex);
             $em->flush();     
-//            return $this->render('sprint2RealEstateAdminBundle:Pages:agence.html.twig',
-//                array('agance'=>$Agance, 'utilisateur'=>$utilisateur, 'adresse'=>$adresse ));
         }
       
         $Agance= $this->getDoctrine()
