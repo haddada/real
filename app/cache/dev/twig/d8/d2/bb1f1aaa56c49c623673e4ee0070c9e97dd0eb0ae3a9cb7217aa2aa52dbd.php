@@ -1,6 +1,6 @@
 <?php
 
-/* @WebProfiler/Collector/exception.css.twig */
+/* WebProfilerBundle:Collector:exception.css.twig */
 class __TwigTemplate_d8d2bb1f1aaa56c49c623673e4ee0070c9e97dd0eb0ae3a9cb7217aa2aa52dbd extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -125,7 +125,7 @@ class __TwigTemplate_d8d2bb1f1aaa56c49c623673e4ee0070c9e97dd0eb0ae3a9cb7217aa2aa
 
     public function getTemplateName()
     {
-        return "@WebProfiler/Collector/exception.css.twig";
+        return "WebProfilerBundle:Collector:exception.css.twig";
     }
 
     public function getDebugInfo()

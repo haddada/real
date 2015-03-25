@@ -361,16 +361,33 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_offre_delete:
 
-            // offre_search
-            if ($pathinfo === '/offre/search') {
-                if ($this->context->getMethod() != 'POST') {
-                    $allow[] = 'POST';
-                    goto not_offre_search;
+            if (0 === strpos($pathinfo, '/offre/search')) {
+                // offre_search
+                if ($pathinfo === '/offre/search') {
+                    return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchAction',  '_route' => 'offre_search',);
                 }
 
-                return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchAction',  '_route' => 'offre_search',);
+                // offre_search_type
+                if (preg_match('#^/offre/search/(?P<type>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'offre_search_type')), array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchByTypeAction',));
+                }
+
+                // offre_search_prix
+                if (preg_match('#^/offre/search/(?P<prix>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'offre_search_prix')), array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchByPriceAction',));
+                }
+
+                // offre_search_gerant
+                if (preg_match('#^/offre/search/(?P<id_gerant>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'offre_search_gerant')), array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchByGerantAction',));
+                }
+
+                // offre_search_gouvern
+                if (preg_match('#^/offre/search/(?P<gouvernorat>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'offre_search_gouvern')), array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchGouvernoratAction',));
+                }
+
             }
-            not_offre_search:
 
         }
 
@@ -399,6 +416,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // real_estate_dashboard
         if ($pathinfo === '/dashboard') {
             return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\AdministrateurController::afficherAdminsAction',  '_route' => 'real_estate_dashboard',);
+        }
+
+        // offre_search_ajax
+        if ($pathinfo === '/search/search_results') {
+            return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchAjaxAction',  '_route' => 'offre_search_ajax',);
         }
 
         if (0 === strpos($pathinfo, '/Admin')) {

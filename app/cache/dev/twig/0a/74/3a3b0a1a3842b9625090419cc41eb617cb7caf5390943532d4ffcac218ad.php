@@ -7,12 +7,12 @@ class __TwigTemplate_0a743a3b0a1a3842b9625090419cc41eb617cb7caf5390943532d4ffcac
     {
         parent::__construct($env);
 
-        // line 1
+        // line 4
         try {
             $this->parent = $this->env->loadTemplate("realEstateBundle:Default:header.html.twig");
         } catch (Twig_Error_Loader $e) {
             $e->setTemplateFile($this->getTemplateName());
-            $e->setTemplateLine(1);
+            $e->setTemplateLine(4);
 
             throw $e;
         }
@@ -33,23 +33,26 @@ class __TwigTemplate_0a743a3b0a1a3842b9625090419cc41eb617cb7caf5390943532d4ffcac
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 3
+    // line 6
     public function block_offreCard($context, array $blocks = array())
     {
-        // line 4
+        // line 7
         echo "    ";
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 5
+            // line 8
             echo "    <div class=\"col-lg-4 col-md-6 col-sm-12 rm-padding-sm \">
       <div class=\"discovery-card rm-padding-sm row-space-4 darken-on-hover \" style=\"background-image:url('https://a0.muscache.com/ic/pictures/discovery/attribute_photos/beach_1x1.jpg?interpolation=lanczos-none&amp;output-format=jpg&amp;output-quality=70&amp;size=large_cover&amp;downsize=326px:326px&amp;v=6');\" sm-img-url=\"https://a0.muscache.com/ic/pictures/discovery/attribute_photos/beach_2x1.jpg?interpolation=lanczos-none&amp;output-format=jpg&amp;output-quality=70&amp;size=large_cover&amp;downsize=655px:326px&amp;v=6\">
-    <a href=\"/s/Hawaii--United-States?source=ds\" class=\"link-reset\" data-hook=\"discovery-card\" data-id=\"\">
+    <a href=\"/offre/search?gouvernorat=";
+            // line 10
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "gouvernorat", array()), "html", null, true);
+            echo "\" class=\"link-reset\" data-hook=\"discovery-card\" data-id=\"\">
     <div class=\"va-container va-container-v va-container-h\">
       <div class=\"va-middle text-center text-contrast\">
           <div class=\"h2 strong\">
             ";
-            // line 11
+            // line 14
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "gouvernorat", array()), "html", null, true);
             echo "
           </div>
@@ -64,7 +67,7 @@ class __TwigTemplate_0a743a3b0a1a3842b9625090419cc41eb617cb7caf5390943532d4ffcac
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 20
+        // line 23
         echo "
 
 
@@ -73,14 +76,14 @@ class __TwigTemplate_0a743a3b0a1a3842b9625090419cc41eb617cb7caf5390943532d4ffcac
 ";
     }
 
-    // line 27
+    // line 30
     public function block_offreCard8($context, array $blocks = array())
     {
-        // line 28
+        // line 31
         echo "
   <div class=\"col-lg-8 col-md-12 rm-padding-sm\">
     <div class=\"discovery-card rm-padding-sm row-space-4 darken-on-hover \" style=\"background-image:url('https://a1.muscache.com/ic/discover/85?interpolation=lanczos-none&amp;output-format=jpg&amp;output-quality=70&amp;v=33b4f2&amp;downsize=655px:326px');\" sm-img-url=\"https://a1.muscache.com/ic/discover/85?interpolation=lanczos-none&amp;output-format=jpg&amp;output-quality=70&amp;v=33b4f2&amp;downsize=655px:326px\">
-    <a href=\"/s/New-York--NY?source=ds\" class=\"link-reset\" data-hook=\"discovery-card\" data-id=\"New York\">
+    <a href=\"/offre/search?\" class=\"link-reset\" data-hook=\"discovery-card\" data-id=\"New York\">
     <div class=\"va-container va-container-v va-container-h\">
       <div class=\"va-middle text-center text-contrast\">
           <div class=\"h2 strong\">
@@ -106,6 +109,6 @@ class __TwigTemplate_0a743a3b0a1a3842b9625090419cc41eb617cb7caf5390943532d4ffcac
 
     public function getDebugInfo()
     {
-        return array (  80 => 28,  77 => 27,  68 => 20,  53 => 11,  45 => 5,  40 => 4,  37 => 3,  11 => 1,);
+        return array (  83 => 31,  80 => 30,  71 => 23,  56 => 14,  49 => 10,  45 => 8,  40 => 7,  37 => 6,  11 => 4,);
     }
 }
