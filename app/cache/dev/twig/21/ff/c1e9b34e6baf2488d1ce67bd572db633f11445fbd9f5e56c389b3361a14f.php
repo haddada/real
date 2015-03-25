@@ -36,7 +36,10 @@ class __TwigTemplate_21ffc1e9b34e6baf2488d1ce67bd572db633f11445fbd9f5e56c389b336
            itemscope itemtype=\"http://schema.org/Enumeration\">
       
         <div class=\"panel-image listing-img\">
-          <a href=\"/rooms/4540756?guests=2&amp;s=eNQN\" target=\"listing_4540756\" class=\"media-photo media-cover\">
+          <a href=\"/offre/";
+            // line 16
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
+            echo "/show\" class=\"media-photo media-cover\">
             <div class=\"listing-img-container media-cover text-center\">
                                                                   
                                                           
@@ -148,6 +151,6 @@ class __TwigTemplate_21ffc1e9b34e6baf2488d1ce67bd572db633f11445fbd9f5e56c389b336
 
     public function getDebugInfo()
     {
-        return array (  134 => 83,  116 => 71,  109 => 67,  105 => 66,  77 => 41,  73 => 40,  58 => 28,  45 => 20,  26 => 3,  22 => 2,  19 => 1,);
+        return array (  137 => 83,  119 => 71,  112 => 67,  108 => 66,  80 => 41,  76 => 40,  61 => 28,  48 => 20,  41 => 16,  26 => 3,  22 => 2,  19 => 1,);
     }
 }

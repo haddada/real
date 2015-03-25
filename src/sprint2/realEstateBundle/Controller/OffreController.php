@@ -283,7 +283,7 @@ class OffreController extends Controller
 
         if($request->isXmlHttpRequest()){
 
-                if($roomType!=-1)
+                if($roomType!=-1&&$roomType!==null)
                     $entitie_room=$em->getRepository('realEstateBundle:Offre')->findBy(array('typeimmob'=>$roomType));
                 else
                      $entitie_room = $em->getRepository('realEstateBundle:Offre')->findAll();
@@ -332,7 +332,16 @@ class OffreController extends Controller
 
     public function intersection($arr1,$arr2){
 
+        if(count($arr1)==0){
+            return $arr2;
+        }
+
+        if(count($arr2)==0){
+            return $arr1;
+        }
+
         $result=array();
+        
         foreach($arr1 as $ob)
             foreach($arr2 as $obj){
                 if ($obj->getId()==$ob->getId())
