@@ -220,7 +220,7 @@ class __TwigTemplate_a051fc3d4439da47472e52d211f42fc89d902ab2232c75f613399826677
           
             </div>
     
-          </div><!--/.direct-chat -->                                                                       -->
+          </div><!--/.direct-chat -->
           </div><!-- /.row -->
         </section><!-- /.content -->
       
@@ -267,7 +267,7 @@ class __TwigTemplate_a051fc3d4439da47472e52d211f42fc89d902ab2232c75f613399826677
     <!-- page script --> 
     <script type=\"text/javascript\">
       \$(function () {
-        \$(\"#example1\").dataTable();
+        \$('#mytab').dataTable();
       });
     </script>
     <script type=\"text/javascript\">

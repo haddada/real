@@ -11,7 +11,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 class AjouCForm extends AbstractType {
     //put your code here
     public function buildForm(FormBuilderInterface $builder,array $options){
-        $builder->add('mail')->add('nom')->add('prenom')->add('password')->add('statusMatrimonial')->add('Ajouter' , 'submit');
+        $builder->add('mail')->add('nom')->add('prenom')->add('password')->add('image', 'file')->add('statusMatrimonial')->add('Ajouter' , 'submit');
         
     }
     public function getName() {

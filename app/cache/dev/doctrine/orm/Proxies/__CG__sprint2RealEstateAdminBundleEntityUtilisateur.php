@@ -64,10 +64,10 @@ class Utilisateur extends \sprint2\RealEstate\AdminBundle\Entity\Utilisateur imp
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'id', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'mail', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'password', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'nom', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'prenom', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'nummobile', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'numfix', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'statusMatrimonial', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'role', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'urlp');
+            return array('__isInitialized__', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'id', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'mail', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'password', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'nom', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'prenom', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'nummobile', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'numfix', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'statusMatrimonial', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'role', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'urlp', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'image');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'id', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'mail', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'password', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'nom', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'prenom', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'nummobile', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'numfix', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'statusMatrimonial', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'role', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'urlp');
+        return array('__isInitialized__', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'id', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'mail', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'password', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'nom', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'prenom', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'nummobile', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'numfix', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'statusMatrimonial', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'role', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'urlp', '' . "\0" . 'sprint2\\RealEstate\\AdminBundle\\Entity\\Utilisateur' . "\0" . 'image');
     }
 
     /**
@@ -384,6 +384,28 @@ class Utilisateur extends \sprint2\RealEstate\AdminBundle\Entity\Utilisateur imp
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUrlp', array());
 
         return parent::getUrlp();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImage()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImage', array());
+
+        return parent::getImage();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setImage($image)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImage', array($image));
+
+        return parent::setImage($image);
     }
 
 }

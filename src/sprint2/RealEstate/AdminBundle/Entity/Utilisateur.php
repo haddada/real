@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Utilisateur
+ * @ORM\HasLifecycleCallbacks
  */
 class Utilisateur
 {
@@ -16,10 +17,12 @@ class Utilisateur
 
     /**
      * @Assert\Email(
-     *     message = "The email '{{ value }}' is not a valid email.",
+     *     message = "le mail '{{ value }}' n'est pas une mail valide.",
      *     checkMX = true
      * )
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(
+     *     message = "remplire le chant",
+     *     )
      * @var string
      */
     private $mail;
@@ -72,6 +75,11 @@ class Utilisateur
      * @var string
      */
     private $urlp;
+    
+    /**
+     * @Assert\File(maxSize="6000000")
+     */
+    private $image;
 
 
     /**
@@ -290,4 +298,14 @@ class Utilisateur
     {
         return $this->urlp;
     }
+    public function getImage() {
+        return $this->image;
+    }
+
+    public function setImage($image) {
+        $this->image = $image;
+    }
+
+
+   
 }

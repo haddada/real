@@ -148,7 +148,7 @@ class __TwigTemplate_f952cf7ea68e9911fa7c79b5351dc25d7f9e9dcd8f1516ae6244e2347a3
             echo "\" alt=\"Product Image\"/>
                       </div>
                       <div class=\"product-info\">
-                        <a href=\"javascript::;\" class=\"product-type\">";
+                        <a  class=\"product-type\">";
             // line 83
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "typeimmob", array()), "html", null, true);
             echo "</a><span class=\"label label-warning pull-right\">";
@@ -205,7 +205,7 @@ class __TwigTemplate_f952cf7ea68e9911fa7c79b5351dc25d7f9e9dcd8f1516ae6244e2347a3
             // line 110
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurc"], "urlp", array()), "html", null, true);
             echo "\" alt=\"User Image\"/>
-                      <a class=\"users-list-name\" href=\"#\">";
+                      <a class=\"users-list-name\" >";
             // line 111
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurc"], "prenom", array()), "html", null, true);
             echo " ";
@@ -248,12 +248,12 @@ class __TwigTemplate_f952cf7ea68e9911fa7c79b5351dc25d7f9e9dcd8f1516ae6244e2347a3
                         <img src=\"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSAJkvd0MYu8xLY4QJqfzM-1a2UbUvIyN0W3FxyS97C-D7uXaQA\" alt=\"Product Image\"/>
                       </div>
                       <div class=\"product-info\">
-                        <a href=\"javascript::;\" class=\"product-type\">";
+                        <a  class=\"product-type\">";
             // line 139
             echo twig_escape_filter($this->env, $this->getAttribute($context["agance"], "nom", array()), "html", null, true);
             echo "</a>
                         <span class=\"product-description\">
-                          Gerait par <a href=\"javascript::;\" class=\"product-type\">";
+                          Gerait par <a  class=\"product-type\">";
             // line 141
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idGerant", array()), "nom", array()), "html", null, true);
             echo " ";
@@ -301,7 +301,7 @@ class __TwigTemplate_f952cf7ea68e9911fa7c79b5351dc25d7f9e9dcd8f1516ae6244e2347a3
             // line 166
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurg"], "urlp", array()), "html", null, true);
             echo "\" alt=\"User Image\"/>
-                      <a class=\"users-list-name\" href=\"#\">";
+                      <a class=\"users-list-name\" >";
             // line 167
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurg"], "prenom", array()), "html", null, true);
             echo " ";

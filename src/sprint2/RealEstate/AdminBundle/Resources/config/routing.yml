@@ -46,3 +46,7 @@ AcmeHomeBundle_ajax_update_mydata:
 AcmeHomeBundle_ajax_update_mydatab:
   pattern:  /ajaxx
   defaults: { _controller: sprint2RealEstateAdminBundle:Ajax:index }
+  
+file_file_homepage:
+    pattern:  /upload
+    defaults: { _controller: sprint2RealEstateAdminBundle:Default:upload }

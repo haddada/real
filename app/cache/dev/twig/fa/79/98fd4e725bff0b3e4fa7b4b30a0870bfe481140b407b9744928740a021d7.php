@@ -67,57 +67,60 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
                         <th>Ville</th>
                         <th>Code postal</th>
                         <th>Description</th>
+                        <th>+/-</th>
                       </tr>
                     </thead>
                     <tbody>
                       
                       
                       ";
-        // line 34
+        // line 35
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($context["agance"]);
         foreach ($context['_seq'] as $context["_key"] => $context["agance"]) {
-            // line 35
-            echo "                            <tr>
-                                <td><a href = \"";
             // line 36
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sprint2_real_estate_admin_agence_supp", array("id" => $this->getAttribute($context["agance"], "id", array()))), "html", null, true);
-            echo "\"><button class=\"btn btn-default btn-sm\"><i class=\"fa fa-trash-o\"></i></button></a>";
+            echo "                            <tr>
+                                <td>";
+            // line 37
             echo twig_escape_filter($this->env, $this->getAttribute($context["agance"], "id", array()), "html", null, true);
             echo "</td>
                               <td>";
-            // line 37
+            // line 38
             echo twig_escape_filter($this->env, $this->getAttribute($context["agance"], "nom", array()), "html", null, true);
             echo "</td>
                               <td>";
-            // line 38
+            // line 39
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idGerant", array()), "nom", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idGerant", array()), "prenom", array()), "html", null, true);
             echo "</td>
                               <td>";
-            // line 39
+            // line 40
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idAdresse", array()), "gouvernorat", array()), "html", null, true);
             echo "</td>
                               <td>";
-            // line 40
+            // line 41
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idAdresse", array()), "ville", array()), "html", null, true);
             echo "</td>
                               <td>";
-            // line 41
+            // line 42
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idAdresse", array()), "codepostal", array()), "html", null, true);
             echo "</td>
                               <td> <textarea>";
-            // line 42
+            // line 43
             echo twig_escape_filter($this->env, $this->getAttribute($context["agance"], "description", array()), "html", null, true);
             echo "</textarea></td>
+                              <td><a href = \"";
+            // line 44
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sprint2_real_estate_admin_agence_supp", array("id" => $this->getAttribute($context["agance"], "id", array()))), "html", null, true);
+            echo "\"><button class=\"btn btn-default btn-sm\"><i class=\"fa fa-trash-o\"></i></button></a></td>
                             </tr>
                         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['agance'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
+        // line 47
         echo "                    </tbody>
                     <tfoot>
                       <tr>
@@ -163,11 +166,11 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
                             <td><input type=\"text\" name=\"nom\"/></td>
                             <td><select name=\"agant\">
                             ";
-        // line 89
+        // line 91
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($context["utilisateur"]);
         foreach ($context['_seq'] as $context["_key"] => $context["utilisateur"]) {
-            // line 90
+            // line 92
             echo "                            <option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateur"], "id", array()), "html", null, true);
             echo "\">";
@@ -180,17 +183,17 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['utilisateur'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 91
+        // line 93
         echo "                           
                             </select></td>
 
                             <td><select name=\"adresse\">
                             ";
-        // line 95
+        // line 97
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($context["adresse"]);
         foreach ($context['_seq'] as $context["_key"] => $context["adresse"]) {
-            // line 96
+            // line 98
             echo "                            <option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["adresse"], "id", array()), "html", null, true);
             echo "\">";
@@ -205,7 +208,7 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['adresse'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 97
+        // line 99
         echo "                           
                             </select></td>   
                             <td> <textarea name=\"description\"></textarea></td>
@@ -229,41 +232,41 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
         
        <!-- jQuery 2.1.3 -->
     <script src=\"";
-        // line 119
+        // line 121
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/jQuery/jQuery-2.1.3.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src=\"";
-        // line 121
+        // line 123
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- DATA TABES SCRIPT -->
     <script src=\"";
-        // line 123
+        // line 125
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin//plugins/datatables/jquery.dataTables.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 124
+        // line 126
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/datatables/dataTables.bootstrap.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- SlimScroll -->
     <script src=\"";
-        // line 126
+        // line 128
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/slimScroll/jquery.slimscroll.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- FastClick -->
     <script src=\"";
-        // line 128
+        // line 130
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/fastclick/fastclick.min.js"), "html", null, true);
         echo "\"></script>
     <!-- AdminLTE App -->
     <script src=\"";
-        // line 130
+        // line 132
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin//js/app.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- AdminLTE for demo purposes -->
     <script src=\"";
-        // line 132
+        // line 134
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin//js/demo.js\" type=\"text/javascript"), "html", null, true);
         echo "\"></script>
     <!-- page script --> 
@@ -287,6 +290,6 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
 
     public function getDebugInfo()
     {
-        return array (  267 => 132,  262 => 130,  257 => 128,  252 => 126,  247 => 124,  243 => 123,  238 => 121,  233 => 119,  209 => 97,  194 => 96,  190 => 95,  184 => 91,  171 => 90,  167 => 89,  121 => 45,  112 => 42,  108 => 41,  104 => 40,  100 => 39,  94 => 38,  90 => 37,  84 => 36,  81 => 35,  77 => 34,  48 => 7,  45 => 6,  40 => 3,  37 => 2,  11 => 1,);
+        return array (  270 => 134,  265 => 132,  260 => 130,  255 => 128,  250 => 126,  246 => 125,  241 => 123,  236 => 121,  212 => 99,  197 => 98,  193 => 97,  187 => 93,  174 => 92,  170 => 91,  124 => 47,  115 => 44,  111 => 43,  107 => 42,  103 => 41,  99 => 40,  93 => 39,  89 => 38,  85 => 37,  82 => 36,  78 => 35,  48 => 7,  45 => 6,  40 => 3,  37 => 2,  11 => 1,);
     }
 }

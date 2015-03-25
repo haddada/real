@@ -3,9 +3,9 @@
 namespace sprint2\RealEstate\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use sprint2\RealEstate\AdminBundle\Entity\Utilisateur;
-use sprint2\RealEstate\AdminBundle\Entity\Offre;
-use sprint2\RealEstate\AdminBundle\form\AjouCForm;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use sprint2\RealEstate\AdminBundle\Models\Document;
+
 class DefaultController extends Controller
 {
     public function indexAction()
@@ -88,11 +88,14 @@ class DefaultController extends Controller
         $form->handleRequest($Request);//laison entre formulaire  et lentity en question et recuperer les données du requet
         if($form->isValid())
         {
+            
+            $cvbnnnn = $this->upload($utilisateurf->getImage());
             $utilisateurf->setPassword(md5($utilisateurf->getPassword()));
             $utilisateurf->setNumfix("default");
             $utilisateurf->setNummobile("default");
             $utilisateurf->setRole("2");
-            $utilisateurf->setUrlp("http://localhost/image/null.png");
+            $utilisateurf->setUrlp($cvbnnnn);
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($utilisateurf);
             $em->flush();
@@ -148,9 +151,10 @@ class DefaultController extends Controller
         $form->handleRequest($Request);//laison entre formulaire  et lentity en question et recuperer les données du requet
         if($form->isValid())
         {
+            $cvbnnnn = $this->upload($utilisateurf->getImage());
             $utilisateurf->setPassword(md5($utilisateurf->getPassword()));
             $utilisateurf->setRole("1");
-            $utilisateurf->setUrlp("http://localhost/image/null.png");
+            $utilisateurf->setUrlp($cvbnnnn);
             $em = $this->getDoctrine()->getManager();
             $em->persist($utilisateurf);
             $em->flush();
@@ -234,5 +238,46 @@ class DefaultController extends Controller
         $em->flush();
         return $this->redirectToRoute("sprint2_real_estate_admin_agence");
     }
+    public function upload($image) {
+  
+            $status = 'success';
+            $uploadedURL='';
+            $message="";
+            if (($image instanceof UploadedFile) && ($image->getError() == '0')) {
+                if (($image->getSize() < 2000000000)) {
+                    $originalName = $image->getClientOriginalName();
+                    $name_array = explode('.', $originalName);
+                    $file_type = $name_array[sizeof($name_array) - 1];
+                    $valid_filetypes = array('jpg', 'jpeg', 'bmp', 'png');
+                    if (in_array(strtolower($file_type), $valid_filetypes)) {
+                    
+                      //Start Uploading File
+                      $name =$this->str_random();
+                      $document = new Document();
+                      $document->setFile($image, $file_type, $name);
+                      $document->setSubDirectory('image');
+                      $document->processFile();
+                      return "http://localhost/image/".$name.".".$file_type;
+
+                    }
+                    else {                      
+                      return "http://localhost/image/null".".png";                       
+                    }
+                }
+                 else {}
+            }  else {
+                
+            }
+            
+        }  
     
+
+   function str_random($length = 16)
+   {
+       $pool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+       return substr(str_shuffle(str_repeat($pool, $length)), 0, $length);
+   }
+
 }
+

@@ -481,6 +481,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            // file_file_homepage
+            if ($pathinfo === '/Admin/upload') {
+                return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::uploadAction',  '_route' => 'file_file_homepage',);
+            }
+
         }
 
         // homepage
