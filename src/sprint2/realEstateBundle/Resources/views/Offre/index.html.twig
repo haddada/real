@@ -480,10 +480,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              data-max-price-daily="1000"
              >
 
-          <div class="ui-slider-handle">
+          <div class="">
             <i class="icon icon-reorder icon-light-gray icon-handle-draggable"></i>
           </div>
-          <div class="ui-slider-handle">
+          <div class="">
             <i class="icon icon-reorder icon-light-gray icon-handle-draggable"></i>
           </div>
 
@@ -498,6 +498,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
+
+<form class="formPrice">
+  <input type="text" value="100000" name="maxprice" class="maxprice hide"></input>
+  <input type="text" value="0"  name="minprice" class="minprice hide"></input>
+</form>
 
   <div class="filters-section size-group panel-body panel-light">
     <div class="row">
@@ -847,17 +852,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <script>
             $(document).ready(function(){
               
-
+                  var str = "";
+                 var strP="";
           $(".filtre-select").change(function(){ 
-                 var str = "";
+                 if(str=="")
                  str =$( ".form-select" ).serialize() ;
-                 console.log(str);
+                 else
+                  str=str+"&"+$( ".form-select" ).serialize() ;
                                 
                     $.get("{{path('offre_search_ajax')}}?"+str+"&ss_id=b66045u7",function( data ) {
                           $( ".search-results" ).html( data );           
                          })
                          
-                        });
+          });
                         
           $(".filter-button").click(function(){
             str =$( ".form-select" ).serialize() ;
@@ -867,9 +874,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                           $( ".search-results" ).html( data );           
                          })
                          
+          })
+
+          
+          $(".ui-slider").click(function(){
+               pricemax=$(".max-price .price").html();
+               pricemin=$(".min-price .price").html();
+             $("input.maxprice").val(pricemax);
+             $("input.minprice").val(pricemin);
+               if(str=="")
+                 str=$(".formPrice :input[value!='']").serialize() ;
+               else
+                str=str+"&"+$(".formPrice :input[value!='']" ).serialize() ;
+
+              $.get("{{path('offre_search_ajax')}}?"+str+"&ss_id=b66045u7",function( data ) {
+                          $( ".search-results" ).html( data );           
+                         })
+                         
                         })
+
+         
           });
              
+
+
+    
+
+
 
 
       </script>
@@ -889,7 +920,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>
  
   </script>
-
+  <div class="modal" aria-hidden="true"><div class="modal-table"><div class="modal-cell"></div></div></div>
   </body>
 </html>
 <!-- ver. 4b463595021ae9d56d957c4f3680cf2a584ba4a1 -->

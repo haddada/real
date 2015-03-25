@@ -507,10 +507,10 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
              data-max-price-daily=\"1000\"
              >
 
-          <div class=\"ui-slider-handle\">
+          <div class=\"\">
             <i class=\"icon icon-reorder icon-light-gray icon-handle-draggable\"></i>
           </div>
-          <div class=\"ui-slider-handle\">
+          <div class=\"\">
             <i class=\"icon icon-reorder icon-light-gray icon-handle-draggable\"></i>
           </div>
 
@@ -526,6 +526,11 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
     </div>
   </div>
 
+<form class=\"formPrice\">
+  <input type=\"text\" value=\"100000\" name=\"maxprice\" class=\"maxprice hide\"></input>
+  <input type=\"text\" value=\"0\"  name=\"minprice\" class=\"minprice hide\"></input>
+</form>
+
   <div class=\"filters-section size-group panel-body panel-light\">
     <div class=\"row\">
       <div class=\"col-lg-2 col-md-12 text-center-sm text-center-md filter-label\">
@@ -533,9 +538,9 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
       </div>
 
       ";
-        // line 508
+        // line 513
         $this->displayBlock('formChambre', $context, $blocks);
-        // line 510
+        // line 515
         echo "      
     </div>
   </div>
@@ -547,9 +552,9 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         </div>
          
          ";
-        // line 520
+        // line 525
         $this->displayBlock('formEtat', $context, $blocks);
-        // line 522
+        // line 527
         echo "    </div>
   </div>
 
@@ -557,9 +562,9 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
        data-name=\"neighborhoods\">
    
        ";
-        // line 528
+        // line 533
         $this->displayBlock('filterQuartier', $context, $blocks);
-        // line 530
+        // line 535
         echo "
 
 
@@ -781,9 +786,9 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         
          
         ";
-        // line 750
+        // line 755
         $this->env->loadTemplate("realEstateBundle:Offre:offreCards.html.twig")->display(array_merge($context, array("entites" => (isset($context["entities"]) ? $context["entities"] : null))));
-        // line 751
+        // line 756
         echo "    
 
         </div>
@@ -883,35 +888,64 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
       <script>
             \$(document).ready(function(){
               
-
+                  var str = \"\";
+                 var strP=\"\";
           \$(\".filtre-select\").change(function(){ 
-                 var str = \"\";
+                 if(str==\"\")
                  str =\$( \".form-select\" ).serialize() ;
-                 console.log(str);
+                 else
+                  str=str+\"&\"+\$( \".form-select\" ).serialize() ;
                                 
                     \$.get(\"";
-        // line 856
+        // line 863
         echo $this->env->getExtension('routing')->getPath("offre_search_ajax");
         echo "?\"+str+\"&ss_id=b66045u7\",function( data ) {
                           \$( \".search-results\" ).html( data );           
                          })
                          
-                        });
+          });
                         
           \$(\".filter-button\").click(function(){
             str =\$( \".form-select\" ).serialize() ;
                  console.log(str);
                                 
                     \$.get(\"";
-        // line 866
+        // line 873
+        echo $this->env->getExtension('routing')->getPath("offre_search_ajax");
+        echo "?\"+str+\"&ss_id=b66045u7\",function( data ) {
+                          \$( \".search-results\" ).html( data );           
+                         })
+                         
+          })
+
+          
+          \$(\".ui-slider\").click(function(){
+               pricemax=\$(\".max-price .price\").html();
+               pricemin=\$(\".min-price .price\").html();
+             \$(\"input.maxprice\").val(pricemax);
+             \$(\"input.minprice\").val(pricemin);
+               if(str==\"\")
+                 str=\$(\".formPrice :input[value!='']\").serialize() ;
+               else
+                str=str+\"&\"+\$(\".formPrice :input[value!='']\" ).serialize() ;
+
+              \$.get(\"";
+        // line 890
         echo $this->env->getExtension('routing')->getPath("offre_search_ajax");
         echo "?\"+str+\"&ss_id=b66045u7\",function( data ) {
                           \$( \".search-results\" ).html( data );           
                          })
                          
                         })
+
+         
           });
              
+
+
+    
+
+
 
 
       </script>
@@ -931,7 +965,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
   <script>
  
   </script>
-
+  <div class=\"modal\" aria-hidden=\"true\"><div class=\"modal-table\"><div class=\"modal-cell\"></div></div></div>
   </body>
 </html>
 <!-- ver. 4b463595021ae9d56d957c4f3680cf2a584ba4a1 -->
@@ -952,24 +986,24 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         echo "      ";
     }
 
-    // line 508
+    // line 513
     public function block_formChambre($context, array $blocks = array())
     {
-        // line 509
+        // line 514
         echo "      ";
     }
 
-    // line 520
+    // line 525
     public function block_formEtat($context, array $blocks = array())
     {
-        // line 521
+        // line 526
         echo "         ";
     }
 
-    // line 528
+    // line 533
     public function block_filterQuartier($context, array $blocks = array())
     {
-        // line 529
+        // line 534
         echo "       ";
     }
 
@@ -985,6 +1019,6 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
 
     public function getDebugInfo()
     {
-        return array (  973 => 529,  970 => 528,  966 => 521,  963 => 520,  959 => 509,  956 => 508,  952 => 466,  949 => 465,  945 => 172,  942 => 171,  907 => 866,  894 => 856,  787 => 751,  785 => 750,  563 => 530,  561 => 528,  553 => 522,  551 => 520,  539 => 510,  537 => 508,  494 => 467,  492 => 465,  198 => 173,  196 => 171,  24 => 1,);
+        return array (  1007 => 534,  1004 => 533,  1000 => 526,  997 => 525,  993 => 514,  990 => 513,  986 => 466,  983 => 465,  979 => 172,  976 => 171,  934 => 890,  914 => 873,  901 => 863,  792 => 756,  790 => 755,  568 => 535,  566 => 533,  558 => 527,  556 => 525,  544 => 515,  542 => 513,  494 => 467,  492 => 465,  198 => 173,  196 => 171,  24 => 1,);
     }
 }

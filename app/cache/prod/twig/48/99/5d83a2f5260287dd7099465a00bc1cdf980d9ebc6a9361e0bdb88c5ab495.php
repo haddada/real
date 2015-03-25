@@ -46,28 +46,25 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
           <div class=\"col-md-4 col-sm-12 row-space-1\">
             <div class=\"select select-block\">
               <select name=\"room_types\" class=\"filtre-select\">
-                <option value=\"-1\">type immobilier</option>
+                  <option value=\"-1\">type immobilier</option>
                   <option value=\"Appartement\">Appartement</option>
                   <option value=\"Villa\">Villa</option>
                   <option value=\"Studio\">Studio</option>
                   <option value=\"Maison\">Maison</option>
-                  <option value=\"Entrepot\">Entrepot</option>
-                  
+                  <option value=\"Entrepot\">Entrepot</option>              
               </select>
             </div>
-          </div>
-
-          
-          
+          </div> 
         </div>
       </form>
+      
 ";
     }
 
-    // line 37
+    // line 34
     public function block_filterQuartier($context, array $blocks = array())
     {
-        // line 38
+        // line 35
         echo "
     <div class=\"row\">
             <div class=\"col-lg-2 col-md-12 filter-label\">
@@ -80,15 +77,15 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
 
           <div class=\"col-md-4\">
             <label class=\"media checkbox text-truncate\" title=\"";
-        // line 49
+        // line 46
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["villes"]) ? $context["villes"] : null), 0, array(), "array"), "ville", array()), "html", null, true);
         echo "\">
               <input type=\"checkbox\" name=\"neighborhood\" value=\"";
-        // line 50
+        // line 47
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["villes"]) ? $context["villes"] : null), 0, array(), "array"), "ville", array()), "html", null, true);
         echo "\" class=\"pull-left\">
               ";
-        // line 51
+        // line 48
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["villes"]) ? $context["villes"] : null), 0, array(), "array"), "ville", array()), "html", null, true);
         echo "
             </label>
@@ -96,15 +93,15 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
 
           <div class=\"col-md-4\">
             <label class=\"media checkbox text-truncate\" title=\"";
-        // line 56
+        // line 53
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["villes"]) ? $context["villes"] : null), 1, array(), "array"), "ville", array()), "html", null, true);
         echo "\">
               <input type=\"checkbox\" name=\"neighborhood\" value=\"";
-        // line 57
+        // line 54
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["villes"]) ? $context["villes"] : null), 1, array(), "array"), "ville", array()), "html", null, true);
         echo "\" class=\"pull-left\">
               ";
-        // line 58
+        // line 55
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["villes"]) ? $context["villes"] : null), 1, array(), "array"), "ville", array()), "html", null, true);
         echo "
             </label>
@@ -112,15 +109,15 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
 
           <div class=\"col-md-4\">
             <label class=\"media checkbox text-truncate\" title=\"";
-        // line 63
+        // line 60
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["villes"]) ? $context["villes"] : null), 2, array(), "array"), "ville", array()), "html", null, true);
         echo "\">
               <input type=\"checkbox\" name=\"neighborhood\" value=\"";
-        // line 64
+        // line 61
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["villes"]) ? $context["villes"] : null), 2, array(), "array"), "ville", array()), "html", null, true);
         echo "\" class=\"pull-left\">
               ";
-        // line 65
+        // line 62
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["villes"]) ? $context["villes"] : null), 2, array(), "array"), "ville", array()), "html", null, true);
         echo "
             </label>
@@ -132,23 +129,23 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
           <div class=\"row row-condensed filters-columns\">
 
           ";
-        // line 74
+        // line 71
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["villes"]) ? $context["villes"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["ville"]) {
-            // line 75
+            // line 72
             echo "
             <div class=\"col-md-4\">
               <label class=\"media checkbox text-truncate\" title=\"";
-            // line 77
+            // line 74
             echo twig_escape_filter($this->env, $this->getAttribute($context["ville"], "ville", array()), "html", null, true);
             echo "\">
                 <input type=\"checkbox\" name=\"neighborhood\" value=\"";
-            // line 78
+            // line 75
             echo twig_escape_filter($this->env, $this->getAttribute($context["ville"], "ville", array()), "html", null, true);
             echo "\" class=\"pull-left\">
                 ";
-            // line 79
+            // line 76
             echo twig_escape_filter($this->env, $this->getAttribute($context["ville"], "ville", array()), "html", null, true);
             echo "
               </label>
@@ -159,17 +156,17 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ville'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 84
+        // line 81
         echo "          </div>
           </div>
     </div>
   ";
     }
 
-    // line 91
+    // line 88
     public function block_formSearch($context, array $blocks = array())
     {
-        // line 92
+        // line 89
         echo "    <style>
     .airbnb-header .search-form1 .search-bar {
   position: relative;
@@ -202,7 +199,7 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
                autocomplete=\"off\"
                name=\"gouvernorat\"
                value=\"";
-        // line 123
+        // line 120
         echo twig_escape_filter($this->env, (isset($context["gouvernorat"]) ? $context["gouvernorat"] : null), "html", null, true);
         echo "\"
                class=\"location\" 
@@ -224,10 +221,10 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
   ";
     }
 
-    // line 142
+    // line 139
     public function block_formChambre($context, array $blocks = array())
     {
-        // line 143
+        // line 140
         echo "  <form class=\"col-lg-9 \">
         <div class=\"row row-condensed\">
           <div class=\"col-md-4 col-sm-12 row-space-1\">
@@ -255,10 +252,10 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
       ";
     }
 
-    // line 169
+    // line 166
     public function block_formEtat($context, array $blocks = array())
     {
-        // line 170
+        // line 167
         echo "      <form class=\"col-lg-9 form-select\" >
         <div class=\"row row-condensed\">
           <div class=\"col-md-4 col-sm-12 row-space-1\">
@@ -292,6 +289,6 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
 
     public function getDebugInfo()
     {
-        return array (  262 => 170,  259 => 169,  231 => 143,  228 => 142,  206 => 123,  173 => 92,  170 => 91,  163 => 84,  152 => 79,  148 => 78,  144 => 77,  140 => 75,  136 => 74,  124 => 65,  120 => 64,  116 => 63,  108 => 58,  104 => 57,  100 => 56,  92 => 51,  88 => 50,  84 => 49,  71 => 38,  68 => 37,  43 => 5,  40 => 4,  11 => 2,);
+        return array (  259 => 167,  256 => 166,  228 => 140,  225 => 139,  203 => 120,  170 => 89,  167 => 88,  160 => 81,  149 => 76,  145 => 75,  141 => 74,  137 => 72,  133 => 71,  121 => 62,  117 => 61,  113 => 60,  105 => 55,  101 => 54,  97 => 53,  89 => 48,  85 => 47,  81 => 46,  68 => 35,  65 => 34,  43 => 5,  40 => 4,  11 => 2,);
     }
 }
