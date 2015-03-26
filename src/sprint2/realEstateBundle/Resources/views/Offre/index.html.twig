@@ -852,14 +852,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <script>
             $(document).ready(function(){
               
-                  var str = "";
+                 var str = "";
                  var strP="";
           $(".filtre-select").change(function(){ 
-                 if(str=="")
-                 str =$( ".form-select" ).serialize() ;
-                 else
-                  str=str+"&"+$( ".form-select" ).serialize() ;
-                                
+                 
+                   str =$( ".form-select" ).serialize() ;
+                if(strP!="")
+                    str=str+"&"+strP;
+
+                             console.log(str);  
                     $.get("{{path('offre_search_ajax')}}?"+str+"&ss_id=b66045u7",function( data ) {
                           $( ".search-results" ).html( data );           
                          })
@@ -867,9 +868,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           });
                         
           $(".filter-button").click(function(){
-            str =$( ".form-select" ).serialize() ;
-                 console.log(str);
-                                
+                 str =$( ".form-select" ).serialize() ;  
+                 if(strP!="")
+                    str=str+"&"+strP;
+                 console.log(str);                        
                     $.get("{{path('offre_search_ajax')}}?"+str+"&ss_id=b66045u7",function( data ) {
                           $( ".search-results" ).html( data );           
                          })
@@ -882,12 +884,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                pricemin=$(".min-price .price").html();
              $("input.maxprice").val(pricemax);
              $("input.minprice").val(pricemin);
-               if(str=="")
-                 str=$(".formPrice :input[value!='']").serialize() ;
-               else
-                str=str+"&"+$(".formPrice :input[value!='']" ).serialize() ;
-
-              $.get("{{path('offre_search_ajax')}}?"+str+"&ss_id=b66045u7",function( data ) {
+              
+                 strP=$(".formPrice :input[value!='']").serialize() ;
+                 console.log(str+"&"+strP);
+              $.get("{{path('offre_search_ajax')}}?"+str+"&"+strP+"&ss_id=b66045u7",function( data ) {
                           $( ".search-results" ).html( data );           
                          })
                          

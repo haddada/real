@@ -888,16 +888,17 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
       <script>
             \$(document).ready(function(){
               
-                  var str = \"\";
+                 var str = \"\";
                  var strP=\"\";
           \$(\".filtre-select\").change(function(){ 
-                 if(str==\"\")
-                 str =\$( \".form-select\" ).serialize() ;
-                 else
-                  str=str+\"&\"+\$( \".form-select\" ).serialize() ;
-                                
+                 
+                   str =\$( \".form-select\" ).serialize() ;
+                if(strP!=\"\")
+                    str=str+\"&\"+strP;
+
+                             console.log(str);  
                     \$.get(\"";
-        // line 863
+        // line 864
         echo $this->env->getExtension('routing')->getPath("offre_search_ajax");
         echo "?\"+str+\"&ss_id=b66045u7\",function( data ) {
                           \$( \".search-results\" ).html( data );           
@@ -906,11 +907,12 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
           });
                         
           \$(\".filter-button\").click(function(){
-            str =\$( \".form-select\" ).serialize() ;
-                 console.log(str);
-                                
+                 str =\$( \".form-select\" ).serialize() ;  
+                 if(strP!=\"\")
+                    str=str+\"&\"+strP;
+                 console.log(str);                        
                     \$.get(\"";
-        // line 873
+        // line 875
         echo $this->env->getExtension('routing')->getPath("offre_search_ajax");
         echo "?\"+str+\"&ss_id=b66045u7\",function( data ) {
                           \$( \".search-results\" ).html( data );           
@@ -924,15 +926,13 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
                pricemin=\$(\".min-price .price\").html();
              \$(\"input.maxprice\").val(pricemax);
              \$(\"input.minprice\").val(pricemin);
-               if(str==\"\")
-                 str=\$(\".formPrice :input[value!='']\").serialize() ;
-               else
-                str=str+\"&\"+\$(\".formPrice :input[value!='']\" ).serialize() ;
-
+              
+                 strP=\$(\".formPrice :input[value!='']\").serialize() ;
+                 console.log(str+\"&\"+strP);
               \$.get(\"";
         // line 890
         echo $this->env->getExtension('routing')->getPath("offre_search_ajax");
-        echo "?\"+str+\"&ss_id=b66045u7\",function( data ) {
+        echo "?\"+str+\"&\"+strP+\"&ss_id=b66045u7\",function( data ) {
                           \$( \".search-results\" ).html( data );           
                          })
                          
@@ -1019,6 +1019,6 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
 
     public function getDebugInfo()
     {
-        return array (  1007 => 534,  1004 => 533,  1000 => 526,  997 => 525,  993 => 514,  990 => 513,  986 => 466,  983 => 465,  979 => 172,  976 => 171,  934 => 890,  914 => 873,  901 => 863,  792 => 756,  790 => 755,  568 => 535,  566 => 533,  558 => 527,  556 => 525,  544 => 515,  542 => 513,  494 => 467,  492 => 465,  198 => 173,  196 => 171,  24 => 1,);
+        return array (  1007 => 534,  1004 => 533,  1000 => 526,  997 => 525,  993 => 514,  990 => 513,  986 => 466,  983 => 465,  979 => 172,  976 => 171,  934 => 890,  916 => 875,  902 => 864,  792 => 756,  790 => 755,  568 => 535,  566 => 533,  558 => 527,  556 => 525,  544 => 515,  542 => 513,  494 => 467,  492 => 465,  198 => 173,  196 => 171,  24 => 1,);
     }
 }

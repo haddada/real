@@ -281,14 +281,14 @@ class OffreController extends Controller
             $min="0";
        }
 
-        if($request->isXmlHttpRequest()){
+         if($request->isXmlHttpRequest()){
 
                 if($roomType!=-1&&$roomType!==null)
                     $entitie_room=$em->getRepository('realEstateBundle:Offre')->findBy(array('typeimmob'=>$roomType));
                 else
                      $entitie_room = $em->getRepository('realEstateBundle:Offre')->findAll();
                
-                if($etat!=-1)
+                if($etat!=-1&&$etat!==null)
                     $entitie_Etat=$em->getRepository('realEstateBundle:Offre')->findBy(array('etat'=>$etat));
                 else
                    $entitie_Etat=$em->getRepository('realEstateBundle:Offre')->findAll();
@@ -300,13 +300,13 @@ class OffreController extends Controller
                     $entities_RE=$this->intersection($entities_roomA,$entities_roomE);
                     $entities=$this->intersection($entities_price,$entities_RE);
 
-
+       
             return $this->container->get('templating')->renderResponse('realEstateBundle:Offre:offreCards.html.twig', array(
             'entities' => $entities
         ));
 
         }
-        return  new Response("<p>".$roomType."</p>");
+        return  new Response("<p>".count($entities_roomE)."</p>");
     }
 
 
@@ -332,14 +332,7 @@ class OffreController extends Controller
 
     public function intersection($arr1,$arr2){
 
-        if(count($arr1)==0){
-            return $arr2;
-        }
-
-        if(count($arr2)==0){
-            return $arr1;
-        }
-
+      
         $result=array();
         
         foreach($arr1 as $ob)
