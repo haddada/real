@@ -24,7 +24,7 @@ class DefaultController extends Controller
         ->findAll();
         //array_slice($utilisateur,-6)
         //count($utilisateur);
-
+        $Image = $this->get_gravatar("fathallahwael@windowslive.com");
         return $this->render('sprint2RealEstateAdminBundle:Default:index.html.twig',
                 array('utilisateurg'=>array_slice($utilisateur_last_6_gerants,-8), 
                     'utilisateurc'=>array_slice($utilisateur_last_6_client,-8), 
@@ -33,49 +33,77 @@ class DefaultController extends Controller
                     'utilisateurcn'=>count($utilisateur_last_6_client),
                     'offren'=>count($offre_last_6),
                     'agancen'=>count($Agance),
-                    'agance'=>array_slice($Agance,-5)));
+                    'agance'=>array_slice($Agance,-5),
+                    'image'=>$Image));
     }
     
     public function mailAction()
     {
-        return $this->render('sprint2RealEstateAdminBundle:Pages:mail.html.twig');
-
+        $Image = $this->get_gravatar("fathallahwael@windowslive.com");
+        return $this->render('sprint2RealEstateAdminBundle:Pages:mail.html.twig',
+        	array('image'=>$Image));
     }
     public function sentAction()
     {
-        return $this->render('sprint2RealEstateAdminBundle:Pages:sentmail.html.twig');
+        $Image = $this->get_gravatar("fathallahwael@windowslive.com");
+        return $this->render('sprint2RealEstateAdminBundle:Pages:sentmail.html.twig',
+        	array('image'=>$Image));
 
     }
 
     public function clientsAction()
     {
+        $Image = $this->get_gravatar("fathallahwael@windowslive.com");
         $request1 = $this->getRequest();
         if ($request1->getMethod()=="POST" ){ 
-            
-            $idx=$request1->get('id');
-            $mailx=$request1->get('mail');
-            $nomx=$request1->get('nom');
-            $prenomx=$request1->get('prenom');
-            $statmatrix=$request1->get('statmatri');
-//            $passx=$request->get('pass');          
-            $em1 = $this->getDoctrine()->getManager();
-            if($request1->get('id')== NULL){
-               $idx= "0";
-            }else{
-                $idx= $request1->get('id');
+            if($request1->get('Submit')=="Modifier"){
+                $idx=$request1->get('id');
+                $mailx=$request1->get('mail');
+                $nomx=$request1->get('nom');
+                $prenomx=$request1->get('prenom');
+                $statmatrix=$request1->get('statmatri');
+
+                $em1 = $this->getDoctrine()->getManager();
+                if($request1->get('id')== NULL){
+                   $idx= "0";
+                }else{
+                    $idx= $request1->get('id');
+                }
+                $utilisateurx = $em1->getRepository('sprint2RealEstateAdminBundle:Utilisateur')->find($idx);
+
+                $utilisateurx->setMail($mailx);
+                $utilisateurx->setNom($nomx);
+                $utilisateurx->setPrenom($prenomx);
+                $utilisateurx->setStatusMatrimonial($statmatrix);
+
+                $em2=$this->getDoctrine()->getManager();
+                $em2->persist($utilisateurx);
+                $em2->flush();     
+    //            return $this->render('sprint2RealEstateAdminBundle:Pages:agence.html.twig',
+    //                array('agance'=>$Agance, 'utilisateur'=>$utilisateur, 'adresse'=>$adresse ));
             }
-            $utilisateurx = $em1->getRepository('sprint2RealEstateAdminBundle:Utilisateur')->find($idx);
-                       
-            $utilisateurx->setMail($mailx);
-            $utilisateurx->setNom($nomx);
-            $utilisateurx->setPrenom($prenomx);
-            $utilisateurx->setStatusMatrimonial($statmatrix);
-//            $utilisateurx->setUrlp("http://localhost/image/null.png");
-            $em2=$this->getDoctrine()->getManager();
-            $em2->persist($utilisateurx);
-            $em2->flush();     
-//            return $this->render('sprint2RealEstateAdminBundle:Pages:agence.html.twig',
-//                array('agance'=>$Agance, 'utilisateur'=>$utilisateur, 'adresse'=>$adresse ));
+            elseif ($request1->get('Submit')=="Envoier") {
+                
+                $idxc=$request1->get('idxc');
+                $mailxc=$request1->get('mailxc');
+                $subxc=$request1->get('subxc');
+                $bodyxc=$request1->get('bodyxc');
+                
+                $emS = $this->getDoctrine()->getManager();
+                $destinataire = $emS->getRepository('sprint2RealEstateAdminBundle:Utilisateur')->find($idxc);
+                $expediteur = $emS->getRepository('sprint2RealEstateAdminBundle:Utilisateur')->find("0");
+                $mailx= new \sprint2\RealEstate\AdminBundle\Entity\Boitemessages();
+                $mailx->setIdDestinataire($destinataire);
+                $mailx->setVu("0");
+                $mailx->setContenu($bodyxc);
+                $mailx->setIdExpediteur($expediteur);  
+                $mailx->setTempsEnvoi(NULL);
+
+                $em=$this->getDoctrine()->getManager();
+                $em->persist($mailx);
+                $em->flush();     
+            
+        }
         }
         
         $utilisateur= $this->getDoctrine()
@@ -91,8 +119,8 @@ class DefaultController extends Controller
             
             $cvbnnnn = $this->upload($utilisateurf->getImage());
             $utilisateurf->setPassword(md5($utilisateurf->getPassword()));
-            $utilisateurf->setNumfix("default");
-            $utilisateurf->setNummobile("default");
+            $utilisateurf->setNumfix(NULL);
+            $utilisateurf->setNummobile(NULL);
             $utilisateurf->setRole("2");
             $utilisateurf->setUrlp($cvbnnnn);
             
@@ -103,11 +131,12 @@ class DefaultController extends Controller
         }
         
         return $this->render('sprint2RealEstateAdminBundle:Pages:client.html.twig',
-        	array('utilisateur'=>$utilisateur, 'form'=>$form->createView()));
+        	array('utilisateur'=>$utilisateur, 'form'=>$form->createView(), 'image'=>$Image));
     }
     
     public function gerantsAction()
     {
+        $Image = $this->get_gravatar("fathallahwael@windowslive.com");
         $request1 = $this->getRequest();
         if ($request1->getMethod()=="POST" ){ 
             
@@ -133,7 +162,7 @@ class DefaultController extends Controller
             $utilisateurx->setStatusMatrimonial($statmatrix);
             $utilisateurx->setNumfix($fixex); 
             $utilisateurx->setNummobile($mobilx); 
-//            $utilisateurx->setUrlp("http://localhost/image/null.png");
+
             $em2=$this->getDoctrine()->getManager();
             $em2->persist($utilisateurx);
             $em2->flush();     
@@ -162,23 +191,23 @@ class DefaultController extends Controller
         }
 
         return $this->render('sprint2RealEstateAdminBundle:Pages:gerants.html.twig',
-        	array('utilisateur'=>$utilisateur, 'form'=>$form->createView()));
+        	array('utilisateur'=>$utilisateur, 'form'=>$form->createView() , 'image'=>$Image));
     }
     
     public function offresAction()
     {
-      
+        $Image = $this->get_gravatar("fathallahwael@windowslive.com");
         $offre_list= $this->getDoctrine()
         ->getRepository('sprint2RealEstateAdminBundle:Offre')
         ->findAll();
 
         return $this->render('sprint2RealEstateAdminBundle:Pages:offres.html.twig',
-                array('offre'=>$offre_list));
+                array('offre'=>$offre_list, 'image'=>$Image));
     }
     
     public function agenceAction()
     {
-        
+        $Image = $this->get_gravatar("fathallahwael@windowslive.com");
         $request = $this->getRequest();
         if ($request->getMethod()=="POST"){  
             $nomx=$request->get('nom');
@@ -210,12 +239,13 @@ class DefaultController extends Controller
         ->findALl();
 
         return $this->render('sprint2RealEstateAdminBundle:Pages:agence.html.twig',
-                array('agance'=>$Agance, 'utilisateur'=>$utilisateur, 'adresse'=>$adresse));
+                array('agance'=>$Agance, 'utilisateur'=>$utilisateur, 'adresse'=>$adresse, 'image'=>$Image));
         
         
     }
     
     public function supprimerUCAction($id){
+        
         $em = $this->getDoctrine()->getManager();
         $utilisateur = $em->getRepository('sprint2RealEstateAdminBundle:Utilisateur')->find($id);
         $em->remove($utilisateur);
@@ -224,6 +254,7 @@ class DefaultController extends Controller
     }
     
     public function supprimerUGAction($id){
+        
         $em = $this->getDoctrine()->getManager();
         $utilisateur = $em->getRepository('sprint2RealEstateAdminBundle:Utilisateur')->find($id);
         $em->remove($utilisateur);
@@ -232,6 +263,7 @@ class DefaultController extends Controller
     }
     
     public function supprimerAAction($id){
+        
         $em = $this->getDoctrine()->getManager();
         $agence = $em->getRepository('sprint2RealEstateAdminBundle:Agence')->find($id);
         $em->remove($agence);
@@ -278,6 +310,19 @@ class DefaultController extends Controller
 
        return substr(str_shuffle(str_repeat($pool, $length)), 0, $length);
    }
+   
+   function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() ) {
+    $url = 'http://www.gravatar.com/avatar/';
+    $url .= md5( strtolower( trim( $email ) ) );
+    $url .= "?s=$s&d=$d&r=$r";
+        if ( $img ) {
+            $url = '<img src="' . $url . '"';
+            foreach ( $atts as $key => $val )
+                $url .= ' ' . $key . '="' . $val . '"';
+            $url .= ' />';
+        }
+    return $url;
+    }
 
 }
 

@@ -10,6 +10,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
         $this->parent = false;
 
         $this->blocks = array(
+            'Image' => array($this, 'block_Image'),
             'DashActive' => array($this, 'block_DashActive'),
             'MailboxActive' => array($this, 'block_MailboxActive'),
             'MailboxEtra' => array($this, 'block_MailboxEtra'),
@@ -88,6 +89,17 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
         <script src=\"https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js\"></script>
         <script src=\"https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js\"></script>
     <![endif]-->
+    <style>
+        ::-moz-selection { /* Code for Firefox */
+            color: #FFF;
+            background: #FF5A5F;
+        }
+
+        ::selection {
+            color: #FFF; 
+            background: #FF5A5F;
+        }
+    </style>
   </head>
   <body class=\"skin-black\">
     <div class=\"wrapper\">
@@ -95,7 +107,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
       <header class=\"main-header\">
         <!-- Logo -->
         <a href=\"\" class=\"logo\"><img src=\"";
-        // line 39
+        // line 50
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/img/logo.png"), "html", null, true);
         echo "\"/></a>
         <!-- Header Navbar: style can be found in header.less -->
@@ -122,7 +134,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
                         <a href=\"#\">
                           <div class=\"pull-left\">
                             <img src=\"";
-        // line 63
+        // line 74
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/img/user2-160x160.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\"/>
                           </div>
@@ -137,7 +149,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
                         <a href=\"#\">
                           <div class=\"pull-left\">
                             <img src=\"";
-        // line 75
+        // line 86
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/img/user3-128x128.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"user image\"/>
                           </div>
@@ -152,7 +164,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
                         <a href=\"#\">
                           <div class=\"pull-left\">
                             <img src=\"";
-        // line 87
+        // line 98
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/img/user4-128x128.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"user image\"/>
                           </div>
@@ -167,7 +179,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
                         <a href=\"#\">
                           <div class=\"pull-left\">
                             <img src=\"";
-        // line 99
+        // line 110
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/img/user3-128x128.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"user image\"/>
                           </div>
@@ -182,7 +194,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
                         <a href=\"#\">
                           <div class=\"pull-left\">
                             <img src=\"";
-        // line 111
+        // line 122
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/img/user4-128x128.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"user image\"/>
                           </div>
@@ -245,7 +257,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
               <li class=\"dropdown user user-menu\">
                 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
                   <img src=\"";
-        // line 171
+        // line 182
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/img/user2-160x160.jpg"), "html", null, true);
         echo "\" class=\"user-image\" alt=\"User Image\"/>
                   <span class=\"hidden-xs\">Alexander Pierce</span>
@@ -254,7 +266,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
                   <!-- User image -->
                   <li class=\"user-header\">
                     <img src=\"";
-        // line 177
+        // line 188
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/img/user2-160x160.jpg"), "html", null, true);
         echo "\" class=\"img-circle\" alt=\"User Image\" />
                     <p>
@@ -286,10 +298,10 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
           <!-- Sidebar user panel -->
           <div class=\"user-panel\">
             <div class=\"pull-left image\">
-              <img src=\"";
-        // line 207
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/img/user2-160x160.jpg"), "html", null, true);
-        echo "\" class=\"img-circle\" alt=\"User Image\" />
+                ";
+        // line 218
+        $this->displayBlock('Image', $context, $blocks);
+        echo "             
             </div>
             <div class=\"pull-left info\">
               <p>Alexander Pierce</p>
@@ -311,7 +323,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
           <ul class=\"sidebar-menu\">
             <li class=\"header\">MAIN NAVIGATION</li>
             <li ";
-        // line 228
+        // line 239
         $this->displayBlock('DashActive', $context, $blocks);
         echo ">
               <a href=\"./\">
@@ -319,23 +331,23 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
               </a> 
             </li>
             <li ";
-        // line 233
+        // line 244
         $this->displayBlock('MailboxActive', $context, $blocks);
         echo ">
               <a href=\"MailBox\">
                 <i class=\"fa fa-envelope\"></i> <span>Mailbox</span>
                 ";
-        // line 236
+        // line 247
         $this->displayBlock('MailboxEtra', $context, $blocks);
-        // line 237
+        // line 248
         echo "              </a>
               ";
-        // line 238
+        // line 249
         $this->displayBlock('MailboxEtra2', $context, $blocks);
-        // line 239
+        // line 250
         echo "            </li>
             <li ";
-        // line 240
+        // line 251
         $this->displayBlock('clientsActive', $context, $blocks);
         echo "> 
               <a href=\"Clients\">
@@ -344,7 +356,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
             </li>
             
             <li ";
-        // line 246
+        // line 257
         $this->displayBlock('gerantsActive', $context, $blocks);
         echo ">
               <a href=\"Gerants\">
@@ -353,7 +365,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
             </li>
             
             <li ";
-        // line 252
+        // line 263
         $this->displayBlock('AganceActive', $context, $blocks);
         echo "> 
               <a href=\"Agences\">
@@ -362,7 +374,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
             </li>
              
             <li ";
-        // line 258
+        // line 269
         $this->displayBlock('offreActive', $context, $blocks);
         echo ">
               <a href=\"Offres\">
@@ -370,7 +382,7 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
               </a>
             </li>
             <li ";
-        // line 263
+        // line 274
         $this->displayBlock('StatActive', $context, $blocks);
         echo ">
               <a href=\"\">
@@ -388,24 +400,24 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
       <div class=\"content-wrapper\">
         <!-- Content Header (Page header) -->
         ";
-        // line 278
+        // line 289
         $this->displayBlock('DashCore', $context, $blocks);
-        // line 279
+        // line 290
         echo "        ";
         $this->displayBlock('MailCore', $context, $blocks);
-        // line 280
+        // line 291
         echo "        ";
         $this->displayBlock('clientsCore', $context, $blocks);
-        // line 281
+        // line 292
         echo "        ";
         $this->displayBlock('gerantsCore', $context, $blocks);
-        // line 282
+        // line 293
         echo "        ";
         $this->displayBlock('AganceCore', $context, $blocks);
-        // line 283
+        // line 294
         echo "        ";
         $this->displayBlock('offreCore', $context, $blocks);
-        // line 284
+        // line 295
         echo "        ";
         $this->displayBlock('StatCore', $context, $blocks);
         echo "    
@@ -415,190 +427,188 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
         <strong>Copyright &copy; 2015 Timob</strong> All rights reserved.
       </footer>
     <!-- Include all JavaScripts, compiled by Assetic -->
-    
+    </div>
     <!-- AdminLTE App -->
     
     <!-- jQuery 2.1.3 -->
     <script src=\"";
-        // line 295
+        // line 306
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/jQuery/jQuery-2.1.3.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src=\"";
-        // line 297
+        // line 308
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
         echo "\"></script>
     <!-- FastClick -->
     <script src=\"";
-        // line 299
+        // line 310
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/fastclick/fastclick.min.js"), "html", null, true);
         echo "\"></script>
     <!-- AdminLTE App -->
     <script src=\"";
-        // line 301
+        // line 312
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/js/app.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- Sparkline -->
     <script src=\"";
-        // line 303
+        // line 314
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/sparkline/jquery.sparkline.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- jvectormap -->
     <script src=\"";
-        // line 305
+        // line 316
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 306
+        // line 317
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- daterangepicker -->
     <script src=\"";
-        // line 308
+        // line 319
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/daterangepicker/daterangepicker.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- datepicker -->
     <script src=\"";
-        // line 310
+        // line 321
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/datepicker/bootstrap-datepicker.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- iCheck -->
     <script src=\"";
-        // line 312
+        // line 323
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/iCheck/icheck.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- SlimScroll 1.3.0 -->
     <script src=\"";
-        // line 314
+        // line 325
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/slimScroll/jquery.slimscroll.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- ChartJS 1.0.1 -->
     <script src=\"";
-        // line 316
+        // line 327
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/chartjs/Chart.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src=\"";
-        // line 319
+        // line 330
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/js/pages/dashboard2.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 
     <!-- AdminLTE for demo purposes -->
     <script src=\"";
-        // line 322
+        // line 333
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/js/demo.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- DATA TABES SCRIPT -->
     <script src=\"";
-        // line 324
+        // line 335
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/datatables/jquery.dataTables.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 325
+        // line 336
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/datatables/dataTables.bootstrap.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 
     <!-- FastClick -->
     <script src=\"";
-        // line 328
+        // line 339
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/fastclick/fastclick.min.js"), "html", null, true);
         echo "\"></script>
 
         <!-- page script -->
     <script type=\"text/javascript\">
-      \$(function () {
-        \$('#example2').dataTable({
-          \"bPaginate\": true,
-          \"bLengthChange\": false,
-          \"bFilter\": false,
-          \"bSort\": true,
-          \"bInfo\": true,
-          \"bAutoWidth\": false
-        });
-      });
+        \$(function () {
+          \$('#mytab').dataTable();
+        });     
     </script>
-    
+
   </body>
 </html>";
     }
 
-    // line 228
+    // line 218
+    public function block_Image($context, array $blocks = array())
+    {
+    }
+
+    // line 239
     public function block_DashActive($context, array $blocks = array())
     {
     }
 
-    // line 233
+    // line 244
     public function block_MailboxActive($context, array $blocks = array())
     {
     }
 
-    // line 236
+    // line 247
     public function block_MailboxEtra($context, array $blocks = array())
     {
     }
 
-    // line 238
+    // line 249
     public function block_MailboxEtra2($context, array $blocks = array())
     {
     }
 
-    // line 240
+    // line 251
     public function block_clientsActive($context, array $blocks = array())
     {
     }
 
-    // line 246
+    // line 257
     public function block_gerantsActive($context, array $blocks = array())
     {
     }
 
-    // line 252
+    // line 263
     public function block_AganceActive($context, array $blocks = array())
     {
     }
 
-    // line 258
+    // line 269
     public function block_offreActive($context, array $blocks = array())
     {
     }
 
-    // line 263
+    // line 274
     public function block_StatActive($context, array $blocks = array())
     {
     }
 
-    // line 278
+    // line 289
     public function block_DashCore($context, array $blocks = array())
     {
     }
 
-    // line 279
+    // line 290
     public function block_MailCore($context, array $blocks = array())
     {
     }
 
-    // line 280
+    // line 291
     public function block_clientsCore($context, array $blocks = array())
     {
     }
 
-    // line 281
+    // line 292
     public function block_gerantsCore($context, array $blocks = array())
     {
     }
 
-    // line 282
+    // line 293
     public function block_AganceCore($context, array $blocks = array())
     {
     }
 
-    // line 283
+    // line 294
     public function block_offreCore($context, array $blocks = array())
     {
     }
 
-    // line 284
+    // line 295
     public function block_StatCore($context, array $blocks = array())
     {
     }
@@ -615,6 +625,6 @@ class __TwigTemplate_791a9e83552d31328561c335813c70abf36460e84755658c1e55b998499
 
     public function getDebugInfo()
     {
-        return array (  602 => 284,  597 => 283,  592 => 282,  587 => 281,  582 => 280,  577 => 279,  572 => 278,  567 => 263,  562 => 258,  557 => 252,  552 => 246,  547 => 240,  542 => 238,  537 => 236,  532 => 233,  527 => 228,  505 => 328,  499 => 325,  495 => 324,  490 => 322,  484 => 319,  478 => 316,  473 => 314,  468 => 312,  463 => 310,  458 => 308,  453 => 306,  449 => 305,  444 => 303,  439 => 301,  434 => 299,  429 => 297,  424 => 295,  409 => 284,  406 => 283,  403 => 282,  400 => 281,  397 => 280,  394 => 279,  392 => 278,  374 => 263,  366 => 258,  357 => 252,  348 => 246,  339 => 240,  336 => 239,  334 => 238,  331 => 237,  329 => 236,  323 => 233,  315 => 228,  291 => 207,  258 => 177,  249 => 171,  186 => 111,  171 => 99,  156 => 87,  141 => 75,  126 => 63,  99 => 39,  83 => 26,  78 => 24,  72 => 21,  67 => 19,  62 => 17,  57 => 15,  52 => 13,  44 => 8,  35 => 1,);
+        return array (  612 => 295,  607 => 294,  602 => 293,  597 => 292,  592 => 291,  587 => 290,  582 => 289,  577 => 274,  572 => 269,  567 => 263,  562 => 257,  557 => 251,  552 => 249,  547 => 247,  542 => 244,  537 => 239,  532 => 218,  517 => 339,  511 => 336,  507 => 335,  502 => 333,  496 => 330,  490 => 327,  485 => 325,  480 => 323,  475 => 321,  470 => 319,  465 => 317,  461 => 316,  456 => 314,  451 => 312,  446 => 310,  441 => 308,  436 => 306,  421 => 295,  418 => 294,  415 => 293,  412 => 292,  409 => 291,  406 => 290,  404 => 289,  386 => 274,  378 => 269,  369 => 263,  360 => 257,  351 => 251,  348 => 250,  346 => 249,  343 => 248,  341 => 247,  335 => 244,  327 => 239,  303 => 218,  270 => 188,  261 => 182,  198 => 122,  183 => 110,  168 => 98,  153 => 86,  138 => 74,  111 => 50,  84 => 26,  79 => 24,  73 => 21,  68 => 19,  63 => 17,  58 => 15,  53 => 13,  45 => 8,  36 => 1,);
     }
 }

@@ -18,6 +18,7 @@ class __TwigTemplate_64da9a89c6aff3d5778137081cb28be58fa907abbfb53c4ccdfc45e8bb8
         }
 
         $this->blocks = array(
+            'Image' => array($this, 'block_Image'),
             'MailboxActive' => array($this, 'block_MailboxActive'),
             'MailboxEtra' => array($this, 'block_MailboxEtra'),
             'MailboxEtra2' => array($this, 'block_MailboxEtra2'),
@@ -36,25 +37,35 @@ class __TwigTemplate_64da9a89c6aff3d5778137081cb28be58fa907abbfb53c4ccdfc45e8bb8
     }
 
     // line 2
-    public function block_MailboxActive($context, array $blocks = array())
+    public function block_Image($context, array $blocks = array())
     {
         // line 3
-        echo "        class=\"active treeview\"
+        echo "        <img src=\"";
+        echo twig_escape_filter($this->env, (isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "html", null, true);
+        echo "\" class=\"img-circle\" alt=\"User Image\" />
     ";
     }
 
     // line 5
-    public function block_MailboxEtra($context, array $blocks = array())
+    public function block_MailboxActive($context, array $blocks = array())
     {
         // line 6
-        echo "        <i class=\"fa fa-angle-left pull-right\"></i>
+        echo "        class=\"active treeview\"
     ";
     }
 
     // line 8
-    public function block_MailboxEtra2($context, array $blocks = array())
+    public function block_MailboxEtra($context, array $blocks = array())
     {
         // line 9
+        echo "        <i class=\"fa fa-angle-left pull-right\"></i>
+    ";
+    }
+
+    // line 11
+    public function block_MailboxEtra2($context, array $blocks = array())
+    {
+        // line 12
         echo "        <ul class=\"treeview-menu\">
             <li><a href=\"MailBox\">Inbox <span class=\"label label-primary pull-right\">13</span></a></li>
             <li class=\"active\"><a href=\"ComposeMail\">Compose</a></li>   
@@ -62,10 +73,10 @@ class __TwigTemplate_64da9a89c6aff3d5778137081cb28be58fa907abbfb53c4ccdfc45e8bb8
     ";
     }
 
-    // line 14
+    // line 17
     public function block_MailCore($context, array $blocks = array())
     {
-        // line 15
+        // line 18
         echo "        <section class=\"content\">
           <div class=\"row\">
             <div class=\"col-md-3\">
@@ -172,6 +183,6 @@ class __TwigTemplate_64da9a89c6aff3d5778137081cb28be58fa907abbfb53c4ccdfc45e8bb8
 
     public function getDebugInfo()
     {
-        return array (  69 => 15,  66 => 14,  58 => 9,  55 => 8,  50 => 6,  47 => 5,  42 => 3,  39 => 2,  11 => 1,);
+        return array (  80 => 18,  77 => 17,  69 => 12,  66 => 11,  61 => 9,  58 => 8,  53 => 6,  50 => 5,  43 => 3,  40 => 2,  11 => 1,);
     }
 }

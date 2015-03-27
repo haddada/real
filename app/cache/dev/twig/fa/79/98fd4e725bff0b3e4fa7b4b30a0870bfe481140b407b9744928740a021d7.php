@@ -18,6 +18,7 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
         }
 
         $this->blocks = array(
+            'Image' => array($this, 'block_Image'),
             'AganceActive' => array($this, 'block_AganceActive'),
             'AganceCore' => array($this, 'block_AganceCore'),
         );
@@ -34,17 +35,27 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
     }
 
     // line 2
-    public function block_AganceActive($context, array $blocks = array())
+    public function block_Image($context, array $blocks = array())
     {
         // line 3
+        echo "        <img src=\"";
+        echo twig_escape_filter($this->env, (isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "html", null, true);
+        echo "\" class=\"img-circle\" alt=\"User Image\" />
+    ";
+    }
+
+    // line 5
+    public function block_AganceActive($context, array $blocks = array())
+    {
+        // line 6
         echo "        class=\"active treeview\"
     ";
     }
 
-    // line 6
+    // line 9
     public function block_AganceCore($context, array $blocks = array())
     {
-        // line 7
+        // line 10
         echo "       
         <!-- Main content -->
         <section class=\"content\">
@@ -74,44 +85,44 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
                       
                       
                       ";
-        // line 35
+        // line 38
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($context["agance"]);
         foreach ($context['_seq'] as $context["_key"] => $context["agance"]) {
-            // line 36
+            // line 39
             echo "                            <tr>
-                                <td>";
-            // line 37
+                              <td>";
+            // line 40
             echo twig_escape_filter($this->env, $this->getAttribute($context["agance"], "id", array()), "html", null, true);
             echo "</td>
                               <td>";
-            // line 38
+            // line 41
             echo twig_escape_filter($this->env, $this->getAttribute($context["agance"], "nom", array()), "html", null, true);
             echo "</td>
                               <td>";
-            // line 39
+            // line 42
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idGerant", array()), "nom", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idGerant", array()), "prenom", array()), "html", null, true);
             echo "</td>
                               <td>";
-            // line 40
+            // line 43
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idAdresse", array()), "gouvernorat", array()), "html", null, true);
             echo "</td>
                               <td>";
-            // line 41
+            // line 44
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idAdresse", array()), "ville", array()), "html", null, true);
             echo "</td>
                               <td>";
-            // line 42
+            // line 45
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idAdresse", array()), "codepostal", array()), "html", null, true);
             echo "</td>
                               <td> <textarea>";
-            // line 43
+            // line 46
             echo twig_escape_filter($this->env, $this->getAttribute($context["agance"], "description", array()), "html", null, true);
             echo "</textarea></td>
                               <td><a href = \"";
-            // line 44
+            // line 47
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sprint2_real_estate_admin_agence_supp", array("id" => $this->getAttribute($context["agance"], "id", array()))), "html", null, true);
             echo "\"><button class=\"btn btn-default btn-sm\"><i class=\"fa fa-trash-o\"></i></button></a></td>
                             </tr>
@@ -120,7 +131,7 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['agance'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 50
         echo "                    </tbody>
                     <tfoot>
                       <tr>
@@ -131,6 +142,7 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
                         <th>Ville</th>
                         <th>Code postal</th>
                         <th>Description</th>
+                        <th>+/-</th>
                       </tr>
                     </tfoot>
                   </table>
@@ -166,11 +178,11 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
                             <td><input type=\"text\" name=\"nom\"/></td>
                             <td><select name=\"agant\">
                             ";
-        // line 91
+        // line 95
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($context["utilisateur"]);
         foreach ($context['_seq'] as $context["_key"] => $context["utilisateur"]) {
-            // line 92
+            // line 96
             echo "                            <option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateur"], "id", array()), "html", null, true);
             echo "\">";
@@ -183,17 +195,17 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['utilisateur'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 93
+        // line 97
         echo "                           
                             </select></td>
 
                             <td><select name=\"adresse\">
                             ";
-        // line 97
+        // line 101
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($context["adresse"]);
         foreach ($context['_seq'] as $context["_key"] => $context["adresse"]) {
-            // line 98
+            // line 102
             echo "                            <option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["adresse"], "id", array()), "html", null, true);
             echo "\">";
@@ -208,7 +220,7 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['adresse'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 99
+        // line 103
         echo "                           
                             </select></td>   
                             <td> <textarea name=\"description\"></textarea></td>
@@ -232,41 +244,41 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
         
        <!-- jQuery 2.1.3 -->
     <script src=\"";
-        // line 121
+        // line 125
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/jQuery/jQuery-2.1.3.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src=\"";
-        // line 123
+        // line 127
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- DATA TABES SCRIPT -->
     <script src=\"";
-        // line 125
+        // line 129
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin//plugins/datatables/jquery.dataTables.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 126
+        // line 130
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/datatables/dataTables.bootstrap.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- SlimScroll -->
     <script src=\"";
-        // line 128
+        // line 132
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/slimScroll/jquery.slimscroll.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- FastClick -->
     <script src=\"";
-        // line 130
+        // line 134
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/fastclick/fastclick.min.js"), "html", null, true);
         echo "\"></script>
     <!-- AdminLTE App -->
     <script src=\"";
-        // line 132
+        // line 136
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin//js/app.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- AdminLTE for demo purposes -->
     <script src=\"";
-        // line 134
+        // line 138
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin//js/demo.js\" type=\"text/javascript"), "html", null, true);
         echo "\"></script>
     <!-- page script --> 
@@ -290,6 +302,6 @@ class __TwigTemplate_fa7998fd4e725bff0b3e4fa7b4b30a0870bfe481140b407b9744928740a
 
     public function getDebugInfo()
     {
-        return array (  270 => 134,  265 => 132,  260 => 130,  255 => 128,  250 => 126,  246 => 125,  241 => 123,  236 => 121,  212 => 99,  197 => 98,  193 => 97,  187 => 93,  174 => 92,  170 => 91,  124 => 47,  115 => 44,  111 => 43,  107 => 42,  103 => 41,  99 => 40,  93 => 39,  89 => 38,  85 => 37,  82 => 36,  78 => 35,  48 => 7,  45 => 6,  40 => 3,  37 => 2,  11 => 1,);
+        return array (  282 => 138,  277 => 136,  272 => 134,  267 => 132,  262 => 130,  258 => 129,  253 => 127,  248 => 125,  224 => 103,  209 => 102,  205 => 101,  199 => 97,  186 => 96,  182 => 95,  135 => 50,  126 => 47,  122 => 46,  118 => 45,  114 => 44,  110 => 43,  104 => 42,  100 => 41,  96 => 40,  93 => 39,  89 => 38,  59 => 10,  56 => 9,  51 => 6,  48 => 5,  41 => 3,  38 => 2,  11 => 1,);
     }
 }
