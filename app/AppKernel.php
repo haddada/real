@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new sprint2\realEstateBundle\realEstateBundle(),
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new sprint2\RealEstate\AdminBundle\sprint2RealEstateAdminBundle(),
+            new RealEstate\AuthentificationBundle\RealEstateAuthentificationBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

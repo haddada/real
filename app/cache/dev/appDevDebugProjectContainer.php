@@ -25,7 +25,7 @@ class appDevDebugProjectContainer extends Container
     public function __construct()
     {
         $dir = __DIR__;
-        for ($i = 1; $i <= 4; ++$i) {
+        for ($i = 1; $i <= 5; ++$i) {
             $this->targetDirs[$i] = $dir = dirname($dir);
         }
         $this->parameters = $this->getDefaultParameters();
@@ -946,7 +946,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_e76c691e8257f16ca36964f269dd3c13f9549021a75df6a1ce1a3430ca9cd8f3');
+        $instance->setNamespace('sf2orm_default_189479d06186c7368ebf2f306a8f09d2dbea38097d8a3f548b2d3546b269c3e0');
 
         return $instance;
     }
@@ -963,7 +963,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_query_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_e76c691e8257f16ca36964f269dd3c13f9549021a75df6a1ce1a3430ca9cd8f3');
+        $instance->setNamespace('sf2orm_default_189479d06186c7368ebf2f306a8f09d2dbea38097d8a3f548b2d3546b269c3e0');
 
         return $instance;
     }
@@ -980,7 +980,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_result_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_e76c691e8257f16ca36964f269dd3c13f9549021a75df6a1ce1a3430ca9cd8f3');
+        $instance->setNamespace('sf2orm_default_189479d06186c7368ebf2f306a8f09d2dbea38097d8a3f548b2d3546b269c3e0');
 
         return $instance;
     }
@@ -3940,7 +3940,7 @@ class appDevDebugProjectContainer extends Container
             'kernel.root_dir' => $this->targetDirs[2],
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
-            'kernel.name' => 'ap_',
+            'kernel.name' => 'app',
             'kernel.cache_dir' => __DIR__,
             'kernel.logs_dir' => ($this->targetDirs[2].'/logs'),
             'kernel.bundles' => array(
@@ -4420,7 +4420,7 @@ class appDevDebugProjectContainer extends Container
             'assetic.java.bin' => '/usr/bin/java',
             'assetic.node.bin' => '/usr/bin/node',
             'assetic.ruby.bin' => '/usr/bin/ruby',
-            'assetic.sass.bin' => '/usr/local/bin/sass',
+            'assetic.sass.bin' => '/usr/bin/sass',
             'assetic.filter.less.class' => 'Assetic\\Filter\\LessFilter',
             'assetic.filter.less.node' => '/usr/bin/node',
             'assetic.filter.less.node_paths' => array(
