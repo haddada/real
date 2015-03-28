@@ -82,11 +82,47 @@ class OffreController extends Controller
     public function newAction()
     {
         $entity = new Offre();
-        $form   = $this->createCreateForm($entity);
+        $em = $this->getDoctrine()->getManager();
+        $gouvernorats=$em->getRepository('realEstateBundle:Adresse')->findGouvernorat(24);
+        $request = $this->container->get('request');
+        $adresse=new Adresse();
 
+        if($request->getMethod()=="POST"){
+            $prix=$request->get('prix');
+            $surface=$request->get('surface');
+            $typeimmob=$request->get('typeimmob');
+            $nature=$request->get('nature');
+            $nbrpiece=$request->get('nbrpiece');
+            $etat=$request->get('etat');
+            $urlimage="url";
+            $idGerant=1;
+            $codepostal=$request->get('code');
+           
+            $adresse  = $em->getRepository('realEstateBundle:Adresse')->findBy(array('codepostal'=>$codepostal));
+           
+            //return new Response ($adresse[0]->getId());
+
+            $entity->setEtat($etat);
+            $entity->setTypeimmob($typeimmob);
+            $entity->setNature($nature);
+            $entity->setNbrpiece($nbrpiece);
+            $entity->setUrlimage($urlimage);
+            $entity->setIdGerant($idGerant);
+            $entity->setSurface($surface);
+            $entity->setAdresse($adresse[0]);
+            $entity->setPayement($prix);
+            $em->persist($entity);
+            $em->flush();
+
+
+            return $this->redirect($this->generateUrl('offre_show', array('id' => $entity->getId())));
+
+
+        }
+      
         return $this->render('realEstateBundle:Offre:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'gouvernorats'=>$gouvernorats
         ));
     }
 
@@ -239,7 +275,7 @@ class OffreController extends Controller
         $request = $this->container->get('request');
         $entities = $em->getRepository('realEstateBundle:Offre')->findAll();
         
-         if ($request->getMethod() == "POST") {  
+        if ($request->getMethod() == "POST") {  
             $gouvernorat=$request->get('gouvernorat')  ;
             $adresse  = $em->getRepository('realEstateBundle:Adresse')->findBy(array('gouvernorat'=>$gouvernorat));
             $entities = $em->getRepository('realEstateBundle:Offre')->findBy(array('Adresse' => $adresse));
@@ -263,26 +299,24 @@ class OffreController extends Controller
          $request = $this->container->get('request');
          $em = $this->getDoctrine()->getManager();
          $entities = $em->getRepository('realEstateBundle:Offre')->findAll();
-
          /*
             get deffirent responses from the request type
          */
-       $entitie_room=array();
-       $entitie_Etat=array();
-       $roomType=$request->get('room_types');
-       $etat=$request->get('Etat');
-       $max=$request->get('maxprice');
-       $min=$request->get('minprice');
+           $entitie_room=array();
+           $entitie_Etat=array();
+           $roomType=$request->get('room_types');
+           $etat=$request->get('Etat');
+           $max=$request->get('maxprice');
+           $min=$request->get('minprice');
 
-       if($max === null){
-            $max="100000";
-       }
-       if($min===null){
-            $min="0";
-       }
-
+           if($max === null){
+                $max="100000";
+           }
+           if($min===null){
+                $min="0";
+           }
          if($request->isXmlHttpRequest()){
-
+            
                 if($roomType!=-1&&$roomType!==null)
                     $entitie_room=$em->getRepository('realEstateBundle:Offre')->findBy(array('typeimmob'=>$roomType));
                 else
@@ -296,14 +330,12 @@ class OffreController extends Controller
                     $entities_price=(array)$this->searchByPrice($min,$max);
                     $entities_roomA=(array)$entitie_room;
                     $entities_roomE=(array)$entitie_Etat;
-
                     $entities_RE=$this->intersection($entities_roomA,$entities_roomE);
                     $entities=$this->intersection($entities_price,$entities_RE);
-
        
-            return $this->container->get('templating')->renderResponse('realEstateBundle:Offre:offreCards.html.twig', array(
-            'entities' => $entities
-        ));
+                    return $this->container->get('templating')->renderResponse('realEstateBundle:Offre:offreCards.html.twig', array(
+                     'entities' => $entities
+                    ));
 
         }
         return  new Response("<p>".count($entities_roomE)."</p>");
@@ -331,10 +363,7 @@ class OffreController extends Controller
     }
 
     public function intersection($arr1,$arr2){
-
-      
         $result=array();
-        
         foreach($arr1 as $ob)
             foreach($arr2 as $obj){
                 if ($obj->getId()==$ob->getId())
@@ -342,6 +371,35 @@ class OffreController extends Controller
             }
 
             return $result;
+    }
+
+    public function searchVilleAction(){
+         $request = $this->container->get('request');
+         $em = $this->getDoctrine()->getManager();
+         $gouvernorat=$request->get('gouvernorats');
+         $villes=$em->getRepository('realEstateBundle:Adresse')->findvilleGouvernorat(array('gouvernorat'=>$gouvernorat));
+          
+         if($request->isXmlHttpRequest()){
+
+            return $this->container->get('templating')->renderResponse('realEstateBundle:Offre:Filtres/ville.html.twig', array(
+                     'villes' => $villes
+                    ));
+         }
+
+    }
+
+    public function searchCodeAction(){
+         $request = $this->container->get('request');
+         $em = $this->getDoctrine()->getManager();
+         $ville=$request->get('Villes');
+         $codes=$em->getRepository('realEstateBundle:Adresse')->findCodeVille(array('ville'=>$ville));   
+         if($request->isXmlHttpRequest()){
+
+            return $this->container->get('templating')->renderResponse('realEstateBundle:Offre:Filtres/code.html.twig', array(
+                     'codes' => $codes
+                    ));
+         }
+
     }
 
 }

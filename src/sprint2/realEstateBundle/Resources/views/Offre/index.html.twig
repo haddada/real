@@ -850,31 +850,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       Airbnb.init();
 </script>
       <script>
-            $(document).ready(function(){
+         $(document).ready(function(){
               
                  var str = "";
                  var strP="";
           $(".filtre-select").change(function(){ 
-                 
-                   str =$( ".form-select" ).serialize() ;
-                if(strP!="")
-                    str=str+"&"+strP;
-
-                             console.log(str);  
-                    $.get("{{path('offre_search_ajax')}}?"+str+"&ss_id=b66045u7",function( data ) {
-                          $( ".search-results" ).html( data );           
-                         })
+              str =$( ".form-select" ).serialize() ;
+              if(strP!="")
+                  str=str+"&"+strP;
+                  console.log(str);  
+              $.get("{{path('offre_search_ajax')}}?"+str+"&ss_id=b66045u7",function( data ) {
+                    $( ".search-results" ).html( data );           
+                   })
                          
           });
                         
           $(".filter-button").click(function(){
-                 str =$( ".form-select" ).serialize() ;  
-                 if(strP!="")
-                    str=str+"&"+strP;
-                 console.log(str);                        
-                    $.get("{{path('offre_search_ajax')}}?"+str+"&ss_id=b66045u7",function( data ) {
-                          $( ".search-results" ).html( data );           
-                         })
+               str =$( ".form-select" ).serialize() ;  
+               if(strP!="")
+                  str=str+"&"+strP;
+               console.log(str);                        
+                  $.get("{{path('offre_search_ajax')}}?"+str+"&ss_id=b66045u7",function( data ) {
+                        $( ".search-results" ).html( data );           
+                  })
                          
           })
 

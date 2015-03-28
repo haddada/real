@@ -1,0 +1,33 @@
+  
+<div class="col-3 text-right col-middle">
+    <div class="h4 text-light">
+          Villes
+    </div>
+</div>
+
+<form class="col-lg-9 form-ville col-middle">
+      <div class="row row-condensed">
+        <div class="col-md-4 col-sm-12 row-space-1">
+          <div class="select select-block">
+            <select name="Villes" >
+            {%for ville in villes %}
+              <option value="{{ville.ville}}"> {{ville.ville}}</option>
+             {%endfor%} 
+            </select>
+          </div>
+        </div>
+      </div>
+</form>
+
+<script>
+
+$(".form-ville").click(function(){
+   str =$( ".form-ville" ).serialize() ;
+
+    $.get("{{path('offre_search_code')}}?"+str,function( data ) {
+         $( ".code" ).html( data );           
+    })
+
+})
+
+</script>

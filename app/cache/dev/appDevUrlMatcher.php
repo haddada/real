@@ -389,6 +389,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            // offre_search_ville
+            if ($pathinfo === '/offre/ville/gouvernorat') {
+                return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchVilleAction',  '_route' => 'offre_search_ville',);
+            }
+
+            // offre_search_code
+            if ($pathinfo === '/offre/code/ville') {
+                return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchCodeAction',  '_route' => 'offre_search_code',);
+            }
+
         }
 
         // real_estate_homepage

@@ -886,37 +886,35 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
       Airbnb.init();
 </script>
       <script>
-            \$(document).ready(function(){
+         \$(document).ready(function(){
               
                  var str = \"\";
                  var strP=\"\";
           \$(\".filtre-select\").change(function(){ 
-                 
-                   str =\$( \".form-select\" ).serialize() ;
-                if(strP!=\"\")
-                    str=str+\"&\"+strP;
-
-                             console.log(str);  
-                    \$.get(\"";
-        // line 864
+              str =\$( \".form-select\" ).serialize() ;
+              if(strP!=\"\")
+                  str=str+\"&\"+strP;
+                  console.log(str);  
+              \$.get(\"";
+        // line 862
         echo $this->env->getExtension('routing')->getPath("offre_search_ajax");
         echo "?\"+str+\"&ss_id=b66045u7\",function( data ) {
-                          \$( \".search-results\" ).html( data );           
-                         })
+                    \$( \".search-results\" ).html( data );           
+                   })
                          
           });
                         
           \$(\".filter-button\").click(function(){
-                 str =\$( \".form-select\" ).serialize() ;  
-                 if(strP!=\"\")
-                    str=str+\"&\"+strP;
-                 console.log(str);                        
-                    \$.get(\"";
-        // line 875
+               str =\$( \".form-select\" ).serialize() ;  
+               if(strP!=\"\")
+                  str=str+\"&\"+strP;
+               console.log(str);                        
+                  \$.get(\"";
+        // line 873
         echo $this->env->getExtension('routing')->getPath("offre_search_ajax");
         echo "?\"+str+\"&ss_id=b66045u7\",function( data ) {
-                          \$( \".search-results\" ).html( data );           
-                         })
+                        \$( \".search-results\" ).html( data );           
+                  })
                          
           })
 
@@ -930,7 +928,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
                  strP=\$(\".formPrice :input[value!='']\").serialize() ;
                  console.log(str+\"&\"+strP);
               \$.get(\"";
-        // line 890
+        // line 888
         echo $this->env->getExtension('routing')->getPath("offre_search_ajax");
         echo "?\"+str+\"&\"+strP+\"&ss_id=b66045u7\",function( data ) {
                           \$( \".search-results\" ).html( data );           
@@ -1019,6 +1017,6 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
 
     public function getDebugInfo()
     {
-        return array (  1007 => 534,  1004 => 533,  1000 => 526,  997 => 525,  993 => 514,  990 => 513,  986 => 466,  983 => 465,  979 => 172,  976 => 171,  934 => 890,  916 => 875,  902 => 864,  792 => 756,  790 => 755,  568 => 535,  566 => 533,  558 => 527,  556 => 525,  544 => 515,  542 => 513,  494 => 467,  492 => 465,  198 => 173,  196 => 171,  24 => 1,);
+        return array (  1005 => 534,  1002 => 533,  998 => 526,  995 => 525,  991 => 514,  988 => 513,  984 => 466,  981 => 465,  977 => 172,  974 => 171,  932 => 888,  914 => 873,  900 => 862,  792 => 756,  790 => 755,  568 => 535,  566 => 533,  558 => 527,  556 => 525,  544 => 515,  542 => 513,  494 => 467,  492 => 465,  198 => 173,  196 => 171,  24 => 1,);
     }
 }
