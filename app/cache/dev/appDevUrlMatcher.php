@@ -243,6 +243,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // real_estate_authentification_homepage
+        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'real_estate_authentification_homepage')), array (  '_controller' => 'RealEstate\\AuthentificationBundle\\Controller\\DefaultController::indexAction',));
+        }
+
         if (0 === strpos($pathinfo, '/adresse')) {
             // adresse
             if (rtrim($pathinfo, '/') === '/adresse') {
