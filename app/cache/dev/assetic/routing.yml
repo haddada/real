@@ -2,4 +2,8 @@ _assetic:
     resource: .
     type: assetic
 _app:
+<<<<<<< HEAD
     resource: /home/senjoux/workspaces/symfony_workspace/RES/app/config/routing_dev.yml
+=======
+    resource: 'C:\wamp\www\pidev_sprint2\app/config/routing_dev.yml'
+>>>>>>> Wael.FATHALLAH/pidev_sprint2-master

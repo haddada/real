@@ -500,17 +500,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-            if (0 === strpos($pathinfo, '/Admin/ajax')) {
-                // AcmeHomeBundle_ajax_update_mydata
-                if ($pathinfo === '/Admin/ajax') {
-                    return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\AjaxController::updateDataAction',  '_route' => 'AcmeHomeBundle_ajax_update_mydata',);
-                }
+            // sprint2_real_estate_admin_ajax_get_mail_list_ofclient
+            if (0 === strpos($pathinfo, '/Admin/ajax') && preg_match('#^/Admin/ajax/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sprint2_real_estate_admin_ajax_get_mail_list_ofclient')), array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\AjaxController::getListOfMailAction',));
+            }
 
-                // AcmeHomeBundle_ajax_update_mydatab
-                if ($pathinfo === '/Admin/ajaxx') {
-                    return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\AjaxController::indexAction',  '_route' => 'AcmeHomeBundle_ajax_update_mydatab',);
-                }
-
+            // file_file_homepage
+            if ($pathinfo === '/Admin/upload') {
+                return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::uploadAction',  '_route' => 'file_file_homepage',);
             }
 
         }

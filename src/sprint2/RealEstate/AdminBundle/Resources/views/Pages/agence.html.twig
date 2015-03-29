@@ -1,4 +1,7 @@
 {% extends "sprint2RealEstateAdminBundle::admin_layout.html.twig" %}
+    {% block Image %}
+        <img src="{{ image }}" class="img-circle" alt="User Image" />
+    {% endblock %}
     {% block AganceActive %}
         class="active treeview"
     {% endblock %}
@@ -26,6 +29,7 @@
                         <th>Ville</th>
                         <th>Code postal</th>
                         <th>Description</th>
+                        <th>+/-</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -33,13 +37,14 @@
                       
                       {% for agance in agance %}
                             <tr>
-                                <td><a href = "{{ path ("sprint2_real_estate_admin_agence_supp",{'id':agance.id})}}"><button class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button></a>{{agance.id}}</td>
+                              <td>{{agance.id}}</td>
                               <td>{{agance.nom}}</td>
                               <td>{{agance.idGerant.nom}} {{agance.idGerant.prenom}}</td>
                               <td>{{agance.idAdresse.gouvernorat}}</td>
                               <td>{{agance.idAdresse.ville}}</td>
                               <td>{{agance.idAdresse.codepostal}}</td>
                               <td> <textarea>{{agance.description}}</textarea></td>
+                              <td><a href = "{{ path ("sprint2_real_estate_admin_agence_supp",{'id':agance.id})}}"><button class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button></a></td>
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -52,6 +57,7 @@
                         <th>Ville</th>
                         <th>Code postal</th>
                         <th>Description</th>
+                        <th>+/-</th>
                       </tr>
                     </tfoot>
                   </table>
