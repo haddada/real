@@ -283,7 +283,7 @@ class __TwigTemplate_e753ea67cc94278e5d1053b79fb899f34b015e928e27394525e4627c5f9
             
 
     <dialog id=\"favDialog2\" class=\"direct-chat\" style=\" border-bottom-color: #00CC00; min-height: 320px; width: 566px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  border-color: #eee; border-radius: 3%;\" >
+  border-color: #eee; border-radius: 10px;\" >
   
     
                 <div class=\"box-header with-border\">
@@ -292,8 +292,43 @@ class __TwigTemplate_e753ea67cc94278e5d1053b79fb899f34b015e928e27394525e4627c5f9
                       <button class=\"btn btn-box-tool\" id=\"hhhbbbbbnnn\" data-widget=\"remove\"><i class=\"fa fa-times\"></i></button>
                   </div><!-- /.box-tools -->
                 </div><!-- /.box-header -->
-             
-                <div id=\"txtHint\"></div>
+                <div class=\"box-body\">
+                  <table id=\"mytab2\" class=\"table table-bordered table-striped\">
+                    <thead>
+                      <tr>
+                        <th>To</th>
+                        <th>Message</th>
+
+                      </tr>
+                    </thead>
+                    <tbody id=\"fshvdvgvukyvbf\">
+                    </tbody>
+                      ";
+        // line 225
+        echo "                      
+                    
+                    
+                  </table>
+                      <br>
+                  <table id=\"mytab2\" class=\"table table-bordered table-striped\">
+                    <thead>
+                      <tr>
+                        <th>From</th>
+                        <th>Message</th>
+
+                      </tr>
+                    </thead>
+                    <tbody id=\"fshvdvgvukyvbf1\">
+                    </tbody>
+                      ";
+        // line 241
+        echo "                      
+                    
+                    
+                  </table>
+                </div><!-- /.box-body -->
+                
+                
   
 </dialog>
 
@@ -304,49 +339,87 @@ class __TwigTemplate_e753ea67cc94278e5d1053b79fb899f34b015e928e27394525e4627c5f9
       
        <!-- jQuery 2.1.3 -->
     <script src=\"";
-        // line 224
+        // line 257
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/jQuery/jQuery-2.1.3.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src=\"";
-        // line 226
+        // line 259
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- DATA TABES SCRIPT -->
     <script src=\"";
-        // line 228
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin//plugins/datatables/jquery.dataTables.js"), "html", null, true);
+        // line 261
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/datatables/jquery.dataTables.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <script src=\"";
-        // line 229
+        // line 262
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/datatables/dataTables.bootstrap.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- SlimScroll -->
     <script src=\"";
-        // line 231
+        // line 264
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/slimScroll/jquery.slimscroll.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- FastClick -->
     <script src=\"";
-        // line 233
+        // line 266
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/plugins/fastclick/fastclick.min.js"), "html", null, true);
         echo "\"></script>
     <!-- AdminLTE App -->
     <script src=\"";
-        // line 235
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin//js/app.min.js"), "html", null, true);
+        // line 268
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/js/app.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
     <!-- AdminLTE for demo purposes -->
     <script src=\"";
-        // line 237
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin//js/demo.js\" type=\"text/javascript"), "html", null, true);
-        echo "\"></script>
+        // line 270
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/sprint2realestateadmin/js/demo.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
     <!-- page script --> 
     <script type=\"text/javascript\">
         \$(function () {
           \$('#mytab').dataTable();
         });     
     </script>
+    <!-- jQuery 2.1.3 -->
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/plugins/jQuery/jQuery-2.1.3.min.js\"></script>
+    <!-- Bootstrap 3.3.2 JS -->
+    <script src=\"/pidev_sprint2/web/js/bootstrap.js\"></script>
+    <!-- FastClick -->
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/plugins/fastclick/fastclick.min.js\"></script>
+    <!-- AdminLTE App -->
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/js/app.min.js\" type=\"text/javascript\"></script>
+    <!-- Sparkline -->
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/plugins/sparkline/jquery.sparkline.min.js\" type=\"text/javascript\"></script>
+    <!-- jvectormap -->
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js\" type=\"text/javascript\"></script>
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/plugins/jvectormap/jquery-jvectormap-world-mill-en.js\" type=\"text/javascript\"></script>
+    <!-- daterangepicker -->
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/plugins/daterangepicker/daterangepicker.js\" type=\"text/javascript\"></script>
+    <!-- datepicker -->
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/plugins/datepicker/bootstrap-datepicker.js\" type=\"text/javascript\"></script>
+    <!-- iCheck -->
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/plugins/iCheck/icheck.min.js\" type=\"text/javascript\"></script>
+    <!-- SlimScroll 1.3.0 -->
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/plugins/slimScroll/jquery.slimscroll.min.js\" type=\"text/javascript\"></script>
+    <!-- ChartJS 1.0.1 -->
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/plugins/chartjs/Chart.min.js\" type=\"text/javascript\"></script>
+
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/js/pages/dashboard2.js\" type=\"text/javascript\"></script>
+
+    <!-- AdminLTE for demo purposes -->
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/js/demo.js\" type=\"text/javascript\"></script>
+    <!-- DATA TABES SCRIPT -->
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/plugins/datatables/jquery.dataTables.js\" type=\"text/javascript\"></script>
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/plugins/datatables/dataTables.bootstrap.js\" type=\"text/javascript\"></script>
+
+    <!-- FastClick -->
+    <script src=\"/pidev_sprint2/web/bundles/sprint2realestateadmin/plugins/fastclick/fastclick.min.js\"></script>
+
+        <!-- page script -->
+
     <script type=\"text/javascript\">   
         \$(\".dddd\").click(function(){
             \$(\".cvvvvvvb\").show(1000);
@@ -404,6 +477,9 @@ class __TwigTemplate_e753ea67cc94278e5d1053b79fb899f34b015e928e27394525e4627c5f9
 
     })();
     </script>
+    ";
+        // line 397
+        echo "    
     <script>
          var cancelButton = document.getElementById('hhhbbbbbnnn');
     \$(\".example2\").click(function(){
@@ -422,12 +498,99 @@ class __TwigTemplate_e753ea67cc94278e5d1053b79fb899f34b015e928e27394525e4627c5f9
           document.getElementById(\"txtHint\").innerHTML=xmlhttp.responseText;
         }
       }
-      xmlhttp.open(\"GET\",\"http://localhost/Ajax/getListOfMailByID.php?q=\"+\$nid,true);
-      xmlhttp.send();
+      \$.ajax({
+          type: 'GET',
+          url:  'http://localhost/pidev_sprint2/web/app_dev.php/Admin/ajax/'+ \$nid,
+          beforeSend: function () {
+                        console.log(\"before send\");
+                    },
+          success: function (data) {
+              \$(\"vbn\").val(data.datalist);
+              console.log(data.datalist);
+              console.log(data.datalist1);
+              
+              createTable(data.datalist, data.datalist1);
+          }
+                    
+          
+      });
     });  
     cancelButton.addEventListener('click', function() {
+    var list = document.getElementById(\"fshvdvgvukyvbf\");
+    
+    while (list.firstChild) {
+    list.removeChild(list.firstChild);
+    }
+    var list1 = document.getElementById(\"fshvdvgvukyvbf1\");
+    
+    while (list1.firstChild) {
+    list1.removeChild(list1.firstChild);
+    }
+       
+        
         document.getElementById('favDialog2').close();
       });
+    function createTable(tableData,tableData1) {
+        var tableBody = null;
+        var tableBody1 = null;
+        tableBody = document.getElementById('fshvdvgvukyvbf');
+        tableBody1 = document.getElementById('fshvdvgvukyvbf1');
+        tableData.forEach(function(rowData) {
+          var row = document.createElement('tr');
+
+          rowData.forEach(function(cellData) {
+            var cell = document.createElement('td');
+            cell.appendChild(document.createTextNode(cellData));
+            
+            row.appendChild(cell);
+            
+          });
+          
+          tableBody.appendChild(row);
+          
+          
+        });
+        tableData1.forEach(function(rowData) {
+          var row = document.createElement('tr');
+
+          rowData.forEach(function(cellData) {
+            var cell = document.createElement('td');
+            cell.appendChild(document.createTextNode(cellData));
+            
+            row.appendChild(cell);
+            
+          });
+          
+          tableBody1.appendChild(row);
+          
+          
+        });
+    tableBody.show();
+    tableBody1.show();
+    
+    };
+    function createTable1(tableData1) {
+        var tableBody1 = null;
+        tableBody1 = document.getElementById('fshvdvgvukyvbf1');
+        
+        tableData1.forEach(function(rowData) {
+          var row = document.createElement('tr');
+
+          rowData.forEach(function(cellData) {
+            var cell = document.createElement('td');
+            cell.appendChild(document.createTextNode(cellData));
+            
+            row.appendChild(cell);
+            
+          });
+          
+          tableBody1.appendChild(row);
+          
+          
+        });
+    tableBody1.show();
+   
+    };
     </script>
 
     
@@ -446,6 +609,6 @@ class __TwigTemplate_e753ea67cc94278e5d1053b79fb899f34b015e928e27394525e4627c5f9
 
     public function getDebugInfo()
     {
-        return array (  342 => 237,  337 => 235,  332 => 233,  327 => 231,  322 => 229,  318 => 228,  313 => 226,  308 => 224,  214 => 133,  178 => 99,  167 => 89,  128 => 51,  114 => 43,  110 => 42,  106 => 41,  102 => 40,  98 => 39,  94 => 38,  91 => 37,  87 => 36,  59 => 10,  56 => 9,  51 => 6,  48 => 5,  41 => 3,  38 => 2,  11 => 1,);
+        return array (  482 => 397,  377 => 270,  372 => 268,  367 => 266,  362 => 264,  357 => 262,  353 => 261,  348 => 259,  343 => 257,  325 => 241,  308 => 225,  214 => 133,  178 => 99,  167 => 89,  128 => 51,  114 => 43,  110 => 42,  106 => 41,  102 => 40,  98 => 39,  94 => 38,  91 => 37,  87 => 36,  59 => 10,  56 => 9,  51 => 6,  48 => 5,  41 => 3,  38 => 2,  11 => 1,);
     }
 }
