@@ -1,6 +1,6 @@
 <?php
 
-/* realEstateBundle:Offre/Filtres:ville.html.twig */
+/* realEstateBundle:Offre:Filtres/ville.html.twig */
 class __TwigTemplate_bab3173f1f52fbd2ebb3d0e05ad591f34213775760c101bc1918b49370e45e58 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -71,7 +71,7 @@ class __TwigTemplate_bab3173f1f52fbd2ebb3d0e05ad591f34213775760c101bc1918b49370e
 
     public function getTemplateName()
     {
-        return "realEstateBundle:Offre/Filtres:ville.html.twig";
+        return "realEstateBundle:Offre:Filtres/ville.html.twig";
     }
 
     public function isTraitable()

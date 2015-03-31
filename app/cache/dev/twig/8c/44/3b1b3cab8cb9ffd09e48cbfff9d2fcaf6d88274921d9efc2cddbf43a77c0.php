@@ -18,6 +18,7 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
         }
 
         $this->blocks = array(
+            'Image' => array($this, 'block_Image'),
             'DashActive' => array($this, 'block_DashActive'),
             'MailboxEtra' => array($this, 'block_MailboxEtra'),
             'DashCore' => array($this, 'block_DashCore'),
@@ -35,25 +36,35 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
     }
 
     // line 2
-    public function block_DashActive($context, array $blocks = array())
+    public function block_Image($context, array $blocks = array())
     {
         // line 3
-        echo "        class=\"active treeview\"
+        echo "        <img src=\"";
+        echo twig_escape_filter($this->env, (isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "html", null, true);
+        echo "\" class=\"img-circle\" alt=\"User Image\" />
     ";
     }
 
     // line 5
-    public function block_MailboxEtra($context, array $blocks = array())
+    public function block_DashActive($context, array $blocks = array())
     {
         // line 6
-        echo "        <small class=\"label pull-right bg-yellow\">12</small>
+        echo "        class=\"active treeview\"
     ";
     }
 
     // line 8
-    public function block_DashCore($context, array $blocks = array())
+    public function block_MailboxEtra($context, array $blocks = array())
     {
         // line 9
+        echo "        <small class=\"label pull-right bg-yellow\">12</small>
+    ";
+    }
+
+    // line 11
+    public function block_DashCore($context, array $blocks = array())
+    {
+        // line 12
         echo "        <section class=\"content\">
         <div class=\"row\">
             <div class=\"col-lg-3 col-xs-6\">
@@ -61,7 +72,7 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
               <div class=\"small-box bg-aqua\">
                 <div class=\"inner\">
                   <h3>";
-        // line 15
+        // line 18
         echo twig_escape_filter($this->env, (isset($context["offren"]) ? $context["offren"] : $this->getContext($context, "offren")), "html", null, true);
         echo "</h3>
                   <p>Offres</p>
@@ -77,7 +88,7 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
               <div class=\"small-box bg-green\">
                 <div class=\"inner\">
                   <h3>";
-        // line 28
+        // line 31
         echo twig_escape_filter($this->env, (isset($context["utilisateurgn"]) ? $context["utilisateurgn"] : $this->getContext($context, "utilisateurgn")), "html", null, true);
         echo "</h3>
                   <p>Gérants</p>
@@ -93,7 +104,7 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
               <div class=\"small-box bg-yellow\">
                 <div class=\"inner\">
                   <h3>";
-        // line 41
+        // line 44
         echo twig_escape_filter($this->env, (isset($context["utilisateurcn"]) ? $context["utilisateurcn"] : $this->getContext($context, "utilisateurcn")), "html", null, true);
         echo "</h3>
                   <p>Clients</p>
@@ -109,7 +120,7 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
               <div class=\"small-box bg-red\">
                 <div class=\"inner\">
                   <h3>";
-        // line 54
+        // line 57
         echo twig_escape_filter($this->env, (isset($context["agancen"]) ? $context["agancen"] : $this->getContext($context, "agancen")), "html", null, true);
         echo "</h3>
                   <p>Agance</p>
@@ -135,28 +146,28 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
                 <div class=\"box-body\">
                   <ul class=\"products-list product-list-in-box\">
                     ";
-        // line 77
+        // line 80
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($context["offre"]);
         foreach ($context['_seq'] as $context["_key"] => $context["offre"]) {
-            // line 78
+            // line 81
             echo "                      <li class=\"item\">
                       <div class=\"product-img\">
                         <img src=\"";
-            // line 80
+            // line 83
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "urlimage", array()), "html", null, true);
             echo "\" alt=\"Product Image\"/>
                       </div>
                       <div class=\"product-info\">
-                        <a href=\"javascript::;\" class=\"product-type\">";
-            // line 83
+                        <a  class=\"product-type\">";
+            // line 86
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "typeimmob", array()), "html", null, true);
             echo "</a><span class=\"label label-warning pull-right\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "payement", array()), "html", null, true);
             echo " TD</span>
                         <span class=\"product-description\">
                           ";
-            // line 85
+            // line 88
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "nbrpiece", array()), "html", null, true);
             echo " Piece, ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "surface", array()), "html", null, true);
@@ -175,7 +186,7 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['offre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 90
+        // line 93
         echo "                  </ul>
                 </div>
               </div>
@@ -195,18 +206,18 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
                 <div class=\"box-body no-padding\">
                   <ul class=\"users-list clearfix\">
                     ";
-        // line 108
+        // line 111
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($context["utilisateurc"]);
         foreach ($context['_seq'] as $context["_key"] => $context["utilisateurc"]) {
-            // line 109
+            // line 112
             echo "                    <li>
                       <img src=\"";
-            // line 110
+            // line 113
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurc"], "urlp", array()), "html", null, true);
             echo "\" alt=\"User Image\"/>
-                      <a class=\"users-list-name\" href=\"#\">";
-            // line 111
+                      <a class=\"users-list-name\" >";
+            // line 114
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurc"], "prenom", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurc"], "nom", array()), "html", null, true);
@@ -217,7 +228,7 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['utilisateurc'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 114
+        // line 117
         echo "                  </ul><!-- /.users-list -->
                 </div>
               </div>
@@ -238,23 +249,23 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
                 <div class=\"box-body\">
                   <ul class=\"products-list product-list-in-box\">
                     ";
-        // line 133
+        // line 136
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($context["agance"]);
         foreach ($context['_seq'] as $context["_key"] => $context["agance"]) {
-            // line 134
+            // line 137
             echo "                      <li class=\"item\"> 
                           <div class=\"product-img\">
                         <img src=\"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSAJkvd0MYu8xLY4QJqfzM-1a2UbUvIyN0W3FxyS97C-D7uXaQA\" alt=\"Product Image\"/>
                       </div>
                       <div class=\"product-info\">
-                        <a href=\"javascript::;\" class=\"product-type\">";
-            // line 139
+                        <a  class=\"product-type\">";
+            // line 142
             echo twig_escape_filter($this->env, $this->getAttribute($context["agance"], "nom", array()), "html", null, true);
             echo "</a>
                         <span class=\"product-description\">
-                          Gerait par <a href=\"javascript::;\" class=\"product-type\">";
-            // line 141
+                          Gerait par <a  class=\"product-type\">";
+            // line 144
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idGerant", array()), "nom", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["agance"], "idGerant", array()), "prenom", array()), "html", null, true);
@@ -270,7 +281,7 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['agance'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 145
+        // line 148
         echo "                  </ul>
                 </div>
               </div>
@@ -291,18 +302,18 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
                 <div class=\"box-body no-padding\">
                   <ul class=\"users-list clearfix\">
                     ";
-        // line 164
+        // line 167
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($context["utilisateurg"]);
         foreach ($context['_seq'] as $context["_key"] => $context["utilisateurg"]) {
-            // line 165
+            // line 168
             echo "                    <li>
                       <img src=\"";
-            // line 166
+            // line 169
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurg"], "urlp", array()), "html", null, true);
             echo "\" alt=\"User Image\"/>
-                      <a class=\"users-list-name\" href=\"#\">";
-            // line 167
+                      <a class=\"users-list-name\" >";
+            // line 170
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurg"], "prenom", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["utilisateurg"], "nom", array()), "html", null, true);
@@ -313,7 +324,7 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['utilisateurg'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 170
+        // line 173
         echo "                  </ul><!-- /.users-list -->
                 </div>
               </div></div>
@@ -335,6 +346,6 @@ class __TwigTemplate_8c443b1b3cab8cb9ffd09e48cbfff9d2fcaf6d88274921d9efc2cddbf43
 
     public function getDebugInfo()
     {
-        return array (  317 => 170,  306 => 167,  302 => 166,  299 => 165,  295 => 164,  274 => 145,  258 => 141,  253 => 139,  246 => 134,  242 => 133,  221 => 114,  210 => 111,  206 => 110,  203 => 109,  199 => 108,  179 => 90,  160 => 85,  153 => 83,  147 => 80,  143 => 78,  139 => 77,  113 => 54,  97 => 41,  81 => 28,  65 => 15,  57 => 9,  54 => 8,  49 => 6,  46 => 5,  41 => 3,  38 => 2,  11 => 1,);
+        return array (  328 => 173,  317 => 170,  313 => 169,  310 => 168,  306 => 167,  285 => 148,  269 => 144,  264 => 142,  257 => 137,  253 => 136,  232 => 117,  221 => 114,  217 => 113,  214 => 112,  210 => 111,  190 => 93,  171 => 88,  164 => 86,  158 => 83,  154 => 81,  150 => 80,  124 => 57,  108 => 44,  92 => 31,  76 => 18,  68 => 12,  65 => 11,  60 => 9,  57 => 8,  52 => 6,  49 => 5,  42 => 3,  39 => 2,  11 => 1,);
     }
 }
