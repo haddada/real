@@ -36,10 +36,10 @@ class __TwigTemplate_21ffc1e9b34e6baf2488d1ce67bd572db633f11445fbd9f5e56c389b336
            itemscope itemtype=\"http://schema.org/Enumeration\">
       
         <div class=\"panel-image listing-img\">
-          <a href=\"/offre/";
+          <a href=\"";
             // line 16
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
-            echo "/show\" class=\"media-photo media-cover\">
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("offre_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
+            echo "\" class=\"media-photo media-cover\">
             <div class=\"listing-img-container media-cover text-center\">
                                                                   
                                                           
