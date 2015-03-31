@@ -41,7 +41,7 @@ offre_search_gerant:
     path: /search/{id_gerant}
     defaults: { _controller: "realEstateBundle:Offre:searchByGerant" }
 offre_search_gouvern:
-    path: /search/{gouvernorat}
+    path: /search/gouvernorat/
     defaults: { _controller: "realEstateBundle:Offre:searchGouvernorat" }
 offre_search_ville:
     path: /ville/gouvernorat

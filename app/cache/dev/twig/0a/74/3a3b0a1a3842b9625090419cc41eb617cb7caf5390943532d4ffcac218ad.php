@@ -44,9 +44,9 @@ class __TwigTemplate_0a743a3b0a1a3842b9625090419cc41eb617cb7caf5390943532d4ffcac
             // line 8
             echo "    <div class=\"col-lg-4 col-md-6 col-sm-12 rm-padding-sm \">
       <div class=\"discovery-card rm-padding-sm row-space-4 darken-on-hover \" style=\"background-image:url('https://a0.muscache.com/ic/pictures/discovery/attribute_photos/beach_1x1.jpg?interpolation=lanczos-none&amp;output-format=jpg&amp;output-quality=70&amp;size=large_cover&amp;downsize=326px:326px&amp;v=6');\" sm-img-url=\"https://a0.muscache.com/ic/pictures/discovery/attribute_photos/beach_2x1.jpg?interpolation=lanczos-none&amp;output-format=jpg&amp;output-quality=70&amp;size=large_cover&amp;downsize=655px:326px&amp;v=6\">
-    <a href=\"/offre/search?gouvernorat=";
+    <a href=\"";
             // line 10
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "gouvernorat", array()), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("offre_search_gouvern", array("gouvernorat" => $this->getAttribute($context["entity"], "gouvernorat", array()))), "html", null, true);
             echo "\" class=\"link-reset\" data-hook=\"discovery-card\" data-id=\"\">
     <div class=\"va-container va-container-v va-container-h\">
       <div class=\"va-middle text-center text-contrast\">

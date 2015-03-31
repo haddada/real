@@ -269,7 +269,7 @@ class OffreController extends Controller
 
 //rechercher Par gouvernorat avec la methode POST Or get
 
-    public function searchAction()
+    public function searchGouvernoratAction()
     {
         $em = $this->getDoctrine()->getManager();
         $request = $this->container->get('request');

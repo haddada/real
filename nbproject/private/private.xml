@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
@@ -8,29 +7,11 @@
             <file>file:/home/haddada/realEstate/src/sprint2/RealEstate/AdminBundle/Resources/public/js/pages/dashboard.js</file>
             <file>file:/home/haddada/realEstate/src/sprint2/RealEstate/AdminBundle/Resources/public/js/demo.js</file>
             <file>file:/home/haddada/realEstate/src/sprint2/RealEstate/AdminBundle/Resources/public/js/app.js</file>
-            <file>file:/home/haddada/realEstate/src/sprint2/realEstateBundle/Resources/views/Offre/offreCards.html.twig</file>
             <file>file:/home/haddada/realEstate/.git/config</file>
             <file>file:/home/haddada/realEstate/composer.json</file>
             <file>file:/home/haddada/realEstate/src/sprint2/RealEstate/AdminBundle/Resources/config/routing.yml</file>
             <file>file:/home/haddada/realEstate/src/sprint2/realEstateBundle/Resources/config/routing.yml</file>
             <file>file:/home/haddada/realEstate/composer.lock</file>
-            <file>file:/home/haddada/realEstate/nbproject/private/private.xml</file>
         </group>
     </open-files>
 </project-private>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/wamp/www/pidev_sprint2/src/sprint2/RealEstate/AdminBundle/Controller/DefaultController.php</file>
-            <file>file:/C:/wamp/www/pidev_sprint2/src/sprint2/RealEstate/AdminBundle/Resources/config/routing.yml</file>
-            <file>file:/C:/wamp/www/pidev_sprint2/src/sprint2/RealEstate/AdminBundle/Resources/views/Pages/client.html.twig</file>
-            <file>file:/C:/wamp/www/pidev_sprint2/src/sprint2/RealEstate/AdminBundle/Entity/Boitemessages.php</file>
-            <file>file:/C:/wamp/www/pidev_sprint2/src/sprint2/RealEstate/AdminBundle/Entity/Utilisateur.php</file>
-            <file>file:/C:/wamp/www/pidev_sprint2/src/sprint2/RealEstate/AdminBundle/Controller/AjaxController.php</file>
-        </group>
-    </open-files>
-</project-private>
->>>>>>> Wael.FATHALLAH/pidev_sprint2-master

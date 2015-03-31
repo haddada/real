@@ -18,6 +18,7 @@ class __TwigTemplate_ee812a32e3eb73addf6e06ddcba682e5e1dd3c2bc09c6ba20262909ec4e
         }
 
         $this->blocks = array(
+            'Image' => array($this, 'block_Image'),
             'offreActive' => array($this, 'block_offreActive'),
             'offreCore' => array($this, 'block_offreCore'),
         );
@@ -34,17 +35,27 @@ class __TwigTemplate_ee812a32e3eb73addf6e06ddcba682e5e1dd3c2bc09c6ba20262909ec4e
     }
 
     // line 2
-    public function block_offreActive($context, array $blocks = array())
+    public function block_Image($context, array $blocks = array())
     {
         // line 3
+        echo "        <img src=\"";
+        echo twig_escape_filter($this->env, (isset($context["image"]) ? $context["image"] : $this->getContext($context, "image")), "html", null, true);
+        echo "\" class=\"img-circle\" alt=\"User Image\" />
+    ";
+    }
+
+    // line 5
+    public function block_offreActive($context, array $blocks = array())
+    {
+        // line 6
         echo "        class=\"active treeview\"
     ";
     }
 
-    // line 6
+    // line 9
     public function block_offreCore($context, array $blocks = array())
     {
-        // line 7
+        // line 10
         echo "       
        <section class=\"content\">
         <div class=\"row\">
@@ -53,7 +64,7 @@ class __TwigTemplate_ee812a32e3eb73addf6e06ddcba682e5e1dd3c2bc09c6ba20262909ec4e
               <div class=\"col-md-12\">
                 <ul class=\"offre-list\">
                     ";
-        // line 14
+        // line 17
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($context["offre"]);
         foreach ($context['_seq'] as $context["_key"] => $context["offre"]) {
@@ -62,15 +73,15 @@ class __TwigTemplate_ee812a32e3eb73addf6e06ddcba682e5e1dd3c2bc09c6ba20262909ec4e
                             <div class=\"small-box bg-red\">
                                 <div class=\"inner\">
                                     <img src=\"";
-            // line 18
+            // line 21
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "urlimage", array()), "html", null, true);
             echo "\"  height=\"150\"/>                                  
                                   <h3>";
-            // line 19
+            // line 22
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "typeimmob", array()), "html", null, true);
             echo "</h3>
                                   <p> ";
-            // line 20
+            // line 23
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "nbrpiece", array()), "html", null, true);
             echo " Piece, ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "surface", array()), "html", null, true);
@@ -93,7 +104,7 @@ class __TwigTemplate_ee812a32e3eb73addf6e06ddcba682e5e1dd3c2bc09c6ba20262909ec4e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['offre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 32
         echo "                </ul>
               </div>
         </div>
@@ -113,6 +124,6 @@ class __TwigTemplate_ee812a32e3eb73addf6e06ddcba682e5e1dd3c2bc09c6ba20262909ec4e
 
     public function getDebugInfo()
     {
-        return array (  97 => 29,  74 => 20,  70 => 19,  66 => 18,  57 => 14,  48 => 7,  45 => 6,  40 => 3,  37 => 2,  11 => 1,);
+        return array (  108 => 32,  85 => 23,  81 => 22,  77 => 21,  68 => 17,  59 => 10,  56 => 9,  51 => 6,  48 => 5,  41 => 3,  38 => 2,  11 => 1,);
     }
 }

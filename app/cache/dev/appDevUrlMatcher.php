@@ -388,8 +388,12 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 }
 
                 // offre_search_gouvern
-                if (preg_match('#^/offre/search/(?P<gouvernorat>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'offre_search_gouvern')), array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchGouvernoratAction',));
+                if (rtrim($pathinfo, '/') === '/offre/search/gouvernorat') {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'offre_search_gouvern');
+                    }
+
+                    return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchGouvernoratAction',  '_route' => 'offre_search_gouvern',);
                 }
 
             }

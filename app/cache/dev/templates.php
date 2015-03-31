@@ -127,6 +127,7 @@
   'sprint2RealEstateAdminBundle:Pages:agence.html.twig' => '/home/haddada/realEstate/src/sprint2/RealEstate/AdminBundle/Resources/views/Pages/agence.html.twig',
   'sprint2RealEstateAdminBundle:Default:ajax.html.twig' => '/home/haddada/realEstate/src/sprint2/RealEstate/AdminBundle/Resources/views/Default/ajax.html.twig',
   'sprint2RealEstateAdminBundle:Default:index.html.twig' => '/home/haddada/realEstate/src/sprint2/RealEstate/AdminBundle/Resources/views/Default/index.html.twig',
+  'RealEstateAuthentificationBundle:Default:index.html.twig' => '/home/haddada/realEstate/src/RealEstate/AuthentificationBundle/Resources/views/Default/index.html.twig',
   'DebugBundle:Profiler:dump.html.twig' => '/home/haddada/realEstate/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views/Profiler/dump.html.twig',
   'AcmeDemoBundle:Secured:login.html.twig' => '/home/haddada/realEstate/src/Acme/DemoBundle/Resources/views/Secured/login.html.twig',
   'AcmeDemoBundle:Secured:layout.html.twig' => '/home/haddada/realEstate/src/Acme/DemoBundle/Resources/views/Secured/layout.html.twig',
