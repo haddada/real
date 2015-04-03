@@ -85,6 +85,8 @@ class OffreController extends Controller
         $em = $this->getDoctrine()->getManager();
         $gouvernorats=$em->getRepository('realEstateBundle:Adresse')->findGouvernorat(24);
         $request = $this->container->get('request');
+        $villes=$em->getRepository('realEstateBundle:Adresse')->findvilleGouvernorat(array('gouvernorat'=>'ariana'));
+        $codes=$em->getRepository('realEstateBundle:Adresse')->findCodeVille(array('ville'=>'Raoued')); 
         $adresse=new Adresse();
 
         if($request->getMethod()=="POST"){
@@ -94,14 +96,29 @@ class OffreController extends Controller
             $nature=$request->get('nature');
             $nbrpiece=$request->get('nbrpiece');
             $etat=$request->get('etat');
+            $asc=$request->get('Ascenseur');
+            $cuis=$request->get('Cuisine');
+            $jar=$request->get('Jardin');
+            $acc=$request->get('Acces');
+            $gaz=$request->get('Gaz');
+            $chauf=$request->get('Chauffage');
+            $meuble=$request->get('Meuble');
+            $clim=$request->get('Climatise');
             $urlimage="url";
             $idGerant=1;
             $codepostal=$request->get('code');
            
-            $adresse  = $em->getRepository('realEstateBundle:Adresse')->findBy(array('codepostal'=>$codepostal));
+            $adresse  = $em->getRepository('realEstateBundle:Adresse')->findOneBy(array('codepostal'=>$codepostal));
            
             //return new Response ($adresse[0]->getId());
-
+            $entity->setClimatisation($clim);
+            $entity->setMeuble($meuble);
+            $entity->setGazdeville($gaz);
+            $entity->setChauffage($chauf);
+            $entity->setEntreeindep($acc);
+            $entity->setJardin($jar);
+            $entity->setCuisineequipe($cuis);
+            $entity->setAscenceur($asc);
             $entity->setEtat($etat);
             $entity->setTypeimmob($typeimmob);
             $entity->setNature($nature);
@@ -109,20 +126,26 @@ class OffreController extends Controller
             $entity->setUrlimage($urlimage);
             $entity->setIdGerant($idGerant);
             $entity->setSurface($surface);
-            $entity->setAdresse($adresse[0]);
+            $entity->setAdresse($adresse);
             $entity->setPayement($prix);
-            $em->persist($entity);
-            $em->flush();
 
+            $validator = $this->get('validator');
+            $errorList = $validator->validate($entity);
 
-            return $this->redirect($this->generateUrl('offre_show', array('id' => $entity->getId())));
-
-
+            if (count($errorList) > 0) {
+                return new Response(print_r($errorList, true));
+            } else {
+               $em->persist($entity);
+               $em->flush();
+               return $this->redirect($this->generateUrl('offre_show', array('id' => $entity->getId())));
+            }
         }
-      
+        
         return $this->render('realEstateBundle:Offre:new.html.twig', array(
             'entity' => $entity,
-            'gouvernorats'=>$gouvernorats
+            'gouvernorats'=>$gouvernorats,
+            'villes'=>$villes,
+            'codes'=>$codes
         ));
     }
 
@@ -308,6 +331,7 @@ class OffreController extends Controller
            $etat=$request->get('Etat');
            $max=$request->get('maxprice');
            $min=$request->get('minprice');
+           $chambre=$request->get('min_bedrooms');
 
            if($max === null){
                 $max="100000";
@@ -326,12 +350,21 @@ class OffreController extends Controller
                     $entitie_Etat=$em->getRepository('realEstateBundle:Offre')->findBy(array('etat'=>$etat));
                 else
                    $entitie_Etat=$em->getRepository('realEstateBundle:Offre')->findAll();
-                          
+
+                if($chambre!=-1&&$chambre!==null)
+                    $entitie_chambre=$em->getRepository('realEstateBundle:Offre')->findBy(array('nbrpiece'=>$chambre));
+                else
+                    $entitie_chambre=$em->getRepository('realEstateBundle:Offre')->findAll();
+
                     $entities_price=(array)$this->searchByPrice($min,$max);
                     $entities_roomA=(array)$entitie_room;
                     $entities_roomE=(array)$entitie_Etat;
+                    $entities_chambre=(array)$entitie_chambre;
+
                     $entities_RE=$this->intersection($entities_roomA,$entities_roomE);
-                    $entities=$this->intersection($entities_price,$entities_RE);
+                    $entities_REC=$this->intersection($entities_RE,$entities_chambre);
+
+                    $entities=$this->intersection($entities_price,$entities_REC);
        
                     return $this->container->get('templating')->renderResponse('realEstateBundle:Offre:offreCards.html.twig', array(
                      'entities' => $entities

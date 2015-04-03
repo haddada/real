@@ -14,7 +14,6 @@ class __TwigTemplate_cda72f5208f0f6145504924770dfd8768c2c757f4337a7530bc66e364d0
             'filtreTypeImmob' => array($this, 'block_filtreTypeImmob'),
             'formChambre' => array($this, 'block_formChambre'),
             'formEtat' => array($this, 'block_formEtat'),
-            'filterQuartier' => array($this, 'block_filterQuartier'),
         );
     }
 
@@ -561,11 +560,8 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
   <div class=\"checkbox-group neighborhoods filters-section panel-body panel-light\"
        data-name=\"neighborhoods\">
    
-       ";
-        // line 533
-        $this->displayBlock('filterQuartier', $context, $blocks);
-        // line 535
-        echo "
+       <div>
+
 
 
       <div class=\"col-md-1\">
@@ -582,93 +578,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
 
   <div class=\"checkbox-group hosting_amenities filters-section panel-body panel-light\"
        data-name=\"hosting_amenities\">
-    <div class=\"row\">
-      <div class=\"col-lg-2 col-md-12 filter-label\">
-        <label>Équipements</label>
-      </div>
-
-      <div class=\"col-lg-9 col-md-11\">
-        <div class=\"row row-condensed filters-columns\">
-          <div class=\"col-md-4\">
-            <label class=\"media checkbox text-truncate\" title=\"Internet sans fil\">
-              <input type=\"checkbox\" name=\"amenities\" value=\"4\" class=\"pull-left\">
-              Ascenseur
-            </label>
-          </div>
-          <div class=\"col-md-4\">
-            <label class=\"media checkbox text-truncate\" title=\"Télévision\">
-              <input type=\"checkbox\" name=\"amenities\" value=\"1\" class=\"pull-left\">
-              Cuisine équipée
-            </label>
-          </div>
-          <div class=\"col-md-4\">
-            <label class=\"media checkbox text-truncate\" title=\"Cuisine\">
-              <input type=\"checkbox\" name=\"amenities\" value=\"8\" class=\"pull-left\">
-              Jardin
-            </label>
-          </div>
-        </div>
-
-        <div class=\"filters-more collapse\">
-          <hr>
-          <div class=\"row row-condensed filters-columns\">
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Accès handicapés\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"6\" class=\"pull-left\">
-                Accès indépendant
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Adapté aux événements\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"32\" class=\"pull-left\">
-                Gaz de ville
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Animaux acceptés\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"12\" class=\"pull-left\">
-                Chauffage
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Ascenseur\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"21\" class=\"pull-left\">
-                Meublé
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Chauffage\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"30\" class=\"pull-left\">
-                Climatisé
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Cheminée d'intérieur\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"27\" class=\"pull-left\">
-                Cheminée d'intérieur
-              </label>
-            </div>
-            <div class=\"col-md-4\">
-              <label class=\"media checkbox text-truncate\" title=\"Climatisation\">
-                <input type=\"checkbox\" name=\"amenities\" value=\"5\" class=\"pull-left\">
-                Climatisation
-              </label>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-
-      <div class=\"col-md-1\">
-        <label class=\"show-more\">
-          <span>
-            <i class=\"icon icon-caret-down hide-sm\"></i>
-            <strong class=\"text-muted show-sm\">+ Plus</strong>
-          </span>
-          <span class=\"hide\"><i class=\"icon icon-caret-up\"></i></span>
-        </label>
-      </div>
-    </div>
+   
   </div>
 
   <div class=\"checkbox-group property_type_id filters-section panel-body panel-light\"
@@ -786,9 +696,9 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         
          
         ";
-        // line 755
+        // line 668
         $this->env->loadTemplate("realEstateBundle:Offre:offreCards.html.twig")->display(array_merge($context, array("entites" => (isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")))));
-        // line 756
+        // line 669
         echo "    
 
         </div>
@@ -896,7 +806,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
                   str=str+\"&\"+strP;
                   console.log(str);  
               \$.get(\"";
-        // line 862
+        // line 775
         echo $this->env->getExtension('routing')->getPath("offre_search_ajax");
         echo "?\"+str+\"&ss_id=b66045u7\",function( data ) {
                     \$( \".search-results\" ).html( data );           
@@ -910,7 +820,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
                   str=str+\"&\"+strP;
                console.log(str);                        
                   \$.get(\"";
-        // line 873
+        // line 786
         echo $this->env->getExtension('routing')->getPath("offre_search_ajax");
         echo "?\"+str+\"&ss_id=b66045u7\",function( data ) {
                         \$( \".search-results\" ).html( data );           
@@ -928,7 +838,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
                  strP=\$(\".formPrice :input[value!='']\").serialize() ;
                  console.log(str+\"&\"+strP);
               \$.get(\"";
-        // line 888
+        // line 801
         echo $this->env->getExtension('routing')->getPath("offre_search_ajax");
         echo "?\"+str+\"&\"+strP+\"&ss_id=b66045u7\",function( data ) {
                           \$( \".search-results\" ).html( data );           
@@ -938,7 +848,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
 
          
           });
-             
+ 
 
 
     
@@ -998,13 +908,6 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         echo "         ";
     }
 
-    // line 533
-    public function block_filterQuartier($context, array $blocks = array())
-    {
-        // line 534
-        echo "       ";
-    }
-
     public function getTemplateName()
     {
         return "realEstateBundle:Offre:index.html.twig";
@@ -1017,6 +920,6 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
 
     public function getDebugInfo()
     {
-        return array (  1005 => 534,  1002 => 533,  998 => 526,  995 => 525,  991 => 514,  988 => 513,  984 => 466,  981 => 465,  977 => 172,  974 => 171,  932 => 888,  914 => 873,  900 => 862,  792 => 756,  790 => 755,  568 => 535,  566 => 533,  558 => 527,  556 => 525,  544 => 515,  542 => 513,  494 => 467,  492 => 465,  198 => 173,  196 => 171,  24 => 1,);
+        return array (  908 => 526,  905 => 525,  901 => 514,  898 => 513,  894 => 466,  891 => 465,  887 => 172,  884 => 171,  842 => 801,  824 => 786,  810 => 775,  702 => 669,  700 => 668,  557 => 527,  555 => 525,  543 => 515,  541 => 513,  493 => 467,  491 => 465,  197 => 173,  195 => 171,  23 => 1,);
     }
 }

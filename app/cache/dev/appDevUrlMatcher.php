@@ -369,7 +369,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             if (0 === strpos($pathinfo, '/offre/search')) {
                 // offre_search
                 if ($pathinfo === '/offre/search') {
-                    return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchAction',  '_route' => 'offre_search',);
+                    return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchGouvernoratAction',  '_route' => 'offre_search',);
                 }
 
                 // offre_search_type

@@ -33,7 +33,10 @@ class __TwigTemplate_7c0f23c0e7f968130e78cab38d20add8bddc3f781e7ac8efb7344f911d9
                 <link rel=\"icon\" type=\"image/x-icon\" href=\"/favicon.ico\">
     <style type=\"text/css\"></style><style type=\"text/css\">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:\"lucida grande\", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
 .fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
-.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><script src=\"https://connect.facebook.net/fr_FR/sdk.js\" class=\"lazyload\" charset=\"utf-8\"></script></head>
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><script src=\"https://connect.facebook.net/fr_FR/sdk.js\" class=\"lazyload\" charset=\"utf-8\"></script>
+
+
+</head>
     <body class=\"\">
         <style type=\"text/css\">.pac-container{background-color:#fff;position:absolute!important;z-index:1000;border-radius:2px;border-top:1px solid #d9d9d9;font-family:Arial,sans-serif;box-shadow:0 2px 6px rgba(0,0,0,0.3);-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}.pac-container:after{content:\"\";padding:1px 1px 1px 0;height:16px;text-align:right;display:block;background-image:url(//maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white2.png);background-position:right;background-repeat:no-repeat;background-size:104px 16px}.hdpi.pac-container:after{background-image:url(//maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white2_hdpi.png)}.pac-item{cursor:default;padding:0 4px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;line-height:30px;text-align:left;border-top:1px solid #e6e6e6;font-size:11px;color:#999}.pac-item:hover{background-color:#fafafa}.pac-item-selected,.pac-item-selected:hover{background-color:#ebf2fe}.pac-matched{font-weight:700}.pac-item-query{font-size:13px;padding-right:3px;color:#000}.pac-icon{width:15px;height:20px;margin-right:7px;margin-top:6px;display:inline-block;vertical-align:top;background-image:url(//maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);background-size:34px}.hdpi .pac-icon{background-image:url(//maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons_hdpi.png)}.pac-icon-search{background-position:-1px -1px}.pac-item-selected .pac-icon-search{background-position:-18px -1px}.pac-icon-marker{background-position:-1px -161px}.pac-item-selected .pac-icon-marker{background-position:-18px -161px}.pac-placeholder{color:gray}</style>
         <meta charset=\"UTF-8\">
@@ -106,7 +109,7 @@ class __TwigTemplate_7c0f23c0e7f968130e78cab38d20add8bddc3f781e7ac8efb7344f911d9
         <link href=\"https://a0.muscache.com/airbnb/static/compatibility/airglyphs-ie8-4726277b9b1996acd7c89b89f9bbcdd7.css\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />
       <![endif]-->
      <link href=\"";
-        // line 82
+        // line 85
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/modal.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"screen\">
     <link href=\"https://a0.muscache.com/airbnb/static/rooms/new-68a7d73eefddfebfe4200c008751b974.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\">
@@ -133,7 +136,15 @@ class __TwigTemplate_7c0f23c0e7f968130e78cab38d20add8bddc3f781e7ac8efb7344f911d9
 
     <meta name=\"twitter:widgets:csp\" content=\"on\">
 
-
+     <script src=\"";
+        // line 110
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery.js"), "html", null, true);
+        echo "\"></script>
+    <!-- Include all JavaScripts, compiled by Assetic -->
+    <script src=\"";
+        // line 112
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
+        echo "\"></script>
 
 
     <meta name=\"viewport\" content=\"width=1045\">
@@ -316,21 +327,21 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
 \t      <div class=\"row row-space-5 row-space-top-5 row-table\">
 \t\t      
 \t      \t ";
-        // line 289
+        // line 294
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/typeLogement.html.twig")->display($context);
-        // line 290
+        // line 295
         echo "\t       </div>
 \t       <div class=\"row row-space-5 row-space-top-5 row-table\">
         \t ";
-        // line 292
+        // line 297
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Etat.html.twig")->display($context);
-        // line 293
+        // line 298
         echo "        \t</div>
             <div class=\"row row-space-5 row-space-top-5 row-table\">
              ";
-        // line 295
+        // line 300
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Prix.html.twig")->display($context);
-        // line 296
+        // line 301
         echo "             </div>
              <div class=\"row row-space-5 row-space-top-5 row-table\">
                 <div class=\"col-3 text-right col-middle\">
@@ -344,7 +355,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
                     <div class=\"col-md-4 col-sm-12 row-space-1\">
                     <div class=\"input-addon\">
                           <span class=\"input-prefix\">m²</span>
-                          <input class=\"input-stem input-large\" type=\"number\" name=\"surface\" value=\"\" id=\"\">
+                          <input class=\"input-stem input-large\" type=\"number\" name=\"surface\" value=\"\" id=\"\" required>
                       </div>  
                     </div>
                   </div>
@@ -375,38 +386,48 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
              
         \t<div class=\"row row-space-5 row-space-top-5 row-table\">
 \t         ";
-        // line 339
-        $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Chambre.html.twig")->display($context);
-        // line 340
-        echo "\t         </div>
-\t         ";
-        // line 341
-        $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Adresse.html.twig")->display($context);
-        // line 342
-        echo "\t        
- \t\t\t <div class=\"row row-space-5 row-space-top-5 row-table\">
-\t         ";
         // line 344
-        $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Quartier.html.twig")->display(array_merge($context, array("gouvernorats" => (isset($context["gouvernorats"]) ? $context["gouvernorats"] : $this->getContext($context, "gouvernorats")))));
+        $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Chambre.html.twig")->display($context);
         // line 345
         echo "\t         </div>
+             ";
+        // line 349
+        echo "               
+             
+\t         
+\t        
+ \t\t\t <div class=\"row row-space-5 row-space-top-5 row-table\">
+\t         ";
+        // line 354
+        $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Quartier.html.twig")->display(array_merge($context, array("gouvernorats" => (isset($context["gouvernorats"]) ? $context["gouvernorats"] : $this->getContext($context, "gouvernorats")))));
+        // line 355
+        echo "\t         </div>
+
 \t         <div class=\"row row-space-5 row-space-top-5 row-table villes\">
-             </div>
+                 ";
+        // line 358
+        $this->env->loadTemplate("realEstateBundle:Offre:Filtres/ville.html.twig")->display(array_merge($context, array("villes" => (isset($context["villes"]) ? $context["villes"] : $this->getContext($context, "villes")))));
+        // line 359
+        echo "             </div>
+
              <div class=\"row row-space-5 row-space-top-5 row-table code\">
-             </div>
+                ";
+        // line 362
+        $this->env->loadTemplate("realEstateBundle:Offre:Filtres/code.html.twig")->display(array_merge($context, array("codes" => (isset($context["codes"]) ? $context["codes"] : $this->getContext($context, "codes")))));
+        // line 363
+        echo "             </div>
 \t        
 \t         <div class=\"row row-space-5 row-space-top-5 row-table\">
 \t         ";
-        // line 352
+        // line 366
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Equipement.html.twig")->display($context);
-        // line 353
+        // line 367
         echo "\t         </div>
              
 
 \t         <div class=\"row row-space-5 row-space-top-7 row-table\">
 \t\t        <div class=\"col-9 col-offset-3 row-space-5 row-space-top-7\" id=\"\">
-\t\t        \t<input type=\"submit\" class=\"btn btn-primary btn-large submit
-\t                \" >
+\t\t        \t<input type=\"submit\" class=\"btn btn-primary btn-large submit\" value=\"Valider\">
 \t\t\t\t\t\t 
 \t\t\t\t\t</input>
 \t\t\t\t</div>
@@ -2309,7 +2330,9 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
           </a>
         </li>
       </ul>
-    </div></body></html>
+    </div>
+    
+    </body></html>
 ";
     }
 
@@ -2320,6 +2343,6 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
 
     public function getDebugInfo()
     {
-        return array (  403 => 353,  401 => 352,  392 => 345,  390 => 344,  386 => 342,  384 => 341,  381 => 340,  379 => 339,  334 => 296,  332 => 295,  328 => 293,  326 => 292,  322 => 290,  320 => 289,  110 => 82,  30 => 4,  24 => 3,  20 => 1,);
+        return array (  425 => 367,  423 => 366,  418 => 363,  416 => 362,  411 => 359,  409 => 358,  404 => 355,  402 => 354,  395 => 349,  392 => 345,  390 => 344,  345 => 301,  343 => 300,  339 => 298,  337 => 297,  333 => 295,  331 => 294,  146 => 112,  141 => 110,  113 => 85,  30 => 4,  24 => 3,  20 => 1,);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-/* realEstateBundle:Offre/Filtres:typeLogement.html.twig */
+/* realEstateBundle:Offre:Filtres/typeLogement.html.twig */
 class __TwigTemplate_81d484b491990d888092b301eb896968b2fca9fb739cba91e6be7e346ca9cc3d extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -51,7 +51,7 @@ class __TwigTemplate_81d484b491990d888092b301eb896968b2fca9fb739cba91e6be7e346ca
 
     public function getTemplateName()
     {
-        return "realEstateBundle:Offre/Filtres:typeLogement.html.twig";
+        return "realEstateBundle:Offre:Filtres/typeLogement.html.twig";
     }
 
     public function getDebugInfo()

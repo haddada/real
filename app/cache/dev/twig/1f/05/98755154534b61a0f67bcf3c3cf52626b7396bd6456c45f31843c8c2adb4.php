@@ -1,6 +1,6 @@
 <?php
 
-/* realEstateBundle:Offre/Filtres:Adresse.html.twig */
+/* realEstateBundle:Offre:Filtres/Adresse.html.twig */
 class __TwigTemplate_1f0598755154534b61a0f67bcf3c3cf52626b7396bd6456c45f31843c8c2adb4 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -17,9 +17,6 @@ class __TwigTemplate_1f0598755154534b61a0f67bcf3c3cf52626b7396bd6456c45f31843c8c
     {
         // line 1
         echo "
-
-
-
 <div class=\"row row-space-5 row-space-top-7 row-table\">
 
     <div class=\"col-3 text-right col-middle\">
@@ -29,7 +26,7 @@ class __TwigTemplate_1f0598755154534b61a0f67bcf3c3cf52626b7396bd6456c45f31843c8c
     </div>
 
 \t<div class=\"col-9 col-middle\" id=\"\">
-\t\t<button class=\"btn btn-primary\" id=\"js-add-address\" data-toggle=\"modal\" data-target=\"#myModal\">
+\t\t<button class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#myModal\">
 \t\t \t Adresse
 \t\t</button>
 \t</div>
@@ -53,29 +50,16 @@ class __TwigTemplate_1f0598755154534b61a0f67bcf3c3cf52626b7396bd6456c45f31843c8c
   </div>
 </div>
 
-   <script src=\"";
-        // line 38
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery.js"), "html", null, true);
-        echo "\"></script>
-    <!-- Include all JavaScripts, compiled by Assetic -->
-    <script src=\"";
-        // line 40
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
-        echo "\"></script>";
+  ";
     }
 
     public function getTemplateName()
     {
-        return "realEstateBundle:Offre/Filtres:Adresse.html.twig";
-    }
-
-    public function isTraitable()
-    {
-        return false;
+        return "realEstateBundle:Offre:Filtres/Adresse.html.twig";
     }
 
     public function getDebugInfo()
     {
-        return array (  63 => 40,  58 => 38,  19 => 1,);
+        return array (  19 => 1,);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-/* realEstateBundle:Offre/Filtres:Quartier.html.twig */
+/* realEstateBundle:Offre:Filtres/Quartier.html.twig */
 class __TwigTemplate_b0eedfd35aebbb30608b00091dc1ae1981196cd0f0a6c68a909cee3b21a96aa9 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -37,7 +37,7 @@ class __TwigTemplate_b0eedfd35aebbb30608b00091dc1ae1981196cd0f0a6c68a909cee3b21a
         <div class=\"row row-condensed\">
           <div class=\"col-md-4 col-sm-12 row-space-1\">
             <div class=\"select select-block\">
-              <select name=\"gouvernorats\" class=\"gouvernoratSelect\" >
+              <select name=\"gouvernorats\" class=\"gouvernoratSelect\" required>
               ";
         // line 15
         $context['_parent'] = (array) $context;
@@ -49,7 +49,7 @@ class __TwigTemplate_b0eedfd35aebbb30608b00091dc1ae1981196cd0f0a6c68a909cee3b21a
             echo "\"> ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["gouvernorat"], "gouvernorat", array()), "html", null, true);
             echo "</option>
-               ";
+              ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['gouvernorat'], $context['_parent'], $context['loop']);
@@ -85,7 +85,7 @@ class __TwigTemplate_b0eedfd35aebbb30608b00091dc1ae1981196cd0f0a6c68a909cee3b21a
 
     public function getTemplateName()
     {
-        return "realEstateBundle:Offre/Filtres:Quartier.html.twig";
+        return "realEstateBundle:Offre:Filtres/Quartier.html.twig";
     }
 
     public function getDebugInfo()

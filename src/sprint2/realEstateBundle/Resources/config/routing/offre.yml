@@ -30,7 +30,7 @@ offre_delete:
     requirements: { _method: post|delete }
 offre_search:
     path: /search
-    defaults: { _controller: "realEstateBundle:Offre:search" }
+    defaults: { _controller: "realEstateBundle:Offre:searchGouvernorat" }
 offre_search_type:
     path: /search/{type}
     defaults: { _controller : "realEstateBundle:Offre:searchByType" }

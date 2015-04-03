@@ -23,6 +23,7 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
             'formSearch' => array($this, 'block_formSearch'),
             'formChambre' => array($this, 'block_formChambre'),
             'formEtat' => array($this, 'block_formEtat'),
+            'equipement' => array($this, 'block_equipement'),
         );
     }
 
@@ -225,12 +226,12 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
     public function block_formChambre($context, array $blocks = array())
     {
         // line 140
-        echo "  <form class=\"col-lg-9 \">
+        echo "  <form class=\"col-lg-9 form-select\">
         <div class=\"row row-condensed\">
           <div class=\"col-md-4 col-sm-12 row-space-1\">
             <div class=\"select select-block\">
               <select name=\"min_bedrooms\" >
-                <option value=\"-1\">Chambres</option>
+                  <option value=\"-1\">Chambres</option>
                   <option value=\"1\">1 chambre</option>
                   <option value=\"2\">2 chambres</option>
                   <option value=\"3\">3 chambres</option>
@@ -242,8 +243,30 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
                   <option value=\"9\">9 chambres</option>
                   <option value=\"10\">10 chambres</option>
               </select>
-            </div>
-          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+";
+    }
+
+    // line 163
+    public function block_formEtat($context, array $blocks = array())
+    {
+        // line 164
+        echo "  <form class=\"col-lg-9 form-select\" >
+  <div class=\"row row-condensed\">
+  <div class=\"col-md-4 col-sm-12 row-space-1\">
+    <div class=\"select select-block\">
+      <select name=\"Etat\">
+        <option value=\"-1\">Etat</option>
+        <option value=\"Mauvai\">mauvaise</option>
+        <option value=\"Bon\">bonne</option>
+        <option value=\"Nouveau\">Nouveau</option>
+        <option value=\"ancien\">ancienne</option>
+      </select>
+    </div>
+  </div>
 
           
           
@@ -252,29 +275,98 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
       ";
     }
 
-    // line 166
-    public function block_formEtat($context, array $blocks = array())
+    // line 184
+    public function block_equipement($context, array $blocks = array())
     {
-        // line 167
-        echo "      <form class=\"col-lg-9 form-select\" >
-        <div class=\"row row-condensed\">
-          <div class=\"col-md-4 col-sm-12 row-space-1\">
-            <div class=\"select select-block\">
-              <select name=\"Etat\">
-                <option value=\"-1\">Etat</option>
-                <option value=\"Mauvai\">mauvaise</option>
-                <option value=\"Bon\">bonne</option>
-                <option value=\"Nouveau\">Nouveau</option>
-                <option value=\"ancien\">ancienne</option>
-              </select>
-            </div>
-          </div>
+        // line 185
+        echo " <div class=\"row\">
+      <div class=\"col-lg-2 col-md-12 filter-label\">
+        <label>Équipements</label>
+      </div>
 
-          
-          
+      <div class=\"col-lg-9 col-md-11\">
+        <div class=\"row row-condensed filters-columns\">
+          <div class=\"col-md-4\">
+            <label class=\"media checkbox text-truncate\" title=\"Internet sans fil\">
+              <input type=\"checkbox\" name=\"amenities\" value=\"4\" class=\"pull-left\">
+              Ascenseur
+            </label>
+          </div>
+          <div class=\"col-md-4\">
+            <label class=\"media checkbox text-truncate\" title=\"Télévision\">
+              <input type=\"checkbox\" name=\"amenities\" value=\"1\" class=\"pull-left\">
+              Cuisine équipée
+            </label>
+          </div>
+          <div class=\"col-md-4\">
+            <label class=\"media checkbox text-truncate\" title=\"Cuisine\">
+              <input type=\"checkbox\" name=\"amenities\" value=\"8\" class=\"pull-left\">
+              Jardin
+            </label>
+          </div>
         </div>
-      </form>
-      ";
+
+        <div class=\"filters-more collapse\">
+          <hr>
+          <div class=\"row row-condensed filters-columns\">
+            <div class=\"col-md-4\">
+              <label class=\"media checkbox text-truncate\" title=\"Accès handicapés\">
+                <input type=\"checkbox\" name=\"amenities\" value=\"6\" class=\"pull-left\">
+                Accès indépendant
+              </label>
+            </div>
+            <div class=\"col-md-4\">
+              <label class=\"media checkbox text-truncate\" title=\"Adapté aux événements\">
+                <input type=\"checkbox\" name=\"amenities\" value=\"32\" class=\"pull-left\">
+                Gaz de ville
+              </label>
+            </div>
+            <div class=\"col-md-4\">
+              <label class=\"media checkbox text-truncate\" title=\"Animaux acceptés\">
+                <input type=\"checkbox\" name=\"amenities\" value=\"12\" class=\"pull-left\">
+                Chauffage
+              </label>
+            </div>
+            <div class=\"col-md-4\">
+              <label class=\"media checkbox text-truncate\" title=\"Ascenseur\">
+                <input type=\"checkbox\" name=\"amenities\" value=\"21\" class=\"pull-left\">
+                Meublé
+              </label>
+            </div>
+            <div class=\"col-md-4\">
+              <label class=\"media checkbox text-truncate\" title=\"Chauffage\">
+                <input type=\"checkbox\" name=\"amenities\" value=\"30\" class=\"pull-left\">
+                Climatisé
+              </label>
+            </div>
+            <div class=\"col-md-4\">
+              <label class=\"media checkbox text-truncate\" title=\"Cheminée d'intérieur\">
+                <input type=\"checkbox\" name=\"amenities\" value=\"27\" class=\"pull-left\">
+                Cheminée d'intérieur
+              </label>
+            </div>
+            <div class=\"col-md-4\">
+              <label class=\"media checkbox text-truncate\" title=\"Climatisation\">
+                <input type=\"checkbox\" name=\"amenities\" value=\"5\" class=\"pull-left\">
+                Climatisation
+              </label>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class=\"col-md-1\">
+        <label class=\"show-more\">
+          <span>
+            <i class=\"icon icon-caret-down hide-sm\"></i>
+            <strong class=\"text-muted show-sm\">+ Plus</strong>
+          </span>
+          <span class=\"hide\"><i class=\"icon icon-caret-up\"></i></span>
+        </label>
+      </div>
+    </div>
+    ";
     }
 
     public function getTemplateName()
@@ -289,6 +381,6 @@ class __TwigTemplate_48995d83a2f5260287dd7099465a00bc1cdf980d9ebc6a9361e0bdb88c5
 
     public function getDebugInfo()
     {
-        return array (  259 => 167,  256 => 166,  228 => 140,  225 => 139,  203 => 120,  170 => 89,  167 => 88,  160 => 81,  149 => 76,  145 => 75,  141 => 74,  137 => 72,  133 => 71,  121 => 62,  117 => 61,  113 => 60,  105 => 55,  101 => 54,  97 => 53,  89 => 48,  85 => 47,  81 => 46,  68 => 35,  65 => 34,  43 => 5,  40 => 4,  11 => 2,);
+        return array (  282 => 185,  279 => 184,  257 => 164,  254 => 163,  229 => 140,  226 => 139,  204 => 120,  171 => 89,  168 => 88,  161 => 81,  150 => 76,  146 => 75,  142 => 74,  138 => 72,  134 => 71,  122 => 62,  118 => 61,  114 => 60,  106 => 55,  102 => 54,  98 => 53,  90 => 48,  86 => 47,  82 => 46,  69 => 35,  66 => 34,  44 => 5,  41 => 4,  11 => 2,);
     }
 }

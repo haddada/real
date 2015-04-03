@@ -11,10 +11,10 @@
         <div class="row row-condensed">
           <div class="col-md-4 col-sm-12 row-space-1">
             <div class="select select-block">
-              <select name="gouvernorats" class="gouvernoratSelect" >
+              <select name="gouvernorats" class="gouvernoratSelect" required>
               {%for gouvernorat in gouvernorats %}
                 <option value="{{gouvernorat.gouvernorat}}"> {{gouvernorat.gouvernorat}}</option>
-               {%endfor%} 
+              {%endfor%} 
               </select>
             </div>
           </div>

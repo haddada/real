@@ -1,6 +1,6 @@
 <?php
 
-/* realEstateBundle:Offre/Filtres:code.html.twig */
+/* realEstateBundle:Offre:Filtres/code.html.twig */
 class __TwigTemplate_c92c125f5e82377cbea1b9f5f08f8233e7c6227844261f3d89510087f0b382db extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -29,7 +29,7 @@ class __TwigTemplate_c92c125f5e82377cbea1b9f5f08f8233e7c6227844261f3d89510087f0b
       <div class=\"row row-condensed\">
         <div class=\"col-md-4 col-sm-12 row-space-1\">
           <div class=\"select select-block\">
-            <select name=\"code\" >
+            <select name=\"code\" required >
             ";
         // line 15
         $context['_parent'] = (array) $context;
@@ -73,7 +73,7 @@ class __TwigTemplate_c92c125f5e82377cbea1b9f5f08f8233e7c6227844261f3d89510087f0b
 
     public function getTemplateName()
     {
-        return "realEstateBundle:Offre/Filtres:code.html.twig";
+        return "realEstateBundle:Offre:Filtres/code.html.twig";
     }
 
     public function isTraitable()
