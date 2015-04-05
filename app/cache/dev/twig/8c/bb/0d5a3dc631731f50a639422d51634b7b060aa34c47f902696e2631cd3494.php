@@ -18,8 +18,7 @@ class __TwigTemplate_8cbb0d5a3dc631731f50a639422d51634b7b060aa34c47f902696e2631c
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "
-<html>
+        echo "<html>
 <head>   
     <link href=\"https://a0.muscache.com/airbnb/static/packages/common_o2.1-ec3a181fa47f7eeeccce237530c4bdf9.css\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />
     <link href=\"https://a2.muscache.com/airbnb/static/p1/main-pretzel-d13973fd70f8c67a5804eef0ff3f7513.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />
@@ -28,24 +27,24 @@ class __TwigTemplate_8cbb0d5a3dc631731f50a639422d51634b7b060aa34c47f902696e2631c
 <body class=\"home_view v2 simple-header p1\">
 
 ";
-        // line 10
+        // line 9
         $this->displayBlock('header', $context, $blocks);
-        // line 12
+        // line 11
         echo "
 ";
-        // line 13
+        // line 12
         $this->displayBlock('content', $context, $blocks);
-        // line 15
+        // line 14
         echo "</body>
 </html>";
     }
 
-    // line 10
+    // line 9
     public function block_header($context, array $blocks = array())
     {
     }
 
-    // line 13
+    // line 12
     public function block_content($context, array $blocks = array())
     {
     }
@@ -57,6 +56,6 @@ class __TwigTemplate_8cbb0d5a3dc631731f50a639422d51634b7b060aa34c47f902696e2631c
 
     public function getDebugInfo()
     {
-        return array (  49 => 13,  44 => 10,  39 => 15,  37 => 13,  34 => 12,  32 => 10,  21 => 1,);
+        return array (  48 => 12,  43 => 9,  38 => 14,  36 => 12,  33 => 11,  31 => 9,  21 => 1,);
     }
 }

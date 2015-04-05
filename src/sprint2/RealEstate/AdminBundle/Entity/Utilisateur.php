@@ -3,10 +3,9 @@
 namespace sprint2\RealEstate\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Utilisateur
- * @ORM\HasLifecycleCallbacks
  */
 class Utilisateur
 {
@@ -16,70 +15,49 @@ class Utilisateur
     private $id;
 
     /**
-     * @Assert\Email(
-     *     message = "le mail '{{ value }}' n'est pas une mail valide.",
-     *     checkMX = true
-     * )
-     * @Assert\NotBlank(
-     *     message = "remplire le chant",
-     *     )
      * @var string
      */
     private $mail;
 
     /**
-     * 
-     * 
      * @var string
      */
     private $password;
 
     /**
-     * 
      * @var string
      */
     private $nom;
 
     /**
-     * 
      * @var string
      */
     private $prenom;
 
     /**
-     * 
      * @var string
      */
     private $nummobile;
 
     /**
-     * 
      * @var string
      */
     private $numfix;
 
     /**
-     *
      * @var string
      */
     private $statusMatrimonial;
 
     /**
-     * 
      * @var integer
      */
     private $role;
 
     /**
-     * 
      * @var string
      */
     private $urlp;
-    
-    /**
-     * @Assert\File(maxSize="6000000")
-     */
-    private $image;
 
 
     /**
@@ -298,14 +276,4 @@ class Utilisateur
     {
         return $this->urlp;
     }
-    public function getImage() {
-        return $this->image;
-    }
-
-    public function setImage($image) {
-        $this->image = $image;
-    }
-
-
-   
 }

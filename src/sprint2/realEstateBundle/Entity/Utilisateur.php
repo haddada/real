@@ -2,63 +2,81 @@
 
 namespace sprint2\realEstateBundle\Entity;
 
-
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Utilisateur
+ *
+ * @ORM\Table(name="utilisateur")
+ * @ORM\Entity
  */
 class Utilisateur
 {
     /**
      * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="mail", type="string", length=50, nullable=false)
      */
     private $mail;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=50, nullable=false)
      */
     private $password;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=50, nullable=false)
      */
     private $nom;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=50, nullable=false)
      */
     private $prenom;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="numMobile", type="string", length=15, nullable=true)
      */
     private $nummobile;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="numFix", type="string", length=15, nullable=true)
      */
     private $numfix;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="status_matrimonial", type="string", length=50, nullable=false)
      */
     private $statusMatrimonial;
 
     /**
      * @var integer
+     *
+     * @ORM\Column(name="role", type="integer", nullable=false)
      */
     private $role;
 
-    /**
-     * @var string
-     */
-    private $urlp;
 
 
     /**
@@ -253,28 +271,5 @@ class Utilisateur
     public function getRole()
     {
         return $this->role;
-    }
-
-    /**
-     * Set urlp
-     *
-     * @param string $urlp
-     * @return Utilisateur
-     */
-    public function setUrlp($urlp)
-    {
-        $this->urlp = $urlp;
-
-        return $this;
-    }
-
-    /**
-     * Get urlp
-     *
-     * @return string 
-     */
-    public function getUrlp()
-    {
-        return $this->urlp;
     }
 }

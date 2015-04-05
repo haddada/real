@@ -1,7 +1,3 @@
-real_estate_authentification:
-    resource: "@RealEstateAuthentificationBundle/Resources/config/routing.yml"
-    prefix:   /
-
 sprint2_real_estate_admin:
     resource: "@sprint2RealEstateAdminBundle/Resources/config/routing.yml"
     prefix:   /

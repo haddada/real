@@ -187,7 +187,7 @@ class Offre
     /**
      * @var string
      *
-     * @ORM\Column(name="position", type="string", length=60, nullable=true)
+     * @ORM\Column(name="position", type="string", length=60, nullable=false)
      */
     private $position;
 

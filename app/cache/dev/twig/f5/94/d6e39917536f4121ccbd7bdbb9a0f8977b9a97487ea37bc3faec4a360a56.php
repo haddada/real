@@ -1,6 +1,6 @@
 <?php
 
-/* WebProfilerBundle:Profiler:body.css.twig */
+/* @WebProfiler/Profiler/body.css.twig */
 class __TwigTemplate_f594d6e39917536f4121ccbd7bdbb9a0f8977b9a97487ea37bc3faec4a360a56 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -158,7 +158,7 @@ build: 56
 
     public function getTemplateName()
     {
-        return "WebProfilerBundle:Profiler:body.css.twig";
+        return "@WebProfiler/Profiler/body.css.twig";
     }
 
     public function getDebugInfo()

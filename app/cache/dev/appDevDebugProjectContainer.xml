@@ -20,7 +20,6 @@
       <parameter key="realEstateBundle">sprint2\realEstateBundle\realEstateBundle</parameter>
       <parameter key="BraincraftedBootstrapBundle">Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle</parameter>
       <parameter key="sprint2RealEstateAdminBundle">sprint2\RealEstate\AdminBundle\sprint2RealEstateAdminBundle</parameter>
-      <parameter key="RealEstateAuthentificationBundle">RealEstate\AuthentificationBundle\RealEstateAuthentificationBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
@@ -1411,11 +1410,6 @@
       <call method="addXmlMappings">
         <argument type="collection">
           <argument>/home/haddada/realEstate/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</argument>
-        </argument>
-      </call>
-      <call method="addYamlMappings">
-        <argument type="collection">
-          <argument>/home/haddada/realEstate/src/sprint2/realEstateBundle/Resources/config/validation.yml</argument>
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -3211,10 +3205,6 @@
       <call method="addPath">
         <argument>/home/haddada/realEstate/src/sprint2/RealEstate/AdminBundle/Resources/views</argument>
         <argument>sprint2RealEstateAdmin</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/haddada/realEstate/src/RealEstate/AuthentificationBundle/Resources/views</argument>
-        <argument>RealEstateAuthentification</argument>
       </call>
       <call method="addPath">
         <argument>/home/haddada/realEstate/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
