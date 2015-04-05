@@ -44,16 +44,9 @@
     <!--[if IE]><![endif]-->
     <meta charset="utf-8">
 
-    <!--[if IE 8]>
-      <link href="https://a0.muscache.com/airbnb/static/packages/common_o2.1_ie8-3fc1c2bcc89380027eba892e6c4c8f0a.css" media="all" rel="stylesheet" type="text/css" />
-    <![endif]-->
-    <!--[if !(IE 8)]><!-->
+  
       <link href="https://a0.muscache.com/airbnb/static/packages/common_o2.1-1699f01de9b9752b9bbf01de246dd944.css" media="all" rel="stylesheet" type="text/css" />
-    <!--<![endif]-->
-
-      <!--[if lt IE 9]>
-        <link href="https://a0.muscache.com/airbnb/static/compatibility/airglyphs-ie8-4726277b9b1996acd7c89b89f9bbcdd7.css" media="all" rel="stylesheet" type="text/css" />
-      <![endif]-->
+   
 
     <link href="https://a0.muscache.com/airbnb/static/packages/map_search-8417e512f93f6a06f2fc15374325ce74.css" media="screen" rel="stylesheet" type="text/css" />
     
@@ -469,36 +462,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </dl>
         </div>
       </div>
-
-      <div class="col-lg-9">
-        <div class="row row-condensed" id="room-options">
-
-          <div class="col-middle-alt col-sm-4">
-            <label class="checkbox panel panel-dark">
-              <input class="pull-right" type="checkbox" name="room-type" value="Entire home/apt">
-              <i class="icon icon-entire-place h5 needsclick"></i>
-              Appartement
-            </label>
-          </div>
-
-          <div class="col-middle-alt col-sm-4">
-            <label class="checkbox panel panel-dark">
-              <input class="pull-right" type="checkbox" name="room-type" value="Private room">
-              <i class="icon icon-private-room h5 needsclick"></i>
-              Villa
-            </label>
-          </div>
-
-          <div class="col-middle-alt col-sm-4">
-            <label class="checkbox panel panel-dark">
-              <input class="pull-right" type="checkbox" name="room-type" value="Shared room">
-              <i class="icon icon-shared-room h5 needsclick"></i>
-              Studio
-            </label>
-          </div>
-
-        </div>
-      </div>
+      {%block filtreTypeImmob%}
+      {%endblock%}
     </div>
   </div>
 
@@ -515,10 +480,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
              data-max-price-daily="1000"
              >
 
-          <div class="ui-slider-handle">
+          <div class="">
             <i class="icon icon-reorder icon-light-gray icon-handle-draggable"></i>
           </div>
-          <div class="ui-slider-handle">
+          <div class="">
             <i class="icon icon-reorder icon-light-gray icon-handle-draggable"></i>
           </div>
 
@@ -533,6 +498,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
+
+<form class="formPrice">
+  <input type="text" value="100000" name="maxprice" class="maxprice hide"></input>
+  <input type="text" value="0"  name="minprice" class="minprice hide"></input>
+</form>
 
   <div class="filters-section size-group panel-body panel-light">
     <div class="row">
@@ -560,8 +530,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="checkbox-group neighborhoods filters-section panel-body panel-light"
        data-name="neighborhoods">
    
-       {%block filterQuartier%}
-       {%endblock%}
+       <div>
 
 
 
@@ -579,93 +548,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="checkbox-group hosting_amenities filters-section panel-body panel-light"
        data-name="hosting_amenities">
-    <div class="row">
-      <div class="col-lg-2 col-md-12 filter-label">
-        <label>Équipements</label>
-      </div>
-
-      <div class="col-lg-9 col-md-11">
-        <div class="row row-condensed filters-columns">
-          <div class="col-md-4">
-            <label class="media checkbox text-truncate" title="Internet sans fil">
-              <input type="checkbox" name="amenities" value="4" class="pull-left">
-              Ascenseur
-            </label>
-          </div>
-          <div class="col-md-4">
-            <label class="media checkbox text-truncate" title="Télévision">
-              <input type="checkbox" name="amenities" value="1" class="pull-left">
-              Cuisine équipée
-            </label>
-          </div>
-          <div class="col-md-4">
-            <label class="media checkbox text-truncate" title="Cuisine">
-              <input type="checkbox" name="amenities" value="8" class="pull-left">
-              Jardin
-            </label>
-          </div>
-        </div>
-
-        <div class="filters-more collapse">
-          <hr>
-          <div class="row row-condensed filters-columns">
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Accès handicapés">
-                <input type="checkbox" name="amenities" value="6" class="pull-left">
-                Accès indépendant
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Adapté aux événements">
-                <input type="checkbox" name="amenities" value="32" class="pull-left">
-                Gaz de ville
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Animaux acceptés">
-                <input type="checkbox" name="amenities" value="12" class="pull-left">
-                Chauffage
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Ascenseur">
-                <input type="checkbox" name="amenities" value="21" class="pull-left">
-                Meublé
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Chauffage">
-                <input type="checkbox" name="amenities" value="30" class="pull-left">
-                Climatisé
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Cheminée d'intérieur">
-                <input type="checkbox" name="amenities" value="27" class="pull-left">
-                Cheminée d'intérieur
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Climatisation">
-                <input type="checkbox" name="amenities" value="5" class="pull-left">
-                Climatisation
-              </label>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-1">
-        <label class="show-more">
-          <span>
-            <i class="icon icon-caret-down hide-sm"></i>
-            <strong class="text-muted show-sm">+ Plus</strong>
-          </span>
-          <span class="hide"><i class="icon icon-caret-up"></i></span>
-        </label>
-      </div>
-    </div>
+   
   </div>
 
   <div class="checkbox-group property_type_id filters-section panel-body panel-light"
@@ -675,100 +558,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <label>Type de propriété</label>
       </div>
 
-      <div class="col-lg-9 col-md-11">
-        <div class="row row-condensed filters-columns">
-          <div class="col-md-4">
-            <label class="media checkbox text-truncate" title="Appartement">
-              <input type="checkbox" name="property_type_id" value="1" class="pull-left">
-              Appartement
-            </label>
-          </div>
-          <div class="col-md-4">
-            <label class="media checkbox text-truncate" title="Maison">
-              <input type="checkbox" name="property_type_id" value="2" class="pull-left">
-              Maison
-            </label>
-          </div>
-          <div class="col-md-4">
-            <label class="media checkbox text-truncate" title="Bed &amp; Breakfast">
-              <input type="checkbox" name="property_type_id" value="3" class="pull-left">
-              Studio
-            </label>
-          </div>
-        </div>
-
-        <div class="filters-more collapse">
-          <hr>
-          <div class="row row-condensed filters-columns">
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Autre">
-                <input type="checkbox" name="property_type_id" value="33" class="pull-left">
-                Autre
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Bateau">
-                <input type="checkbox" name="property_type_id" value="8" class="pull-left">
-                Bateau
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Cabane">
-                <input type="checkbox" name="property_type_id" value="4" class="pull-left">
-                Cabane
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Cabane dans les arbres">
-                <input type="checkbox" name="property_type_id" value="6" class="pull-left">
-                Cabane dans les arbres
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Camping-car/caravane">
-                <input type="checkbox" name="property_type_id" value="32" class="pull-left">
-                Camping-car/caravane
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Chalet">
-                <input type="checkbox" name="property_type_id" value="22" class="pull-left">
-                Chalet
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Dortoir">
-                <input type="checkbox" name="property_type_id" value="9" class="pull-left">
-                Dortoir
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Loft">
-                <input type="checkbox" name="property_type_id" value="35" class="pull-left">
-                Loft
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Maison écologique">
-                <input type="checkbox" name="property_type_id" value="23" class="pull-left">
-                Maison écologique
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Tente">
-                <input type="checkbox" name="property_type_id" value="34" class="pull-left">
-                Tente
-              </label>
-            </div>
-            <div class="col-md-4">
-              <label class="media checkbox text-truncate" title="Villa">
-                <input type="checkbox" name="property_type_id" value="11" class="pull-left">
-                Villa
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       
 
@@ -791,7 +581,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
 
       <div class="panel-btn-sm panel-light filters-footer">
-        <button class="btn btn-block btn-large btn-primary search-button row-space-4-sm">
+        <button class="btn btn-block btn-large btn-primary search-button row-space-4-sm filter-button">
           Afficher les logements
         </button>
       </div>
@@ -843,7 +633,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="sidebar-header-placeholder"></div>
     <div class="search-results">
-
+     
+        
       <div class="alert alert-block alert-with-icon disaster-rooster hide row-space-4 row-space-0-sm">
         <i class="icon icon-comment alert-icon"></i>
         <a href="#" class="alert-close close"></a>
@@ -872,8 +663,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class = "outer-listings-container row-space-5 row-space-2-sm">
         <div class="row listings-container">
 
-        {%block card %}
-        {%endblock%}
+        
+         
+        {% include 'realEstateBundle:Offre:offreCards.html.twig' with {'entites' : entities}  %}
+    
 
         </div>
         </div>
@@ -942,16 +735,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
       </div>
-
-    <meta content="{&quot;priv.everyone&quot;:&quot;Tout le monde&quot;,&quot;priv.only_me&quot;:&quot;Seulement moi&quot;,&quot;priv.description&quot;:&quot;Qui peut la voir ?&quot;,&quot;priv.everyone_description&quot;:&quot;Visible par tous, y compris sur votre profil public Airbnb.&quot;,&quot;priv.only_me_description&quot;:&quot;Visible par vous uniquement et publiée nulle part.&quot;,&quot;save_to_wish_list&quot;:&quot;Enregistrer dans une Wish List&quot;,&quot;save_to_wish_list_and_fb&quot;:&quot;Enregistrer dans une Wish List et sur le journal Facebook&quot;,&quot;wl_modal.create_new&quot;:&quot;Créer une nouvelle Wish List&quot;,&quot;wl_modal.make_a_new&quot;:&quot;Faire une nouvelle Wish List&quot;,&quot;wl_modal.create&quot;:&quot;Créer&quot;,&quot;wl_modal.add_note&quot;:&quot;Ajouter une note&quot;,&quot;wl_modal.add_to_timeline&quot;:&quot;Ajouter au journal&quot;,&quot;wl_modal.done&quot;:&quot;Terminé&quot;,&quot;wl_modal.save&quot;:&quot;Enregistrer&quot;,&quot;wl_modal.change_sharing&quot;:&quot;Vous pouvez toujours changer vos options de partage dans les paramètres du compte.&quot;,&quot;refresh_list&quot;:&quot;Rafraîchir la liste&quot;,&quot;who_can_see_new_wishlist&quot;:&quot;Qui peut voir votre nouvelle Wish List ?&quot;,&quot;where_are_you_going&quot;:&quot;Où allez-vous ?&quot;,&quot;tour_alert_title&quot;:&quot;Vivez %{location} comme un local&quot;,&quot;tour_alert_title_general&quot;:&quot;Vivez comme les habitants du coin lorsque vous voyagez&quot;,&quot;tour_alert_text&quot;:&quot;Réservez des hébergements uniques auprès d&#x27;hôtes locaux sur Airbnb.  %{link_start}Comment ça marche%{link_end}&quot;,&quot;tour_calendar_title&quot;:&quot;Fixez vos dates&quot;,&quot;tour_calendar_text&quot;:&quot;Vous choisissez vos dates et nous vous montrerons ce qui est disponible&quot;,&quot;tour_listing_type_title&quot;:&quot;Choisissez l&#x27;hébergement&quot;,&quot;tour_listing_type_text&quot;:&quot;Vous pouvez louer la totalité d&#x27;un logement ou le partager avec votre hôte.&quot;,&quot;tour_host_title&quot;:&quot;Rencontrer l&#x27;hôte&quot;,&quot;tour_host_text&quot;:&quot;Faites-vous une idée plus précise des hôtes à travers leurs profils et commentaires avant d&#x27;envoyer une demande de réservation.&quot;,&quot;next&quot;:&quot;Suivant&quot;,&quot;tour_finish&quot;:&quot;J&#x27;ai compris !&quot;,&quot;Password&quot;:&quot;Mot de passe&quot;,&quot;users.Confirm_Password_to_Continue&quot;:&quot;Confirmer le mot de passe pour continuer&quot;,&quot;users.Confirm_Password&quot;:&quot;Confirmer le mot de passe&quot;,&quot;users.Cancel&quot;:&quot;Annuler&quot;,&quot;users.Please_enter_your_Airbnb_password_to_continue.&quot;:&quot;Pour votre sécurité, veuillez saisir votre mot de passe Airbnb avant de poursuivre.&quot;,&quot;user.signup.forgot_password&quot;:&quot;Mot de passe oublié ?&quot;,&quot;users.Confirm_Facebook_Password&quot;:&quot;Confirmer le mot de passe Facebook&quot;,&quot;home&quot;:&quot;Page d&#x27;accueil&quot;,&quot;download_the_app&quot;:&quot;Télécharger l&#x27;application&quot;,&quot;sign_up&quot;:&quot;Inscription&quot;,&quot;log_in&quot;:&quot;Connexion&quot;,&quot;alerts&quot;:&quot;Alertes&quot;,&quot;inbox&quot;:&quot;Boîte de réception&quot;,&quot;discover&quot;:&quot;Découvrir&quot;,&quot;search&quot;:&quot;Rechercher&quot;,&quot;how_it_works&quot;:&quot;Mode d&#x27;emploi&quot;,&quot;help&quot;:&quot;Aide&quot;,&quot;invite_friends&quot;:&quot;Inviter des amis&quot;,&quot;logout&quot;:&quot;Déconnexion&quot;,&quot;name&quot;:&quot;Utilisateur&quot;,&quot;photography&quot;:&quot;Photo&quot;,&quot;where_are_you_going&quot;:&quot;Où allez-vous ?&quot;,&quot;checkin&quot;:&quot;Arrivée&quot;,&quot;checkout&quot;:&quot;Départ&quot;,&quot;room_type_0&quot;:&quot;Logement entier&quot;,&quot;room_type_1&quot;:&quot;Chambre privée&quot;,&quot;room_type_2&quot;:&quot;Chambre partagée&quot;,&quot;find_a_place&quot;:&quot;Trouver un logement&quot;,&quot;shared.x guests&quot;:&quot;%{smart_count} voyageur |||| %{smart_count} voyageurs&quot;,&quot;choose_language&quot;:&quot;Choisir la langue&quot;,&quot;choose_currency&quot;:&quot;Choisir la devise&quot;,&quot;clear_dates&quot;:&quot;Effacer les dates&quot;,&quot;datepicker_updated_years_ago&quot;:&quot;Mis à jour il y a %{smart_count} an |||| Mis à jour il y a %{smart_count} années&quot;,&quot;datepicker_updated_months_ago&quot;:&quot;Mis à jour il y a %{smart_count} mois |||| Mis à jour il y a %{smart_count} mois&quot;,&quot;datepicker_updated_days_ago&quot;:&quot;Mis à jour il y a %{smart_count} jour |||| Mis à jour il y a %{smart_count} jours&quot;,&quot;datepicker_updated_today&quot;:&quot;Mis à jour aujourd&#x27;hui&quot;,&quot;datepicker_never_updated&quot;:&quot;Jamais mis à jour&quot;,&quot;datepicker_min_nights&quot;:&quot;Séjour minimum de %{smart_count} nuit |||| Séjour minimum de %{smart_count} nuits&quot;,&quot;datepicker_min_nights_this_month&quot;:&quot;%{smart_count} nuit min. ce mois |||| %{smart_count} nuits min. ce mois&quot;,&quot;datepicker_min_nights_varies&quot;:&quot;La durée minimum de séjour peut varier&quot;}" id="_bootstrap-phrases" />
-<meta content="{&quot;canonical_host&quot;:&quot;www.airbnb.fr&quot;,&quot;canonical_url&quot;:&quot;https://www.airbnb.fr/s/New-York--NY?guests=2&amp;price_min=45&amp;sw_lat=40.57834400473412&amp;sw_lng=-74.06148002977625&amp;ne_lat=40.74806499382262&amp;ne_lng=-73.86441276903406&amp;zoom=12&amp;search_by_map=true&amp;ss_id=56kqlda2&quot;,&quot;language&quot;:&quot;fr&quot;,&quot;locale&quot;:&quot;fr&quot;,&quot;api_config&quot;:{&quot;baseUrl&quot;:&quot;https://www.airbnb.fr/api&quot;,&quot;key&quot;:&quot;d306zoyjsyarp7ifhu67rjxn52tv0t20&quot;},&quot;deep_link&quot;:null,&quot;tracking_context&quot;:{&quot;source&quot;:&quot;monorail&quot;,&quot;platform&quot;:&quot;js&quot;,&quot;version&quot;:&quot;4b463595021ae9d56d957c4f3680cf2a584ba4a1&quot;,&quot;controller&quot;:&quot;search&quot;,&quot;action&quot;:&quot;index&quot;,&quot;req_uuid&quot;:&quot;0b0e4354-f9a2-4c89-8fc3-0523057e5268&quot;,&quot;shardset&quot;:&quot;a0&quot;},&quot;no_flash_alerts&quot;:null,&quot;google_maps_url&quot;:&quot;//maps.googleapis.com/maps/api/js?language=fr&amp;region=FR&amp;sensor=false&amp;v=3.13&amp;libraries=places&amp;client=gme-airbnbinc&amp;channel=monorail-prod&quot;,&quot;open_street_map_url&quot;:&quot;https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js&quot;}" id="_bootstrap-layout-init" />
+ <meta content="{&quot;priv.everyone&quot;:&quot;Tout le monde&quot;,&quot;priv.only_me&quot;:&quot;Seulement moi&quot;,&quot;priv.description&quot;:&quot;Qui peut la voir ?&quot;,&quot;priv.everyone_description&quot;:&quot;Visible par tous, y compris sur votre profil public Airbnb.&quot;,&quot;priv.only_me_description&quot;:&quot;Visible par vous uniquement et publiée nulle part.&quot;,&quot;save_to_wish_list&quot;:&quot;Enregistrer dans une Wish List&quot;,&quot;save_to_wish_list_and_fb&quot;:&quot;Enregistrer dans une Wish List et sur le journal Facebook&quot;,&quot;wl_modal.create_new&quot;:&quot;Créer une nouvelle Wish List&quot;,&quot;wl_modal.make_a_new&quot;:&quot;Faire une nouvelle Wish List&quot;,&quot;wl_modal.create&quot;:&quot;Créer&quot;,&quot;wl_modal.add_note&quot;:&quot;Ajouter une note&quot;,&quot;wl_modal.add_to_timeline&quot;:&quot;Ajouter au journal&quot;,&quot;wl_modal.done&quot;:&quot;Terminé&quot;,&quot;wl_modal.save&quot;:&quot;Enregistrer&quot;,&quot;wl_modal.change_sharing&quot;:&quot;Vous pouvez toujours changer vos options de partage dans les paramètres du compte.&quot;,&quot;refresh_list&quot;:&quot;Rafraîchir la liste&quot;,&quot;who_can_see_new_wishlist&quot;:&quot;Qui peut voir votre nouvelle Wish List ?&quot;,&quot;where_are_you_going&quot;:&quot;Où allez-vous ?&quot;,&quot;tour_alert_title&quot;:&quot;Vivez %{location} comme un local&quot;,&quot;tour_alert_title_general&quot;:&quot;Vivez comme les habitants du coin lorsque vous voyagez&quot;,&quot;tour_alert_text&quot;:&quot;Réservez des hébergements uniques auprès d&#x27;hôtes locaux sur Airbnb.  %{link_start}Comment ça marche%{link_end}&quot;,&quot;tour_calendar_title&quot;:&quot;Fixez vos dates&quot;,&quot;tour_calendar_text&quot;:&quot;Vous choisissez vos dates et nous vous montrerons ce qui est disponible&quot;,&quot;tour_listing_type_title&quot;:&quot;Choisissez l&#x27;hébergement&quot;,&quot;tour_listing_type_text&quot;:&quot;Vous pouvez louer la totalité d&#x27;un logement ou le partager avec votre hôte.&quot;,&quot;tour_host_title&quot;:&quot;Rencontrer l&#x27;hôte&quot;,&quot;tour_host_text&quot;:&quot;Faites-vous une idée plus précise des hôtes à travers leurs profils et commentaires avant d&#x27;envoyer une demande de réservation.&quot;,&quot;next&quot;:&quot;Suivant&quot;,&quot;tour_finish&quot;:&quot;J&#x27;ai compris !&quot;,&quot;Password&quot;:&quot;Mot de passe&quot;,&quot;users.Confirm_Password_to_Continue&quot;:&quot;Confirmer le mot de passe pour continuer&quot;,&quot;users.Confirm_Password&quot;:&quot;Confirmer le mot de passe&quot;,&quot;users.Cancel&quot;:&quot;Annuler&quot;,&quot;users.Please_enter_your_Airbnb_password_to_continue.&quot;:&quot;Pour votre sécurité, veuillez saisir votre mot de passe Airbnb avant de poursuivre.&quot;,&quot;user.signup.forgot_password&quot;:&quot;Mot de passe oublié ?&quot;,&quot;users.Confirm_Facebook_Password&quot;:&quot;Confirmer le mot de passe Facebook&quot;,&quot;home&quot;:&quot;Page d&#x27;accueil&quot;,&quot;download_the_app&quot;:&quot;Télécharger l&#x27;application&quot;,&quot;sign_up&quot;:&quot;Inscription&quot;,&quot;log_in&quot;:&quot;Connexion&quot;,&quot;alerts&quot;:&quot;Alertes&quot;,&quot;inbox&quot;:&quot;Boîte de réception&quot;,&quot;discover&quot;:&quot;Découvrir&quot;,&quot;search&quot;:&quot;Rechercher&quot;,&quot;how_it_works&quot;:&quot;Mode d&#x27;emploi&quot;,&quot;help&quot;:&quot;Aide&quot;,&quot;invite_friends&quot;:&quot;Inviter des amis&quot;,&quot;logout&quot;:&quot;Déconnexion&quot;,&quot;name&quot;:&quot;Utilisateur&quot;,&quot;photography&quot;:&quot;Photo&quot;,&quot;where_are_you_going&quot;:&quot;Où allez-vous ?&quot;,&quot;checkin&quot;:&quot;Arrivée&quot;,&quot;checkout&quot;:&quot;Départ&quot;,&quot;room_type_0&quot;:&quot;Logement entier&quot;,&quot;room_type_1&quot;:&quot;Chambre privée&quot;,&quot;room_type_2&quot;:&quot;Chambre partagée&quot;,&quot;find_a_place&quot;:&quot;Trouver un logement&quot;,&quot;shared.x guests&quot;:&quot;%{smart_count} voyageur |||| %{smart_count} voyageurs&quot;,&quot;guests&quot;:&quot;Voyageurs&quot;,&quot;room_type&quot;:&quot;Type de logement&quot;,&quot;choose_language&quot;:&quot;Choisir la langue&quot;,&quot;choose_currency&quot;:&quot;Choisir la devise&quot;,&quot;clear_dates&quot;:&quot;Effacer les dates&quot;,&quot;datepicker_updated_years_ago&quot;:&quot;Mis à jour il y a %{smart_count} an |||| Mis à jour il y a %{smart_count} années&quot;,&quot;datepicker_updated_months_ago&quot;:&quot;Mis à jour il y a %{smart_count} mois |||| Mis à jour il y a %{smart_count} mois&quot;,&quot;datepicker_updated_days_ago&quot;:&quot;Mis à jour il y a %{smart_count} jour |||| Mis à jour il y a %{smart_count} jours&quot;,&quot;datepicker_updated_today&quot;:&quot;Mis à jour aujourd&#x27;hui&quot;,&quot;datepicker_never_updated&quot;:&quot;Jamais mis à jour&quot;,&quot;datepicker_min_nights&quot;:&quot;Séjour minimum de %{smart_count} nuit |||| Séjour minimum de %{smart_count} nuits&quot;,&quot;datepicker_min_nights_this_month&quot;:&quot;%{smart_count} nuit min. ce mois |||| %{smart_count} nuits min. ce mois&quot;,&quot;datepicker_min_nights_varies&quot;:&quot;La durée minimum de séjour peut varier&quot;}" id="_bootstrap-phrases" />
+<meta content="{&quot;canonical_host&quot;:&quot;www.airbnb.fr&quot;,&quot;canonical_url&quot;:&quot;https://www.airbnb.fr/s&quot;,&quot;language&quot;:&quot;fr&quot;,&quot;locale&quot;:&quot;fr&quot;,&quot;api_config&quot;:{&quot;baseUrl&quot;:&quot;https://www.airbnb.fr/api&quot;,&quot;key&quot;:&quot;d306zoyjsyarp7ifhu67rjxn52tv0t20&quot;},&quot;deep_link&quot;:null,&quot;tracking_context&quot;:{&quot;source&quot;:&quot;monorail&quot;,&quot;platform&quot;:&quot;js&quot;,&quot;version&quot;:&quot;93790b12dee38f2bb0b767193ace017c8bb070be&quot;,&quot;controller&quot;:&quot;search&quot;,&quot;action&quot;:&quot;index&quot;,&quot;req_uuid&quot;:&quot;5684b0ad-66cb-4750-bc68-51f50bb80ad8&quot;,&quot;shardset&quot;:&quot;a0&quot;},&quot;no_flash_alerts&quot;:null,&quot;google_maps_url&quot;:&quot;//maps.googleapis.com/maps/api/js?language=fr&amp;region=FR&amp;sensor=false&amp;v=3.13&amp;libraries=places&amp;client=gme-airbnbinc&amp;channel=monorail-prod&quot;,&quot;open_street_map_url&quot;:&quot;https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js&quot;}" id="_bootstrap-layout-init" />
 <meta content="{&quot;data&quot;:{&quot;country&quot;:&quot;FR&quot;,&quot;tld_country&quot;:&quot;FR&quot;,&quot;currencies&quot;:{&quot;AED&quot;:{&quot;symbol&quot;:&quot;&amp;#1583;.&amp;#1573;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;ﺩ.ﺇ&quot;}},&quot;ARS&quot;:{&quot;symbol&quot;:&quot;$&quot;,&quot;code_required&quot;:true,&quot;options&quot;:null},&quot;AUD&quot;:{&quot;symbol&quot;:&quot;$&quot;,&quot;code_required&quot;:true,&quot;options&quot;:null},&quot;BRL&quot;:{&quot;symbol&quot;:&quot;R$&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;space_between_price_and_symbol&quot;:true}},&quot;CAD&quot;:{&quot;symbol&quot;:&quot;$&quot;,&quot;code_required&quot;:true,&quot;options&quot;:null},&quot;CHF&quot;:{&quot;symbol&quot;:&quot;CHF&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;position&quot;:&quot;after&quot;,&quot;space_between_price_and_symbol&quot;:true}},&quot;CNY&quot;:{&quot;symbol&quot;:&quot;&amp;yen;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;¥&quot;}},&quot;CRC&quot;:{&quot;symbol&quot;:&quot;&amp;#8353;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;₡&quot;}},&quot;CZK&quot;:{&quot;symbol&quot;:&quot;&amp;#75;&amp;#269;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;Kč&quot;}},&quot;DKK&quot;:{&quot;symbol&quot;:&quot;kr&quot;,&quot;code_required&quot;:true,&quot;options&quot;:{&quot;position&quot;:&quot;after&quot;,&quot;space_between_price_and_symbol&quot;:true,&quot;explicit_currency_not_aesthetic&quot;:true}},&quot;EUR&quot;:{&quot;symbol&quot;:&quot;&amp;euro;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;€&quot;,&quot;position&quot;:&quot;special&quot;}},&quot;GBP&quot;:{&quot;symbol&quot;:&quot;&amp;pound;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;£&quot;}},&quot;HKD&quot;:{&quot;symbol&quot;:&quot;$&quot;,&quot;code_required&quot;:true,&quot;options&quot;:null},&quot;HRK&quot;:{&quot;symbol&quot;:&quot;kn&quot;,&quot;code_required&quot;:false,&quot;options&quot;:null},&quot;HUF&quot;:{&quot;symbol&quot;:&quot;Ft&quot;,&quot;code_required&quot;:false,&quot;options&quot;:null},&quot;IDR&quot;:{&quot;symbol&quot;:&quot;Rp&quot;,&quot;code_required&quot;:false,&quot;options&quot;:null},&quot;ILS&quot;:{&quot;symbol&quot;:&quot;&amp;#8362;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;₪&quot;,&quot;space_between_price_and_symbol&quot;:true}},&quot;INR&quot;:{&quot;symbol&quot;:&quot;&amp;#8377;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;₹&quot;}},&quot;JPY&quot;:{&quot;symbol&quot;:&quot;&amp;yen;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;¥&quot;,&quot;space_between_price_and_symbol&quot;:true}},&quot;KRW&quot;:{&quot;symbol&quot;:&quot;&amp;#8361;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;₩&quot;}},&quot;MAD&quot;:{&quot;symbol&quot;:&quot;MAD&quot;,&quot;code_required&quot;:false,&quot;options&quot;:null},&quot;MYR&quot;:{&quot;symbol&quot;:&quot;&amp;#82;&amp;#77;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;RM&quot;}},&quot;MXN&quot;:{&quot;symbol&quot;:&quot;$&quot;,&quot;code_required&quot;:true,&quot;options&quot;:null},&quot;NOK&quot;:{&quot;symbol&quot;:&quot;kr&quot;,&quot;code_required&quot;:true,&quot;options&quot;:{&quot;position&quot;:&quot;after&quot;,&quot;space_between_price_and_symbol&quot;:true,&quot;explicit_currency_not_aesthetic&quot;:true}},&quot;NZD&quot;:{&quot;symbol&quot;:&quot;$&quot;,&quot;code_required&quot;:true,&quot;options&quot;:null},&quot;PEN&quot;:{&quot;symbol&quot;:&quot;&amp;#83;&amp;#47;&amp;#46;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;S/.&quot;}},&quot;PHP&quot;:{&quot;symbol&quot;:&quot;&amp;#8369;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;₱&quot;}},&quot;PLN&quot;:{&quot;symbol&quot;:&quot;z&amp;#22;&amp;#322;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;zł&quot;,&quot;position&quot;:&quot;after&quot;,&quot;space_between_price_and_symbol&quot;:true}},&quot;RON&quot;:{&quot;symbol&quot;:&quot;lei&quot;,&quot;code_required&quot;:false,&quot;options&quot;:null},&quot;RUB&quot;:{&quot;symbol&quot;:&quot;&amp;#1088;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;р&quot;,&quot;position&quot;:&quot;after&quot;}},&quot;SEK&quot;:{&quot;symbol&quot;:&quot;kr&quot;,&quot;code_required&quot;:true,&quot;options&quot;:{&quot;position&quot;:&quot;after&quot;,&quot;space_between_price_and_symbol&quot;:true,&quot;explicit_currency_not_aesthetic&quot;:true}},&quot;SGD&quot;:{&quot;symbol&quot;:&quot;$&quot;,&quot;code_required&quot;:true,&quot;options&quot;:null},&quot;THB&quot;:{&quot;symbol&quot;:&quot;&amp;#3647;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;฿&quot;}},&quot;TRY&quot;:{&quot;symbol&quot;:&quot;&amp;#84;&amp;#76;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;TL&quot;,&quot;position&quot;:&quot;after&quot;,&quot;space_between_price_and_symbol&quot;:true}},&quot;TWD&quot;:{&quot;symbol&quot;:&quot;$&quot;,&quot;code_required&quot;:true,&quot;options&quot;:null},&quot;USD&quot;:{&quot;symbol&quot;:&quot;$&quot;,&quot;code_required&quot;:false,&quot;options&quot;:null},&quot;VND&quot;:{&quot;symbol&quot;:&quot;&amp;#8363;&quot;,&quot;code_required&quot;:false,&quot;options&quot;:{&quot;unicode_symbol&quot;:&quot;₫&quot;}},&quot;ZAR&quot;:{&quot;symbol&quot;:&quot;R&quot;,&quot;code_required&quot;:true,&quot;options&quot;:null}},&quot;current_locale_name&quot;:&quot;Français&quot;,&quot;languages&quot;:[{&quot;locale_name&quot;:&quot;Bahasa Indonesia&quot;,&quot;locale&quot;:&quot;id&quot;},{&quot;locale_name&quot;:&quot;Bahasa Melayu&quot;,&quot;locale&quot;:&quot;ms&quot;},{&quot;locale_name&quot;:&quot;Català&quot;,&quot;locale&quot;:&quot;ca&quot;},{&quot;locale_name&quot;:&quot;Dansk&quot;,&quot;locale&quot;:&quot;da&quot;},{&quot;locale_name&quot;:&quot;Deutsch&quot;,&quot;locale&quot;:&quot;de&quot;},{&quot;locale_name&quot;:&quot;English&quot;,&quot;locale&quot;:&quot;en&quot;},{&quot;locale_name&quot;:&quot;Español&quot;,&quot;locale&quot;:&quot;es&quot;},{&quot;locale_name&quot;:&quot;Eλληνικά&quot;,&quot;locale&quot;:&quot;el&quot;},{&quot;locale_name&quot;:&quot;Français&quot;,&quot;locale&quot;:&quot;fr&quot;},{&quot;locale_name&quot;:&quot;Italiano&quot;,&quot;locale&quot;:&quot;it&quot;},{&quot;locale_name&quot;:&quot;Magyar&quot;,&quot;locale&quot;:&quot;hu&quot;},{&quot;locale_name&quot;:&quot;Nederlands&quot;,&quot;locale&quot;:&quot;nl&quot;},{&quot;locale_name&quot;:&quot;Norsk&quot;,&quot;locale&quot;:&quot;no&quot;},{&quot;locale_name&quot;:&quot;Polski&quot;,&quot;locale&quot;:&quot;pl&quot;},{&quot;locale_name&quot;:&quot;Português&quot;,&quot;locale&quot;:&quot;pt&quot;},{&quot;locale_name&quot;:&quot;Suomi&quot;,&quot;locale&quot;:&quot;fi&quot;},{&quot;locale_name&quot;:&quot;Svenska&quot;,&quot;locale&quot;:&quot;sv&quot;},{&quot;locale_name&quot;:&quot;Türkçe&quot;,&quot;locale&quot;:&quot;tr&quot;},{&quot;locale_name&quot;:&quot;Íslenska&quot;,&quot;locale&quot;:&quot;is&quot;},{&quot;locale_name&quot;:&quot;Čeština&quot;,&quot;locale&quot;:&quot;cs&quot;},{&quot;locale_name&quot;:&quot;Русский&quot;,&quot;locale&quot;:&quot;ru&quot;},{&quot;locale_name&quot;:&quot;ภาษาไทย&quot;,&quot;locale&quot;:&quot;th&quot;},{&quot;locale_name&quot;:&quot;中文 (简体)&quot;,&quot;locale&quot;:&quot;zh&quot;},{&quot;locale_name&quot;:&quot;中文 (繁體)&quot;,&quot;locale&quot;:&quot;zh-TW&quot;},{&quot;locale_name&quot;:&quot;日本語&quot;,&quot;locale&quot;:&quot;ja&quot;},{&quot;locale_name&quot;:&quot;한국어&quot;,&quot;locale&quot;:&quot;ko&quot;}]}}" id="_bootstrap-i18n-init" />
 <meta content="{&quot;enabled&quot;:true,&quot;appId&quot;:&quot;138566025676&quot;,&quot;scope&quot;:&quot;email,user_birthday,user_likes,user_education_history,user_hometown,user_location,user_friends&quot;,&quot;sdkUrl&quot;:&quot;https://connect.facebook.net/fr_FR/sdk.js&quot;}" id="_bootstrap-facebook-init" />
 <meta content="{&quot;packages/field_guide.bundle.js&quot;:&quot;https://a0.muscache.com/airbnb/static/packages/field_guide.bundle-de6844313464e5042105a6c0051d5f01.js&quot;}" id="_bootstrap-javascript_paths" />
 <meta content="{&quot;map_search/markers.png&quot;:&quot;https://a0.muscache.com/airbnb/static/map_search/markers-2bc70cc8c077435bef3fcc75e427849d.png&quot;,&quot;map_search/blank_markers.png&quot;:&quot;https://a0.muscache.com/airbnb/static/map_search/blank_markers-02db6302f63f21c90f1ea7ccc2914b7a.png&quot;,&quot;map_search/address_pin.png&quot;:&quot;https://a0.muscache.com/airbnb/static/map_search/address_pin-afe611fc31d51fc079f16e55448b8a22.png&quot;,&quot;map_search/current_primary_pin.png&quot;:&quot;https://a0.muscache.com/airbnb/static/map_search/current_primary_pin-bd3b90aa252c58c54356ee2582a88fb5.png&quot;,&quot;map_search/current_wish_list_pin.png&quot;:&quot;https://a0.muscache.com/airbnb/static/map_search/current_wish_list_pin-d869957cf606426938fc8517bf71d62f.png&quot;,&quot;map_search/primary_pin.png&quot;:&quot;https://a0.muscache.com/airbnb/static/map_search/primary_pin-2d5185c4bbdd7e4aa25d04915cc2f0a3.png&quot;,&quot;map_search/viewed_primary_pin.png&quot;:&quot;https://a0.muscache.com/airbnb/static/map_search/viewed_primary_pin-65e1729ea31d2e896dd4739381d76841.png&quot;,&quot;map_search/wish_list_pin.png&quot;:&quot;https://a0.muscache.com/airbnb/static/map_search/wish_list_pin-56ed85cf95cc8e94792f9004df50d67f.png&quot;,&quot;map_search/pois/ny1.svg&quot;:&quot;https://a0.muscache.com/airbnb/static/map_search/pois/ny1-423b3532c6cf97c0dcfec9e9713a4a4d.svg&quot;,&quot;map_search/pois/ny2.svg&quot;:&quot;https://a0.muscache.com/airbnb/static/map_search/pois/ny2-23125fa6190291a5edbbd00ac7f6dc61.svg&quot;,&quot;map_search/pois/ny3.svg&quot;:&quot;https://a0.muscache.com/airbnb/static/map_search/pois/ny3-e1b4edf4c87241f2f33488c099ffc9e5.svg&quot;,&quot;map_search/pois/ny4.svg&quot;:&quot;https://a0.muscache.com/airbnb/static/map_search/pois/ny4-d27df866320bec383382aa758f30c07f.svg&quot;,&quot;map_search/pois/ny5.svg&quot;:&quot;https://a0.muscache.com/airbnb/static/map_search/pois/ny5-42508913e0e7ecd97b821a7d86d05c13.svg&quot;}" id="_bootstrap-p2_marker_image_path" />
 <meta content="&quot;Google&quot;" id="_bootstrap-map_provider" />
-<meta content="&quot;new-york--ny&quot;" id="_bootstrap-canonical_remarketing_location" />
-<meta content="{&quot;p3_map_css&quot;:&quot;https://a0.muscache.com/airbnb/static/packages/p3-adc0d0efaf4c46d4c80eaa3d16b46b65.css&quot;,&quot;p3_map_templates&quot;:&quot;https://a0.muscache.com/airbnb/static/packages/p3_template_manifest-acb7d3aa2db65aea1fa0b922352c31c9.js&quot;,&quot;p3_map_js&quot;:&quot;https://a0.muscache.com/airbnb/static/packages/p3.bundle-2d6f1940532d83c795293012732076f0.js&quot;}" id="_bootstrap-p2_preload" />
+<meta content="&quot;&quot;" id="_bootstrap-canonical_remarketing_location" />
+<meta content="{&quot;p3_map_css&quot;:&quot;https://a0.muscache.com/airbnb/static/packages/p3-adc0d0efaf4c46d4c80eaa3d16b46b65.css&quot;,&quot;p3_map_templates&quot;:&quot;https://a0.muscache.com/airbnb/static/packages/p3_template_manifest-acb7d3aa2db65aea1fa0b922352c31c9.js&quot;,&quot;p3_map_js&quot;:&quot;https://a0.muscache.com/airbnb/static/packages/p3.bundle-e7e292e4c7e24826ff0765f4c3947ecd.js&quot;}" id="_bootstrap-p2_preload" />
 <meta content="{&quot;p2_nyc_pois&quot;:false}" id="_bootstrap-trebuchet" />
 <meta content="false" id="_bootstrap-saved_search_kill" />
 <meta content="false" id="_bootstrap-saved_search_kill_sync" />
@@ -970,6 +762,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       Airbnb.init();
 </script>
+      <script>
+         $(document).ready(function(){
+              
+                 var str = "";
+                 var strP="";
+          $(".filtre-select").change(function(){ 
+              str =$( ".form-select" ).serialize() ;
+              if(strP!="")
+                  str=str+"&"+strP;
+                  console.log(str);  
+              $.get("{{path('offre_search_ajax')}}?"+str+"&ss_id=b66045u7",function( data ) {
+                    $( ".search-results" ).html( data );           
+                   })
+                         
+          });
+                        
+          $(".filter-button").click(function(){
+               str =$( ".form-select" ).serialize() ;  
+               if(strP!="")
+                  str=str+"&"+strP;
+               console.log(str);                        
+                  $.get("{{path('offre_search_ajax')}}?"+str+"&ss_id=b66045u7",function( data ) {
+                        $( ".search-results" ).html( data );           
+                  })
+                         
+          })
+
+          
+          $(".ui-slider").click(function(){
+               pricemax=$(".max-price .price").html();
+               pricemin=$(".min-price .price").html();
+             $("input.maxprice").val(pricemax);
+             $("input.minprice").val(pricemin);
+              
+                 strP=$(".formPrice :input[value!='']").serialize() ;
+                 console.log(str+"&"+strP);
+              $.get("{{path('offre_search_ajax')}}?"+str+"&"+strP+"&ss_id=b66045u7",function( data ) {
+                          $( ".search-results" ).html( data );           
+                         })
+                         
+                        })
+
+         
+          });
+ 
+
+
+    
+
+
+
+
+      </script>
 
     <div id="fb-root"></div>
 
@@ -982,6 +827,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="https://a0.muscache.com/airbnb/static/packages/p2.bundle-1b1255b32db4b8119c0d6f46e5dbe76a.js" type="text/javascript"></script>
     
 
+  </body>
+  <script>
+ 
+  </script>
+  <div class="modal" aria-hidden="true"><div class="modal-table"><div class="modal-cell"></div></div></div>
   </body>
 </html>
 <!-- ver. 4b463595021ae9d56d957c4f3680cf2a584ba4a1 -->

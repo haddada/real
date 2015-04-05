@@ -3,8 +3,9 @@
 namespace sprint2\RealEstate\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Gedmo\Mapping\Annotation as Gedmo;
 /**
+ * @HasLifecycleCallbacks 
  * Boitemessages
  */
 class Boitemessages
@@ -25,6 +26,7 @@ class Boitemessages
     private $vu;
 
     /**
+     * 
      * @var \DateTime
      */
     private $tempsEnvoi;
@@ -38,8 +40,7 @@ class Boitemessages
      * @var \sprint2\RealEstate\AdminBundle\Entity\Utilisateur
      */
     private $idExpediteur;
-
-
+    
     /**
      * Get id
      *

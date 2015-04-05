@@ -1,4 +1,7 @@
 {% extends "sprint2RealEstateAdminBundle::admin_layout.html.twig" %}
+    {% block Image %}
+        <img src="{{ image }}" class="img-circle" alt="User Image" />
+    {% endblock %}
     {% block gerantsActive %}
         class="active treeview"
     {% endblock %}
@@ -8,24 +11,25 @@
         <!-- Main content -->
         <section class="content">
           <div class="row">
+            <!-- List des client   -->
             <div class="col-xs-12">
-             
-
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title"></h3>
                 </div><!-- /.box-header -->
+                
                 <div class="box-body">
-                  <table id="example1" class="table table-bordered table-striped">
+                  <table id="mytab" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>#</th>
                         <th>Mail</th>
                         <th>Nom</th>
                         <th>Prenom</th>
-                        <th>Fixe</th>
-                        <th>Mobile</th>
                         <th>Status Matrimonial</th>
+                        <th>Num mobile</th>
+                        <th>Num fix</th>
+                        <th>+/-</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -33,16 +37,16 @@
                       
                       {% for utilisateur in utilisateur %}
                             <tr>
-
-                                <td><a href = "{{ path ("sprint2_real_estate_admin_gerants_supp",{'id':utilisateur.id})}}"><button class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button></a>{{utilisateur.id}}</td>
-                              <td>{{utilisateur.mail}}</td>
-                              <td>{{utilisateur.nom}}</td>
-                              <td>{{utilisateur.prenom}}</td>
-                              <td>{{utilisateur.numfix}}</td>
-                              <td>{{utilisateur.nummobile}}</td>
-                              <td>{{utilisateur.statusMatrimonial}}</td>
-                              
-
+                              <td class="nid">{{utilisateur.id}}</td>
+                              <td class="nmail">{{utilisateur.mail}}</td>
+                              <td class="nnom">{{utilisateur.nom}}</td>
+                              <td class="nprenom">{{utilisateur.prenom}}</td>
+                              <td class="nstat">{{utilisateur.statusMatrimonial}}</td>
+                              <td class="nnummob">{{utilisateur.nummobile}}</td>
+                              <td class="nnumfix">{{utilisateur.numfix}}</td>
+                              <td><a href = "{{ path ("sprint2_real_estate_admin_gerants_supp",{'id':utilisateur.id})}}"><button class="btn"><i class="fa fa-trash-o"></i></button></a>
+                                  <a href = "#Modifier"><button type="button" class="btn dddd" ><i class="fa fa-edit"></i></button></a>
+                              </td>
                             </tr>
                         {% endfor %}
                     </tbody>
@@ -52,9 +56,10 @@
                         <th>Mail</th>
                         <th>Nom</th>
                         <th>Prenom</th>
-                        <th>Fixe</th>
-                        <th>Mobile</th>
                         <th>Status Matrimonial</th>
+                        <th>Num mobile</th>
+                        <th>Num fix</th>
+                        <th>+/-</th>
                       </tr>
                     </tfoot>
                   </table>
@@ -62,12 +67,12 @@
               </div><!-- /.box -->
             </div><!-- /.col -->
             
-            <!-- Ajout des gerant   -->
-            <div class="col-xs-12">
+            <!-- Modif des client   -->
+            <div id="Modifier" class="col-xs-12 cvvvvvvb" style="display:none">
             <!--                                                                         -->
-            <div class="box box-danger direct-chat direct-chat-danger">
+            <div class="box box-warning direct-chat direct-chat-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Ajout</h3>
+              <h3 class="box-title">Modifier</h3>
               <div class="box-tools pull-right">
                 
                   <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -76,45 +81,69 @@
             </div><!-- /.box-header -->
             <form method="POST">
             <div class="box-body">
-                
                 <table id="mytab" class="table table-bordered table-striped">
                     <thead>
-                      <tr>                     
+                      <tr>   
+                        <th>#</th>
                         <th>Mail</th>
                         <th>Nom</th>
                         <th>Prenom</th>
-                        <th>Password</th>
-                        <th>Fixe</th>
-                        <th>Mobile</th>
+                        {#<th>Password</th>#}
                         <th>Status Matrimonial</th>
+                        <th>Num mobile</th>
+                        <th>Num fix</th>
                       </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="text" name="mail"/></td>
-                            <td><input type="text" name="nom"/></td>
-                            <td><input type="text" name="prenom"/></td>
-                            <td><input type="text" name="pass"/></td>
-                            <td><input type="text" name="fixe"/></td>
-                            <td><input type="text" name="mobil"/></td>
-                            <td><input type="text" name="statmatri"/></td>                             
+                            <td><input type="text" name="id" class="idc"/></td>
+                            <td><input type="text" name="mail" class="mailc"/></td>
+                            <td><input type="text" name="nom" class="nomc"/></td>
+                            <td><input type="text" name="prenom" class="prenomc"/></td>
+                            {#<td><input type="text" name="pass" class="passc"/></td>#}
+                            <td><input type="text" name="statmatri" class="statmatric"/></td> 
+                            <td><input type="text" name="nummob" class="nummobc"/></td>  
+                            <td><input type="text" name="numfix" class="numfixc"/></td> 
+                            
                         </tr>
                     </tbody>
                   </table>
             <div class="box-footer">
               <div class="pull-right">
                 <span class="input-group-btn">
-                  <input type="submit" name="Submit" value="Ajouter" class="btn btn-danger btn-flat"/>
+                  <input type="submit" name="Submit" value="Modifier" class="btn btn-danger btn-flat"/>
                 </span>
               <div class="with-border "></div>
             </div><!-- /.box-footer-->
             </div>
-                
           </div><!--/.direct-chat -->
-           </form>
+          </form>
+          </div></div>
+           
+            
+            
+            <!-- Ajout des client   -->
+            <div class="col-xs-12">
+            <!--                                                                         -->
+            <div class="box box-danger">
+            <div class="box-header with-border">
+              <h3 class="box-title">Ajout</h3>
+              <div class="box-tools pull-right">
+                
+                  <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+               
+              </div>
+            </div><!-- /.box-header -->
+            
+            
+            <div class="box-body box-pane">        
+                
+                {{ form(form) }}
             </div>
-            {#<input type="button" name="valider" value="valider" onclick="submitForm()"></input>#}
-		
+          
+            </div>
+    
+          </div><!--/.direct-chat -->
           </div><!-- /.row -->
         </section><!-- /.content -->
       
@@ -137,37 +166,35 @@
     <!-- page script --> 
     <script type="text/javascript">
       $(function () {
-        $("#example1").dataTable();
+        $('#mytab').dataTable();
       });
     </script>
     <script type="text/javascript">
-      function submitForm()
-	{
-		xmlhttp=getXMLHttpRequest();//appel de fonction
-		xmlhttp.onreadystatechange=function(){
-			if (xmlhttp.readyState==4 && xmlhttp.status==200){
-				document.getElementById("example1").innerHTML=xmlhttp.responseText;}   
-			}   
-		xmlhttp.open("GET","http://localhost/fichier.txt",true);
-		xmlhttp.send();
-	}
-            function getXMLHttpRequest() {
-                    var xhr = null;
-                    if (window.XMLHttpRequest || window.ActiveXObject) {
-                            if (window.ActiveXObject) {
-                                    try {
-                                            xhr = new ActiveXObject("Msxml2.XMLHTTP");
-                                    } catch(e) {
-                                            xhr = new ActiveXObject("Microsoft.XMLHTTP");
-                                    }
-                            } else {
-                                    xhr = new XMLHttpRequest(); 
-                            }
-                    } else {
-                            alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
-                            return null;
-                    }
-                    return xhr;
-}
+    
+    $(".dddd").click(function(){
+        $(".cvvvvvvb").show(1000);
+        });
+            
+    $(".dddd").click(function() {
+    var $row = $(this).closest("tr");    // Find the row
+    var $nid = $row.find(".nid").text(); // Find the text
+    var $nmail = $row.find(".nmail").text(); // Find the text
+    var $nnom = $row.find(".nnom").text(); // Find the text
+    var $nprenom = $row.find(".nprenom").text(); // Find the text
+    var $nstat = $row.find(".nstat").text(); // Find the text
+    var $nnummob = $row.find(".nnummob").text(); // Find the text
+    var $nnumfix = $row.find(".nnumfix").text(); // Find the text
+    // Let's test it out
+    //alert($text);
+    $('.idc').val($nid);
+    $('.mailc').val($nmail);
+    $('.nomc').val($nnom);
+    $('.prenomc').val($nprenom);
+    $('.statmatric').val($nstat);
+    $('.nummobc').val($nnummob);
+    $('.numfixc').val($nnumfix);
+    });      
+    {#<td><input type="text" name="pass" class="passc"/></td>#}
+
     </script>
     {% endblock %}

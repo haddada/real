@@ -37,12 +37,11 @@ sprint2_real_estate_admin_agence:
 sprint2_real_estate_admin_agence_supp:
     path:     /Agences/{id}
     defaults: { _controller: sprint2RealEstateAdminBundle:Default:supprimerA }
-
-AcmeHomeBundle_ajax_update_mydata:
-  pattern:  /ajax
-  defaults: { _controller: sprint2RealEstateAdminBundle:Ajax:updateData }
   
+sprint2_real_estate_admin_ajax_get_mail_list_ofclient:
+  pattern:  /ajax/{id}
+  defaults: { _controller: sprint2RealEstateAdminBundle:Ajax:getListOfMail }
   
-AcmeHomeBundle_ajax_update_mydatab:
-  pattern:  /ajaxx
-  defaults: { _controller: sprint2RealEstateAdminBundle:Ajax:index }
+file_file_homepage:
+    pattern:  /upload
+    defaults: { _controller: sprint2RealEstateAdminBundle:Default:upload }

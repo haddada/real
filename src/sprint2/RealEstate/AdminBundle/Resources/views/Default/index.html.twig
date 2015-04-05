@@ -1,4 +1,7 @@
 {% extends "sprint2RealEstateAdminBundle::admin_layout.html.twig" %}
+    {% block Image %}
+        <img src="{{ image }}" class="img-circle" alt="User Image" />
+    {% endblock %}
     {% block DashActive %}
         class="active treeview"
     {% endblock %}
@@ -80,7 +83,7 @@
                         <img src="{{offre.urlimage}}" alt="Product Image"/>
                       </div>
                       <div class="product-info">
-                        <a href="javascript::;" class="product-type">{{offre.typeimmob}}</a><span class="label label-warning pull-right">{{offre.payement}} TD</span>
+                        <a  class="product-type">{{offre.typeimmob}}</a><span class="label label-warning pull-right">{{offre.payement}} TD</span>
                         <span class="product-description">
                           {{offre.nbrpiece}} Piece, {{offre.surface}} Metre, Tunisie {{offre.idAdresse.gouvernorat}} {{offre.idAdresse.ville}}, A {{offre.nature}} 
                         </span>
@@ -108,7 +111,7 @@
                     {% for utilisateurc in utilisateurc %}
                     <li>
                       <img src="{{utilisateurc.urlp}}" alt="User Image"/>
-                      <a class="users-list-name" href="#">{{utilisateurc.prenom}} {{utilisateurc.nom}}</a>
+                      <a class="users-list-name" >{{utilisateurc.prenom}} {{utilisateurc.nom}}</a>
                     </li>
                    {% endfor %}
                   </ul><!-- /.users-list -->
@@ -136,9 +139,9 @@
                         <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSAJkvd0MYu8xLY4QJqfzM-1a2UbUvIyN0W3FxyS97C-D7uXaQA" alt="Product Image"/>
                       </div>
                       <div class="product-info">
-                        <a href="javascript::;" class="product-type">{{agance.nom}}</a>
+                        <a  class="product-type">{{agance.nom}}</a>
                         <span class="product-description">
-                          Gerait par <a href="javascript::;" class="product-type">{{agance.idGerant.nom}} {{agance.idGerant.prenom}}</a>, Localiser {{agance.idAdresse.gouvernorat}} {{agance.idAdresse.ville}}
+                          Gerait par <a  class="product-type">{{agance.idGerant.nom}} {{agance.idGerant.prenom}}</a>, Localiser {{agance.idAdresse.gouvernorat}} {{agance.idAdresse.ville}}
                       </div>
                       </li><!-- /.item -->
                     {% endfor %}
@@ -164,7 +167,7 @@
                     {% for utilisateurg in utilisateurg %}
                     <li>
                       <img src="{{utilisateurg.urlp}}" alt="User Image"/>
-                      <a class="users-list-name" href="#">{{utilisateurg.prenom}} {{utilisateurg.nom}}</a>
+                      <a class="users-list-name" >{{utilisateurg.prenom}} {{utilisateurg.nom}}</a>
                     </li>
                    {% endfor %}
                   </ul><!-- /.users-list -->

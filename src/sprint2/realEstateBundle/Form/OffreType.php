@@ -16,7 +16,6 @@ class OffreType extends AbstractType
     {
         $builder
             ->add('idGerant')
-            ->add('idAdresse')
             ->add('etat')
             ->add('typeimmob')
             ->add('nature')
