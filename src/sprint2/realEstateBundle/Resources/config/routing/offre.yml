@@ -49,3 +49,6 @@ offre_search_ville:
 offre_search_code:
     path: /code/ville
     defaults: { _controller: "realEstateBundle:Offre:searchCode" }
+vote_add:
+    path: /{id}/show/note
+    defaults: { _controller: "realEstateBundle:Vote:create" }

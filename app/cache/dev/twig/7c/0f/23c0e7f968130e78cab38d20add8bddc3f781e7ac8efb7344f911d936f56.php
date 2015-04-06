@@ -222,12 +222,17 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
   <div class=\"search-modal-container\"></div>
 </div>
 
-
-  <div class=\"regular-header clearfix hide-sm\">
+<div class=\"regular-header clearfix hide-sm\">
   <a href=\"/\" class=\"header-belo pull-left\"></a>
 
-  <ul class=\"nav pull-left hide-sm list-unstyled search-form-container\" id=\"search-form-header\">
-  <li id=\"header-search\" class=\"search-bar-wrapper pull-left medium-right-margin\"><form action=\"/s\" class=\"search-form\" data-reactid=\".0\"><div class=\"search-bar\" data-reactid=\".0.0\"><i class=\"icon icon-search icon-gray h4\" data-reactid=\".0.0.0\"></i><input type=\"text\" placeholder=\"Où allez-vous ?\" autocomplete=\"off\" name=\"location\" class=\"location\" value=\"\" data-reactid=\".0.0.1\"><input type=\"hidden\" name=\"source\" value=\"hdr\" data-reactid=\".0.0.2\"></div><div id=\"header-search-settings\" class=\"search-settings header-menu\" data-reactid=\".0.1\"><div class=\"panel-body clearfix basic-settings\" data-reactid=\".0.1.0\"><div class=\"setting checkin\" data-reactid=\".0.1.0.0\"><label for=\"header-search-checkin\" class=\"field-label\" data-reactid=\".0.1.0.0.0\"><strong data-reactid=\".0.1.0.0.0.0\">Arrivée</strong></label><input type=\"text\" id=\"header-search-checkin\" data-field-name=\"check_in_dates\" name=\"checkin\" class=\"checkin ui-datepicker-target\" data-reactid=\".0.1.0.0.1\"></div><div class=\"setting checkout\" data-reactid=\".0.1.0.1\"><label for=\"header-search-checkout\" class=\"field-label\" data-reactid=\".0.1.0.1.0\"><strong data-reactid=\".0.1.0.1.0.0\">Départ</strong></label><input type=\"text\" id=\"header-search-checkout\" data-field-name=\"check_out_dates\" class=\"checkout ui-datepicker-target\" name=\"checkout\" data-reactid=\".0.1.0.1.1\"></div><div class=\"setting guests\" data-reactid=\".0.1.0.2\"><label for=\"header-search-guests\" class=\"field-label\" data-reactid=\".0.1.0.2.0\"><strong data-reactid=\".0.1.0.2.0.0\">Voyageurs</strong></label><div class=\"select select-block\" data-reactid=\".0.1.0.2.1\"><select id=\"header-search-guests\" data-field-name=\"number_of_guests\" name=\"guests\" data-reactid=\".0.1.0.2.1.0\"><option value=\"1\" data-reactid=\".0.1.0.2.1.0.\$1\">1</option><option value=\"2\" data-reactid=\".0.1.0.2.1.0.\$2\">2</option><option value=\"3\" data-reactid=\".0.1.0.2.1.0.\$3\">3</option><option value=\"4\" data-reactid=\".0.1.0.2.1.0.\$4\">4</option><option value=\"5\" data-reactid=\".0.1.0.2.1.0.\$5\">5</option><option value=\"6\" data-reactid=\".0.1.0.2.1.0.\$6\">6</option><option value=\"7\" data-reactid=\".0.1.0.2.1.0.\$7\">7</option><option value=\"8\" data-reactid=\".0.1.0.2.1.0.\$8\">8</option><option value=\"9\" data-reactid=\".0.1.0.2.1.0.\$9\">9</option><option value=\"10\" data-reactid=\".0.1.0.2.1.0.\$10\">10</option><option value=\"11\" data-reactid=\".0.1.0.2.1.0.\$11\">11</option><option value=\"12\" data-reactid=\".0.1.0.2.1.0.\$12\">12</option><option value=\"13\" data-reactid=\".0.1.0.2.1.0.\$13\">13</option><option value=\"14\" data-reactid=\".0.1.0.2.1.0.\$14\">14</option><option value=\"15\" data-reactid=\".0.1.0.2.1.0.\$15\">15</option><option value=\"16\" data-reactid=\".0.1.0.2.1.0.\$16\">16</option></select></div></div></div><div class=\"panel-header menu-header\" data-reactid=\".0.1.1\"><small data-reactid=\".0.1.1.0\"><strong data-reactid=\".0.1.1.0.0\">Type de logement</strong></small></div><div class=\"panel-body\" data-reactid=\".0.1.2\"><div class=\"row-space-4\" data-reactid=\".0.1.2.0\"><label class=\"checkbox menu-item\" for=\"room_type_0\" data-reactid=\".0.1.2.0.0\"><input type=\"checkbox\" id=\"room_type_0\" data-room-type=\"entire_home\" name=\"room_types[]\" value=\"Entire home/apt\" data-reactid=\".0.1.2.0.0.0\"><i class=\"icon icon-entire-place horizontal-margin-medium\" data-reactid=\".0.1.2.0.0.1\"></i><span data-reactid=\".0.1.2.0.0.2\">Logement entier</span></label><label class=\"checkbox menu-item\" for=\"room_type_1\" data-reactid=\".0.1.2.0.1\"><input type=\"checkbox\" id=\"room_type_1\" data-room-type=\"private_home\" name=\"room_types[]\" value=\"Private room\" data-reactid=\".0.1.2.0.1.0\"><i class=\"icon icon-private-room horizontal-margin-medium\" data-reactid=\".0.1.2.0.1.1\"></i><span data-reactid=\".0.1.2.0.1.2\">Chambre privée</span></label><label class=\"checkbox menu-item\" for=\"room_type_2\" data-reactid=\".0.1.2.0.2\"><input type=\"checkbox\" id=\"room_type_2\" data-room-type=\"shared_room\" name=\"room_types[]\" value=\"Shared room\" data-reactid=\".0.1.2.0.2.0\"><i class=\"icon icon-shared-room horizontal-margin-medium\" data-reactid=\".0.1.2.0.2.1\"></i><span data-reactid=\".0.1.2.0.2.2\">Chambre partagée</span></label></div><button type=\"submit\" class=\"btn btn-primary btn-block\" data-reactid=\".0.1.2.1\"><i class=\"icon icon-search\" data-reactid=\".0.1.2.1.0\"></i><span data-reactid=\".0.1.2.1.1\">Trouver un logement</span></button></div></div></form></li>
+  <ul class=\"nav pull-left hide-sm list-unstyled search-form-container\"
+    id=\"search-form-header\">
+  <li id=\"header-search\" class=\"search-bar-wrapper pull-left medium-right-margin\">
+    ";
+        // line 196
+        $this->env->loadTemplate("realEstateBundle:Offre:searchForm.html.twig")->display($context);
+        // line 197
+        echo "  </li>
     <li class=\"browse-container pull-left hide-md\">
       <a class=\"link-reset header-browse-trigger\" href=\"#\" data-prevent-default=\"\" id=\"header-browse-trigger\">
   Naviguer
@@ -309,7 +314,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
 
 
 <div class=\"page-container-full\">
-<form action=\"\" method=\"POST\">
+<form action=\"\" method=\"POST\" enctype=\"multipart/form-data\">
   <div class=\"panel lys-panel-header\">
     <div class=\"panel-light panel-body\">
       <div></div>
@@ -327,21 +332,21 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
 \t      <div class=\"row row-space-5 row-space-top-5 row-table\">
 \t\t      
 \t      \t ";
-        // line 294
+        // line 296
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/typeLogement.html.twig")->display($context);
-        // line 295
+        // line 297
         echo "\t       </div>
 \t       <div class=\"row row-space-5 row-space-top-5 row-table\">
         \t ";
-        // line 297
+        // line 299
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Etat.html.twig")->display($context);
-        // line 298
+        // line 300
         echo "        \t</div>
             <div class=\"row row-space-5 row-space-top-5 row-table\">
              ";
-        // line 300
+        // line 302
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Prix.html.twig")->display($context);
-        // line 301
+        // line 303
         echo "             </div>
              <div class=\"row row-space-5 row-space-top-5 row-table\">
                 <div class=\"col-3 text-right col-middle\">
@@ -386,54 +391,77 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
              
         \t<div class=\"row row-space-5 row-space-top-5 row-table\">
 \t         ";
-        // line 344
+        // line 346
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Chambre.html.twig")->display($context);
-        // line 345
+        // line 347
         echo "\t         </div>
              ";
-        // line 349
+        // line 351
         echo "               
              
 \t         
 \t        
  \t\t\t <div class=\"row row-space-5 row-space-top-5 row-table\">
 \t         ";
-        // line 354
+        // line 356
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Quartier.html.twig")->display(array_merge($context, array("gouvernorats" => (isset($context["gouvernorats"]) ? $context["gouvernorats"] : $this->getContext($context, "gouvernorats")))));
-        // line 355
+        // line 357
         echo "\t         </div>
 
 \t         <div class=\"row row-space-5 row-space-top-5 row-table villes\">
                  ";
-        // line 358
+        // line 360
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/ville.html.twig")->display(array_merge($context, array("villes" => (isset($context["villes"]) ? $context["villes"] : $this->getContext($context, "villes")))));
-        // line 359
+        // line 361
         echo "             </div>
 
              <div class=\"row row-space-5 row-space-top-5 row-table code\">
                 ";
-        // line 362
+        // line 364
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/code.html.twig")->display(array_merge($context, array("codes" => (isset($context["codes"]) ? $context["codes"] : $this->getContext($context, "codes")))));
-        // line 363
+        // line 365
         echo "             </div>
 \t        
 \t         <div class=\"row row-space-5 row-space-top-5 row-table\">
 \t         ";
-        // line 366
+        // line 368
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Equipement.html.twig")->display($context);
-        // line 367
+        // line 369
         echo "\t         </div>
              
 
 \t         <div class=\"row row-space-5 row-space-top-7 row-table\">
 \t\t        <div class=\"col-9 col-offset-3 row-space-5 row-space-top-7\" id=\"\">
+                <style>
+                        .fileUpload {
+                            position: relative;
+                            overflow: hidden;
+                            margin: 10px;
+                        }
+                        .fileUpload input.upload {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            margin: 0;
+                            padding: 0;
+                            font-size: 20px;
+                            cursor: pointer;
+                            opacity: 0;
+                            filter: alpha(opacity=0);
+                        }
+                </style>
+                    <div class=\"fileUpload btn-large btn btn-primary\">
+                        <span>Upload</span>
+                        <input type=\"file\" class=\"upload\" name=\"fileToUpload\"/>
+                    </div>
+
 \t\t        \t<input type=\"submit\" class=\"btn btn-primary btn-large submit\" value=\"Valider\">
 \t\t\t\t\t\t 
 \t\t\t\t\t</input>
 \t\t\t\t</div>
 \t         </div>
 
-    </form
+    </form>
       </div>
 
       <div class=\"page-container page-container-responsive col-center\">
@@ -2343,6 +2371,6 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
 
     public function getDebugInfo()
     {
-        return array (  425 => 367,  423 => 366,  418 => 363,  416 => 362,  411 => 359,  409 => 358,  404 => 355,  402 => 354,  395 => 349,  392 => 345,  390 => 344,  345 => 301,  343 => 300,  339 => 298,  337 => 297,  333 => 295,  331 => 294,  146 => 112,  141 => 110,  113 => 85,  30 => 4,  24 => 3,  20 => 1,);
+        return array (  430 => 369,  428 => 368,  423 => 365,  421 => 364,  416 => 361,  414 => 360,  409 => 357,  407 => 356,  400 => 351,  397 => 347,  395 => 346,  350 => 303,  348 => 302,  344 => 300,  342 => 299,  338 => 297,  336 => 296,  235 => 197,  233 => 196,  146 => 112,  141 => 110,  113 => 85,  30 => 4,  24 => 3,  20 => 1,);
     }
 }

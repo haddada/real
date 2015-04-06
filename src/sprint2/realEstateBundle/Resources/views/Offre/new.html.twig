@@ -187,12 +187,14 @@ height="0" width="0" style="display:none;visibility:hidden"&amp;gt;&amp;lt;/ifra
   <div class="search-modal-container"></div>
 </div>
 
-
-  <div class="regular-header clearfix hide-sm">
+<div class="regular-header clearfix hide-sm">
   <a href="/" class="header-belo pull-left"></a>
 
-  <ul class="nav pull-left hide-sm list-unstyled search-form-container" id="search-form-header">
-  <li id="header-search" class="search-bar-wrapper pull-left medium-right-margin"><form action="/s" class="search-form" data-reactid=".0"><div class="search-bar" data-reactid=".0.0"><i class="icon icon-search icon-gray h4" data-reactid=".0.0.0"></i><input type="text" placeholder="Où allez-vous ?" autocomplete="off" name="location" class="location" value="" data-reactid=".0.0.1"><input type="hidden" name="source" value="hdr" data-reactid=".0.0.2"></div><div id="header-search-settings" class="search-settings header-menu" data-reactid=".0.1"><div class="panel-body clearfix basic-settings" data-reactid=".0.1.0"><div class="setting checkin" data-reactid=".0.1.0.0"><label for="header-search-checkin" class="field-label" data-reactid=".0.1.0.0.0"><strong data-reactid=".0.1.0.0.0.0">Arrivée</strong></label><input type="text" id="header-search-checkin" data-field-name="check_in_dates" name="checkin" class="checkin ui-datepicker-target" data-reactid=".0.1.0.0.1"></div><div class="setting checkout" data-reactid=".0.1.0.1"><label for="header-search-checkout" class="field-label" data-reactid=".0.1.0.1.0"><strong data-reactid=".0.1.0.1.0.0">Départ</strong></label><input type="text" id="header-search-checkout" data-field-name="check_out_dates" class="checkout ui-datepicker-target" name="checkout" data-reactid=".0.1.0.1.1"></div><div class="setting guests" data-reactid=".0.1.0.2"><label for="header-search-guests" class="field-label" data-reactid=".0.1.0.2.0"><strong data-reactid=".0.1.0.2.0.0">Voyageurs</strong></label><div class="select select-block" data-reactid=".0.1.0.2.1"><select id="header-search-guests" data-field-name="number_of_guests" name="guests" data-reactid=".0.1.0.2.1.0"><option value="1" data-reactid=".0.1.0.2.1.0.$1">1</option><option value="2" data-reactid=".0.1.0.2.1.0.$2">2</option><option value="3" data-reactid=".0.1.0.2.1.0.$3">3</option><option value="4" data-reactid=".0.1.0.2.1.0.$4">4</option><option value="5" data-reactid=".0.1.0.2.1.0.$5">5</option><option value="6" data-reactid=".0.1.0.2.1.0.$6">6</option><option value="7" data-reactid=".0.1.0.2.1.0.$7">7</option><option value="8" data-reactid=".0.1.0.2.1.0.$8">8</option><option value="9" data-reactid=".0.1.0.2.1.0.$9">9</option><option value="10" data-reactid=".0.1.0.2.1.0.$10">10</option><option value="11" data-reactid=".0.1.0.2.1.0.$11">11</option><option value="12" data-reactid=".0.1.0.2.1.0.$12">12</option><option value="13" data-reactid=".0.1.0.2.1.0.$13">13</option><option value="14" data-reactid=".0.1.0.2.1.0.$14">14</option><option value="15" data-reactid=".0.1.0.2.1.0.$15">15</option><option value="16" data-reactid=".0.1.0.2.1.0.$16">16</option></select></div></div></div><div class="panel-header menu-header" data-reactid=".0.1.1"><small data-reactid=".0.1.1.0"><strong data-reactid=".0.1.1.0.0">Type de logement</strong></small></div><div class="panel-body" data-reactid=".0.1.2"><div class="row-space-4" data-reactid=".0.1.2.0"><label class="checkbox menu-item" for="room_type_0" data-reactid=".0.1.2.0.0"><input type="checkbox" id="room_type_0" data-room-type="entire_home" name="room_types[]" value="Entire home/apt" data-reactid=".0.1.2.0.0.0"><i class="icon icon-entire-place horizontal-margin-medium" data-reactid=".0.1.2.0.0.1"></i><span data-reactid=".0.1.2.0.0.2">Logement entier</span></label><label class="checkbox menu-item" for="room_type_1" data-reactid=".0.1.2.0.1"><input type="checkbox" id="room_type_1" data-room-type="private_home" name="room_types[]" value="Private room" data-reactid=".0.1.2.0.1.0"><i class="icon icon-private-room horizontal-margin-medium" data-reactid=".0.1.2.0.1.1"></i><span data-reactid=".0.1.2.0.1.2">Chambre privée</span></label><label class="checkbox menu-item" for="room_type_2" data-reactid=".0.1.2.0.2"><input type="checkbox" id="room_type_2" data-room-type="shared_room" name="room_types[]" value="Shared room" data-reactid=".0.1.2.0.2.0"><i class="icon icon-shared-room horizontal-margin-medium" data-reactid=".0.1.2.0.2.1"></i><span data-reactid=".0.1.2.0.2.2">Chambre partagée</span></label></div><button type="submit" class="btn btn-primary btn-block" data-reactid=".0.1.2.1"><i class="icon icon-search" data-reactid=".0.1.2.1.0"></i><span data-reactid=".0.1.2.1.1">Trouver un logement</span></button></div></div></form></li>
+  <ul class="nav pull-left hide-sm list-unstyled search-form-container"
+    id="search-form-header">
+  <li id="header-search" class="search-bar-wrapper pull-left medium-right-margin">
+    {%include 'realEstateBundle:Offre:searchForm.html.twig' %}
+  </li>
     <li class="browse-container pull-left hide-md">
       <a class="link-reset header-browse-trigger" href="#" data-prevent-default="" id="header-browse-trigger">
   Naviguer
@@ -274,7 +276,7 @@ height="0" width="0" style="display:none;visibility:hidden"&amp;gt;&amp;lt;/ifra
 
 
 <div class="page-container-full">
-<form action="" method="POST">
+<form action="" method="POST" enctype="multipart/form-data">
   <div class="panel lys-panel-header">
     <div class="panel-light panel-body">
       <div></div>
@@ -369,13 +371,36 @@ height="0" width="0" style="display:none;visibility:hidden"&amp;gt;&amp;lt;/ifra
 
 	         <div class="row row-space-5 row-space-top-7 row-table">
 		        <div class="col-9 col-offset-3 row-space-5 row-space-top-7" id="">
+                <style>
+                        .fileUpload {
+                            position: relative;
+                            overflow: hidden;
+                            margin: 10px;
+                        }
+                        .fileUpload input.upload {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            margin: 0;
+                            padding: 0;
+                            font-size: 20px;
+                            cursor: pointer;
+                            opacity: 0;
+                            filter: alpha(opacity=0);
+                        }
+                </style>
+                    <div class="fileUpload btn-large btn btn-primary">
+                        <span>Upload</span>
+                        <input type="file" class="upload" name="fileToUpload"/>
+                    </div>
+
 		        	<input type="submit" class="btn btn-primary btn-large submit" value="Valider">
 						 
 					</input>
 				</div>
 	         </div>
 
-    </form
+    </form>
       </div>
 
       <div class="page-container page-container-responsive col-center">

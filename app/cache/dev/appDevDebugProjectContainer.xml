@@ -21,6 +21,7 @@
       <parameter key="BraincraftedBootstrapBundle">Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle</parameter>
       <parameter key="sprint2RealEstateAdminBundle">sprint2\RealEstate\AdminBundle\sprint2RealEstateAdminBundle</parameter>
       <parameter key="RealEstateAuthentificationBundle">RealEstate\AuthentificationBundle\RealEstateAuthentificationBundle</parameter>
+      <parameter key="DCSRatingBundle">DCS\RatingBundle\DCSRatingBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
@@ -620,6 +621,17 @@
     <parameter key="braincrafted_bootstrap.output_dir">null</parameter>
     <parameter key="braincrafted_bootstrap.less_filter">less</parameter>
     <parameter key="braincrafted_bootstrap.icon_tag">span</parameter>
+    <parameter key="dcs_rating.model.rating.class">sprint2\realEstateBundle\Entity\Rating</parameter>
+    <parameter key="dcs_rating.model.vote.class">sprint2\realEstateBundle\Entity\Vote</parameter>
+    <parameter key="dcs_rating.manager.rating.default.class">DCS\RatingBundle\Entity\RatingManager</parameter>
+    <parameter key="dcs_rating.manager.vote.default.class">DCS\RatingBundle\Entity\VoteManager</parameter>
+    <parameter key="dcs_rating.base_security_role">IS_AUTHENTICATED_FULLY</parameter>
+    <parameter key="dcs_rating.base_path_to_redirect">/</parameter>
+    <parameter key="dcs_rating.unique_vote">true</parameter>
+    <parameter key="dcs_rating.max_value">5</parameter>
+    <parameter key="dcs_rating.listener.rating_update_info.class">DCS\RatingBundle\EventListener\RatingUpdateInfoEventListener</parameter>
+    <parameter key="dcs_rating.listener.rating_update_rate.class">DCS\RatingBundle\EventListener\RatingUpdateRateEventListener</parameter>
+    <parameter key="dcs_rating.twig.rating_extension.class">DCS\RatingBundle\Twig\RatingExtension</parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -1808,6 +1820,14 @@
         <argument>Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener</argument>
       </call>
       <call method="addSubscriberService">
+        <argument>dcs_rating.listener.rating_update_info</argument>
+        <argument>DCS\RatingBundle\EventListener\RatingUpdateInfoEventListener</argument>
+      </call>
+      <call method="addSubscriberService">
+        <argument>dcs_rating.listener.rating_update_rate</argument>
+        <argument>DCS\RatingBundle\EventListener\RatingUpdateRateEventListener</argument>
+      </call>
+      <call method="addSubscriberService">
         <argument>debug.dump_listener</argument>
         <argument>Symfony\Component\HttpKernel\EventListener\DumpListener</argument>
       </call>
@@ -2340,6 +2360,9 @@
         <argument type="service" id="braincrafted_bootstrap.twig.form_extension"/>
       </call>
       <call method="addExtension">
+        <argument type="service" id="dcs_rating.twig.rating_extension"/>
+      </call>
+      <call method="addExtension">
         <argument type="service">
           <service class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
             <tag name="twig.extension"/>
@@ -2680,6 +2703,7 @@
             <argument type="collection">
               <argument key="realEstateBundle">sprint2\realEstateBundle\Entity</argument>
               <argument key="sprint2RealEstateAdminBundle">sprint2\RealEstate\AdminBundle\Entity</argument>
+              <argument key="DCSRatingBundle">DCS\RatingBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2717,6 +2741,19 @@
                     </service>
                   </argument>
                   <argument>sprint2\RealEstate\AdminBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="/home/haddada/realEstate/vendor/damianociarla/rating-bundle/DCS/RatingBundle/Resources/config/doctrine">DCS\RatingBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>DCS\RatingBundle\Entity</argument>
                 </call>
               </service>
             </argument>
@@ -2835,6 +2872,31 @@
     </service>
     <service id="braincrafted_bootstrap.flash" class="Braincrafted\Bundle\BootstrapBundle\Session\FlashMessage">
       <argument type="service" id="session"/>
+    </service>
+    <service id="dcs_rating.manager.rating.default" class="DCS\RatingBundle\Entity\RatingManager">
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument>sprint2\realEstateBundle\Entity\Rating</argument>
+    </service>
+    <service id="dcs_rating.manager.vote.default" class="DCS\RatingBundle\Entity\VoteManager">
+      <argument type="service" id="debug.event_dispatcher"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument>sprint2\realEstateBundle\Entity\Vote</argument>
+    </service>
+    <service id="dcs_rating.listener.rating_update_info" class="DCS\RatingBundle\EventListener\RatingUpdateInfoEventListener">
+      <tag name="kernel.event_subscriber"/>
+      <call method="setRequest">
+        <argument type="service" id="request" on-invalid="null" strict="false"/>
+      </call>
+    </service>
+    <service id="dcs_rating.listener.rating_update_rate" class="DCS\RatingBundle\EventListener\RatingUpdateRateEventListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="dcs_rating.manager.rating.default"/>
+      <argument type="service" id="dcs_rating.manager.vote.default"/>
+    </service>
+    <service id="dcs_rating.twig.rating_extension" class="DCS\RatingBundle\Twig\RatingExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="service_container"/>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig"/>
@@ -3217,6 +3279,10 @@
         <argument>RealEstateAuthentification</argument>
       </call>
       <call method="addPath">
+        <argument>/home/haddada/realEstate/vendor/damianociarla/rating-bundle/DCS/RatingBundle/Resources/views</argument>
+        <argument>DCSRating</argument>
+      </call>
+      <call method="addPath">
         <argument>/home/haddada/realEstate/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
@@ -3324,6 +3390,8 @@
     <service id="doctrine.orm.default_metadata_cache" alias="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
     <service id="doctrine.orm.default_result_cache" alias="doctrine_cache.providers.doctrine.orm.default_result_cache"/>
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache"/>
+    <service id="dcs_rating.manager.rating" alias="dcs_rating.manager.rating.default"/>
+    <service id="dcs_rating.manager.vote" alias="dcs_rating.manager.vote.default"/>
     <service id="sensio.distribution.webconfigurator" alias="sensio_distribution.webconfigurator"/>
     <service id="console.command.sensiolabs_security_command_securitycheckercommand" alias="sensio_distribution.security_checker.command"/>
   </services>

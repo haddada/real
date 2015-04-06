@@ -84,11 +84,6 @@ class __TwigTemplate_21ffc1e9b34e6baf2488d1ce67bd572db633f11445fbd9f5e56c389b336
                      id=\"wishlist-widget-4540756\"
                      name=\"wishlist-widget-4540756\"
                      data-for-hosting=\"4540756\">
-              <label for=\"wishlist-widget-4540756\" class=\"hide-sm\">
-                <i class=\"icon icon-heart icon-rausch icon-size-2 rich-toggle-checked\"></i>
-                <i class=\"icon icon-heart wishlist-heart-unchecked icon-size-2 rich-toggle-unchecked\"></i>
-                <i class=\"icon icon-heart-alt icon-white icon-size-2\"></i>
-              </label>
             </span>
       
       
@@ -104,18 +99,18 @@ class __TwigTemplate_21ffc1e9b34e6baf2488d1ce67bd572db633f11445fbd9f5e56c389b336
               </a>
             <a href=\"/rooms/4540756?guests=2&amp;s=eNQN\" target=\"listing_4540756\" class=\"text-normal\">
               <div title=\"Sun-filled room in ";
-            // line 66
+            // line 61
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "Adresse", array()), "ville", array()), "html", null, true);
             echo "\" class=\"h5 listing-name text-truncate row-space-top-1\">
                 Sun-filled room in ";
-            // line 67
+            // line 62
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "Adresse", array()), "ville", array()), "html", null, true);
             echo "
               </div>
             </a>
             <div class=\"text-muted listing-location text-truncate\"><a href=\"/rooms/4540756?guests=2&amp;s=eNQN\" class=\"text-normal link-reset\">
   ";
-            // line 71
+            // line 66
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "description", array()), "html", null, true);
             echo "
 </a>
@@ -133,7 +128,7 @@ class __TwigTemplate_21ffc1e9b34e6baf2488d1ce67bd572db633f11445fbd9f5e56c389b336
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 83
+        // line 78
         echo "    
 
 ";
@@ -151,6 +146,6 @@ class __TwigTemplate_21ffc1e9b34e6baf2488d1ce67bd572db633f11445fbd9f5e56c389b336
 
     public function getDebugInfo()
     {
-        return array (  137 => 83,  119 => 71,  112 => 67,  108 => 66,  80 => 41,  76 => 40,  61 => 28,  48 => 20,  41 => 16,  26 => 3,  22 => 2,  19 => 1,);
+        return array (  132 => 78,  114 => 66,  107 => 62,  103 => 61,  80 => 41,  76 => 40,  61 => 28,  48 => 20,  41 => 16,  26 => 3,  22 => 2,  19 => 1,);
     }
 }

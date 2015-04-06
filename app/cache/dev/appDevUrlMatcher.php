@@ -408,6 +408,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\OffreController::searchCodeAction',  '_route' => 'offre_search_code',);
             }
 
+            // vote_add
+            if (preg_match('#^/offre/(?P<id>[^/]++)/show/note$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'vote_add')), array (  '_controller' => 'sprint2\\realEstateBundle\\Controller\\VoteController::createAction',));
+            }
+
         }
 
         // real_estate_homepage
@@ -524,6 +529,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // homepage
         if ($pathinfo === '/app/example') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+        }
+
+        // dcs_rating_add_vote
+        if (0 === strpos($pathinfo, '/dcs/vote/add') && preg_match('#^/dcs/vote/add/(?P<id>[^/]++)/(?P<value>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dcs_rating_add_vote')), array (  '_controller' => 'DCS\\RatingBundle\\Controller\\RatingController::addVoteAction',));
         }
 
         // _welcome

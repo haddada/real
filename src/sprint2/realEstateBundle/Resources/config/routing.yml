@@ -5,7 +5,6 @@ real_estate_adresse:
 real_estate_offre:
     resource: "@realEstateBundle/Resources/config/routing/offre.yml"
     prefix:   /offre
-
 real_estate_homepage:
     path:     /
     defaults: { _controller: realEstateBundle:Default:index }

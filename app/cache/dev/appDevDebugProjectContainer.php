@@ -70,6 +70,11 @@ class appDevDebugProjectContainer extends Container
             'data_collector.form.extractor' => 'getDataCollector_Form_ExtractorService',
             'data_collector.request' => 'getDataCollector_RequestService',
             'data_collector.router' => 'getDataCollector_RouterService',
+            'dcs_rating.listener.rating_update_info' => 'getDcsRating_Listener_RatingUpdateInfoService',
+            'dcs_rating.listener.rating_update_rate' => 'getDcsRating_Listener_RatingUpdateRateService',
+            'dcs_rating.manager.rating.default' => 'getDcsRating_Manager_Rating_DefaultService',
+            'dcs_rating.manager.vote.default' => 'getDcsRating_Manager_Vote_DefaultService',
+            'dcs_rating.twig.rating_extension' => 'getDcsRating_Twig_RatingExtensionService',
             'debug.controller_resolver' => 'getDebug_ControllerResolverService',
             'debug.debug_handlers_listener' => 'getDebug_DebugHandlersListenerService',
             'debug.dump_listener' => 'getDebug_DumpListenerService',
@@ -283,6 +288,8 @@ class appDevDebugProjectContainer extends Container
         $this->aliases = array(
             'console.command.sensiolabs_security_command_securitycheckercommand' => 'sensio_distribution.security_checker.command',
             'database_connection' => 'doctrine.dbal.default_connection',
+            'dcs_rating.manager.rating' => 'dcs_rating.manager.rating.default',
+            'dcs_rating.manager.vote' => 'dcs_rating.manager.vote.default',
             'debug.templating.engine.twig' => 'templating',
             'doctrine.orm.default_metadata_cache' => 'doctrine_cache.providers.doctrine.orm.default_metadata_cache',
             'doctrine.orm.default_query_cache' => 'doctrine_cache.providers.doctrine.orm.default_query_cache',
@@ -686,6 +693,75 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'dcs_rating.listener.rating_update_info' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \DCS\RatingBundle\EventListener\RatingUpdateInfoEventListener A DCS\RatingBundle\EventListener\RatingUpdateInfoEventListener instance.
+     */
+    protected function getDcsRating_Listener_RatingUpdateInfoService()
+    {
+        $this->services['dcs_rating.listener.rating_update_info'] = $instance = new \DCS\RatingBundle\EventListener\RatingUpdateInfoEventListener();
+
+        $instance->setRequest($this->get('request', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'dcs_rating.listener.rating_update_rate' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \DCS\RatingBundle\EventListener\RatingUpdateRateEventListener A DCS\RatingBundle\EventListener\RatingUpdateRateEventListener instance.
+     */
+    protected function getDcsRating_Listener_RatingUpdateRateService()
+    {
+        return $this->services['dcs_rating.listener.rating_update_rate'] = new \DCS\RatingBundle\EventListener\RatingUpdateRateEventListener($this->get('dcs_rating.manager.rating.default'), $this->get('dcs_rating.manager.vote.default'));
+    }
+
+    /**
+     * Gets the 'dcs_rating.manager.rating.default' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \DCS\RatingBundle\Entity\RatingManager A DCS\RatingBundle\Entity\RatingManager instance.
+     */
+    protected function getDcsRating_Manager_Rating_DefaultService()
+    {
+        return $this->services['dcs_rating.manager.rating.default'] = new \DCS\RatingBundle\Entity\RatingManager($this->get('debug.event_dispatcher'), $this->get('doctrine.orm.default_entity_manager'), 'sprint2\\realEstateBundle\\Entity\\Rating');
+    }
+
+    /**
+     * Gets the 'dcs_rating.manager.vote.default' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \DCS\RatingBundle\Entity\VoteManager A DCS\RatingBundle\Entity\VoteManager instance.
+     */
+    protected function getDcsRating_Manager_Vote_DefaultService()
+    {
+        return $this->services['dcs_rating.manager.vote.default'] = new \DCS\RatingBundle\Entity\VoteManager($this->get('debug.event_dispatcher'), $this->get('doctrine.orm.default_entity_manager'), 'sprint2\\realEstateBundle\\Entity\\Vote');
+    }
+
+    /**
+     * Gets the 'dcs_rating.twig.rating_extension' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \DCS\RatingBundle\Twig\RatingExtension A DCS\RatingBundle\Twig\RatingExtension instance.
+     */
+    protected function getDcsRating_Twig_RatingExtensionService()
+    {
+        return $this->services['dcs_rating.twig.rating_extension'] = new \DCS\RatingBundle\Twig\RatingExtension($this);
+    }
+
+    /**
      * Gets the 'debug.controller_resolver' service.
      *
      * This service is shared.
@@ -761,6 +837,8 @@ class appDevDebugProjectContainer extends Container
         $instance->addSubscriberService('sensio_framework_extra.view.listener', 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\TemplateListener');
         $instance->addSubscriberService('sensio_framework_extra.cache.listener', 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\HttpCacheListener');
         $instance->addSubscriberService('sensio_framework_extra.security.listener', 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\SecurityListener');
+        $instance->addSubscriberService('dcs_rating.listener.rating_update_info', 'DCS\\RatingBundle\\EventListener\\RatingUpdateInfoEventListener');
+        $instance->addSubscriberService('dcs_rating.listener.rating_update_rate', 'DCS\\RatingBundle\\EventListener\\RatingUpdateRateEventListener');
         $instance->addSubscriberService('debug.dump_listener', 'Symfony\\Component\\HttpKernel\\EventListener\\DumpListener');
         $instance->addSubscriberService('web_profiler.debug_toolbar', 'Symfony\\Bundle\\WebProfilerBundle\\EventListener\\WebDebugToolbarListener');
 
@@ -870,25 +948,29 @@ class appDevDebugProjectContainer extends Container
         $a = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array(($this->targetDirs[3].'/src/sprint2/RealEstate/AdminBundle/Resources/config/doctrine') => 'sprint2\\RealEstate\\AdminBundle\\Entity'));
         $a->setGlobalBasename('mapping');
 
-        $b = new \Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain();
-        $b->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($this->get('annotation_reader'), array(0 => ($this->targetDirs[3].'/src/sprint2/realEstateBundle/Entity'))), 'sprint2\\realEstateBundle\\Entity');
-        $b->addDriver($a, 'sprint2\\RealEstate\\AdminBundle\\Entity');
+        $b = new \Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver(array(($this->targetDirs[3].'/vendor/damianociarla/rating-bundle/DCS/RatingBundle/Resources/config/doctrine') => 'DCS\\RatingBundle\\Entity'));
+        $b->setGlobalBasename('mapping');
 
-        $c = new \Doctrine\ORM\Configuration();
-        $c->setEntityNamespaces(array('realEstateBundle' => 'sprint2\\realEstateBundle\\Entity', 'sprint2RealEstateAdminBundle' => 'sprint2\\RealEstate\\AdminBundle\\Entity'));
-        $c->setMetadataCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_metadata_cache'));
-        $c->setQueryCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_query_cache'));
-        $c->setResultCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_result_cache'));
-        $c->setMetadataDriverImpl($b);
-        $c->setProxyDir((__DIR__.'/doctrine/orm/Proxies'));
-        $c->setProxyNamespace('Proxies');
-        $c->setAutoGenerateProxyClasses(true);
-        $c->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
-        $c->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
-        $c->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
-        $c->setEntityListenerResolver($this->get('doctrine.orm.default_entity_listener_resolver'));
+        $c = new \Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain();
+        $c->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($this->get('annotation_reader'), array(0 => ($this->targetDirs[3].'/src/sprint2/realEstateBundle/Entity'))), 'sprint2\\realEstateBundle\\Entity');
+        $c->addDriver($a, 'sprint2\\RealEstate\\AdminBundle\\Entity');
+        $c->addDriver($b, 'DCS\\RatingBundle\\Entity');
 
-        $this->services['doctrine.orm.default_entity_manager'] = $instance = \Doctrine\ORM\EntityManager::create($this->get('doctrine.dbal.default_connection'), $c);
+        $d = new \Doctrine\ORM\Configuration();
+        $d->setEntityNamespaces(array('realEstateBundle' => 'sprint2\\realEstateBundle\\Entity', 'sprint2RealEstateAdminBundle' => 'sprint2\\RealEstate\\AdminBundle\\Entity', 'DCSRatingBundle' => 'DCS\\RatingBundle\\Entity'));
+        $d->setMetadataCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_metadata_cache'));
+        $d->setQueryCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_query_cache'));
+        $d->setResultCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_result_cache'));
+        $d->setMetadataDriverImpl($c);
+        $d->setProxyDir((__DIR__.'/doctrine/orm/Proxies'));
+        $d->setProxyNamespace('Proxies');
+        $d->setAutoGenerateProxyClasses(true);
+        $d->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+        $d->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
+        $d->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
+        $d->setEntityListenerResolver($this->get('doctrine.orm.default_entity_listener_resolver'));
+
+        $this->services['doctrine.orm.default_entity_manager'] = $instance = \Doctrine\ORM\EntityManager::create($this->get('doctrine.dbal.default_connection'), $d);
 
         $this->get('doctrine.orm.default_manager_configurator')->configure($instance);
 
@@ -3377,6 +3459,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addExtension($this->get('braincrafted_bootstrap.twig.label_extension'));
         $instance->addExtension($this->get('braincrafted_bootstrap.twig.badge_extension'));
         $instance->addExtension($this->get('braincrafted_bootstrap.twig.form_extension'));
+        $instance->addExtension($this->get('dcs_rating.twig.rating_extension'));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\DumpExtension($this->get('var_dumper.cloner')));
         $instance->addExtension($this->get('twig.extension.acme.demo'));
         $instance->addExtension(new \Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension());
@@ -3445,6 +3528,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath(($this->targetDirs[3].'/vendor/braincrafted/bootstrap-bundle/Braincrafted/Bundle/BootstrapBundle/Resources/views'), 'BraincraftedBootstrap');
         $instance->addPath(($this->targetDirs[3].'/src/sprint2/RealEstate/AdminBundle/Resources/views'), 'sprint2RealEstateAdmin');
         $instance->addPath(($this->targetDirs[3].'/src/RealEstate/AuthentificationBundle/Resources/views'), 'RealEstateAuthentification');
+        $instance->addPath(($this->targetDirs[3].'/vendor/damianociarla/rating-bundle/DCS/RatingBundle/Resources/views'), 'DCSRating');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views'), 'Debug');
         $instance->addPath(($this->targetDirs[3].'/src/Acme/DemoBundle/Resources/views'), 'AcmeDemo');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views'), 'WebProfiler');
@@ -3613,6 +3697,16 @@ class appDevDebugProjectContainer extends Container
     protected function getWebProfiler_DebugToolbarService()
     {
         return $this->services['web_profiler.debug_toolbar'] = new \Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener($this->get('twig'), false, 2, 'bottom', $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE), '^/bundles|^/_wdt');
+    }
+
+    /**
+     * Updates the 'request' service.
+     */
+    protected function synchronizeRequestService()
+    {
+        if ($this->initialized('dcs_rating.listener.rating_update_info')) {
+            $this->get('dcs_rating.listener.rating_update_info')->setRequest($this->get('request', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+        }
     }
 
     /**
@@ -3959,6 +4053,7 @@ class appDevDebugProjectContainer extends Container
                 'BraincraftedBootstrapBundle' => 'Braincrafted\\Bundle\\BootstrapBundle\\BraincraftedBootstrapBundle',
                 'sprint2RealEstateAdminBundle' => 'sprint2\\RealEstate\\AdminBundle\\sprint2RealEstateAdminBundle',
                 'RealEstateAuthentificationBundle' => 'RealEstate\\AuthentificationBundle\\RealEstateAuthentificationBundle',
+                'DCSRatingBundle' => 'DCS\\RatingBundle\\DCSRatingBundle',
                 'DebugBundle' => 'Symfony\\Bundle\\DebugBundle\\DebugBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
@@ -4578,6 +4673,17 @@ class appDevDebugProjectContainer extends Container
             'braincrafted_bootstrap.output_dir' => NULL,
             'braincrafted_bootstrap.less_filter' => 'less',
             'braincrafted_bootstrap.icon_tag' => 'span',
+            'dcs_rating.model.rating.class' => 'sprint2\\realEstateBundle\\Entity\\Rating',
+            'dcs_rating.model.vote.class' => 'sprint2\\realEstateBundle\\Entity\\Vote',
+            'dcs_rating.manager.rating.default.class' => 'DCS\\RatingBundle\\Entity\\RatingManager',
+            'dcs_rating.manager.vote.default.class' => 'DCS\\RatingBundle\\Entity\\VoteManager',
+            'dcs_rating.base_security_role' => 'IS_AUTHENTICATED_FULLY',
+            'dcs_rating.base_path_to_redirect' => '/',
+            'dcs_rating.unique_vote' => true,
+            'dcs_rating.max_value' => 5,
+            'dcs_rating.listener.rating_update_info.class' => 'DCS\\RatingBundle\\EventListener\\RatingUpdateInfoEventListener',
+            'dcs_rating.listener.rating_update_rate.class' => 'DCS\\RatingBundle\\EventListener\\RatingUpdateRateEventListener',
+            'dcs_rating.twig.rating_extension.class' => 'DCS\\RatingBundle\\Twig\\RatingExtension',
             'web_profiler.controller.profiler.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ProfilerController',
             'web_profiler.controller.router.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\RouterController',
             'web_profiler.controller.exception.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ExceptionController',

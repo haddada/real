@@ -1,7 +1,0 @@
-e8eba5,127.0.0.1,GET,http://localhost:8000/offre/new,1428265563,
-b93477,127.0.0.1,GET,http://localhost:8000/tracking/events,1428265565,ee1275
-ee1275,127.0.0.1,POST,http://localhost:8000/tracking/events,1428265565,
-3120b5,127.0.0.1,GET,http://localhost:8000/tracking/events,1428265566,635225
-635225,127.0.0.1,POST,http://localhost:8000/tracking/events,1428265566,
-d7decd,127.0.0.1,GET,http://localhost:8000/tracking/events,1428265567,c52677
-c52677,127.0.0.1,POST,http://localhost:8000/tracking/events,1428265567,

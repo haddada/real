@@ -15,6 +15,7 @@
 
 <!--[if IE 8]>
 
+
 <html lang="fr"
       
       xmlns:fb="http://ogp.me/ns/fb#"
@@ -95,6 +96,7 @@
     <![endif]-->
 
 
+    <link rel="stylesheet" href="{{ asset('bundles/dcsrating/css/rating.css') }}" />
 
   </head>
   <body class="no_wiggle_webkit">
@@ -471,25 +473,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p  class="link-reset">{{entity.Adresse.ville}}, {{entity.Adresse.gouvernorat}}, Tunis</p>
 
           &nbsp;
-          <a href="#reviews" class="link-reset">      <div class="star-rating">
-        <div class="foreground">
-                  <i class="icon icon-beach icon-star"></i>
-        <i class="icon icon-beach icon-star"></i>
-        <i class="icon icon-beach icon-star"></i>
-        <i class="icon icon-beach icon-star"></i>
-        <i class="icon icon-beach icon-star"></i>
-        <meta itemProp="ratingValue" content="5.0">
+                <script src="{{ asset('js/jquery.js') }}"></script>
+             
+                 {%include 'realEstateBundle:Offre:vote.html.twig' with {'entity' : entity}%}
 
-        </div>
-        <div class="background">
-          <i class="icon icon-star icon-light-gray"></i>
-          <i class="icon icon-star icon-light-gray"></i>
-          <i class="icon icon-star icon-light-gray"></i>
-          <i class="icon icon-star icon-light-gray"></i>
-          <i class="icon icon-star icon-light-gray"></i>
-        </div>
-      </div>
-(<span itemprop="reviewCount">64</span>)</a>
+        
+
+        
+(<span itemprop="reviewCount">{{entity.NBNote}}</span>)</a>
       </div>
 
       
@@ -592,8 +583,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          data-network="facebook"
          rel="nofollow"
          title="Facebook"
-         href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.airbnb.fr%2Frooms%2F439714%3Fs%3D3"
-         target="_blank">
+         href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%2Foffre%2F439714%3Fs%3D3"
+         target="popup">
          <i class="icon icon-facebook icon-gray social-icon-size"></i>
       </a>
 
@@ -619,7 +610,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
          data-network="googlePlus"
          rel="nofollow"
          title="Google+"
-         href="https://plus.google.com/share?url=https%3A%2F%2Fwww.airbnb.fr%2Frooms%2F439714%3Fs%3D19"
+         href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%2Foffre%2F439714%3Fs%3D19"
          target="_blank">
         <i class="icon icon-google-plus icon-gray social-icon-size"></i>
       </a>

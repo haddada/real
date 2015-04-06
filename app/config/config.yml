@@ -96,3 +96,11 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+#dcsRating
+dcs_rating:
+    db_driver: orm
+    base_path_to_redirect: / # when the permalink is not configured
+    max_value: 5 # maximum value for the vote (stars displayed)
+    model:
+        rating: sprint2\realEstateBundle\Entity\Rating
+        vote: sprint2\realEstateBundle\Entity\Vote

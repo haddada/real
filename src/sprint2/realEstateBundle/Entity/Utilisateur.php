@@ -6,12 +6,18 @@ namespace sprint2\realEstateBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Utilisateur
+ *@ORM\Entity
+ * @ORM\Table(name="utilisateur")
  */
 class Utilisateur
 {
     /**
      * @var integer
+     * 
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     *
      */
     private $id;
 

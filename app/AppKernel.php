@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new sprint2\RealEstate\AdminBundle\sprint2RealEstateAdminBundle(),
             new RealEstate\AuthentificationBundle\RealEstateAuthentificationBundle(),
+            new DCS\RatingBundle\DCSRatingBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

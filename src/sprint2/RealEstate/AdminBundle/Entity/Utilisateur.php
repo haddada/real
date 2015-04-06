@@ -21,7 +21,7 @@ class Utilisateur
      *     checkMX = true
      * )
      * @Assert\NotBlank(
-     *     message = "remplire le chant",
+     *     message = "remplire le champs",
      *     )
      * @var string
      */

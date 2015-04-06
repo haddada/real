@@ -2,6 +2,8 @@
 
 namespace sprint2\realEstateBundle\Entity;
 use sprint2\realEstateBundle\Entity\Adresse;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -178,6 +180,13 @@ class Offre
     private $note;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="NBNote", type="integer", nullable=true)
+     */
+    private $NBNote;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="UrlImage", type="string", length=200, nullable=false)
@@ -191,7 +200,10 @@ class Offre
      */
     private $position;
 
-
+     /**
+     * @Assert\File(maxSize="6000000")
+     */
+    private $image;
 
     /**
      * Get id
@@ -754,4 +766,42 @@ class Offre
     {
         return $this->Adresse;
     }
+
+    public function getNBNote(){
+
+        return $this->NBNote;
+
+        
+    }
+    /**
+     * Set NBNote
+     *
+     * @param integer $NBNote
+     * @return Offre
+     */
+    public function setNBNote($NBNote){
+        $this->NBNote=$NBNote;
+        return $this;
+    }
+
+
+
+ 
+
+
+
+     public function getImage() {
+        return $this->image;
+    }
+
+    public function setImage($image) {
+        $this->image = $image;
+        return $this;
+    }
+
+
+    
+
 }
+
+

@@ -17,3 +17,6 @@ real_estate_admin:
 app:
     resource: @AppBundle/Controller/
     type:     annotation
+dcs_rating:
+    resource: "@DCSRatingBundle/Resources/config/routing.xml"
+    prefix:   /dcs

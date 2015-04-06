@@ -50,6 +50,7 @@ class __TwigTemplate_259b48f35ba527740e938f6dedaf7df879b67e9249230c3c9c3e74ed3de
 
 <!--[if IE 8]>
 
+
 <html lang=\"fr\"
       
       xmlns:fb=\"http://ogp.me/ns/fb#\"
@@ -120,7 +121,7 @@ class __TwigTemplate_259b48f35ba527740e938f6dedaf7df879b67e9249230c3c9c3e74ed3de
      
 
     <link rel=\"image_src\" href=";
-        // line 87
+        // line 88
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "urlimage", array()), "html", null, true);
         echo ">
     <link rel=\"search\" type=\"application/opensearchdescription+xml\" href=\"/opensearch.xml\" title=\"Airbnb\">
@@ -133,6 +134,10 @@ class __TwigTemplate_259b48f35ba527740e938f6dedaf7df879b67e9249230c3c9c3e74ed3de
     <![endif]-->
 
 
+    <link rel=\"stylesheet\" href=\"";
+        // line 99
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/dcsrating/css/rating.css"), "html", null, true);
+        echo "\" />
 
   </head>
   <body class=\"no_wiggle_webkit\">
@@ -454,7 +459,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
   <div id=\"pricing\" itemprop=\"offers\" itemscope itemtype=\"http://schema.org/Offer\">
     <div id=\"price_amount\" itemprop=\"price\" class=\"pull-left h3 text-special\">
       ";
-        // line 418
+        // line 420
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "payement", array()), "html", null, true);
         echo "&euro;
     </div>
@@ -490,7 +495,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
           class=\"overflow h3 row-space-1 text-center-sm\"
           id=\"listing_name\">
         à ";
-        // line 451
+        // line 453
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "Adresse", array()), "ville", array()), "html", null, true);
         echo "
       </h1>
@@ -513,32 +518,30 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
            data-location=\"Kent, CT, États-Unis\">
 
         <p  class=\"link-reset\">";
-        // line 471
+        // line 473
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "Adresse", array()), "ville", array()), "html", null, true);
         echo ", ";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "Adresse", array()), "gouvernorat", array()), "html", null, true);
         echo ", Tunis</p>
 
           &nbsp;
-          <a href=\"#reviews\" class=\"link-reset\">      <div class=\"star-rating\">
-        <div class=\"foreground\">
-                  <i class=\"icon icon-beach icon-star\"></i>
-        <i class=\"icon icon-beach icon-star\"></i>
-        <i class=\"icon icon-beach icon-star\"></i>
-        <i class=\"icon icon-beach icon-star\"></i>
-        <i class=\"icon icon-beach icon-star\"></i>
-        <meta itemProp=\"ratingValue\" content=\"5.0\">
+                <script src=\"";
+        // line 476
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery.js"), "html", null, true);
+        echo "\"></script>
+             
+                 ";
+        // line 478
+        $this->env->loadTemplate("realEstateBundle:Offre:vote.html.twig")->display(array_merge($context, array("entity" => (isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")))));
+        // line 479
+        echo "
+        
 
-        </div>
-        <div class=\"background\">
-          <i class=\"icon icon-star icon-light-gray\"></i>
-          <i class=\"icon icon-star icon-light-gray\"></i>
-          <i class=\"icon icon-star icon-light-gray\"></i>
-          <i class=\"icon icon-star icon-light-gray\"></i>
-          <i class=\"icon icon-star icon-light-gray\"></i>
-        </div>
-      </div>
-(<span itemprop=\"reviewCount\">64</span>)</a>
+        
+(<span itemprop=\"reviewCount\">";
+        // line 483
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "NBNote", array()), "html", null, true);
+        echo "</span>)</a>
       </div>
 
       
@@ -641,8 +644,8 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
          data-network=\"facebook\"
          rel=\"nofollow\"
          title=\"Facebook\"
-         href=\"http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.airbnb.fr%2Frooms%2F439714%3Fs%3D3\"
-         target=\"_blank\">
+         href=\"http://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%2Foffre%2F439714%3Fs%3D3\"
+         target=\"popup\">
          <i class=\"icon icon-facebook icon-gray social-icon-size\"></i>
       </a>
 
@@ -668,7 +671,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
          data-network=\"googlePlus\"
          rel=\"nofollow\"
          title=\"Google+\"
-         href=\"https://plus.google.com/share?url=https%3A%2F%2Fwww.airbnb.fr%2Frooms%2F439714%3Fs%3D19\"
+         href=\"https://plus.google.com/share?url=http%3A%2F%2Flocalhost%2Foffre%2F439714%3Fs%3D19\"
          target=\"_blank\">
         <i class=\"icon icon-google-plus icon-gray social-icon-size\"></i>
       </a>
@@ -798,7 +801,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
 </a>    </p>
     <div class=\"panel panel-dark row-space-4\">
       <div class=\"panel-body\">";
-        // line 751
+        // line 742
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "description", array()), "html", null, true);
         echo ".</div>
     </div>
@@ -823,7 +826,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
 
   <div class=\"row-space-4 row-space-top-4 inline-photo\">
     <a href=\"#\" class=\"photo-trigger\" data-index=\"1\"><img class=\"media-photo media-photo-block row-space-1 row-space-top-1 img-responsive\" src=\"";
-        // line 773
+        // line 764
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "urlImage", array()), "html", null, true);
         echo "?interpolation=lanczos-none&amp;size=x_large&amp;output-format=progressive-jpeg&amp;output-quality=70\"></a>
     <div class=\"row\">
@@ -849,15 +852,15 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         <div class=\"row\">
             <div class=\"col-md-6\">
                   <div>surface : <strong>";
-        // line 796
+        // line 787
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "surface", array()), "html", null, true);
         echo "</strong></div>
                   <div>Type de propriété : <strong>";
-        // line 797
+        // line 788
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "typeimmob", array()), "html", null, true);
         echo "</strong></div>
                   <div>jardin : <strong>";
-        // line 798
+        // line 789
         if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "jardin", array()) == 0)) {
             echo "Non";
         }
@@ -866,17 +869,17 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         }
         echo "</strong></div>
                   <div>Chambres : <strong>";
-        // line 799
+        // line 790
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "nbrPiece", array()), "html", null, true);
         echo "</strong></div>
             </div>
             <div class=\"col-md-6\">
                   <div>entrée indépendant : <strong>";
-        // line 802
+        // line 793
         if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "entreeIndep", array()) == 0)) {
             echo "Non";
         }
-        // line 803
+        // line 794
         echo "                  ";
         if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "entreeIndep", array()) == 1)) {
             echo "Oui";
@@ -903,9 +906,9 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         
             <div class=\"col-sm-6\">
             ";
-        // line 824
+        // line 815
         if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "cuisineEquipe", array()) == 1)) {
-            // line 825
+            // line 816
             echo "                <div class=\"row-space-1\">
                   <i class=\"icon h3 icon-meal\"></i>
                   &nbsp;
@@ -915,14 +918,14 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
                 </div>
              ";
         }
-        // line 833
+        // line 824
         echo "
 
 
                 ";
-        // line 836
+        // line 827
         if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "gazDeVille", array()) == 1)) {
-            // line 837
+            // line 828
             echo "                    <div class=\"row-space-1\">
                       <i class=\"icon h3 icon-internet\"></i>
                       &nbsp;
@@ -932,13 +935,13 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
                     </div>
                 ";
         }
-        // line 844
+        // line 835
         echo "  
 
               ";
-        // line 846
+        // line 837
         if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "meuble", array()) == 0)) {
-            // line 847
+            // line 838
             echo "                    <div class=\"row-space-1\">
                       <i class=\"icon h3 icon-double-bed\"></i>
                       &nbsp;
@@ -948,16 +951,16 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
                     </div>
               ";
         }
-        // line 854
+        // line 845
         echo "                       
 
             </div>
 
             <div class=\"col-sm-6\">
                 ";
-        // line 859
+        // line 850
         if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "chauffage", array()) == 1)) {
-            // line 860
+            // line 851
             echo "                    <div class=\"row-space-1\">
                       <i class=\"icon h3 icon-heating\"></i>
                       &nbsp;
@@ -967,12 +970,12 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
                     </div>
                 ";
         }
-        // line 868
+        // line 859
         echo "                      
                 ";
-        // line 869
+        // line 860
         if (($this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "climatisation", array()) == 1)) {
-            // line 870
+            // line 861
             echo "                    <div class=\"row-space-1\">
                       <i class=\"icon h3 icon-air-conditioning\"></i>
                       &nbsp;
@@ -982,7 +985,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
                     </div>
                 ";
         }
-        // line 878
+        // line 869
         echo "            </div>
             
     </div>
@@ -1007,7 +1010,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         <div class=\"row\">
             <div class=\"col-md-6\">
                 <div><strong>";
-        // line 901
+        // line 892
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "payement", array()), "html", null, true);
         echo " Euro</strong></div>
             </div>
@@ -1088,6 +1091,6 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
 
     public function getDebugInfo()
     {
-        return array (  1011 => 901,  986 => 878,  976 => 870,  974 => 869,  971 => 868,  961 => 860,  959 => 859,  952 => 854,  942 => 847,  940 => 846,  936 => 844,  926 => 837,  924 => 836,  919 => 833,  909 => 825,  907 => 824,  880 => 803,  876 => 802,  870 => 799,  861 => 798,  857 => 797,  853 => 796,  827 => 773,  802 => 751,  517 => 471,  494 => 451,  458 => 418,  124 => 87,  39 => 4,  36 => 3,  11 => 1,);
+        return array (  1014 => 892,  989 => 869,  979 => 861,  977 => 860,  974 => 859,  964 => 851,  962 => 850,  955 => 845,  945 => 838,  943 => 837,  939 => 835,  929 => 828,  927 => 827,  922 => 824,  912 => 816,  910 => 815,  883 => 794,  879 => 793,  873 => 790,  864 => 789,  860 => 788,  856 => 787,  830 => 764,  805 => 742,  543 => 483,  537 => 479,  535 => 478,  530 => 476,  522 => 473,  499 => 453,  463 => 420,  139 => 99,  125 => 88,  39 => 4,  36 => 3,  11 => 1,);
     }
 }

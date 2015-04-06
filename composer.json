@@ -36,7 +36,9 @@
         "twbs/bootstrap": "~3.3",
         "jquery/jquery":  "~1.11",
         "symfony/serializer": "dev-master",
-        "ob/highcharts-bundle": "~1.2"
+        "ob/highcharts-bundle": "~1.2",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "damianociarla/rating-bundle": "~1.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
