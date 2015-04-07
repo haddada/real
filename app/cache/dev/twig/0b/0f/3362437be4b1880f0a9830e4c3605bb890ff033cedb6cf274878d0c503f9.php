@@ -1,6 +1,6 @@
 <?php
 
-/* realEstateBundle:Offre/Filtres:Prix.html.twig */
+/* realEstateBundle:Offre:Filtres/Prix.html.twig */
 class __TwigTemplate_0b0f3362437be4b1880f0a9830e4c3605bb890ff033cedb6cf274878d0c503f9 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -47,7 +47,7 @@ class __TwigTemplate_0b0f3362437be4b1880f0a9830e4c3605bb890ff033cedb6cf274878d0c
 
     public function getTemplateName()
     {
-        return "realEstateBundle:Offre/Filtres:Prix.html.twig";
+        return "realEstateBundle:Offre:Filtres/Prix.html.twig";
     }
 
     public function getDebugInfo()

@@ -1,6 +1,6 @@
 <?php
 
-/* realEstateBundle:Offre/Filtres:Equipement.html.twig */
+/* realEstateBundle:Offre:Filtres/Equipement.html.twig */
 class __TwigTemplate_e5e9ae03f63306b79effa77294959675b03fa4837841e3b28e82f1bb6290c068 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -93,7 +93,7 @@ class __TwigTemplate_e5e9ae03f63306b79effa77294959675b03fa4837841e3b28e82f1bb629
 
     public function getTemplateName()
     {
-        return "realEstateBundle:Offre/Filtres:Equipement.html.twig";
+        return "realEstateBundle:Offre:Filtres/Equipement.html.twig";
     }
 
     public function getDebugInfo()
