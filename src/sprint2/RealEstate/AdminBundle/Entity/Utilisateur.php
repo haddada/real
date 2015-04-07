@@ -4,6 +4,7 @@ namespace sprint2\RealEstate\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Utilisateur
  * @ORM\HasLifecycleCallbacks
@@ -21,7 +22,7 @@ class Utilisateur
      *     checkMX = true
      * )
      * @Assert\NotBlank(
-     *     message = "remplire le champs",
+     *     message = "remplire le chant",
      *     )
      * @var string
      */
@@ -59,8 +60,11 @@ class Utilisateur
     private $numfix;
 
     /**
-     *
      * @var string
+     * @Assert\Choice(
+     *     choices = {"Mariee", "Celibataire", "Compliqué"  },
+     *     message = "Choose a valid choice Mariee, Celibataire, Compliqué."
+     * )
      */
     private $statusMatrimonial;
 
@@ -77,7 +81,11 @@ class Utilisateur
     private $urlp;
     
     /**
-     * @Assert\File(maxSize="6000000")
+     * @Assert\Image(
+     *     minHeight = 512,
+     *     allowLandscape = false,
+     *     allowPortrait = true
+     * )
      */
     private $image;
 

@@ -91,7 +91,7 @@ class OffreController extends Controller
         $codes=$em->getRepository('realEstateBundle:Adresse')->findCodeVille(array('ville'=>'Raoued')); 
         $adresse=new Adresse();
 
-        
+            $erreur=false;
 
         if($request->getMethod()=="POST"){
             $prix=$request->get('prix');
@@ -109,14 +109,7 @@ class OffreController extends Controller
             $meuble=$request->get('Meuble');
             $clim=$request->get('Climatise');
 
-           
-
-            
-
             $urlimage=$this->upload();
-            
-
-            
             $idGerant=1;
             $codepostal=$request->get('code');
            
@@ -142,10 +135,20 @@ class OffreController extends Controller
             $entity->setPayement($prix);
 
             $validator = $this->get('validator');
+
             $errorList = $validator->validate($entity);
 
+            
             if (count($errorList) > 0) {
-                return new Response(print_r($errorList, true));
+             $erreur=true;
+                return $this->render('realEstateBundle:Offre:new.html.twig', array(
+                    'entity' => $entity,
+                    'gouvernorats'=>$gouvernorats,
+                    'villes'=>$villes,
+                    'codes'=>$codes,
+                    'erreur'=>$erreur,
+                ));
+
             } else {
                $em->persist($entity);
                $em->flush();
@@ -157,7 +160,8 @@ class OffreController extends Controller
             'entity' => $entity,
             'gouvernorats'=>$gouvernorats,
             'villes'=>$villes,
-            'codes'=>$codes
+            'codes'=>$codes,
+            'erreur'=>$erreur,
         ));
     }
 
@@ -170,10 +174,42 @@ class OffreController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('realEstateBundle:Offre')->find($id);
+        $idUser =1; //normalement m session
+        $countNbOffr=0;
+
+        // nombre de vote
+        $qb =  $em->createQueryBuilder();
+        $qb->select('count(Vote.idOffre)');
+        $qb->from('realEstateBundle:Vote','Vote');
+        $countNbOffre = $qb->getQuery()->getSingleScalarResult();
+
+        //note
+        $qb->select('SUM(V.note)');
+        $qb->from('realEstateBundle:Vote','V');
+        $qb->where('V.idOffre = :id');
+        $qb->setParameter('id', $id);
+        $note = $qb->getQuery()->getSingleScalarResult();
+        $note=$note/$countNbOffre;
+
+        $vote=$em->getRepository('realEstateBundle:Vote')->findBy(array('idOffre'=>$id,'idUtilisateur'=>$idUser));
+            
+         if($vote !=null)
+            $found=true;
+         else
+            $found=false;
+
+        return $this->render('realEstateBundle:Offre:show.html.twig', array(
+            'entity'      => $entity,
+            'found' => $found,
+            'countNbOffre' => $countNbOffre,
+            'note'=>$note,
+        ));
         /*
         $vote=$em->getRepository('realEstateBundle:Offre')->findBY('idOffre'=>$id);
         $userID=$vote->getIdUtilisateur();
         */
+
+
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Offre entity.');
         }
@@ -459,38 +495,33 @@ class OffreController extends Controller
             if(isset($_POST["submit"])) {
                 $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
                 if($check !== false) {
-                    echo "File is an image - " . $check["mime"] . ".";
                     $uploadOk = 1;
                 } else {
-                    echo "File is not an image.";
                     $uploadOk = 0;
                 }
             }
             // Check if file already exists
             if (file_exists($target_file)) {
-                echo "Sorry, file already exists.";
                 $uploadOk = 0;
             }
             // Check file size
             if ($_FILES["fileToUpload"]["size"] > 500000) {
-                echo "Sorry, your file is too large.";
                 $uploadOk = 0;
             }
             // Allow certain file formats
             if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
             && $imageFileType != "gif" ) {
-                echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                
                 $uploadOk = 0;
             }
             // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
-                echo "Sorry, your file was not uploaded.";
             // if everything is ok, try to upload file
             } else {
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                     return "http://localhost/image/". basename( $_FILES["fileToUpload"]["name"]);
                 } else {
-                    echo "Sorry, there was an error uploading your file.";
+                   // echo "Sorry, there was an error uploading your file.";
                 }
 }
 

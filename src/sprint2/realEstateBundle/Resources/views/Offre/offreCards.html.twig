@@ -2,9 +2,12 @@
 {%for entity in entities %}
 <div class="col-sm-12 col-md-6 row-space-2">
 
+  {% set a= entity.position %}
   
-      <div data-lat="40.684013166194646"
-           data-lng="-73.98322038869327"
+    {% set foo =  a|split(',') %}
+
+      <div data-lat= {{foo[0]}}
+           data-lng= {{foo[1]}}
            data-name="Sun-filled room in Boerum Hill"
            data-url="/rooms/4540756?guests=2&amp;s=eNQN"
            data-user="1243559"
@@ -63,6 +66,7 @@
               </div>
             </a>
             <div class="text-muted listing-location text-truncate"><a href="/rooms/4540756?guests=2&amp;s=eNQN" class="text-normal link-reset">
+   
   {{entity.description}}
 </a>
 </div>

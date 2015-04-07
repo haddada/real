@@ -248,6 +248,36 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'real_estate_authentification_homepage')), array (  '_controller' => 'RealEstate\\AuthentificationBundle\\Controller\\DefaultController::indexAction',));
         }
 
+        if (0 === strpos($pathinfo, '/log')) {
+            // sprint2_authandlog_login
+            if (rtrim($pathinfo, '/') === '/login') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'sprint2_authandlog_login');
+                }
+
+                return array (  '_controller' => 'sprint2\\AuthandlogBundle\\Controller\\DefaultController::loginAction',  '_route' => 'sprint2_authandlog_login',);
+            }
+
+            // sprint2_authandlog_logout
+            if (rtrim($pathinfo, '/') === '/logout') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'sprint2_authandlog_logout');
+                }
+
+                return array (  '_controller' => 'sprint2\\AuthandlogBundle\\Controller\\DefaultController::logoutAction',  '_route' => 'sprint2_authandlog_logout',);
+            }
+
+        }
+
+        // sprint2_authandlog_register
+        if (rtrim($pathinfo, '/') === '/register') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'sprint2_authandlog_register');
+            }
+
+            return array (  '_controller' => 'sprint2\\AuthandlogBundle\\Controller\\DefaultController::registerAction',  '_route' => 'sprint2_authandlog_register',);
+        }
+
         if (0 === strpos($pathinfo, '/adresse')) {
             // adresse
             if (rtrim($pathinfo, '/') === '/adresse') {
@@ -462,23 +492,20 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::mailAction',  '_route' => 'sprint2_real_estate_admin_mailbox',);
             }
 
-            if (0 === strpos($pathinfo, '/Admin/C')) {
-                // sprint2_real_estate_admin_sentmail
-                if ($pathinfo === '/Admin/ComposeMail') {
-                    return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::sentAction',  '_route' => 'sprint2_real_estate_admin_sentmail',);
+            // sprint2_real_estate_admin_sentmail
+            if ($pathinfo === '/Admin/SentMail') {
+                return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::sentAction',  '_route' => 'sprint2_real_estate_admin_sentmail',);
+            }
+
+            if (0 === strpos($pathinfo, '/Admin/Clients')) {
+                // sprint2_real_estate_admin_clients
+                if ($pathinfo === '/Admin/Clients') {
+                    return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::clientsAction',  '_route' => 'sprint2_real_estate_admin_clients',);
                 }
 
-                if (0 === strpos($pathinfo, '/Admin/Clients')) {
-                    // sprint2_real_estate_admin_clients
-                    if ($pathinfo === '/Admin/Clients') {
-                        return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::clientsAction',  '_route' => 'sprint2_real_estate_admin_clients',);
-                    }
-
-                    // sprint2_real_estate_admin_clients_supp
-                    if (preg_match('#^/Admin/Clients/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'sprint2_real_estate_admin_clients_supp')), array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::supprimerUCAction',));
-                    }
-
+                // sprint2_real_estate_admin_clients_supp
+                if (preg_match('#^/Admin/Clients/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'sprint2_real_estate_admin_clients_supp')), array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::supprimerUCAction',));
                 }
 
             }
@@ -514,14 +541,61 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-            // sprint2_real_estate_admin_ajax_get_mail_list_ofclient
-            if (0 === strpos($pathinfo, '/Admin/ajax') && preg_match('#^/Admin/ajax/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sprint2_real_estate_admin_ajax_get_mail_list_ofclient')), array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\AjaxController::getListOfMailAction',));
+            if (0 === strpos($pathinfo, '/Admin/ajax')) {
+                // sprint2_real_estate_admin_ajax_get_mail_list_ofclient
+                if (preg_match('#^/Admin/ajax/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'sprint2_real_estate_admin_ajax_get_mail_list_ofclient')), array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\AjaxController::getListOfMailAction',));
+                }
+
+                if (0 === strpos($pathinfo, '/Admin/ajax2')) {
+                    // sprint2_real_estate_admin_ajax_get_mail_list_of_inbox_admin
+                    if (preg_match('#^/Admin/ajax2/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'sprint2_real_estate_admin_ajax_get_mail_list_of_inbox_admin')), array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\AjaxController::getInboxListOfMailAction',));
+                    }
+
+                    // sprint2_real_estate_admin_ajax_dell_one_mail_of_inbox_admin
+                    if (preg_match('#^/Admin/ajax2/(?P<id>[^/]++)/(?P<idp>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'sprint2_real_estate_admin_ajax_dell_one_mail_of_inbox_admin')), array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\AjaxController::dellInboxOneMailAction',));
+                    }
+
+                }
+
+                if (0 === strpos($pathinfo, '/Admin/ajax3')) {
+                    // sprint2_real_estate_admin_ajax_find_list_of_mail_of_inbox_admin
+                    if (preg_match('#^/Admin/ajax3/(?P<id>[^/]++)/(?P<find>[^/]++)$#s', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'sprint2_real_estate_admin_ajax_find_list_of_mail_of_inbox_admin')), array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\AjaxController::findListOfMailAction',));
+                    }
+
+                    // sprint2_real_estate_admin_ajax_find_list1_of_mail_of_inbox_admin
+                    if (preg_match('#^/Admin/ajax3/(?P<id>[^/]++)/?$#s', $pathinfo, $matches)) {
+                        if (substr($pathinfo, -1) !== '/') {
+                            return $this->redirect($pathinfo.'/', 'sprint2_real_estate_admin_ajax_find_list1_of_mail_of_inbox_admin');
+                        }
+
+                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'sprint2_real_estate_admin_ajax_find_list1_of_mail_of_inbox_admin')), array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\AjaxController::getInboxListOfMailAction',));
+                    }
+
+                }
+
+                // sprint2_real_estate_admin_ajax_find_one_mail_of_inbox_admin
+                if (0 === strpos($pathinfo, '/Admin/ajax4') && preg_match('#^/Admin/ajax4/(?P<id>[^/]++)/?$#s', $pathinfo, $matches)) {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'sprint2_real_estate_admin_ajax_find_one_mail_of_inbox_admin');
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'sprint2_real_estate_admin_ajax_find_one_mail_of_inbox_admin')), array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\AjaxController::getInboxOneMailAction',));
+                }
+
             }
 
             // file_file_homepage
             if ($pathinfo === '/Admin/upload') {
                 return array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\DefaultController::uploadAction',  '_route' => 'file_file_homepage',);
+            }
+
+            // sprint2_real_estate_admin_ajax_get_mail_list_of_inboxS_admin
+            if (0 === strpos($pathinfo, '/Admin/ajax5') && preg_match('#^/Admin/ajax5/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sprint2_real_estate_admin_ajax_get_mail_list_of_inboxS_admin')), array (  '_controller' => 'sprint2\\RealEstate\\AdminBundle\\Controller\\AjaxController::getInboxListOfMailSAction',));
             }
 
         }

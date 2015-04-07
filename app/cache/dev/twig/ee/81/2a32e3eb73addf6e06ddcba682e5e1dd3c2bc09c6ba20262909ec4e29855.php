@@ -80,8 +80,19 @@ class __TwigTemplate_ee812a32e3eb73addf6e06ddcba682e5e1dd3c2bc09c6ba20262909ec4e
             // line 22
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "typeimmob", array()), "html", null, true);
             echo "</h3>
-                                  <p> ";
+                                  ";
             // line 23
+            ob_start();
+            // line 24
+            echo "                                    ";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "position", array()), "html", null, true);
+            echo "
+                                  ";
+            $context["foo"] = ('' === $tmp = ob_get_clean()) ? '' : new Twig_Markup($tmp, $this->env->getCharset());
+            // line 26
+            echo "                                  
+                                  <p> ";
+            // line 27
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "nbrpiece", array()), "html", null, true);
             echo " Piece, ";
             echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "surface", array()), "html", null, true);
@@ -89,9 +100,7 @@ class __TwigTemplate_ee812a32e3eb73addf6e06ddcba682e5e1dd3c2bc09c6ba20262909ec4e
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["offre"], "idAdresse", array()), "gouvernorat", array()), "html", null, true);
             echo " ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["offre"], "idAdresse", array()), "ville", array()), "html", null, true);
-            echo ", A ";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["offre"], "nature", array()), "html", null, true);
-            echo " </p>
+            echo "</p>
                                 </div>
 
                                 <a href=\"#\" class=\"small-box-footer\">
@@ -104,7 +113,7 @@ class __TwigTemplate_ee812a32e3eb73addf6e06ddcba682e5e1dd3c2bc09c6ba20262909ec4e
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['offre'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
+        // line 36
         echo "                </ul>
               </div>
         </div>
@@ -124,6 +133,6 @@ class __TwigTemplate_ee812a32e3eb73addf6e06ddcba682e5e1dd3c2bc09c6ba20262909ec4e
 
     public function getDebugInfo()
     {
-        return array (  108 => 32,  85 => 23,  81 => 22,  77 => 21,  68 => 17,  59 => 10,  56 => 9,  51 => 6,  48 => 5,  41 => 3,  38 => 2,  11 => 1,);
+        return array (  117 => 36,  96 => 27,  93 => 26,  87 => 24,  85 => 23,  81 => 22,  77 => 21,  68 => 17,  59 => 10,  56 => 9,  51 => 6,  48 => 5,  41 => 3,  38 => 2,  11 => 1,);
     }
 }

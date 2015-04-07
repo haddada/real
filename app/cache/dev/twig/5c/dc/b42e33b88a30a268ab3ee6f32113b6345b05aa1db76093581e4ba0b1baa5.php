@@ -39,8 +39,8 @@ class __TwigTemplate_5cdcb42e33b88a30a268ab3ee6f32113b6345b05aa1db76093581e4ba0b
     public function block_header($context, array $blocks = array())
     {
         // line 5
-        echo "<div class=\"airbnb-header shift-with-hiw\" id=\"header\">
-
+        echo "
+<div class=\"airbnb-header shift-with-hiw\" id=\"header\">
 <div class=\"regular-header clearfix hide-sm\">
 
 
@@ -55,7 +55,7 @@ class __TwigTemplate_5cdcb42e33b88a30a268ab3ee6f32113b6345b05aa1db76093581e4ba0b
 
  <ul class=\"nav pull-right logged-out list-unstyled medium-right-margin\">
     <li id=\"sign_up\" class=\"pull-left medium-right-margin\">
-      <a data-signup-modal=\"\" data-header-view=\"true\" href=\"/#\" class=\"link-reset\" rel=\"nofollow\">
+      <a data-signup-modal=\"\" data-toggle=\"modal\" data-target=\"#myModal\" data-header-view=\"true\" href=\"/#\" class=\"link-reset\" rel=\"nofollow\">
         Inscription
       </a>
     </li>
@@ -69,8 +69,11 @@ class __TwigTemplate_5cdcb42e33b88a30a268ab3ee6f32113b6345b05aa1db76093581e4ba0b
 </div>
 </div>
 
-
- 
+";
+        // line 35
+        $this->env->loadTemplate("realEstateBundle:authentification:signup.html.twig")->display($context);
+        // line 36
+        echo " 
 
 <div class=\"p1-hero-wrapper shift-with-hiw\">
   <div id=\"hero\" data-native-currency=\"EUR\">
@@ -259,6 +262,6 @@ class __TwigTemplate_5cdcb42e33b88a30a268ab3ee6f32113b6345b05aa1db76093581e4ba0b
 
     public function getDebugInfo()
     {
-        return array (  246 => 179,  241 => 176,  226 => 181,  224 => 179,  221 => 178,  219 => 176,  178 => 137,  175 => 136,  145 => 106,  42 => 5,  39 => 4,  11 => 2,);
+        return array (  249 => 179,  244 => 176,  229 => 181,  227 => 179,  224 => 178,  222 => 176,  181 => 137,  178 => 136,  148 => 106,  76 => 36,  74 => 35,  42 => 5,  39 => 4,  11 => 2,);
     }
 }

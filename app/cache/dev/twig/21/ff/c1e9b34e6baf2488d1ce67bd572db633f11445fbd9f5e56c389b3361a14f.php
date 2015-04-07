@@ -25,9 +25,24 @@ class __TwigTemplate_21ffc1e9b34e6baf2488d1ce67bd572db633f11445fbd9f5e56c389b336
             // line 3
             echo "<div class=\"col-sm-12 col-md-6 row-space-2\">
 
-  
-      <div data-lat=\"40.684013166194646\"
-           data-lng=\"-73.98322038869327\"
+  ";
+            // line 5
+            $context["a"] = $this->getAttribute($context["entity"], "position", array());
+            // line 6
+            echo "  
+    ";
+            // line 7
+            $context["foo"] = twig_split_filter($this->env, (isset($context["a"]) ? $context["a"] : $this->getContext($context, "a")), ",");
+            // line 8
+            echo "
+      <div data-lat= ";
+            // line 9
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["foo"]) ? $context["foo"] : $this->getContext($context, "foo")), 0, array(), "array"), "html", null, true);
+            echo "
+           data-lng= ";
+            // line 10
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["foo"]) ? $context["foo"] : $this->getContext($context, "foo")), 1, array(), "array"), "html", null, true);
+            echo "
            data-name=\"Sun-filled room in Boerum Hill\"
            data-url=\"/rooms/4540756?guests=2&amp;s=eNQN\"
            data-user=\"1243559\"
@@ -37,14 +52,14 @@ class __TwigTemplate_21ffc1e9b34e6baf2488d1ce67bd572db633f11445fbd9f5e56c389b336
       
         <div class=\"panel-image listing-img\">
           <a href=\"";
-            // line 16
+            // line 19
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("offre_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\" class=\"media-photo media-cover\">
             <div class=\"listing-img-container media-cover text-center\">
                                                                   
                                                           
               <img itemprop=\"image\" data-current=\"0\" src=\"";
-            // line 20
+            // line 23
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "urlImage", array()), "html", null, true);
             echo "?interpolation=lanczos-none&amp;size=x_medium&amp;output-format=jpg&amp;output-quality=70\" class=\"img-responsive-height\" alt=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "description", array()), "html", null, true);
@@ -57,7 +72,7 @@ class __TwigTemplate_21ffc1e9b34e6baf2488d1ce67bd572db633f11445fbd9f5e56c389b336
             <div>
               <sup class=\"h6 text-contrast\"></sup>
               <span class=\"h3 price-amount\">";
-            // line 28
+            // line 31
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "payement", array()), "html", null, true);
             echo "</span>
               <sup class=\"h6 text-contrast\">&euro;</sup>
@@ -72,11 +87,11 @@ class __TwigTemplate_21ffc1e9b34e6baf2488d1ce67bd572db633f11445fbd9f5e56c389b336
             <span class=\"rich-toggle wish_list_button wishlist-button\"
                   data-img=\"https://a0.muscache.com/ic/pictures/66670616/6a2e75e7_original.jpg?interpolation=lanczos-none&amp;size=x_medium&amp;output-format=jpg&amp;output-quality=70\"
                   data-name=\"Sun-filled room in ";
-            // line 40
+            // line 43
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "Adresse", array()), "ville", array()), "html", null, true);
             echo "\"
                   data-address=\"";
-            // line 41
+            // line 44
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "Adresse", array()), "ville", array()), "html", null, true);
             echo "\"
                   data-hosting_id=\"4540756\">
@@ -99,18 +114,19 @@ class __TwigTemplate_21ffc1e9b34e6baf2488d1ce67bd572db633f11445fbd9f5e56c389b336
               </a>
             <a href=\"/rooms/4540756?guests=2&amp;s=eNQN\" target=\"listing_4540756\" class=\"text-normal\">
               <div title=\"Sun-filled room in ";
-            // line 61
+            // line 64
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "Adresse", array()), "ville", array()), "html", null, true);
             echo "\" class=\"h5 listing-name text-truncate row-space-top-1\">
                 Sun-filled room in ";
-            // line 62
+            // line 65
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "Adresse", array()), "ville", array()), "html", null, true);
             echo "
               </div>
             </a>
             <div class=\"text-muted listing-location text-truncate\"><a href=\"/rooms/4540756?guests=2&amp;s=eNQN\" class=\"text-normal link-reset\">
+   
   ";
-            // line 66
+            // line 70
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "description", array()), "html", null, true);
             echo "
 </a>
@@ -128,7 +144,7 @@ class __TwigTemplate_21ffc1e9b34e6baf2488d1ce67bd572db633f11445fbd9f5e56c389b336
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 78
+        // line 82
         echo "    
 
 ";
@@ -146,6 +162,6 @@ class __TwigTemplate_21ffc1e9b34e6baf2488d1ce67bd572db633f11445fbd9f5e56c389b336
 
     public function getDebugInfo()
     {
-        return array (  132 => 78,  114 => 66,  107 => 62,  103 => 61,  80 => 41,  76 => 40,  61 => 28,  48 => 20,  41 => 16,  26 => 3,  22 => 2,  19 => 1,);
+        return array (  148 => 82,  130 => 70,  122 => 65,  118 => 64,  95 => 44,  91 => 43,  76 => 31,  63 => 23,  56 => 19,  44 => 10,  40 => 9,  37 => 8,  35 => 7,  32 => 6,  30 => 5,  26 => 3,  22 => 2,  19 => 1,);
     }
 }

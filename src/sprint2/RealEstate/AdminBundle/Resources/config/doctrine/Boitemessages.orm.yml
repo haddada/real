@@ -30,12 +30,6 @@ sprint2\RealEstate\AdminBundle\Entity\Boitemessages:
             unsigned: false
             comment: ''
             default: '0'
-        tempsEnvoi:
-            type: datetime
-            nullable: true
-            comment: ''
-            default: CURRENT_TIMESTAMP
-            column: temps_envoi
     manyToOne:
         idDestinataire:
             targetEntity: Utilisateur

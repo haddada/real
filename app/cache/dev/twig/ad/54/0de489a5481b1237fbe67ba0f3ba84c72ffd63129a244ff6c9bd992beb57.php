@@ -1,6 +1,6 @@
 <?php
 
-/* realEstateBundle:Offre:Filtres/Chambre.html.twig */
+/* realEstateBundle:Offre/Filtres:Chambre.html.twig */
 class __TwigTemplate_ad540de489a5481b1237fbe67ba0f3ba84c72ffd63129a244ff6c9bd992beb57 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -55,7 +55,7 @@ class __TwigTemplate_ad540de489a5481b1237fbe67ba0f3ba84c72ffd63129a244ff6c9bd992
 
     public function getTemplateName()
     {
-        return "realEstateBundle:Offre:Filtres/Chambre.html.twig";
+        return "realEstateBundle:Offre/Filtres:Chambre.html.twig";
     }
 
     public function getDebugInfo()

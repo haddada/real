@@ -2,6 +2,10 @@ real_estate_authentification:
     resource: "@RealEstateAuthentificationBundle/Resources/config/routing.yml"
     prefix:   /
 
+sprint2_authandlog:
+    resource: "@sprint2AuthandlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
 sprint2_real_estate_admin:
     resource: "@sprint2RealEstateAdminBundle/Resources/config/routing.yml"
     prefix:   /
@@ -13,7 +17,7 @@ real_estate:
 real_estate_admin:
     resource: "@sprint2RealEstateAdminBundle/Resources/config/routing.yml"
     prefix:   /Admin
-    
+
 app:
     resource: @AppBundle/Controller/
     type:     annotation

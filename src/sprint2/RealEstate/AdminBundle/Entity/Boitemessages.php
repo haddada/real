@@ -25,11 +25,6 @@ class Boitemessages
      */
     private $vu;
 
-    /**
-     * 
-     * @var \DateTime
-     */
-    private $tempsEnvoi;
 
     /**
      * @var \sprint2\RealEstate\AdminBundle\Entity\Utilisateur
@@ -95,29 +90,6 @@ class Boitemessages
     public function getVu()
     {
         return $this->vu;
-    }
-
-    /**
-     * Set tempsEnvoi
-     *
-     * @param \DateTime $tempsEnvoi
-     * @return Boitemessages
-     */
-    public function setTempsEnvoi($tempsEnvoi)
-    {
-        $this->tempsEnvoi = $tempsEnvoi;
-
-        return $this;
-    }
-
-    /**
-     * Get tempsEnvoi
-     *
-     * @return \DateTime 
-     */
-    public function getTempsEnvoi()
-    {
-        return $this->tempsEnvoi;
     }
 
     /**

@@ -475,12 +475,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           &nbsp;
                 <script src="{{ asset('js/jquery.js') }}"></script>
              
-                 {%include 'realEstateBundle:Offre:vote.html.twig' with {'entity' : entity}%}
+                 {%include 'realEstateBundle:Offre:vote.html.twig' with {'entity' : entity,'found':found,'note':note}%}
 
         
 
         
-(<span itemprop="reviewCount">{{entity.NBNote}}</span>)</a>
+(<span itemprop="reviewCount">{{countNbOffre}}</span>)</a>
       </div>
 
       

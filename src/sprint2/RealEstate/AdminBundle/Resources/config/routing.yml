@@ -7,7 +7,7 @@ sprint2_real_estate_admin_mailbox:
     defaults: { _controller: sprint2RealEstateAdminBundle:Default:mail }
 
 sprint2_real_estate_admin_sentmail:
-    path:     /ComposeMail
+    path:     /SentMail
     defaults: { _controller: sprint2RealEstateAdminBundle:Default:sent }
     
 sprint2_real_estate_admin_clients:
@@ -42,6 +42,30 @@ sprint2_real_estate_admin_ajax_get_mail_list_ofclient:
   pattern:  /ajax/{id}
   defaults: { _controller: sprint2RealEstateAdminBundle:Ajax:getListOfMail }
   
+sprint2_real_estate_admin_ajax_get_mail_list_of_inbox_admin:
+  pattern:  /ajax2/{id}
+  defaults: { _controller: sprint2RealEstateAdminBundle:Ajax:getInboxListOfMail }
+
+sprint2_real_estate_admin_ajax_dell_one_mail_of_inbox_admin:
+  pattern:  /ajax2/{id}/{idp}
+  defaults: { _controller: sprint2RealEstateAdminBundle:Ajax:dellInboxOneMail }
+  
+sprint2_real_estate_admin_ajax_find_list_of_mail_of_inbox_admin:
+  pattern:  /ajax3/{id}/{find}
+  defaults: { _controller: sprint2RealEstateAdminBundle:Ajax:findListOfMail }
+  
+sprint2_real_estate_admin_ajax_find_list1_of_mail_of_inbox_admin:
+  pattern:  /ajax3/{id}/
+  defaults: { _controller: sprint2RealEstateAdminBundle:Ajax:getInboxListOfMail }
+  
+sprint2_real_estate_admin_ajax_find_one_mail_of_inbox_admin:
+  pattern:  /ajax4/{id}/
+  defaults: { _controller: sprint2RealEstateAdminBundle:Ajax:getInboxOneMail }
+  
 file_file_homepage:
     pattern:  /upload
     defaults: { _controller: sprint2RealEstateAdminBundle:Default:upload }
+    
+sprint2_real_estate_admin_ajax_get_mail_list_of_inboxS_admin:
+  pattern:  /ajax5/{id}
+  defaults: { _controller: sprint2RealEstateAdminBundle:Ajax:getInboxListOfMailS }

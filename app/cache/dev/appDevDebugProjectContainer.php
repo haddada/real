@@ -945,32 +945,37 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getDoctrine_Orm_DefaultEntityManagerService()
     {
-        $a = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array(($this->targetDirs[3].'/src/sprint2/RealEstate/AdminBundle/Resources/config/doctrine') => 'sprint2\\RealEstate\\AdminBundle\\Entity'));
-        $a->setGlobalBasename('mapping');
+        $a = $this->get('annotation_reader');
 
-        $b = new \Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver(array(($this->targetDirs[3].'/vendor/damianociarla/rating-bundle/DCS/RatingBundle/Resources/config/doctrine') => 'DCS\\RatingBundle\\Entity'));
-        $b->setGlobalBasename('mapping');
+        $b = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($a, array(0 => ($this->targetDirs[3].'/src/sprint2/realEstateBundle/Entity'), 1 => ($this->targetDirs[3].'/src/sprint2/AuthandlogBundle/Entity')));
 
-        $c = new \Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain();
-        $c->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($this->get('annotation_reader'), array(0 => ($this->targetDirs[3].'/src/sprint2/realEstateBundle/Entity'))), 'sprint2\\realEstateBundle\\Entity');
-        $c->addDriver($a, 'sprint2\\RealEstate\\AdminBundle\\Entity');
-        $c->addDriver($b, 'DCS\\RatingBundle\\Entity');
+        $c = new \Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver(array(($this->targetDirs[3].'/src/sprint2/RealEstate/AdminBundle/Resources/config/doctrine') => 'sprint2\\RealEstate\\AdminBundle\\Entity'));
+        $c->setGlobalBasename('mapping');
 
-        $d = new \Doctrine\ORM\Configuration();
-        $d->setEntityNamespaces(array('realEstateBundle' => 'sprint2\\realEstateBundle\\Entity', 'sprint2RealEstateAdminBundle' => 'sprint2\\RealEstate\\AdminBundle\\Entity', 'DCSRatingBundle' => 'DCS\\RatingBundle\\Entity'));
-        $d->setMetadataCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_metadata_cache'));
-        $d->setQueryCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_query_cache'));
-        $d->setResultCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_result_cache'));
-        $d->setMetadataDriverImpl($c);
-        $d->setProxyDir((__DIR__.'/doctrine/orm/Proxies'));
-        $d->setProxyNamespace('Proxies');
-        $d->setAutoGenerateProxyClasses(true);
-        $d->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
-        $d->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
-        $d->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
-        $d->setEntityListenerResolver($this->get('doctrine.orm.default_entity_listener_resolver'));
+        $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver(array(($this->targetDirs[3].'/vendor/damianociarla/rating-bundle/DCS/RatingBundle/Resources/config/doctrine') => 'DCS\\RatingBundle\\Entity'));
+        $d->setGlobalBasename('mapping');
 
-        $this->services['doctrine.orm.default_entity_manager'] = $instance = \Doctrine\ORM\EntityManager::create($this->get('doctrine.dbal.default_connection'), $d);
+        $e = new \Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain();
+        $e->addDriver($b, 'sprint2\\realEstateBundle\\Entity');
+        $e->addDriver($b, 'sprint2\\AuthandlogBundle\\Entity');
+        $e->addDriver($c, 'sprint2\\RealEstate\\AdminBundle\\Entity');
+        $e->addDriver($d, 'DCS\\RatingBundle\\Entity');
+
+        $f = new \Doctrine\ORM\Configuration();
+        $f->setEntityNamespaces(array('realEstateBundle' => 'sprint2\\realEstateBundle\\Entity', 'sprint2RealEstateAdminBundle' => 'sprint2\\RealEstate\\AdminBundle\\Entity', 'DCSRatingBundle' => 'DCS\\RatingBundle\\Entity', 'sprint2AuthandlogBundle' => 'sprint2\\AuthandlogBundle\\Entity'));
+        $f->setMetadataCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_metadata_cache'));
+        $f->setQueryCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_query_cache'));
+        $f->setResultCacheImpl($this->get('doctrine_cache.providers.doctrine.orm.default_result_cache'));
+        $f->setMetadataDriverImpl($e);
+        $f->setProxyDir((__DIR__.'/doctrine/orm/Proxies'));
+        $f->setProxyNamespace('Proxies');
+        $f->setAutoGenerateProxyClasses(true);
+        $f->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+        $f->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
+        $f->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
+        $f->setEntityListenerResolver($this->get('doctrine.orm.default_entity_listener_resolver'));
+
+        $this->services['doctrine.orm.default_entity_manager'] = $instance = \Doctrine\ORM\EntityManager::create($this->get('doctrine.dbal.default_connection'), $f);
 
         $this->get('doctrine.orm.default_manager_configurator')->configure($instance);
 
@@ -3529,6 +3534,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath(($this->targetDirs[3].'/src/sprint2/RealEstate/AdminBundle/Resources/views'), 'sprint2RealEstateAdmin');
         $instance->addPath(($this->targetDirs[3].'/src/RealEstate/AuthentificationBundle/Resources/views'), 'RealEstateAuthentification');
         $instance->addPath(($this->targetDirs[3].'/vendor/damianociarla/rating-bundle/DCS/RatingBundle/Resources/views'), 'DCSRating');
+        $instance->addPath(($this->targetDirs[3].'/src/sprint2/AuthandlogBundle/Resources/views'), 'sprint2Authandlog');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views'), 'Debug');
         $instance->addPath(($this->targetDirs[3].'/src/Acme/DemoBundle/Resources/views'), 'AcmeDemo');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views'), 'WebProfiler');
@@ -4036,7 +4042,7 @@ class appDevDebugProjectContainer extends Container
             'kernel.root_dir' => $this->targetDirs[2],
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
-            'kernel.name' => 'app',
+            'kernel.name' => 'ap_',
             'kernel.cache_dir' => __DIR__,
             'kernel.logs_dir' => ($this->targetDirs[2].'/logs'),
             'kernel.bundles' => array(
@@ -4054,6 +4060,7 @@ class appDevDebugProjectContainer extends Container
                 'sprint2RealEstateAdminBundle' => 'sprint2\\RealEstate\\AdminBundle\\sprint2RealEstateAdminBundle',
                 'RealEstateAuthentificationBundle' => 'RealEstate\\AuthentificationBundle\\RealEstateAuthentificationBundle',
                 'DCSRatingBundle' => 'DCS\\RatingBundle\\DCSRatingBundle',
+                'sprint2AuthandlogBundle' => 'sprint2\\AuthandlogBundle\\sprint2AuthandlogBundle',
                 'DebugBundle' => 'Symfony\\Bundle\\DebugBundle\\DebugBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',

@@ -29,6 +29,22 @@ class __TwigTemplate_7c0f23c0e7f968130e78cab38d20add8bddc3f781e7ac8efb7344f911d9
         // line 4
         echo "<html lang=\"fr\" xmlns:fb=\"http://ogp.me/ns/fb#\"><head><style type=\"text/css\">.pac-container{background-color:#fff;position:absolute!important;z-index:1000;border-radius:2px;border-top:1px solid #d9d9d9;font-family:Arial,sans-serif;box-shadow:0 2px 6px rgba(0,0,0,0.3);-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}.pac-container:after{content:\"\";padding:1px 1px 1px 0;height:16px;text-align:right;display:block;background-image:url(//maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white2.png);background-position:right;background-repeat:no-repeat;background-size:104px 16px}.hdpi.pac-container:after{background-image:url(//maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white2_hdpi.png)}.pac-item{cursor:default;padding:0 4px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;line-height:30px;text-align:left;border-top:1px solid #e6e6e6;font-size:11px;color:#999}.pac-item:hover{background-color:#fafafa}.pac-item-selected,.pac-item-selected:hover{background-color:#ebf2fe}.pac-matched{font-weight:700}.pac-item-query{font-size:13px;padding-right:3px;color:#000}.pac-icon{width:15px;height:20px;margin-right:7px;margin-top:6px;display:inline-block;vertical-align:top;background-image:url(//maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png);background-size:34px}.hdpi .pac-icon{background-image:url(//maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons_hdpi.png)}.pac-icon-search{background-position:-1px -1px}.pac-item-selected .pac-icon-search{background-position:-18px -1px}.pac-icon-marker{background-position:-1px -161px}.pac-item-selected .pac-icon-marker{background-position:-18px -161px}.pac-placeholder{color:gray}</style>
         <meta charset=\"UTF-8\">
+
+         <link rel=\"stylesheet\" href=\"";
+        // line 7
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/alertify.bootstrap.css"), "html", null, true);
+        echo "\"></link>
+         <link rel=\"stylesheet\" href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/alertify.core.css"), "html", null, true);
+        echo "\"></link>
+         <link rel=\"stylesheet\" href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/alertify.default.css"), "html", null, true);
+        echo "\"></link>
+
+
+
         <title>Welcome!</title>
                 <link rel=\"icon\" type=\"image/x-icon\" href=\"/favicon.ico\">
     <style type=\"text/css\"></style><style type=\"text/css\">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:\"lucida grande\", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
@@ -109,7 +125,7 @@ class __TwigTemplate_7c0f23c0e7f968130e78cab38d20add8bddc3f781e7ac8efb7344f911d9
         <link href=\"https://a0.muscache.com/airbnb/static/compatibility/airglyphs-ie8-4726277b9b1996acd7c89b89f9bbcdd7.css\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />
       <![endif]-->
      <link href=\"";
-        // line 85
+        // line 92
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/modal.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" media=\"screen\">
     <link href=\"https://a0.muscache.com/airbnb/static/rooms/new-68a7d73eefddfebfe4200c008751b974.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\">
@@ -137,13 +153,17 @@ class __TwigTemplate_7c0f23c0e7f968130e78cab38d20add8bddc3f781e7ac8efb7344f911d9
     <meta name=\"twitter:widgets:csp\" content=\"on\">
 
      <script src=\"";
-        // line 110
+        // line 117
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery.js"), "html", null, true);
         echo "\"></script>
     <!-- Include all JavaScripts, compiled by Assetic -->
     <script src=\"";
-        // line 112
+        // line 119
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
+        echo "\"></script>
+     <script src=\"";
+        // line 120
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/alertify.js"), "html", null, true);
         echo "\"></script>
 
 
@@ -229,9 +249,9 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
     id=\"search-form-header\">
   <li id=\"header-search\" class=\"search-bar-wrapper pull-left medium-right-margin\">
     ";
-        // line 196
+        // line 204
         $this->env->loadTemplate("realEstateBundle:Offre:searchForm.html.twig")->display($context);
-        // line 197
+        // line 205
         echo "  </li>
     <li class=\"browse-container pull-left hide-md\">
       <a class=\"link-reset header-browse-trigger\" href=\"#\" data-prevent-default=\"\" id=\"header-browse-trigger\">
@@ -332,21 +352,21 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
 \t      <div class=\"row row-space-5 row-space-top-5 row-table\">
 \t\t      
 \t      \t ";
-        // line 296
+        // line 304
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/typeLogement.html.twig")->display($context);
-        // line 297
+        // line 305
         echo "\t       </div>
 \t       <div class=\"row row-space-5 row-space-top-5 row-table\">
         \t ";
-        // line 299
+        // line 307
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Etat.html.twig")->display($context);
-        // line 300
+        // line 308
         echo "        \t</div>
             <div class=\"row row-space-5 row-space-top-5 row-table\">
              ";
-        // line 302
+        // line 310
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Prix.html.twig")->display($context);
-        // line 303
+        // line 311
         echo "             </div>
              <div class=\"row row-space-5 row-space-top-5 row-table\">
                 <div class=\"col-3 text-right col-middle\">
@@ -391,42 +411,42 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
              
         \t<div class=\"row row-space-5 row-space-top-5 row-table\">
 \t         ";
-        // line 346
+        // line 354
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Chambre.html.twig")->display($context);
-        // line 347
+        // line 355
         echo "\t         </div>
              ";
-        // line 351
+        // line 359
         echo "               
              
 \t         
 \t        
  \t\t\t <div class=\"row row-space-5 row-space-top-5 row-table\">
 \t         ";
-        // line 356
+        // line 364
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Quartier.html.twig")->display(array_merge($context, array("gouvernorats" => (isset($context["gouvernorats"]) ? $context["gouvernorats"] : $this->getContext($context, "gouvernorats")))));
-        // line 357
+        // line 365
         echo "\t         </div>
 
 \t         <div class=\"row row-space-5 row-space-top-5 row-table villes\">
                  ";
-        // line 360
+        // line 368
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/ville.html.twig")->display(array_merge($context, array("villes" => (isset($context["villes"]) ? $context["villes"] : $this->getContext($context, "villes")))));
-        // line 361
+        // line 369
         echo "             </div>
 
              <div class=\"row row-space-5 row-space-top-5 row-table code\">
                 ";
-        // line 364
+        // line 372
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/code.html.twig")->display(array_merge($context, array("codes" => (isset($context["codes"]) ? $context["codes"] : $this->getContext($context, "codes")))));
-        // line 365
+        // line 373
         echo "             </div>
 \t        
 \t         <div class=\"row row-space-5 row-space-top-5 row-table\">
 \t         ";
-        // line 368
+        // line 376
         $this->env->loadTemplate("realEstateBundle:Offre:Filtres/Equipement.html.twig")->display($context);
-        // line 369
+        // line 377
         echo "\t         </div>
              
 
@@ -452,7 +472,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
                 </style>
                     <div class=\"fileUpload btn-large btn btn-primary\">
                         <span>Upload</span>
-                        <input type=\"file\" class=\"upload\" name=\"fileToUpload\"/>
+                        <input type=\"file\" class=\"upload\" name=\"fileToUpload\" required/>
                     </div>
 
 \t\t        \t<input type=\"submit\" class=\"btn btn-primary btn-large submit\" value=\"Valider\">
@@ -2360,7 +2380,19 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
       </ul>
     </div>
     
-    </body></html>
+        ";
+        // line 2310
+        if (((isset($context["erreur"]) ? $context["erreur"] : $this->getContext($context, "erreur")) == true)) {
+            // line 2311
+            echo "            <div class=\"errors\">
+                <script>
+                alertify.error(\"Error notification\");
+            </script>
+            </div>
+        ";
+        }
+        // line 2317
+        echo "    </body></html>
 ";
     }
 
@@ -2371,6 +2403,6 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"&amp;gt;&amp;lt
 
     public function getDebugInfo()
     {
-        return array (  430 => 369,  428 => 368,  423 => 365,  421 => 364,  416 => 361,  414 => 360,  409 => 357,  407 => 356,  400 => 351,  397 => 347,  395 => 346,  350 => 303,  348 => 302,  344 => 300,  342 => 299,  338 => 297,  336 => 296,  235 => 197,  233 => 196,  146 => 112,  141 => 110,  113 => 85,  30 => 4,  24 => 3,  20 => 1,);
+        return array (  2395 => 2317,  2387 => 2311,  2385 => 2310,  450 => 377,  448 => 376,  443 => 373,  441 => 372,  436 => 369,  434 => 368,  429 => 365,  427 => 364,  420 => 359,  417 => 355,  415 => 354,  370 => 311,  368 => 310,  364 => 308,  362 => 307,  358 => 305,  356 => 304,  255 => 205,  253 => 204,  166 => 120,  162 => 119,  157 => 117,  129 => 92,  43 => 9,  39 => 8,  35 => 7,  30 => 4,  24 => 3,  20 => 1,);
     }
 }

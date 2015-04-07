@@ -276,6 +276,11 @@
                 <i class="fa fa-pie-chart"></i> <span>Statistiques</span>
               </a>
             </li>
+            <li {% block Archive %}{% endblock %}>
+              <a href="">
+                <i class="fa fa-folder"></i> <span>Archive</span>
+              </a>
+            </li>
             
             
         </section>
@@ -293,6 +298,7 @@
         {% block AganceCore %}{% endblock %}
         {% block offreCore %}{% endblock %}
         {% block StatCore %}{% endblock %}    
+        {% block ArchiveCore %}{% endblock %}  
       </div>
         
         <footer class="main-footer">

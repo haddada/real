@@ -2,8 +2,8 @@
 {% extends "realEstateBundle:Default:index.html.twig" %}
 
 {% block header %}
-<div class="airbnb-header shift-with-hiw" id="header">
 
+<div class="airbnb-header shift-with-hiw" id="header">
 <div class="regular-header clearfix hide-sm">
 
 
@@ -18,7 +18,7 @@
 
  <ul class="nav pull-right logged-out list-unstyled medium-right-margin">
     <li id="sign_up" class="pull-left medium-right-margin">
-      <a data-signup-modal="" data-header-view="true" href="/#" class="link-reset" rel="nofollow">
+      <a data-signup-modal="" data-toggle="modal" data-target="#myModal" data-header-view="true" href="/#" class="link-reset" rel="nofollow">
         Inscription
       </a>
     </li>
@@ -32,7 +32,7 @@
 </div>
 </div>
 
-
+{%include 'realEstateBundle:authentification:signup.html.twig'%}
  
 
 <div class="p1-hero-wrapper shift-with-hiw">

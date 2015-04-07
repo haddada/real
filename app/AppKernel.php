@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new sprint2\RealEstate\AdminBundle\sprint2RealEstateAdminBundle(),
             new RealEstate\AuthentificationBundle\RealEstateAuthentificationBundle(),
             new DCS\RatingBundle\DCSRatingBundle(),
+            new sprint2\AuthandlogBundle\sprint2AuthandlogBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

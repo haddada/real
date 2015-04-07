@@ -21,31 +21,46 @@ class __TwigTemplate_8cbb0d5a3dc631731f50a639422d51634b7b060aa34c47f902696e2631c
         echo "
 <html>
 <head>   
+\t<link href=\"";
+        // line 4
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("css/customBootstrap.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\" media=\"screen\">
     <link href=\"https://a0.muscache.com/airbnb/static/packages/common_o2.1-ec3a181fa47f7eeeccce237530c4bdf9.css\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />
     <link href=\"https://a2.muscache.com/airbnb/static/p1/main-pretzel-d13973fd70f8c67a5804eef0ff3f7513.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />
+    
 </head>
 
 <body class=\"home_view v2 simple-header p1\">
 
 ";
-        // line 10
-        $this->displayBlock('header', $context, $blocks);
         // line 12
+        $this->displayBlock('header', $context, $blocks);
+        // line 14
         echo "
 ";
-        // line 13
-        $this->displayBlock('content', $context, $blocks);
         // line 15
-        echo "</body>
+        $this->displayBlock('content', $context, $blocks);
+        // line 17
+        echo "
+<script src=\"";
+        // line 18
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/jquery.js"), "html", null, true);
+        echo "\"></script>
+<!-- Include all JavaScripts, compiled by Assetic -->
+<script src=\"";
+        // line 20
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/bootstrap.js"), "html", null, true);
+        echo "\"></script>
+</body>
 </html>";
     }
 
-    // line 10
+    // line 12
     public function block_header($context, array $blocks = array())
     {
     }
 
-    // line 13
+    // line 15
     public function block_content($context, array $blocks = array())
     {
     }
@@ -55,8 +70,13 @@ class __TwigTemplate_8cbb0d5a3dc631731f50a639422d51634b7b060aa34c47f902696e2631c
         return "realEstateBundle:Default:index.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  49 => 13,  44 => 10,  39 => 15,  37 => 13,  34 => 12,  32 => 10,  21 => 1,);
+        return array (  64 => 15,  59 => 12,  52 => 20,  47 => 18,  44 => 17,  42 => 15,  39 => 14,  37 => 12,  26 => 4,  21 => 1,);
     }
 }

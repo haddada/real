@@ -4,7 +4,9 @@ namespace sprint2\RealEstate\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Form\FormError;
 use sprint2\RealEstate\AdminBundle\Models\Document;
+use sprint2\RealEstate\AdminBundle\Entity\Utilisateur;
 
 class DefaultController extends Controller
 {
@@ -22,8 +24,7 @@ class DefaultController extends Controller
         $Agance= $this->getDoctrine()
         ->getRepository('sprint2RealEstateAdminBundle:Agence')
         ->findAll();
-        //array_slice($utilisateur,-6)
-        //count($utilisateur);
+
         $Image = $this->get_gravatar("fathallahwael@windowslive.com");
         return $this->render('sprint2RealEstateAdminBundle:Default:index.html.twig',
                 array('utilisateurg'=>array_slice($utilisateur_last_6_gerants,-8), 
@@ -97,7 +98,7 @@ class DefaultController extends Controller
                 $mailx->setVu("0");
                 $mailx->setContenu($bodyxc);
                 $mailx->setIdExpediteur($expediteur);  
-                $mailx->setTempsEnvoi(NULL);
+                
 
                 $em=$this->getDoctrine()->getManager();
                 $em->persist($mailx);
@@ -110,24 +111,35 @@ class DefaultController extends Controller
         ->getRepository('sprint2RealEstateAdminBundle:Utilisateur')
         ->findBy(array('role'=>2));
         
-        $utilisateurf=new \sprint2\RealEstate\AdminBundle\Entity\Utilisateur();
-        $form=$this->createForm(new \sprint2\RealEstate\AdminBundle\form\AjouCForm(),$utilisateurf);#container->get("form.factory")entre this et create#}
+        $utilisateurf=new Utilisateur();
+        $form=$this->createForm(new \sprint2\RealEstate\AdminBundle\Form\AjouCForm(),$utilisateurf);#container->get("form.factory")entre this et create#}
         $Request = $this->get('request_stack')->getCurrentRequest();
-        $form->handleRequest($Request);//laison entre formulaire  et lentity en question et recuperer les données du requet
+        $form->handleRequest($Request);
         if($form->isValid())
         {
             
-            $cvbnnnn = $this->upload($utilisateurf->getImage());
-            $utilisateurf->setPassword(md5($utilisateurf->getPassword()));
-            $utilisateurf->setNumfix(NULL);
-            $utilisateurf->setNummobile(NULL);
-            $utilisateurf->setRole("2");
-            $utilisateurf->setUrlp($cvbnnnn);
-            
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($utilisateurf);
-            $em->flush();
+            try {
+                $cvbnnnn = $this->upload($utilisateurf->getImage());
+                $utilisateurf->setPassword(md5($utilisateurf->getPassword()));
+                $utilisateurf->setNumfix(NULL);
+                $utilisateurf->setNummobile(NULL);
+                $utilisateurf->setRole("2");
+                $utilisateurf->setUrlp($cvbnnnn);
 
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($utilisateurf);
+                $em->flush();
+            } catch(\Exception $e) {
+                die($e->getMessage());
+                $findme   = "'mail'";
+                $pos = strpos($e->getMessage(), $findme);
+                if( $pos !== false )
+                {
+                    $form->get('mail')->addError(new FormError("L'adresse e-mail existe déjà"));                    
+                    return $this->render('sprint2RealEstateAdminBundle:Pages:client.html.twig',
+                        array('utilisateur'=>$utilisateur, 'form'=>$form->createView(), 'image'=>$Image));              
+                }
+            }           
         }
         
         return $this->render('sprint2RealEstateAdminBundle:Pages:client.html.twig',
@@ -139,33 +151,56 @@ class DefaultController extends Controller
         $Image = $this->get_gravatar("fathallahwael@windowslive.com");
         $request1 = $this->getRequest();
         if ($request1->getMethod()=="POST" ){ 
-            
-            $idx=$request1->get('id');
-            $mailx=$request1->get('mail');
-            $nomx=$request1->get('nom');
-            $prenomx=$request1->get('prenom');
-            $statmatrix=$request1->get('statmatri');
-            $fixex=$request1->get('numfix');
-            $mobilx=$request1->get('nummob');
-//            $passx=$request->get('pass');          
-            $em1 = $this->getDoctrine()->getManager();
-            if($request1->get('id')== NULL){
-               $idx= "0";
-            }else{
-                $idx= $request1->get('id');
-            }
-            $utilisateurx = $em1->getRepository('sprint2RealEstateAdminBundle:Utilisateur')->find($idx);
-                       
-            $utilisateurx->setMail($mailx);
-            $utilisateurx->setNom($nomx);
-            $utilisateurx->setPrenom($prenomx);
-            $utilisateurx->setStatusMatrimonial($statmatrix);
-            $utilisateurx->setNumfix($fixex); 
-            $utilisateurx->setNummobile($mobilx); 
+            if($request1->get('Submit')=="Modifier"){
+                $idx=$request1->get('id');
+                $mailx=$request1->get('mail');
+                $nomx=$request1->get('nom');
+                $prenomx=$request1->get('prenom');
+                $statmatrix=$request1->get('statmatri');
+                $fixex=$request1->get('numfix');
+                $mobilx=$request1->get('nummob');
+    //            $passx=$request->get('pass');          
+                $em1 = $this->getDoctrine()->getManager();
+                if($request1->get('id')== NULL){
+                   $idx= "0";
+                }else{
+                    $idx= $request1->get('id');
+                }
+                $utilisateurx = $em1->getRepository('sprint2RealEstateAdminBundle:Utilisateur')->find($idx);
 
-            $em2=$this->getDoctrine()->getManager();
-            $em2->persist($utilisateurx);
-            $em2->flush();     
+                $utilisateurx->setMail($mailx);
+                $utilisateurx->setNom($nomx);
+                $utilisateurx->setPrenom($prenomx);
+                $utilisateurx->setStatusMatrimonial($statmatrix);
+                $utilisateurx->setNumfix($fixex); 
+                $utilisateurx->setNummobile($mobilx); 
+
+                $em2=$this->getDoctrine()->getManager();
+                $em2->persist($utilisateurx);
+                $em2->flush();   
+            }
+            elseif ($request1->get('Submit')=="Envoier") {
+                
+                $idxc=$request1->get('idxc');
+                $mailxc=$request1->get('mailxc');
+                $subxc=$request1->get('subxc');
+                $bodyxc=$request1->get('bodyxc');
+                
+                $emS = $this->getDoctrine()->getManager();
+                $destinataire = $emS->getRepository('sprint2RealEstateAdminBundle:Utilisateur')->find($idxc);
+                $expediteur = $emS->getRepository('sprint2RealEstateAdminBundle:Utilisateur')->find("0");
+                $mailx= new \sprint2\RealEstate\AdminBundle\Entity\Boitemessages();
+                $mailx->setIdDestinataire($destinataire);
+                $mailx->setVu("0");
+                $mailx->setContenu($bodyxc);
+                $mailx->setIdExpediteur($expediteur);  
+                
+
+                $em=$this->getDoctrine()->getManager();
+                $em->persist($mailx);
+                $em->flush();     
+            
+        }
 //            return $this->render('sprint2RealEstateAdminBundle:Pages:agence.html.twig',
 //                array('agance'=>$Agance, 'utilisateur'=>$utilisateur, 'adresse'=>$adresse ));
         }
@@ -175,11 +210,12 @@ class DefaultController extends Controller
         ->findBy(array('role'=>1));
         
         $utilisateurf=new \sprint2\RealEstate\AdminBundle\Entity\Utilisateur();
-        $form=$this->createForm(new \sprint2\RealEstate\AdminBundle\form\AjouGForm(),$utilisateurf);#container->get("form.factory")entre this et create#}
+        $form=$this->createForm(new \sprint2\RealEstate\AdminBundle\Form\AjouGForm(),$utilisateurf);#container->get("form.factory")entre this et create#}
         $Request = $this->get('request_stack')->getCurrentRequest();
         $form->handleRequest($Request);//laison entre formulaire  et lentity en question et recuperer les données du requet
         if($form->isValid())
         {
+            try {
             $cvbnnnn = $this->upload($utilisateurf->getImage());
             $utilisateurf->setPassword(md5($utilisateurf->getPassword()));
             $utilisateurf->setRole("1");
@@ -187,6 +223,34 @@ class DefaultController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($utilisateurf);
             $em->flush();
+            } catch(\Exception $e) {
+              
+                $findme   = "'mail'";
+                $findme1   = "'numMobile'";
+                $findme2   = "'numFix'";
+                $pos = strpos($e->getMessage(), $findme);
+                $pos1 = strpos($e->getMessage(), $findme1);
+                $pos2 = strpos($e->getMessage(), $findme2);
+                if( $pos !== false )
+                {
+                    $form->get('mail')->addError(new FormError("L'adresse e-mail existe déjà"));                    
+//                    return $this->render('sprint2RealEstateAdminBundle:Pages:gerants.html.twig',
+//                        array('utilisateur'=>$utilisateur, 'form'=>$form->createView() , 'image'=>$Image));     
+                }
+                if( $pos1 !== false )
+                {
+                    $form->get('nummobile')->addError(new FormError("Le numero Mobile existe déjà"));                    
+//                    return $this->render('sprint2RealEstateAdminBundle:Pages:gerants.html.twig',
+//                        array('utilisateur'=>$utilisateur, 'form'=>$form->createView() , 'image'=>$Image));     
+                }
+                if( $pos2 !== false )
+                {
+                    $form->get('numfix')->addError(new FormError("Le numero Fix existe déjà "));                    
+                       
+                }
+                return $this->render('sprint2RealEstateAdminBundle:Pages:gerants.html.twig',
+                        array('utilisateur'=>$utilisateur, 'form'=>$form->createView() , 'image'=>$Image));  
+            }        
 
         }
 
@@ -276,7 +340,7 @@ class DefaultController extends Controller
             $uploadedURL='';
             $message="";
             if (($image instanceof UploadedFile) && ($image->getError() == '0')) {
-                if (($image->getSize() < 2000000000)) {
+                if (($image->getSize() < 100000 )) {
                     $originalName = $image->getClientOriginalName();
                     $name_array = explode('.', $originalName);
                     $file_type = $name_array[sizeof($name_array) - 1];
@@ -296,7 +360,8 @@ class DefaultController extends Controller
                       return "http://localhost/image/null".".png";                       
                     }
                 }
-                 else {}
+                 else {  }
+                 
             }  else {
                 
             }

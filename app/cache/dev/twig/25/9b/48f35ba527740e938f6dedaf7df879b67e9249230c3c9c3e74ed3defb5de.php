@@ -532,7 +532,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
              
                  ";
         // line 478
-        $this->env->loadTemplate("realEstateBundle:Offre:vote.html.twig")->display(array_merge($context, array("entity" => (isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")))));
+        $this->env->loadTemplate("realEstateBundle:Offre:vote.html.twig")->display(array_merge($context, array("entity" => (isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "found" => (isset($context["found"]) ? $context["found"] : $this->getContext($context, "found")), "note" => (isset($context["note"]) ? $context["note"] : $this->getContext($context, "note")))));
         // line 479
         echo "
         
@@ -540,7 +540,7 @@ height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></nos
         
 (<span itemprop=\"reviewCount\">";
         // line 483
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "NBNote", array()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["countNbOffre"]) ? $context["countNbOffre"] : $this->getContext($context, "countNbOffre")), "html", null, true);
         echo "</span>)</a>
       </div>
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace sprint2\RealEstate\AdminBundle\form;
+namespace sprint2\RealEstate\AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

@@ -1,6 +1,6 @@
 <?php
 
-/* realEstateBundle:Offre:Filtres/Etat.html.twig */
+/* realEstateBundle:Offre/Filtres:Etat.html.twig */
 class __TwigTemplate_86c317d30a7eb1599fde36857f743dd35af3d19ff8341ee0d89ba421e111c53f extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -51,7 +51,7 @@ class __TwigTemplate_86c317d30a7eb1599fde36857f743dd35af3d19ff8341ee0d89ba421e11
 
     public function getTemplateName()
     {
-        return "realEstateBundle:Offre:Filtres/Etat.html.twig";
+        return "realEstateBundle:Offre/Filtres:Etat.html.twig";
     }
 
     public function getDebugInfo()

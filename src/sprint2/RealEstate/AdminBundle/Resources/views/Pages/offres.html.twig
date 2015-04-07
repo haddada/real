@@ -20,7 +20,11 @@
                                 <div class="inner">
                                     <img src="{{offre.urlimage}}"  height="150"/>                                  
                                   <h3>{{offre.typeimmob}}</h3>
-                                  <p> {{offre.nbrpiece}} Piece, {{offre.surface}} Metre, Tunisie {{offre.idAdresse.gouvernorat}} {{offre.idAdresse.ville}}, A {{offre.nature}} </p>
+                                  {% set foo %}
+                                    {{offre.position}}
+                                  {% endset %}
+                                  
+                                  <p> {{offre.nbrpiece}} Piece, {{offre.surface}} Metre, Tunisie {{offre.idAdresse.gouvernorat}} {{offre.idAdresse.ville}}</p>
                                 </div>
 
                                 <a href="#" class="small-box-footer">
